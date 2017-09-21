@@ -8,7 +8,9 @@
     "dev": "DEBUG=commonwealth:* nodemon --debug ./src/server.js",
     "build": "babel src --out-dir dist",
     "lint-check": "eslint ./src/ ./tests/",
-    "lint-fix": "eslint --fix ./src/ ./tests/"
+    "lint-fix": "eslint --fix ./src/ ./tests/",
+    "commitizen": "git cz",
+    "precommit": "npm run lint-check"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -21,6 +23,8 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-preset-env": "^1.6.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.7.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-flowtype": "^2.35.1",
@@ -28,6 +32,7 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
     "nodemon": "^1.12.1"
   }
 }
