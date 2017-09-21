@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run build && node ./dist/server.js",
+    "prestart": "npm run build",
+    "start": "node ./dist/server.js",
     "dev": "DEBUG=commonwealth:* nodemon --debug ./src/server.js",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "lint-check": "eslint ./src/ ./tests/",
+    "lint-fix": "eslint --fix ./src/ ./tests/"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -16,7 +19,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.0",
     "babel-preset-env": "^1.6.0",
+    "eslint": "^4.7.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.12.1"
   }
 }
