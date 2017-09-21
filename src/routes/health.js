@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
-router.get('/', function (req, res) { 
+router.get('/', function (req, res) {
   res.status(200)
-      .json({ version: '0.0.0', date: new Date() })
-});
+    .json({ version: '0.0.0', date: new Date() })
+})
 
-module.exports = router;
+module.exports = router
