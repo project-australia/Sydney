@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "debug": "DEBUG=commonwealth:* npm start"
+    "start": "npm run build && node ./dist/server.js",
+    "dev": "DEBUG=commonwealth:* nodemon --debug ./src/server.js",
+    "build": "babel src --out-dir dist"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -12,5 +13,10 @@
     "express": "~4.15.2",
     "helmet": "^3.8.1",
     "morgan": "~1.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.12.1"
   }
 }
