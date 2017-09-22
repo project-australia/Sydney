@@ -5,8 +5,7 @@ export const create = (req, res) => {
   res.status(200).json({message: 'Foobar created'})
 }
 
-export const findAll = (req, res) => {
-  const listOfSomeObject = findAllSomeObject()
-
+export const findAll = async (req, res) => {
+  const listOfSomeObject = await findAllSomeObject()
   res.status(200).json(listOfSomeObject)
 }
