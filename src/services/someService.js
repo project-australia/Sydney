@@ -1,7 +1,7 @@
-var SomeModel = require('../mongoose/models/someModel')
+import SomeModel from '../mongoose/models/someModel'
 
-function createSomeObject (word) {
-  var awesomeInstance = new SomeModel({a_string: word})
+export function createSomeObject (word) {
+  let awesomeInstance = new SomeModel({a_string: word})
   awesomeInstance.save(function (err) {
     if (err) {
       console.log(err)
@@ -9,7 +9,7 @@ function createSomeObject (word) {
   })
 }
 
-function findAllSomeObject () {
+export function findAllSomeObject () {
   SomeModel.find({}, function (err, docs) {
     if (err) {
       console.error(err)
@@ -18,6 +18,3 @@ function findAllSomeObject () {
     }
   })
 }
-
-exports.createSomeObject = createSomeObject
-exports.findAllSomeObject = findAllSomeObject

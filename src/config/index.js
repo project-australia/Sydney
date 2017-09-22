@@ -1,9 +1,7 @@
-var dotenv = require('dotenv')
-var mongoose = require('./mongoose')
+import dotenv from 'dotenv'
+import { connectMongo } from './mongoose'
 
-function initConfigurations () {
+export function initConfigurations () {
   dotenv.config()
-  mongoose.connectMongo()
+  connectMongo()
 }
-
-module.exports = initConfigurations

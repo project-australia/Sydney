@@ -1,13 +1,13 @@
-var mongoose = require('mongoose')
-var blueBird = require('bluebird')
+import mongoose from 'mongoose'
+import blueBird from 'bluebird'
 
-function connectMongo () {
+export function connectMongo () {
   mongoose.Promise = blueBird
   mongoose.connect(process.env.MONGO_URL, { useMongoClient: true })
   mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
 }
 
-var parserOptions = {
+export const parserOptions = {
   virtuals: true,
   getters: true,
   minimize: false,
@@ -18,6 +18,3 @@ var parserOptions = {
     return ret
   }
 }
-
-exports.connectMongo = connectMongo
-exports.parserOptions = parserOptions

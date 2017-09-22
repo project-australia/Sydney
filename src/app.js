@@ -1,12 +1,12 @@
-var express = require('express')
-var logger = require('morgan')
-var bodyParser = require('body-parser')
-var helmet = require('helmet')
+import express from 'express'
+import logger from 'morgan'
+import bodyParser from 'body-parser'
+import helmet from 'helmet'
 
-var initConfigurations = require('./config/index')
-var configureRoutes = require('./routes/index')
+import { initConfigurations } from './config/index'
+import configureRoutes from './routes/index'
 
-var app = express()
+const app = express()
 
 initConfigurations()
 configureRoutes(app)
@@ -17,4 +17,4 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())
 
-module.exports = app
+export default app

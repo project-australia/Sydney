@@ -1,8 +1,8 @@
-var express = require('express')
-var router = express.Router()
-var someController = require('../controllers/someController')
+import express from 'express'
+import { findAll, create } from '../controllers/someController'
+const router = express.Router()
 
-router.get('/', someController.findAll)
-router.post('/', someController.create)
+router.get('/', findAll)
+router.post('/', create)
 
-module.exports = router
+export default router

@@ -1,14 +1,12 @@
-var health = require('./health')
-var notFound = require('./notFound')
-var errorHandler = require('./errorHandler')
-var someRoute = require('./someRoute')
+import health from './health'
+import notFound from './notFound'
+import errorHandler from './errorHandler'
+import someRoute from './someRoute'
 
-function configureRoutes (app) {
+export default function configureRoutes (app) {
   app.use('/some', someRoute)
   app.use('/health', health)
 
   app.use(notFound)
   app.use(errorHandler)
 }
-
-module.exports = configureRoutes

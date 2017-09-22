@@ -1,14 +1,14 @@
-var mongoose = require('mongoose')
-var moongooseConfig = require('../../config/mongoose')
+import mongoose from 'mongoose'
+import { parserOptions } from '../../config/mongoose'
 
-var Schema = mongoose.Schema
+const Schema = mongoose.Schema
 
-var SomeModelSchema = new Schema({
+let SomeModelSchema = new Schema({
   a_string: { type: String, lowercase: true, trim: true },
   a_date: { type: Date, default: Date.now }
 })
 
-SomeModelSchema.set('toJSON', moongooseConfig.parserOptions)
-SomeModelSchema.set('toObject', moongooseConfig.parserOptions)
+SomeModelSchema.set('toJSON', parserOptions)
+SomeModelSchema.set('toObject', parserOptions)
 
-module.exports = mongoose.model('SomeModel', SomeModelSchema)
+export default mongoose.model('SomeModel', SomeModelSchema)
