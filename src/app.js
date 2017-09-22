@@ -3,9 +3,12 @@ var logger = require('morgan')
 var bodyParser = require('body-parser')
 var helmet = require('helmet')
 
+var initConfigurations = require('./config/index')
 var configureRoutes = require('./routes/index')
 
 var app = express()
+
+initConfigurations()
 configureRoutes(app)
 
 app.disable('x-powered-by')
