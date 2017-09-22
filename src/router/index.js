@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import health from './health/'
+import health from './health'
 import some from './some'
 import { notFound } from './notFound'
 import { errorHandler } from './errorHandler'
