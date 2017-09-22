@@ -1,5 +1,5 @@
-import express from 'express'
-const router = express.Router()
+import { Router } from 'express'
+const router = Router()
 
 export default router.get('/', function (req, res) {
   res.status(200)

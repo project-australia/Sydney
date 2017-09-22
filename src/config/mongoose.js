@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
 import blueBird from 'bluebird'
 
-export function connectMongo () {
+export function connectMongo (environment) {
+  let mongoURL = environment === 'integration-test' ? process.env.MONGO_TEST_URL : process.env.MONGO_URL
+
   mongoose.Promise = blueBird
-  mongoose.connect(process.env.MONGO_URL, { useMongoClient: true })
+  mongoose.connect(mongoURL, { useMongoClient: true })
   mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
 }
 

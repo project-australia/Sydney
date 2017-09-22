@@ -2,10 +2,10 @@ import dotenv from 'dotenv'
 import { connectMongo } from './mongoose'
 
 export function initConfigurations () {
-  if (process.env.NODE_ENV === 'test') {
-    return
-  }
-
+  const { NODE_ENV } = process.env
   dotenv.config()
-  connectMongo()
+
+  if (NODE_ENV !== 'test') {
+    connectMongo(NODE_ENV)
+  }
 }
