@@ -11,6 +11,7 @@
     "lint-fix": "eslint --fix ./src/ ./tests/",
     "commitizen": "git cz",
     "test": "jest --forceExit",
+    "test-watch": "jest --watch",
     "precommit": "npm run lint-check"
   },
   "dependencies": {
