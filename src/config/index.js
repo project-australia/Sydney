@@ -1,11 +1,7 @@
 import dotenv from 'dotenv'
-import { connectMongo } from './mongoose'
+import { mongooseConfig } from './mongoose'
 
-export function initConfigurations () {
+export async function initConfigurations () {
   dotenv.config()
-  const { NODE_ENV } = process.env
-
-  if (NODE_ENV !== 'test') {
-    connectMongo(NODE_ENV)
-  }
+  await mongooseConfig(process.env.NODE_ENV)
 }
