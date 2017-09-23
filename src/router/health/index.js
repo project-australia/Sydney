@@ -11,10 +11,10 @@ getLastCommit((err, commit) => {
   if (err) {
     console.error(err)
     lastCommit = {}
+  } else {
+    const { shortHash, subject } = commit
+    lastCommit = { hash: shortHash, message: subject }
   }
-
-  const { shortHash, subject } = commit
-  lastCommit = { hash: shortHash, message: subject }
 })
 
 function dateTimeNow () {
