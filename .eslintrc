@@ -6,6 +6,9 @@
     "commonjs": true,
     "jest": true
   },
+  "rules": {
+    "semi": [2, "never"]
+  },
   "extends": "standard",
   "plugins": [ "flowtype" ]
 }
