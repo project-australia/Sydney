@@ -5,8 +5,13 @@ export function connectMongo (environment) {
   let mongoURL = environment === 'integration-test' ? process.env.MONGO_TEST_URL : process.env.MONGO_URL
 
   mongoose.Promise = blueBird
+
   mongoose.connect(mongoURL, { useMongoClient: true })
   mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
+}
+
+export function closeConnection () {
+  mongoose.connection.close()
 }
 
 export const parserOptions = {
