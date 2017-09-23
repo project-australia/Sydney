@@ -1,14 +1,13 @@
 import { findAllSomeObject } from '../../../../src/services/someService'
-import { initConfigurations } from '../../../../src/config'
-import { closeConnection } from '../../../../src/config/mongoose'
+import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 describe('Some service integration test', () => {
-  beforeAll(() => {
-    initConfigurations()
+  beforeAll(async () => {
+    await connectDB()
   })
 
   afterAll(() => {
-    closeConnection()
+    closeDBConnection()
   })
 
   it('should find all some object from DB', async () => {

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prestart": "npm run build",
+
     "start": "cross-env DEBUG=commonwealth:* node ./dist/server.js",
     "dev": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js",
     "dev-win": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js --exec babel-node",
@@ -14,11 +15,15 @@
     "commitizen": "git cz",
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "jest ./__tests__/unit/",
-    "test-integration": "cross-env NODE_ENV=test-integration jest ./__tests__/integration/",
+    "test-integration": "jest ./__tests__/integration/",
     "test-watch": "jest --watch",
     "precommit": "npm run lint-check"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
     "debug": "~2.6.3",
@@ -31,12 +36,8 @@
     "morgan": "~1.8.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
     "commitizen": "^2.9.6",
     "cross-env": "^5.0.5",
     "cz-conventional-changelog": "^2.0.0",
@@ -57,5 +58,9 @@
       "**/__tests__/**/*.test.js?(x)"
     ],
     "testEnvironment": "node"
+  },
+  "nodemonConfig": {
+    "ignore": ["__test__/*"],
+    "delay": "2500"
   }
 }
