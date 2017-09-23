@@ -8,7 +8,7 @@ let lastCommit
 const birthTime = dateTimeNow()
 
 getLastCommit((err, commit) => {
-  if (err) { console.err(err) }
+  if (err) { console.error(err) }
   const { shortHash, subject } = commit
   lastCommit = { hash: shortHash, message: subject }
 })
