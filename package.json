@@ -10,7 +10,7 @@
     "lint-check": "eslint ./src/ ./tests/",
     "lint-fix": "eslint --fix ./src/ ./tests/",
     "commitizen": "git cz",
-    "test": "jest",
+    "test": "npm run test-unit && npm run test-integration",
     "test-unit": "jest ./__tests__/unit/",
     "test-integration": "NODE_ENV=test-integration jest ./__tests__/integration/",
     "test-watch": "jest --watch",
