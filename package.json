@@ -2,11 +2,9 @@
   "name": "sydney",
   "version": "0.0.0",
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "DEBUG=commonwealth:*  node ./src/server.js",
     "dev": "DEBUG=commonwealth:* nodemon --debug ./src/server.js",
     "dev-win": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js --exec babel-node",
-    "build": "babel src --out-dir dist",
-    "build-win": "./node_modules/.bin/babel src --out-dir dist --source-maps",
     "lint-check": "eslint ./src/ ./tests/",
     "lint-fix": "eslint --fix ./src/ ./tests/",
     "commitizen": "git cz",
@@ -18,14 +16,10 @@
     "prepush": "echo prepush"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
     "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
     "debug": "~2.6.3",
-    "dotenv": "^4.0.0",
+    "dotenv": "4.0.0",
     "express": "~4.15.2",
     "git-last-commit": "^0.3.0",
     "helmet": "^3.8.1",
@@ -34,6 +28,10 @@
     "morgan": "~1.8.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
     "commitizen": "^2.9.6",
@@ -51,9 +49,9 @@
     "nodemon": "^1.12.1",
     "supertest": "^3.0.0"
   },
-  "engines": { 
-    "node" : "9.2.0",
-    "npm" : "5.5.1"
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
   },
   "jest": {
     "testMatch": [
