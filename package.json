@@ -17,7 +17,8 @@
     "test-unit": "jest ./__tests__/unit/",
     "test-integration": "jest ./__tests__/integration/",
     "test-watch": "jest --watch",
-    "precommit": "npm run lint-check"
+    "precommit": "npm run lint-check",
+    "prepush": "echo prepush"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
