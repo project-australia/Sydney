@@ -1,12 +1,9 @@
 {
-  "name": "commonwealth",
+  "name": "sydney",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
-    "prestart": "npm run build",
-
-    "start": "cross-env DEBUG=commonwealth:* node ./dist/server.js",
-    "dev": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js",
+    "start": "node ./src/server.js",
+    "dev": "DEBUG=commonwealth:* nodemon --debug ./src/server.js",
     "dev-win": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js --exec babel-node",
     "build": "babel src --out-dir dist",
     "build-win": "./node_modules/.bin/babel src --out-dir dist --source-maps",
@@ -54,6 +51,10 @@
     "nodemon": "^1.12.1",
     "supertest": "^3.0.0"
   },
+  "engines": { 
+    "node" : "9.2.0",
+    "npm" : "5.5.1"
+  },
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.test.js?(x)"
@@ -61,7 +62,9 @@
     "testEnvironment": "node"
   },
   "nodemonConfig": {
-    "ignore": ["__test__/*"],
+    "ignore": [
+      "__test__/*"
+    ],
     "delay": "2500"
   }
 }
