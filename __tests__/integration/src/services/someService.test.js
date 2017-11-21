@@ -1,5 +1,5 @@
-import { findAllSomeObject } from '../../../../src/services/someService'
-import { closeDBConnection, connectDB } from '../config/integrationTest'
+const { findAllSomeObject } from '../../../../src/services/someService'
+const { closeDBConnection, connectDB } from '../config/integrationTest'
 
 describe('Some service integration test', () => {
   beforeAll(async () => {

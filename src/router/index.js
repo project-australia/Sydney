@@ -1,14 +1,16 @@
-import { Router } from 'express'
+const { Router } = require('express')
 
-import health from './health'
-import some from './some'
-import { notFound } from './notFound'
-import { errorHandler } from './errorHandler'
+const health = require('./health')
+const some = require('./some')
+const { notFound } = require('./notFound')
+const { errorHandler } = require('./errorHandler')
 
-export const router = Router()
+const router = Router()
 
 router.use('/some', some)
 router.use('/health', health)
 
 router.use(notFound)
 router.use(errorHandler)
+
+module.exports = { router }

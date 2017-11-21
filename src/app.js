@@ -1,10 +1,10 @@
-import express from 'express'
-import logger from 'morgan'
-import bodyParser from 'body-parser'
-import helmet from 'helmet'
+const express = require('express')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
+const helmet = require('helmet')
 
-import { initConfigurations } from './config'
-import { router } from './router'
+const { initConfigurations } = require('./config')
+const { router } = require('./router')
 
 initConfigurations()
 const app = express()
@@ -17,4 +17,4 @@ app.use(helmet())
 
 app.use(router)
 
-export default app
+module.exports = app

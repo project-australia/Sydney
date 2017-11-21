@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
-import blueBird from 'bluebird'
-import { connectMongo } from '../mongoose'
+const mongoose = require('mongoose')
+const blueBird = require('bluebird')
+const { connectMongo } = require('../mongoose')
 
-export async function mongooseConfig (environment) {
+async function mongooseConfig (environment) {
   if (environment === 'test') { return }
 
   const options = { useMongoClient: true, promiseLibrary: blueBird }
@@ -12,7 +12,7 @@ export async function mongooseConfig (environment) {
   await connectMongo(mongoURL, options)
 }
 
-export const parserOptions = {
+const parserOptions = {
   virtuals: true,
   getters: true,
   minimize: false,
@@ -23,3 +23,5 @@ export const parserOptions = {
     return ret
   }
 }
+
+module.exports = { mongooseConfig, parserOptions }

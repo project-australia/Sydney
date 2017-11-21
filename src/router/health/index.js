@@ -1,6 +1,6 @@
-import { getLastCommit } from 'git-last-commit'
-import { Router } from 'express'
-import moment from 'moment'
+const { getLastCommit } = require('git-last-commit')
+const { Router } = require('express')
+const moment = require('moment')
 
 const router = Router()
 
@@ -25,7 +25,7 @@ function getUptime () {
   return dateTimeNow().diff(birthTime, 'minutes')
 }
 
-export default router.get('/', function (req, res) {
+module.exports = router.get('/', function (req, res) {
   const healthCheck = {
     lastCommit,
     upTime: getUptime(),

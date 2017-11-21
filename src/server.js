@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-import app from './app'
-import http from 'http'
+const app = require('./app')
+const http = require('http')
 const debug = require('debug')('commonwealth:server')
 
 /**
