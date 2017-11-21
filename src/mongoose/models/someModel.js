@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import { parserOptions } from '../../config/mongoose'
+const mongoose = require('mongoose')
+const { parserOptions } = require('../../config/mongoose')
 
 const Schema = mongoose.Schema
 
@@ -11,4 +11,4 @@ let SomeModelSchema = new Schema({
 SomeModelSchema.set('toJSON', parserOptions)
 SomeModelSchema.set('toObject', parserOptions)
 
-export default mongoose.model('SomeModel', SomeModelSchema)
+module.exports = mongoose.model('SomeModel', SomeModelSchema)

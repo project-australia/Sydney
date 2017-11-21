@@ -1,10 +1,12 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
-export async function connectMongo (url, options) {
+async function connectMongo (url, options) {
   await mongoose.connect(url, options)
   mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
 }
 
-export function closeConnection () {
+function closeConnection () {
   mongoose.connection.close()
 }
+
+module.exports = { connectMongo, closeConnection }

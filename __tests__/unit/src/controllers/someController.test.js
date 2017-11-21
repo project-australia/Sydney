@@ -1,7 +1,7 @@
-import request from 'supertest'
-import app from '../../../../src/app'
+const request from 'supertest'
+const app from '../../../../src/app'
 
-import * as SomeService from '../../../../src/services/someService'
+const * as SomeService from '../../../../src/services/someService'
 jest.mock('../../../../src/services/someService')
 
 describe('Some Controller test', () => {

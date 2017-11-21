@@ -1,12 +1,14 @@
-import SomeModel from '../mongoose/models/someModel'
+const SomeModel = require('../mongoose/models/someModel')
 
 const ALL = {}
 
-export async function createSomeObject (word) {
+async function createSomeObject (word) {
   let awesomeInstance = new SomeModel({a_string: word})
   await awesomeInstance.save()
 }
 
-export async function findAllSomeObject () {
+async function findAllSomeObject () {
   return SomeModel.find(ALL)
 }
+
+module.exports = { createSomeObject, findAllSomeObject }

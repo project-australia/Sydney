@@ -1,7 +1,9 @@
-import dotenv from 'dotenv'
-import { mongooseConfig } from './mongoose'
+const dotenv = require('dotenv')
+const { mongooseConfig } = require('./mongoose')
 
-export async function initConfigurations () {
+async function initConfigurations () {
   dotenv.config()
   await mongooseConfig(process.env.NODE_ENV)
 }
+
+module.exports = { initConfigurations }

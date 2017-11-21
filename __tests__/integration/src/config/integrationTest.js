@@ -1,6 +1,6 @@
-import dotenv from 'dotenv'
-import { mongooseConfig } from '../../../../src/config/mongoose'
-import { closeConnection } from '../../../../src/mongoose'
+const dotenv from 'dotenv'
+const { mongooseConfig } from '../../../../src/config/mongoose'
+const { closeConnection } from '../../../../src/mongoose'
 
 dotenv.config()
 
