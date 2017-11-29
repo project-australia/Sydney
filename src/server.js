@@ -6,7 +6,7 @@
 
 const app = require('./app')
 const http = require('http')
-const debug = require('debug')('commonwealth:server')
+const debug = require('debug')('sydney:server')
 
 /**
  * Get port from environment and store in Express.
