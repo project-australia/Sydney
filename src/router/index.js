@@ -1,14 +1,16 @@
 const { Router } = require('express')
 
 const health = require('./health')
+const books = require('./books')
 const { notFound } = require('./notFound')
 const { errorHandler } = require('./errorHandler')
-const { getBookEvaluation } = require('../controllers/pricingController')
+const { evaluate } = require('../controllers/bookController')
 
 const router = Router()
 
+router.use('/books', books)
 router.use('/health', health)
-router.get('/pricing', getBookEvaluation)
+router.get('/pricing', evaluate)
 
 router.use(notFound)
 router.use(errorHandler)
