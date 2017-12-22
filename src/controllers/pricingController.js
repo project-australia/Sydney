@@ -1,5 +1,4 @@
-const { getEvaluationPrice } = require('../services/amazonProductApi')
-// const { responseAmazon } = require('./amazonreturn')
+const { getEvaluationPrice } = require('../clients/amazon')
 
 const getBookEvaluation = async (req, res) => {
   const { isbn } = req.query

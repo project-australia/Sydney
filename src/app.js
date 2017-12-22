@@ -3,10 +3,10 @@ const logger = require('morgan')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
 
-const { initConfigurations } = require('./config')
+const { initialConfigurations } = require('./config')
 const { router } = require('./router')
 
-initConfigurations()
+initialConfigurations()
 const app = express()
 
 app.disable('x-powered-by')
