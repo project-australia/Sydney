@@ -1,26 +1,26 @@
 const amazon = require('amazon-product-api')
+const { ClientError } = require('./clientError')
 
 const { AWS_ID, AWS_SECRET, AWS_TAG } = process.env
 
-const client = amazon.createClient({
+const client = () => amazon.createClient({
   awsId: AWS_ID,
   awsSecret: AWS_SECRET,
   awsTag: AWS_TAG
 })
 
-async function getEvaluationPrice (isbn) {
+async function lookupByISBN (isbn) {
   const formattedIsbn = isbn.replace(/-/, '')
   try {
-    const salesRankInfo = await client.itemLookup({
+    const salesRankInfo = await client().itemLookup({
       idType: 'ISBN',
       itemId: formattedIsbn,
       ResponseGroup: 'SalesRank,Offers,ItemAttributes'
     })
     return salesRankInfo
-  } catch (err) {
-    console.log('ERROR', err)
-    return { msg: err }
+  } catch (error) {
+    throw new ClientError(error)
   }
 }
 
-module.exports = { getEvaluationPrice }
+module.exports = { lookupByISBN }
