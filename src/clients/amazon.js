@@ -18,8 +18,8 @@ async function getEvaluationPrice (isbn) {
     })
     return salesRankInfo
   } catch (err) {
-    console.log('ERROR', err.Error)
-    return { msg: err.Error }
+    console.log('ERROR', err)
+    return { msg: err }
   }
 }
 

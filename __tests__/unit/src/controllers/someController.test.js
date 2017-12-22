@@ -4,7 +4,7 @@ const app = require('../../../../src/app')
 const SomeService = require('../../../../src/services/someService')
 jest.mock('../../../../src/services/someService')
 
-describe('Some Controller test', () => {
+xdescribe('Some Controller test', () => {
   it('should find all some objects', async () => {
     const dummySomeObject = { id: 'unique_id' }
     SomeService.findAllSomeObject = jest.fn(() => Promise.resolve(dummySomeObject))
