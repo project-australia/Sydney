@@ -55,6 +55,7 @@ const evaluateBook = async (isbn) => {
       amazonPrice: Number(amazonPrice).toFixed(2)
     }
   } catch (error) {
+    console.error(error)
     throw new ServiceError(error)
   }
 }

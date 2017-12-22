@@ -16,8 +16,8 @@ describe('Amazon API client', () => {
     amazon.createClient = () => mockClient
   })
 
-  xit('should lookup on amazon a book by ISBN', async () => {
-    const itemId = '9781483358505';
+  it('should lookup on amazon a book by ISBN', async () => {
+    const itemId = '9781483358505'
     const lookup = await lookupByISBN(itemId)
     const expectedParams = {
       itemId,
