@@ -1,7 +1,7 @@
-const request from 'supertest'
-const app from '../../../../src/app'
+const request = require('supertest')
+const app = require('../../../../src/app')
 
-const * as SomeService from '../../../../src/services/someService'
+const SomeService = require('../../../../src/services/someService')
 jest.mock('../../../../src/services/someService')
 
 describe('Some Controller test', () => {
