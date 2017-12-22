@@ -1,4 +1,4 @@
-const { evaluateBook } = require('../services/amazon')
+const { evaluateBook } = require('../services/bookEvaluation')
 const { ApiError } = require('./apiError')
 
 const getBookEvaluation = async (req, res) => {
