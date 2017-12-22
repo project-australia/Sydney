@@ -1,3 +1,5 @@
+const { ServiceError } = require('./serviceError')
+
 const AmazonClient = require('../clients/amazon')
 
 const byEAN = isbn => lookup => {
@@ -42,14 +44,18 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
 
 const evaluateBook = async (isbn) => {
   const result = await AmazonClient.lookupByISBN(isbn)
-  const filteredByEAN = result.filter(byEAN(isbn))
-  const bestOffer = filteredByEAN.reduce(cheapestBook)
-  const ballardPercentage = ballardPricePercetage(bestOffer)
-  const amazonPrice = getPrice(bestOffer)
+  try {
+    const filteredByEAN = result.filter(byEAN(isbn))
+    const bestOffer = filteredByEAN.reduce(cheapestBook)
+    const ballardPercentage = ballardPricePercetage(bestOffer)
+    const amazonPrice = getPrice(bestOffer)
 
-  return {
-    ballardPrice: calculateBallardPrice(amazonPrice, ballardPercentage),
-    amazonPrice: Number(amazonPrice).toFixed(2)
+    return {
+      ballardPrice: calculateBallardPrice(amazonPrice, ballardPercentage),
+      amazonPrice: Number(amazonPrice).toFixed(2)
+    }
+  } catch (error) {
+    throw new ServiceError(error)
   }
 }
 
