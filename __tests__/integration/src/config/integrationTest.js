@@ -1,6 +1,6 @@
-const dotenv from 'dotenv'
-const { mongooseConfig } from '../../../../src/config/mongoose'
-const { closeConnection } from '../../../../src/mongoose'
+const dotenv = require('dotenv')
+const { mongooseConfig } = require('../../../../src/config/mongoose')
+const { closeConnection } = require('../../../../src/mongoose')
 
 dotenv.config()
 
