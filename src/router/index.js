@@ -1,16 +1,16 @@
 const { Router } = require('express')
 
 const health = require('./health')
-const some = require('./some')
-const pricing = require('./pricing')
+const books = require('./books')
 const { notFound } = require('./notFound')
 const { errorHandler } = require('./errorHandler')
+const { evaluate } = require('../controllers/bookController')
 
 const router = Router()
 
-router.use('/some', some)
+router.use('/books', books)
 router.use('/health', health)
-router.use('/pricing', pricing)
+router.get('/pricing', evaluate)
 
 router.use(notFound)
 router.use(errorHandler)
