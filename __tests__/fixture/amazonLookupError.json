@@ -3,6 +3,14 @@
     "Error": [
       {
         "Code": [
+          "TEST_VALUE"
+        ],
+        "Message": [
+          "This was raised intentionally, PLEASE IGNORE IT"
+        ]
+      },
+      {
+        "Code": [
           "AWS.InvalidParameterValue"
         ],
         "Message": [

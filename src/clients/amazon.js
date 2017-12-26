@@ -20,7 +20,7 @@ async function lookupByISBN (isbn) {
     })
     return salesRankInfo
   } catch (error) {
-    console.error(error)
+    console.error(JSON.stringify(error))
     throw new ClientError(error)
   }
 }

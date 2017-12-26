@@ -6,8 +6,12 @@ jest.mock('../../../../src/clients/amazon')
 const bookUnderSalesRankThreshold = 0
 
 describe('Amazon API Service', () => {
+  beforeAll(() => {
+    AmazonClient.lookupByISBN = jest.fn()
+  })
+
   it('should evaluate book price by cheapest amazon price', async () => {
-    AmazonClient.lookupByISBN = jest.fn(() => Promise.resolve(amazonLookupByISBN))
+    AmazonClient.lookupByISBN.mockReturnValue(Promise.resolve(amazonLookupByISBN))
 
     const result = await evaluateBook('9781483358505')
     expect(result.ballardPrice).toEqual(null)
@@ -15,7 +19,7 @@ describe('Amazon API Service', () => {
   })
 
   it('should calculate ballard price if book is above 900 000 on amazon sales rank', async () => {
-    AmazonClient.lookupByISBN = jest.fn(() => Promise.resolve([amazonLookupByISBN[bookUnderSalesRankThreshold]]))
+    AmazonClient.lookupByISBN.mockReturnValue(Promise.resolve([amazonLookupByISBN[bookUnderSalesRankThreshold]]))
 
     const result = await evaluateBook('9781483358505')
     expect(result.amazonPrice).toEqual('69.04')
