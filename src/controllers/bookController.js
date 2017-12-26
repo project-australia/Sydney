@@ -1,7 +1,5 @@
 const EvaluationService = require('../services/bookEvaluation')
 const { ApiError } = require('./apiError')
-const { ClientError } = require('../clients/clientError')
-const { ServiceError } = require('../services/serviceError')
 
 const isInvalidISBN = (isbn, res) => {
   if (isNaN(isbn)) {

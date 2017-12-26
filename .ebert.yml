@@ -12,7 +12,7 @@ engines:
   remark-lint:
     enabled: true
   duplication:
-    enabled: true
+    enabled: false
 exclude_paths:
  - android/
  - ios/

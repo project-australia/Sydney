@@ -1,4 +1,4 @@
-import {ClientError} from "../../../../src/clients/clientError";
+import {ClientError} from '../../../../src/clients/clientError'
 
 const request = require('supertest')
 const app = require('../../../../src/app')
