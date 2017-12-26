@@ -9,9 +9,9 @@
     "lint:fix": "eslint --fix ./src/ ./__tests__/",
     "commitizen": "git cz",
     "test": "npm run test-unit && npm run test-integration",
-    "test-unit": "jest ./__tests__/unit/",
-    "test-integration": "jest ./__tests__/integration/",
-    "test-watch": "jest --watch",
+    "test:unit": "jest ./__tests__/unit/",
+    "test:integration": "jest ./__tests__/integration/",
+    "test:watch": "jest --watch",
     "precommit": "echo precommit",
     "prepush": "echo prepush"
   },
