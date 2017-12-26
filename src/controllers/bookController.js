@@ -13,13 +13,14 @@ const isInvalidISBN = (isbn, res) => {
 
 const handleControllerErrors = function (error, res) {
   const apiErrorModel = new ApiError(error)
-  if (error instanceof ClientError) {
+  if (error.name === 'ClientError') {
     res.status(404).json(apiErrorModel) // FIXME: just an example of semantic status code
-  } else if (error instanceof ServiceError) {
+  } else if (error.name === 'ServiceError') {
     res.status(400).json(apiErrorModel) // FIXME: just an example of semantic status code
   } else {
     res.status(500).json(apiErrorModel) // FIXME: just an example of semantic status code
   }
+  res.end()
 }
 
 const evaluate = async (req, res) => {
