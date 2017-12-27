@@ -1,5 +1,17 @@
-import { createProfile, eraseCollection } from '../../../../src/services/userService'
+import { createProfile, eraseCollection, mapToMongoose } from '../../../../src/services/userService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
+
+const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
+const userProfile = {
+  id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
+  referredBy: 'DUDUZINHO',
+  name: 'TALHATE',
+  email: 't@yahoo.com',
+  birthDate: new Date(),
+  telephone: '1234567890',
+  school: 'School of Life',
+  address: address
+}
 
 describe('User profile integration tests', () => {
   beforeAll(async () => {
@@ -15,24 +27,13 @@ describe('User profile integration tests', () => {
   })
 
   it('should save an User profile to DB', async () => {
-    const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
-    const desiredUser = {
-      _id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
-      referId: 'HEBERT_BOLADO',
-      referredBy: 'DUDUZINHO',
-      name: 'TALHATE',
-      email: 't@yahoo.com',
-      birthDate: new Date(),
-      telephone: '1234567890',
-      school: 'School of Life',
-      address: address
-    }
-
-    const savedUser = await createProfile(desiredUser)
-    expect(savedUser.id).toEqual(desiredUser._id)
+    const savedUser = await createProfile(userProfile)
+    expect(savedUser.id).toEqual(userProfile._id)
   })
 
-  it('should create a referId before inserting', () => {
-    expect(false).toEqual(true)
+  it('should map external representation into mongoose one', async () => {
+    const mappedProfile = mapToMongoose(userProfile)
+    expect(mappedProfile.referId).toEqual(userProfile.email)
+    expect(mappedProfile._id).toEqual(userProfile.id)
   })
 })

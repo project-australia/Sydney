@@ -5,15 +5,9 @@ const getSellingToggle = async (req, res) => {
   res.status(200).json(isSellingAvailable)
 }
 
-const mapId = (request) => {
-  request._id = request.id
-  delete request.id
-  return request
-}
-
 const createProfile = async (req, res) => {
   const { body } = req
-  const newProfile = await UserService.createProfile(mapId(body))
+  const newProfile = await UserService.createProfile(body)
   res.status(201).json(newProfile)
 }
 

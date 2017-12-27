@@ -50,14 +50,11 @@ describe('Configuration controller', () => {
       }
     }
 
-    const expectedCreateProfileParam = {...requestBody, _id: requestBody.id}
-    delete expectedCreateProfileParam.id
-
     const response = await request(app)
       .post(`/users/${userId}/profile`)
       .send(requestBody)
 
-    expect(UserService.createProfile).toHaveBeenCalledWith(expectedCreateProfileParam)
+    expect(UserService.createProfile).toHaveBeenCalledWith(requestBody)
     expect(response.statusCode).toEqual(201)
     expect(response.body).toEqual(expectedProfile)
   })
