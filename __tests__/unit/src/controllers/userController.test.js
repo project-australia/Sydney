@@ -28,6 +28,16 @@ describe('Configuration controller', () => {
 
   beforeAll(() => {
     UserService.createProfile = jest.fn()
+    UserService.getProfile = jest.fn()
+  })
+
+  it('should get a user profile', async () => {
+    UserService.getProfile.mockReturnValue(expectedProfile)
+    const response = await request(app).get(`/users/${userId}/profile`)
+
+    expect(UserService.getProfile).toHaveBeenCalledWith(userId)
+    expect(response.statusCode).toEqual(200)
+    expect(response.body).toEqual(expectedProfile)
   })
 
   it('should create a profile for a user', async () => {

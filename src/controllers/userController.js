@@ -1,8 +1,9 @@
 const UserService = require('../services/userService')
 
-const getSellingToggle = async (req, res) => {
-  const isSellingAvailable = await UserService.getSelling()
-  res.status(200).json(isSellingAvailable)
+const getProfile = async (req, res) => {
+  const { id } = req.params
+  const userProfile = await UserService.getProfile(id)
+  res.status(200).json(userProfile)
 }
 
 const createProfile = async (req, res) => {
@@ -12,6 +13,6 @@ const createProfile = async (req, res) => {
 }
 
 module.exports = {
-  getSellingToggle,
+  getProfile,
   createProfile
 }
