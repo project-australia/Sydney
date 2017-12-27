@@ -11,10 +11,11 @@ const createReferId = profile => {
   profile.referId = profile.email
 }
 
-const mapToMongoose = (profile) => {
-  changeIdField(profile)
-  createReferId(profile)
-  return profile
+function mapToMongoose (profile) {
+  const clone = {...profile}
+  changeIdField(clone)
+  createReferId(clone)
+  return clone
 }
 
 async function createProfile (profile) {
@@ -32,9 +33,14 @@ async function eraseCollection (areYouSure) {
   }
 }
 
+async function findById (id) {
+  return UserProfileModel.findById(id)
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
   eraseCollection,
+  findById,
   mapToMongoose
 }
