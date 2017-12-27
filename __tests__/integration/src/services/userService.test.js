@@ -1,4 +1,4 @@
-import { createProfile, eraseCollection, mapToMongoose } from '../../../../src/services/userService'
+import {createProfile, eraseCollection, findById, mapToMongoose} from '../../../../src/services/userService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
@@ -28,7 +28,13 @@ describe('User profile integration tests', () => {
 
   it('should save an User profile to DB', async () => {
     const savedUser = await createProfile(userProfile)
-    expect(savedUser.id).toEqual(userProfile._id)
+    expect(savedUser.id).toEqual(userProfile.id)
+  })
+
+  it('should retrieve an user profile by Id', async () => {
+    await createProfile(userProfile)
+    const user = await findById(userProfile.id)
+    expect(user).toBeDefined()
   })
 
   it('should map external representation into mongoose one', async () => {
