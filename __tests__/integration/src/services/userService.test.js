@@ -1,4 +1,4 @@
-import { findAllUsers, createUser, eraseCollection } from '../../../../src/services/userService'
+import { createUser, eraseCollection } from '../../../../src/services/userService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 describe('Some service integration test', () => {
