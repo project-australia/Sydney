@@ -28,7 +28,7 @@ async function findAllUsers () {
 }
 
 async function eraseCollection (areYouSure) {
-  if (areYouSure && process.env.NODE_ENVIRONMENT !== 'production') {
+  if (areYouSure && process.env.NODE_ENV !== 'production') {
     await UserProfileModel.remove(ALL)
   }
 }
