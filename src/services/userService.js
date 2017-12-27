@@ -1,24 +1,24 @@
-const UserModel = require('../mongoose/models/userModel')
+const UserProfileModel = require('../mongoose/models/userModel')
 
 const ALL = {}
 
-async function createUser (user) {
-  const awesomeInstance = new UserModel(user)
+async function createProfile (user) {
+  const awesomeInstance = new UserProfileModel(user)
   return awesomeInstance.save()
 }
 
 async function findAllUsers () {
-  return UserModel.find(ALL)
+  return UserProfileModel.find(ALL)
 }
 
 async function eraseCollection (areYouSure) {
   if (areYouSure) {
-    await UserModel.remove(ALL)
+    await UserProfileModel.remove(ALL)
   }
 }
 
 module.exports = {
-  createUser,
+  createProfile,
   findAllUsers,
   eraseCollection
 }

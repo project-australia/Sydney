@@ -1,7 +1,7 @@
-import { createUser, eraseCollection } from '../../../../src/services/userService'
+import { createProfile, eraseCollection } from '../../../../src/services/userService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
-describe('Some service integration test', () => {
+describe('User profile integration tests', () => {
   beforeAll(async () => {
     await connectDB()
   })
@@ -14,7 +14,7 @@ describe('Some service integration test', () => {
     await eraseCollection(true)
   })
 
-  it('should save an User to DB', async () => {
+  it('should save an User profile to DB', async () => {
     const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
     const desiredUser = {
       _id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
@@ -28,7 +28,11 @@ describe('Some service integration test', () => {
       address: address
     }
 
-    const savedUser = await createUser(desiredUser)
+    const savedUser = await createProfile(desiredUser)
     expect(savedUser.id).toEqual(desiredUser._id)
+  })
+
+  it('should create a referId before inserting', () => {
+    expect(false).toEqual(true)
   })
 })

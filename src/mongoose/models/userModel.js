@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 
 const address = {city: {type: String, lowercase: true, trim: true}, street: {type: String, lowercase: true, trim: true}, number: {type: String, lowercase: true, trim: true}, zipCode: {type: String, lowercase: true, trim: true}, state: {type: String, lowercase: true, trim: true}}
 
-let SomeModelSchema = new Schema({
+let UserProfileSchema = new Schema({
   _id: {type: String, trim: true},
   referId: {type: String, trim: true},
   referredBy: {type: String, trim: true},
@@ -19,20 +19,8 @@ let SomeModelSchema = new Schema({
   address: address
 })
 
-SomeModelSchema.set('toJSON', parserOptions)
-SomeModelSchema.set('toObject', parserOptions)
+UserProfileSchema.set('toJSON', parserOptions)
+UserProfileSchema.set('toObject', parserOptions)
+const collectionName = 'UserProfile'
 
-module.exports = mongoose.model('SomeModel', SomeModelSchema)
-
-// # Usuario
-// - id (Id do firebase)
-// - ReferalID (Id usado para amigos se cadastrarem)
-// - nome
-// - email
-// - data de nascimento
-// - endereco
-// - telefone
-// - school
-// - Role(ENUM)
-// - Club(ENUM)
-// - Referrals
+module.exports = mongoose.model(collectionName, UserProfileSchema)
