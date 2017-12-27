@@ -24,7 +24,6 @@ const expectedProfile = {
   }
 }
 const userId = expectedProfile.id
-
 describe('Configuration controller', () => {
 
   beforeAll(() => {
@@ -35,7 +34,6 @@ describe('Configuration controller', () => {
     UserService.createProfile.mockReturnValue(expectedProfile)
     const requestBody = {
       id: userId,
-      referredBy: 'DUDUZINHO',
       name: 'talhate',
       email: 't@yahoo.com',
       birthDate: '2017/12/30',
