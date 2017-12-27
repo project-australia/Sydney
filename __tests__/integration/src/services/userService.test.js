@@ -31,10 +31,4 @@ describe('Some service integration test', () => {
     const savedUser = await createUser(desiredUser)
     expect(savedUser.id).toEqual(desiredUser._id)
   })
-
-  it('should find all some object from DB', async () => {
-    const someObjects = await findAllUsers()
-    console.log('someObjects', someObjects)
-    expect(someObjects.length).toBeGreaterThan(0)
-  })
 })
