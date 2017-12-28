@@ -1,6 +1,6 @@
 const dotenv = require('dotenv')
 const { mongooseConfig } = require('./mongoose')
-const { initializeFirebaseAdmin } = require('./firebase')
+const { initializeFirebaseAdmin, initializeFirebase } = require('./firebase')
 
 async function initialConfigurations () {
   const result = dotenv.config()
@@ -11,6 +11,7 @@ async function initialConfigurations () {
 
   await mongooseConfig(process.env.NODE_ENV)
   await initializeFirebaseAdmin()
+  await initializeFirebase()
 }
 
 module.exports = { initialConfigurations }

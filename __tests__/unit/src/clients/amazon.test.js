@@ -24,7 +24,7 @@ describe('Amazon API client', () => {
     const expectedParams = {
       itemId,
       idType: 'ISBN',
-      ResponseGroup: 'SalesRank,Offers,ItemAttributes'
+      ResponseGroup: 'SalesRank,Offers,ItemAttributes,Images'
     }
 
     expect(lookup).toEqual(amazonLookupByISBN)

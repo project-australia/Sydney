@@ -16,7 +16,7 @@ async function lookupByISBN (isbn) {
     const salesRankInfo = await client().itemLookup({
       idType: 'ISBN',
       itemId: formattedIsbn,
-      ResponseGroup: 'SalesRank,Offers,ItemAttributes'
+      ResponseGroup: 'SalesRank,Offers,ItemAttributes,Images'
     })
     return salesRankInfo
   } catch (error) {
