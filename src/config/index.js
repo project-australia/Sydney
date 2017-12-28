@@ -6,11 +6,11 @@ async function initialConfigurations () {
   const result = dotenv.config()
 
   if (result.error) {
-    console.error(result.error)
+    console.info('error during dotEnv config:', result.error)
+  } else {
+    await mongooseConfig(process.env.NODE_ENV)
+    await initializeFirebaseAdmin()
   }
-
-  await mongooseConfig(process.env.NODE_ENV)
-  await initializeFirebaseAdmin()
 }
 
 module.exports = { initialConfigurations }

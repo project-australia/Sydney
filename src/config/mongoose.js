@@ -4,13 +4,13 @@ const { connectMongo } = require('../mongoose')
 
 async function mongooseConfig (environment) {
   let mongoURL
-  const { NODE_ENV, MONGO_TEST_URL, MONGO_URL } = process.env
+  const { MONGO_TEST_URL, MONGO_URL } = process.env
 
-  if (NODE_ENV === 'test') {
-    if (environment !== 'integration-test') {
-      return
-    }
+  if (environment === 'test') {
+    return
+  }
 
+  if (environment !== 'integration-test') {
     mongoURL = MONGO_TEST_URL
   } else {
     mongoURL = MONGO_URL
