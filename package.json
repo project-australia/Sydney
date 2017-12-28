@@ -25,6 +25,7 @@
     "firebase-admin": "5.5.1",
     "git-last-commit": "^0.3.0",
     "helmet": "^3.8.1",
+    "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "mongoose": "^4.11.12",
     "morgan": "~1.8.1"
