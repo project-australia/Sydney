@@ -1,8 +1,10 @@
 const request = require('supertest')
 const app = require('../../../../src/app')
 const UserService = require('../../../../src/services/userService')
+const FirebaseService = require('../../../../src/services/firebase')
 
 jest.mock('../../../../src/services/userService')
+jest.mock('../../../../src/services/firebase')
 
 const expectedProfile = {
   id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
@@ -29,6 +31,7 @@ describe('Configuration controller', () => {
   beforeAll(() => {
     UserService.createProfile = jest.fn()
     UserService.getProfile = jest.fn()
+    FirebaseService.createUserWithEmailAndPassword = jest.fn()
   })
 
   it('should get a user profile', async () => {
@@ -39,6 +42,11 @@ describe('Configuration controller', () => {
     expect(response.statusCode).toEqual(200)
     expect(response.body).toEqual(expectedProfile)
   })
+
+  xit('should signup a user', function () {
+    FirebaseService.createUserWithEmailAndPassword.mockReturnValue('IDK')
+    // expect(FirebaseService.createUserWithEmailAndPassword).toHaveBeenCalledWith(requestBody)
+  });
 
   it('should create a profile for a user', async () => {
     UserService.createProfile.mockReturnValue(expectedProfile)
