@@ -17,6 +17,6 @@ router.post('/:isbn/rent', rent)
 router.post('/:isbn/sell', sell)
 router.post('/:isbn/buy', buy)
 router.post('/:isbn/donate', donate)
-router.post('/:isbn/evaluation', evaluate)
+router.get('/:isbn/evaluation', evaluate)
 
 module.exports = router
