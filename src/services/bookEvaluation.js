@@ -1,5 +1,5 @@
 const { ServiceError } = require('./serviceError')
-
+const _ = require('lodash')
 const AmazonClient = require('../clients/amazon')
 
 const byEAN = isbn => lookup => {
@@ -43,24 +43,41 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
 }
 
 const getAuthorFromEntireLookup = (bookLookupResult) => {
+  const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Author
+  const bookWithAuthors = _.find(bookLookupResult, byBookAuthor)
+  const authors = bookWithAuthors.ItemAttributes[0].Author
+  return authors
+}
 
+const getImagesFromEntireLookup = (bookLookupResult) => {
+  const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
+  const bookWithImages = _.find(bookLookupResult, byImages)
+
+  return {
+    small: bookWithImages.SmallImage[0].URL[0],
+    medium: bookWithImages.MediumImage[0].URL[0],
+    large: bookWithImages.LargeImage[0].URL[0]
+  }
 }
 
 const evaluateBook = async (isbn) => {
   const bookLookUp = await AmazonClient.lookupByISBN(isbn)
   try {
     const filteredByEAN = bookLookUp.filter(byEAN(isbn))
-    const bestOffer = filteredByEAN.reduce(cheapestBook)
-    const book = bestOffer.ItemAttributes[0]
-    console.log('book', book)
+    const bestOffer = filteredByEAN.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
-    const price = calculateBallardPrice(amazonPrice, ballardPercentage);
+    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
+    const book = bestOffer.ItemAttributes[0]
+    const title = book.Title[0]
+    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
+    const images = getImagesFromEntireLookup(bookLookUp)
 
     return {
+      title,
       price,
-      title: book.Title[0],
-      authors: book.Author[0] || getAuthorFromEntireLookup(bookLookUp)
+      images,
+      authors
     }
   } catch (error) {
     console.error(error)

@@ -29,8 +29,8 @@ const evaluate = async (req, res) => {
   }
 
   try {
-    const { ballardPrice, amazonPrice } = await EvaluationService.evaluateBook(isbn)
-    res.status(200).json({ ballardPrice, amazonPrice })
+    const evaluation = await EvaluationService.evaluateBook(isbn)
+    res.status(200).json(evaluation)
   } catch (error) {
     handleControllerErrors(error, res)
   }
