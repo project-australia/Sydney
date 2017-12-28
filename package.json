@@ -11,9 +11,7 @@
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jest ./__tests__/unit/",
     "test:integration": "jest ./__tests__/integration/",
-    "test:watch": "jest --watch",
-    "precommit": "echo precommit",
-    "prepush": "echo prepush"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "amazon-product-api": "^0.4.4",
@@ -47,7 +45,6 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.14.3",
     "jest": "^21.1.0",
     "nodemon": "^1.12.1",
     "supertest": "^3.0.0"
