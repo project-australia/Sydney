@@ -42,17 +42,25 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
   return Number(amazonPrice * ballardPercentage * userDiscout()).toFixed(2)
 }
 
+const getAuthorFromEntireLookup = (bookLookupResult) => {
+
+}
+
 const evaluateBook = async (isbn) => {
-  const result = await AmazonClient.lookupByISBN(isbn)
+  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
   try {
-    const filteredByEAN = result.filter(byEAN(isbn))
+    const filteredByEAN = bookLookUp.filter(byEAN(isbn))
     const bestOffer = filteredByEAN.reduce(cheapestBook)
+    const book = bestOffer.ItemAttributes[0]
+    console.log('book', book)
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
+    const price = calculateBallardPrice(amazonPrice, ballardPercentage);
 
     return {
-      ballardPrice: calculateBallardPrice(amazonPrice, ballardPercentage),
-      amazonPrice: Number(amazonPrice).toFixed(2)
+      price,
+      title: book.Title[0],
+      authors: book.Author[0] || getAuthorFromEntireLookup(bookLookUp)
     }
   } catch (error) {
     console.error(error)
