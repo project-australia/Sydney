@@ -49,6 +49,13 @@ const getAuthorFromEntireLookup = (bookLookupResult) => {
   return authors
 }
 
+const getBookEditionFromEntireLookup = (bookLookupResult) => {
+  const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Edition
+  const bookWithEdition = _.find(bookLookupResult, byBookAuthor)
+  const edition = bookWithEdition.ItemAttributes[0].Edition[0]
+  return edition
+}
+
 const getImagesFromEntireLookup = (bookLookupResult) => {
   const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
   const bookWithImages = _.find(bookLookupResult, byImages)
@@ -68,16 +75,23 @@ const evaluateBook = async (isbn) => {
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
     const price = calculateBallardPrice(amazonPrice, ballardPercentage)
+
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
     const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
     const images = getImagesFromEntireLookup(bookLookUp)
+    const edition = getBookEditionFromEntireLookup(bookLookUp)
+    const id = isbn // FIXME: Refactor this
+    const description = null //  FIXME: we need to grab this from amazon api
 
     return {
+      id,
       title,
       price,
       images,
-      authors
+      authors,
+      description,
+      edition
     }
   } catch (error) {
     console.error(error)

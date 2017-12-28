@@ -12,11 +12,14 @@ describe('Amazon API Service', () => {
 
   it('should return all book\'s information', async () => {
     AmazonClient.lookupByISBN.mockReturnValue(Promise.resolve(amazonLookupByISBN))
+    const isbn = '9781483358505'
 
-    const book = await evaluateBook('9781483358505')
+    const book = await evaluateBook(isbn)
 
     expect(book.title).toEqual('Fundamentals Of Human Resource Management Functions, Applications, Skill Development')
     expect(book.authors).toEqual(['Robert N. Lussier', 'John R. Hendon'])
+    expect(book.edition).toEqual('1')
+    expect(book.id).toEqual(isbn)
     expect(book.price).toEqual(null)
     expect(book.images.small).toEqual('https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg')
     expect(book.images.medium).toEqual('https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL160_.jpg')
