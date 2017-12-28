@@ -25,7 +25,6 @@ const expectedProfile = {
 }
 const userId = expectedProfile.id
 describe('Configuration controller', () => {
-
   beforeAll(() => {
     UserService.createProfile = jest.fn()
     UserService.getProfile = jest.fn()

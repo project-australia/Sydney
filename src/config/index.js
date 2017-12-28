@@ -6,7 +6,7 @@ async function initialConfigurations () {
   const result = dotenv.config()
 
   if (result.error) {
-    throw result.error
+    console.error(result.error)
   }
 
   await mongooseConfig(process.env.NODE_ENV)
