@@ -2,7 +2,8 @@ const EvaluationService = require('../services/bookEvaluation')
 const { ApiError } = require('./apiError')
 
 const isInvalidISBN = (isbn, res) => {
-  if (isNaN(isbn)) {
+  const formattedIsbn = isbn.replace(/-/, '').trim()
+  if (isNaN(formattedIsbn)) {
     res.status(400).json(new ApiError({message: 'Invalid ISBN, please check it out.'})).end()
     return true
   }
@@ -24,12 +25,18 @@ const handleControllerErrors = function (error, res) {
 const evaluate = async (req, res) => {
   const isbn = req.query.isbn || req.params.isbn
 
-  if (isInvalidISBN(isbn, res)) {
+  // FIXME: Please, remove from the code and git history, my name is on it :(
+  const formattedIsbn = isbn.replace(/-/, '')
+                            .replace(/-/, '')
+                            .replace(/-/, '')
+                            .replace(/-/, '').trim()
+
+  if (isInvalidISBN(formattedIsbn, res)) {
     return null
   }
 
   try {
-    const evaluation = await EvaluationService.evaluateBook(isbn)
+    const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
     res.status(200).json(evaluation)
   } catch (error) {
     handleControllerErrors(error, res)
