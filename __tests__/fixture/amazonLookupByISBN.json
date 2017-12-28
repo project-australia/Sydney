@@ -1,272 +1,1688 @@
-[{
-  "ASIN": ["148335850X"],
-  "DetailPageURL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=148335850X"],
-  "ItemLinks": [{
-    "ItemLink": [{
-      "Description": ["Technical Details"],
-      "URL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/tech-data/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["Add To Baby Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["Add To Wedding Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["Add To Wishlist"],
-      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["Tell A Friend"],
-      "URL": ["https://www.amazon.com/gp/pdp/taf/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["All Customer Reviews"],
-      "URL": ["https://www.amazon.com/review/product/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }, {
-      "Description": ["All Offers"],
-      "URL": ["https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"]
-    }]
-  }],
-  "SalesRank": ["471101"],
-  "ItemAttributes": [{
-    "Author": ["Robert N. Lussier", "John R. Hendon"],
-    "Binding": ["Paperback"],
-    "Brand": ["Sage Publications Ltd"],
-    "EAN": ["9781483358505"],
-    "EANList": [{"EANListElement": ["9781483358505"]}],
-    "Edition": ["1"],
-    "Feature": ["Sage Publications Ltd"],
-    "IsAdultProduct": ["0"],
-    "ISBN": ["148335850X"],
-    "ItemDimensions": [{
-      "Height": [{"_": "1050", "$": {"Units": "hundredths-inches"}}],
-      "Length": [{"_": "825", "$": {"Units": "hundredths-inches"}}],
-      "Weight": [{"_": "0", "$": {"Units": "Hundredths Pounds"}}],
-      "Width": [{"_": "50", "$": {"Units": "hundredths-inches"}}]
-    }],
-    "Label": ["SAGE Publications, Inc"],
-    "Languages": [{
-      "Language": [{"Name": ["English"], "Type": ["Published"]}, {
-        "Name": ["English"],
-        "Type": ["Original Language"]
-      }, {"Name": ["English"], "Type": ["Unknown"]}]
-    }],
-    "ListPrice": [{"Amount": ["10300"], "CurrencyCode": ["USD"], "FormattedPrice": ["$103.00"]}],
-    "Manufacturer": ["SAGE Publications, Inc"],
-    "NumberOfItems": ["1"],
-    "NumberOfPages": ["440"],
-    "PackageDimensions": [{
-      "Height": [{"_": "73", "$": {"Units": "hundredths-inches"}}],
-      "Length": [{"_": "843", "$": {"Units": "hundredths-inches"}}],
-      "Weight": [{"_": "79", "$": {"Units": "Hundredths Pounds"}}],
-      "Width": [{"_": "585", "$": {"Units": "hundredths-inches"}}]
-    }],
-    "PackageQuantity": ["3"],
-    "ProductGroup": ["Book"],
-    "ProductTypeName": ["ABIS_BOOK"],
-    "PublicationDate": ["2016-01-22"],
-    "Publisher": ["SAGE Publications, Inc"],
-    "Studio": ["SAGE Publications, Inc"],
-    "Title": ["Fundamentals of Human Resource Management: Functions, Applications, Skill Development"]
-  }],
-  "OfferSummary": [{
-    "LowestNewPrice": [{"Amount": ["7304"], "CurrencyCode": ["USD"], "FormattedPrice": ["$73.04"]}],
-    "LowestUsedPrice": [{"Amount": ["6904"], "CurrencyCode": ["USD"], "FormattedPrice": ["$69.04"]}],
-    "TotalNew": ["22"],
-    "TotalUsed": ["24"],
-    "TotalCollectible": ["0"],
-    "TotalRefurbished": ["0"]
-  }],
-  "Offers": [{
-    "TotalOffers": ["2"],
-    "TotalOfferPages": ["1"],
-    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"],
-    "Offer": [{
-      "OfferAttributes": [{"Condition": ["New"]}],
-      "OfferListing": [{
-        "OfferListingId": ["7VuyGcu%2Fm61ZuWoFIama%2FTtMsqjsQzRFRLd%2BUluv8R66NVTc%2BSPL%2Bzv%2FB8tdOQuzIJnctv0qiXvrTdsvYsFbjG7qkctrcN%2BBiETjb3tR569%2F4pY%2FU7rOQ0lXNQC2P0eJ%2FaF9i%2B2s%2FKe5wmON9FAaLep5CYXdFnJ9"],
-        "Price": [{"Amount": ["7304"], "CurrencyCode": ["USD"], "FormattedPrice": ["$73.04"]}],
-        "AmountSaved": [{"Amount": ["2996"], "CurrencyCode": ["USD"], "FormattedPrice": ["$29.96"]}],
-        "PercentageSaved": ["29"],
-        "Availability": ["Usually ships in 24 hours"],
-        "AvailabilityAttributes": [{"AvailabilityType": ["now"], "MinimumHours": ["0"], "MaximumHours": ["0"]}],
-        "IsEligibleForSuperSaverShipping": ["1"],
-        "IsEligibleForPrime": ["1"]
-      }]
-    }, {
-      "OfferAttributes": [{"Condition": ["Used"]}],
-      "OfferListing": [{
-        "OfferListingId": ["7VuyGcu%2Fm61ZuWoFIama%2FTtMsqjsQzRFyeM5L0gdIotUWIl8k8uV4FnDHENAlbzABw7eJvo7h3enps7GO2pn3W0ClAfHZ%2B4z%2FTrAoKUROtSo5KH%2BIlY3GMX75bi%2Bd4m2Pnl8nFyRTiKmUjhXVGmlZw%3D%3D"],
-        "Price": [{"Amount": ["6904"], "CurrencyCode": ["USD"], "FormattedPrice": ["$69.04"]}],
-        "AmountSaved": [{"Amount": ["3396"], "CurrencyCode": ["USD"], "FormattedPrice": ["$33.96"]}],
-        "PercentageSaved": ["33"],
-        "Availability": ["Usually ships in 1-2 business days"],
-        "AvailabilityAttributes": [{"AvailabilityType": ["now"], "MinimumHours": ["24"], "MaximumHours": ["48"]}],
-        "IsEligibleForSuperSaverShipping": ["0"],
-        "IsEligibleForPrime": ["0"]
-      }]
-    }]
-  }]
-}, {
-  "ASIN": ["B071W9NSS1"],
-  "DetailPageURL": ["https://www.amazon.com/Fundamentals-Management-Functions-Applications-Development/dp/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B071W9NSS1"],
-  "ItemLinks": [{
-    "ItemLink": [{
-      "Description": ["Technical Details"],
-      "URL": ["https://www.amazon.com/Fundamentals-Management-Functions-Applications-Development/dp/tech-data/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["Add To Baby Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["Add To Wedding Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["Add To Wishlist"],
-      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["Tell A Friend"],
-      "URL": ["https://www.amazon.com/gp/pdp/taf/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["All Customer Reviews"],
-      "URL": ["https://www.amazon.com/review/product/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }, {
-      "Description": ["All Offers"],
-      "URL": ["https://www.amazon.com/gp/offer-listing/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"]
-    }]
-  }],
-  "SalesRank": ["1429262"],
-  "ItemAttributes": [{
-    "Binding": ["Paperback"],
-    "EAN": ["9781483358505"],
-    "EANList": [{"EANListElement": ["9781483358505"]}],
-    "ISBN": ["148335850X"],
-    "PackageQuantity": ["1"],
-    "ProductGroup": ["Book"],
-    "ProductTypeName": ["BOOKS_1973_AND_LATER"],
-    "PublicationDate": ["2017"],
-    "Title": ["Fundamentals Of Human Resource Management Functions, Applications, Skill Development"]
-  }],
-  "OfferSummary": [{
-    "LowestNewPrice": [{"Amount": ["8858"], "CurrencyCode": ["USD"], "FormattedPrice": ["$88.58"]}],
-    "LowestUsedPrice": [{"Amount": ["6427"], "CurrencyCode": ["USD"], "FormattedPrice": ["$64.27"]}],
-    "TotalNew": ["14"],
-    "TotalUsed": ["18"],
-    "TotalCollectible": ["0"],
-    "TotalRefurbished": ["0"]
-  }],
-  "Offers": [{
-    "TotalOffers": ["2"],
-    "TotalOfferPages": ["1"],
-    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"],
-    "Offer": [{
-      "OfferAttributes": [{"Condition": ["New"]}],
-      "OfferListing": [{
-        "OfferListingId": ["sHTtmYtRotc6ZWDhAXqIh9N1d%2F77rrM4eNe5JADh1DwCTWRMdeBRtkO98hD4ja8VY8%2FsTeD4VxJHmGwwnUGydAndfPMevDGvFpW3S8JS9xA8D%2BqsAXh9JMZxR9SYeq6P5F5VBxlP9PQTPii3oN5yaMUdMJN59R4N"],
-        "Price": [{"Amount": ["8858"], "CurrencyCode": ["USD"], "FormattedPrice": ["$88.58"]}],
-        "Availability": ["Usually ships in 1-2 business days"],
-        "AvailabilityAttributes": [{"AvailabilityType": ["now"], "MinimumHours": ["24"], "MaximumHours": ["48"]}],
-        "IsEligibleForSuperSaverShipping": ["0"],
-        "IsEligibleForPrime": ["0"]
-      }]
-    }, {
-      "OfferAttributes": [{"Condition": ["Used"]}],
-      "OfferListing": [{
-        "OfferListingId": ["sHTtmYtRotc6ZWDhAXqIh9N1d%2F77rrM4rOWyV7kxO7bkdsxM4%2BInBgBJr52Um8m57yEll4Usnb5sihbqg2KC%2Bg94DGRumuKLfOe24Rd7YCt1BjlnmonNYG40Aj2%2BElcoj0bGTRDh079vxMEeR7l37HmHjyn3DhSi"],
-        "Price": [{"Amount": ["6427"], "CurrencyCode": ["USD"], "FormattedPrice": ["$64.27"]}],
-        "Availability": ["Usually ships in 24 hours"],
-        "AvailabilityAttributes": [{"AvailabilityType": ["now"], "MinimumHours": ["24"], "MaximumHours": ["24"]}],
-        "IsEligibleForSuperSaverShipping": ["0"],
-        "IsEligibleForPrime": ["0"]
-      }]
-    }]
-  }]
-}, {
-  "ASIN": ["B018W23QVC"],
-  "DetailPageURL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B018W23QVC"],
-  "ItemLinks": [{
-    "ItemLink": [{
-      "Description": ["Technical Details"],
-      "URL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/tech-data/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["Add To Baby Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["Add To Wedding Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["Add To Wishlist"],
-      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["Tell A Friend"],
-      "URL": ["https://www.amazon.com/gp/pdp/taf/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["All Customer Reviews"],
-      "URL": ["https://www.amazon.com/review/product/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }, {
-      "Description": ["All Offers"],
-      "URL": ["https://www.amazon.com/gp/offer-listing/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"]
-    }]
-  }],
-  "SalesRank": ["330768"],
-  "ItemAttributes": [{
-    "Author": ["Robert N. Lussier", "John R. Hendon"],
-    "Binding": ["Kindle Edition"],
-    "Edition": ["1"],
-    "EISBN": ["9781506331836"],
-    "Format": ["Kindle eBook"],
-    "Label": ["SAGE Publications, Inc"],
-    "Languages": [{"Language": [{"Name": ["English"], "Type": ["Published"]}]}],
-    "Manufacturer": ["SAGE Publications, Inc"],
-    "NumberOfPages": ["438"],
-    "ProductGroup": ["eBooks"],
-    "ProductTypeName": ["ABIS_EBOOKS"],
-    "PublicationDate": ["2015-11-26"],
-    "Publisher": ["SAGE Publications, Inc"],
-    "ReleaseDate": ["2015-12-02"],
-    "Studio": ["SAGE Publications, Inc"],
-    "Title": ["Fundamentals of Human Resource Management: Functions, Applications, Skill Development"]
-  }]
-}, {
-  "ASIN": ["B06Y3BFTQ2"],
-  "DetailPageURL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B06Y3BFTQ2"],
-  "ItemLinks": [{
-    "ItemLink": [{
-      "Description": ["Technical Details"],
-      "URL": ["https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/tech-data/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["Add To Baby Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["Add To Wedding Registry"],
-      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["Add To Wishlist"],
-      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["Tell A Friend"],
-      "URL": ["https://www.amazon.com/gp/pdp/taf/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["All Customer Reviews"],
-      "URL": ["https://www.amazon.com/review/product/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }, {
-      "Description": ["All Offers"],
-      "URL": ["https://www.amazon.com/gp/offer-listing/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"]
-    }]
-  }],
-  "ItemAttributes": [{
-    "Author": ["Robert N. Lussier", "John R. Hendon"],
-    "Binding": ["Kindle Edition"],
-    "Edition": ["1"],
-    "EISBN": ["9781506331812"],
-    "Format": ["Kindle eBook"],
-    "Label": ["SAGE Publications, Inc"],
-    "Languages": [{"Language": [{"Name": ["English"], "Type": ["Published"]}]}],
-    "Manufacturer": ["SAGE Publications, Inc"],
-    "NumberOfPages": ["440"],
-    "ProductGroup": ["eBooks"],
-    "ProductTypeName": ["ABIS_EBOOKS"],
-    "PublicationDate": ["2015-11-26"],
-    "Publisher": ["SAGE Publications, Inc"],
-    "ReleaseDate": ["2015-11-26"],
-    "Studio": ["SAGE Publications, Inc"],
-    "Title": ["Fundamentals of Human Resource Management: Functions, Applications, Skill Development"]
-  }]
-}]
+[
+  {
+    "ASIN": [
+      "148335850X"
+    ],
+    "DetailPageURL": [
+      "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=148335850X"
+    ],
+    "ItemLinks": [
+      {
+        "ItemLink": [
+          {
+            "Description": [
+              "Technical Details"
+            ],
+            "URL": [
+              "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/tech-data/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Baby Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wedding Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wishlist"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "Tell A Friend"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/pdp/taf/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "All Customer Reviews"
+            ],
+            "URL": [
+              "https://www.amazon.com/review/product/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          },
+          {
+            "Description": [
+              "All Offers"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+            ]
+          }
+        ]
+      }
+    ],
+    "SalesRank": [
+      "560951"
+    ],
+    "SmallImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "75",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "58",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "MediumImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL160_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "160",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "124",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "LargeImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL.jpg"
+        ],
+        "Height": [
+          {
+            "_": "500",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "387",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "ImageSets": [
+      {
+        "ImageSet": [
+          {
+            "$": {
+              "Category": "primary"
+            },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL30_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "30",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "23",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL110_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "110",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "85",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL160_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "160",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "124",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "500",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "387",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ItemAttributes": [
+      {
+        "Author": [
+          "Robert N. Lussier",
+          "John R. Hendon"
+        ],
+        "Binding": [
+          "Paperback"
+        ],
+        "Brand": [
+          "Sage Publications Ltd"
+        ],
+        "EAN": [
+          "9781483358505"
+        ],
+        "EANList": [
+          {
+            "EANListElement": [
+              "9781483358505"
+            ]
+          }
+        ],
+        "Edition": [
+          "1"
+        ],
+        "Feature": [
+          "Sage Publications Ltd"
+        ],
+        "IsAdultProduct": [
+          "0"
+        ],
+        "ISBN": [
+          "148335850X"
+        ],
+        "ItemDimensions": [
+          {
+            "Height": [
+              {
+                "_": "1050",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ],
+            "Length": [
+              {
+                "_": "825",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ],
+            "Weight": [
+              {
+                "_": "0",
+                "$": {
+                  "Units": "Hundredths Pounds"
+                }
+              }
+            ],
+            "Width": [
+              {
+                "_": "50",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ]
+          }
+        ],
+        "Label": [
+          "SAGE Publications, Inc"
+        ],
+        "Languages": [
+          {
+            "Language": [
+              {
+                "Name": [
+                  "English"
+                ],
+                "Type": [
+                  "Published"
+                ]
+              },
+              {
+                "Name": [
+                  "English"
+                ],
+                "Type": [
+                  "Original Language"
+                ]
+              },
+              {
+                "Name": [
+                  "English"
+                ],
+                "Type": [
+                  "Unknown"
+                ]
+              }
+            ]
+          }
+        ],
+        "ListPrice": [
+          {
+            "Amount": [
+              "10300"
+            ],
+            "CurrencyCode": [
+              "USD"
+            ],
+            "FormattedPrice": [
+              "$103.00"
+            ]
+          }
+        ],
+        "Manufacturer": [
+          "SAGE Publications, Inc"
+        ],
+        "NumberOfItems": [
+          "1"
+        ],
+        "NumberOfPages": [
+          "440"
+        ],
+        "PackageDimensions": [
+          {
+            "Height": [
+              {
+                "_": "73",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ],
+            "Length": [
+              {
+                "_": "843",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ],
+            "Weight": [
+              {
+                "_": "79",
+                "$": {
+                  "Units": "Hundredths Pounds"
+                }
+              }
+            ],
+            "Width": [
+              {
+                "_": "585",
+                "$": {
+                  "Units": "hundredths-inches"
+                }
+              }
+            ]
+          }
+        ],
+        "PackageQuantity": [
+          "3"
+        ],
+        "ProductGroup": [
+          "Book"
+        ],
+        "ProductTypeName": [
+          "ABIS_BOOK"
+        ],
+        "PublicationDate": [
+          "2016-01-22"
+        ],
+        "Publisher": [
+          "SAGE Publications, Inc"
+        ],
+        "Studio": [
+          "SAGE Publications, Inc"
+        ],
+        "Title": [
+          "Fundamentals of Human Resource Management: Functions, Applications, Skill Development"
+        ]
+      }
+    ],
+    "OfferSummary": [
+      {
+        "LowestNewPrice": [
+          {
+            "Amount": [
+              "7110"
+            ],
+            "CurrencyCode": [
+              "USD"
+            ],
+            "FormattedPrice": [
+              "$71.10"
+            ]
+          }
+        ],
+        "LowestUsedPrice": [
+          {
+            "Amount": [
+              "6756"
+            ],
+            "CurrencyCode": [
+              "USD"
+            ],
+            "FormattedPrice": [
+              "$67.56"
+            ]
+          }
+        ],
+        "TotalNew": [
+          "20"
+        ],
+        "TotalUsed": [
+          "25"
+        ],
+        "TotalCollectible": [
+          "0"
+        ],
+        "TotalRefurbished": [
+          "0"
+        ]
+      }
+    ],
+    "Offers": [
+      {
+        "TotalOffers": [
+          "2"
+        ],
+        "TotalOfferPages": [
+          "1"
+        ],
+        "MoreOffersUrl": [
+          "https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+        ],
+        "Offer": [
+          {
+            "OfferAttributes": [
+              {
+                "Condition": [
+                  "New"
+                ]
+              }
+            ],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "VVyIz0o0y8GEEqfD6m74UW%2FgDx91gFOXiXJko%2FJtSBH%2F3RO7aG5bS%2Bxz8YkAIuGAhY4S8OaFbZJbddx60jLJ8HCp2kZQ03xFvmkXRPzoFyq3OMg1hNHqIcAsQkXFY2Gc5%2FGoWA17V46TJk%2FDZrqK%2Fw%3D%3D"
+                ],
+                "Price": [
+                  {
+                    "Amount": [
+                      "7110"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$71.10"
+                    ]
+                  }
+                ],
+                "AmountSaved": [
+                  {
+                    "Amount": [
+                      "3190"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$31.90"
+                    ]
+                  }
+                ],
+                "PercentageSaved": [
+                  "31"
+                ],
+                "Availability": [
+                  "Usually ships in 24 hours"
+                ],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": [
+                      "now"
+                    ],
+                    "MinimumHours": [
+                      "24"
+                    ],
+                    "MaximumHours": [
+                      "24"
+                    ]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": [
+                  "0"
+                ],
+                "IsEligibleForPrime": [
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "OfferAttributes": [
+              {
+                "Condition": [
+                  "Used"
+                ]
+              }
+            ],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "VVyIz0o0y8GEEqfD6m74UW%2FgDx91gFOXYmCRw3O7eGGbN8zZj6d14Qj2KMwd%2F7mjIrXU5f1JPcOStVvIhGWuAVUKLGq5D9CnKDQKOba3u%2BFVOKt6DwWljgBN9SRiCG7DNSq6Y%2BorUWjqBLiVWUJIXA%3D%3D"
+                ],
+                "Price": [
+                  {
+                    "Amount": [
+                      "6756"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$67.56"
+                    ]
+                  }
+                ],
+                "AmountSaved": [
+                  {
+                    "Amount": [
+                      "3544"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$35.44"
+                    ]
+                  }
+                ],
+                "PercentageSaved": [
+                  "34"
+                ],
+                "Availability": [
+                  "Usually ships in 1-2 business days"
+                ],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": [
+                      "now"
+                    ],
+                    "MinimumHours": [
+                      "24"
+                    ],
+                    "MaximumHours": [
+                      "48"
+                    ]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": [
+                  "0"
+                ],
+                "IsEligibleForPrime": [
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ASIN": [
+      "B071W9NSS1"
+    ],
+    "DetailPageURL": [
+      "https://www.amazon.com/Fundamentals-Management-Functions-Applications-Development/dp/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B071W9NSS1"
+    ],
+    "ItemLinks": [
+      {
+        "ItemLink": [
+          {
+            "Description": [
+              "Technical Details"
+            ],
+            "URL": [
+              "https://www.amazon.com/Fundamentals-Management-Functions-Applications-Development/dp/tech-data/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Baby Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wedding Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wishlist"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B071W9NSS1&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "Tell A Friend"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/pdp/taf/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "All Customer Reviews"
+            ],
+            "URL": [
+              "https://www.amazon.com/review/product/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          },
+          {
+            "Description": [
+              "All Offers"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/offer-listing/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+            ]
+          }
+        ]
+      }
+    ],
+    "SalesRank": [
+      "1864830"
+    ],
+    "ItemAttributes": [
+      {
+        "Binding": [
+          "Paperback"
+        ],
+        "EAN": [
+          "9781483358505"
+        ],
+        "EANList": [
+          {
+            "EANListElement": [
+              "9781483358505"
+            ]
+          }
+        ],
+        "ISBN": [
+          "148335850X"
+        ],
+        "PackageQuantity": [
+          "1"
+        ],
+        "ProductGroup": [
+          "Book"
+        ],
+        "ProductTypeName": [
+          "BOOKS_1973_AND_LATER"
+        ],
+        "PublicationDate": [
+          "2017"
+        ],
+        "Title": [
+          "Fundamentals Of Human Resource Management Functions, Applications, Skill Development"
+        ]
+      }
+    ],
+    "OfferSummary": [
+      {
+        "LowestNewPrice": [
+          {
+            "Amount": [
+              "7250"
+            ],
+            "CurrencyCode": [
+              "USD"
+            ],
+            "FormattedPrice": [
+              "$72.50"
+            ]
+          }
+        ],
+        "LowestUsedPrice": [
+          {
+            "Amount": [
+              "6427"
+            ],
+            "CurrencyCode": [
+              "USD"
+            ],
+            "FormattedPrice": [
+              "$64.27"
+            ]
+          }
+        ],
+        "TotalNew": [
+          "14"
+        ],
+        "TotalUsed": [
+          "19"
+        ],
+        "TotalCollectible": [
+          "0"
+        ],
+        "TotalRefurbished": [
+          "0"
+        ]
+      }
+    ],
+    "Offers": [
+      {
+        "TotalOffers": [
+          "2"
+        ],
+        "TotalOfferPages": [
+          "1"
+        ],
+        "MoreOffersUrl": [
+          "https://www.amazon.com/gp/offer-listing/B071W9NSS1?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B071W9NSS1"
+        ],
+        "Offer": [
+          {
+            "OfferAttributes": [
+              {
+                "Condition": [
+                  "New"
+                ]
+              }
+            ],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "BwU0vQjogQEhlossTwvaBifW80rvO3pxvNEGiVcWwnakeOYRuTE3ExkPlte%2BxjwT0CAXyp%2BO4RHe4c8bttAdsqls55RLmkd27OmuJ3LA%2BPzO%2FBf4%2FGM4yDJxHdlLv%2Bmi3tLKeSeXBK0MVHKMCs%2BiZF5s1K9F0dNJ"
+                ],
+                "Price": [
+                  {
+                    "Amount": [
+                      "7250"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$72.50"
+                    ]
+                  }
+                ],
+                "Availability": [
+                  "Usually ships in 1-2 business days"
+                ],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": [
+                      "now"
+                    ],
+                    "MinimumHours": [
+                      "24"
+                    ],
+                    "MaximumHours": [
+                      "48"
+                    ]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": [
+                  "0"
+                ],
+                "IsEligibleForPrime": [
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "OfferAttributes": [
+              {
+                "Condition": [
+                  "Used"
+                ]
+              }
+            ],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "BwU0vQjogQEhlossTwvaBifW80rvO3pxuQlo0HJEWyuC9ND6Ax5hmAo6M2%2BP4AMIDIr9njlM4sIPAen%2FiyYz5UiwyzwPnE9YO42XeMn34r8ulaIZB%2B4WYT%2FHdtmaNyVIwu85B5jLahE2PbGjiUAt6ysejFc2sLCP"
+                ],
+                "Price": [
+                  {
+                    "Amount": [
+                      "6427"
+                    ],
+                    "CurrencyCode": [
+                      "USD"
+                    ],
+                    "FormattedPrice": [
+                      "$64.27"
+                    ]
+                  }
+                ],
+                "Availability": [
+                  "Usually ships in 24 hours"
+                ],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": [
+                      "now"
+                    ],
+                    "MinimumHours": [
+                      "24"
+                    ],
+                    "MaximumHours": [
+                      "24"
+                    ]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": [
+                  "0"
+                ],
+                "IsEligibleForPrime": [
+                  "0"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ASIN": [
+      "B018W23QVC"
+    ],
+    "DetailPageURL": [
+      "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B018W23QVC"
+    ],
+    "ItemLinks": [
+      {
+        "ItemLink": [
+          {
+            "Description": [
+              "Technical Details"
+            ],
+            "URL": [
+              "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/tech-data/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Baby Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wedding Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wishlist"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B018W23QVC&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "Tell A Friend"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/pdp/taf/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "All Customer Reviews"
+            ],
+            "URL": [
+              "https://www.amazon.com/review/product/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          },
+          {
+            "Description": [
+              "All Offers"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/offer-listing/B018W23QVC?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B018W23QVC"
+            ]
+          }
+        ]
+      }
+    ],
+    "SalesRank": [
+      "668714"
+    ],
+    "SmallImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "75",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "58",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "MediumImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "160",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "124",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "LargeImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+        ],
+        "Height": [
+          {
+            "_": "500",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "386",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "ImageSets": [
+      {
+        "ImageSet": [
+          {
+            "$": {
+              "Category": "primary"
+            },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL30_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "30",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "23",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL110_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "110",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "85",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "160",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "124",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "500",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "386",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "HiResImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/91drlKzIpUL.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "2560",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "1978",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ItemAttributes": [
+      {
+        "Author": [
+          "Robert N. Lussier",
+          "John R. Hendon"
+        ],
+        "Binding": [
+          "Kindle Edition"
+        ],
+        "Edition": [
+          "1"
+        ],
+        "EISBN": [
+          "9781506331836"
+        ],
+        "Format": [
+          "Kindle eBook"
+        ],
+        "Label": [
+          "SAGE Publications, Inc"
+        ],
+        "Languages": [
+          {
+            "Language": [
+              {
+                "Name": [
+                  "English"
+                ],
+                "Type": [
+                  "Published"
+                ]
+              }
+            ]
+          }
+        ],
+        "Manufacturer": [
+          "SAGE Publications, Inc"
+        ],
+        "NumberOfPages": [
+          "438"
+        ],
+        "ProductGroup": [
+          "eBooks"
+        ],
+        "ProductTypeName": [
+          "ABIS_EBOOKS"
+        ],
+        "PublicationDate": [
+          "2015-11-26"
+        ],
+        "Publisher": [
+          "SAGE Publications, Inc"
+        ],
+        "ReleaseDate": [
+          "2015-12-02"
+        ],
+        "Studio": [
+          "SAGE Publications, Inc"
+        ],
+        "Title": [
+          "Fundamentals of Human Resource Management: Functions, Applications, Skill Development"
+        ]
+      }
+    ]
+  },
+  {
+    "ASIN": [
+      "B06Y3BFTQ2"
+    ],
+    "DetailPageURL": [
+      "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B06Y3BFTQ2"
+    ],
+    "ItemLinks": [
+      {
+        "ItemLink": [
+          {
+            "Description": [
+              "Technical Details"
+            ],
+            "URL": [
+              "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/tech-data/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Baby Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wedding Registry"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "Add To Wishlist"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "Tell A Friend"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/pdp/taf/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "All Customer Reviews"
+            ],
+            "URL": [
+              "https://www.amazon.com/review/product/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          },
+          {
+            "Description": [
+              "All Offers"
+            ],
+            "URL": [
+              "https://www.amazon.com/gp/offer-listing/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+            ]
+          }
+        ]
+      }
+    ],
+    "SmallImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "75",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "58",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "MediumImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+        ],
+        "Height": [
+          {
+            "_": "160",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "124",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "LargeImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+        ],
+        "Height": [
+          {
+            "_": "500",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ],
+        "Width": [
+          {
+            "_": "386",
+            "$": {
+              "Units": "pixels"
+            }
+          }
+        ]
+      }
+    ],
+    "ImageSets": [
+      {
+        "ImageSet": [
+          {
+            "$": {
+              "Category": "primary"
+            },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL30_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "30",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "23",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "75",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "58",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL110_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "110",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "85",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "160",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "124",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "500",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "386",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ],
+            "HiResImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/91drlKzIpUL.jpg"
+                ],
+                "Height": [
+                  {
+                    "_": "2560",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ],
+                "Width": [
+                  {
+                    "_": "1978",
+                    "$": {
+                      "Units": "pixels"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ItemAttributes": [
+      {
+        "Author": [
+          "Robert N. Lussier",
+          "John R. Hendon"
+        ],
+        "Binding": [
+          "Kindle Edition"
+        ],
+        "Edition": [
+          "1"
+        ],
+        "EISBN": [
+          "9781506331812"
+        ],
+        "Format": [
+          "Kindle eBook"
+        ],
+        "Label": [
+          "SAGE Publications, Inc"
+        ],
+        "Languages": [
+          {
+            "Language": [
+              {
+                "Name": [
+                  "English"
+                ],
+                "Type": [
+                  "Published"
+                ]
+              }
+            ]
+          }
+        ],
+        "Manufacturer": [
+          "SAGE Publications, Inc"
+        ],
+        "NumberOfPages": [
+          "440"
+        ],
+        "ProductGroup": [
+          "eBooks"
+        ],
+        "ProductTypeName": [
+          "ABIS_EBOOKS"
+        ],
+        "PublicationDate": [
+          "2015-11-26"
+        ],
+        "Publisher": [
+          "SAGE Publications, Inc"
+        ],
+        "ReleaseDate": [
+          "2015-11-26"
+        ],
+        "Studio": [
+          "SAGE Publications, Inc"
+        ],
+        "Title": [
+          "Fundamentals of Human Resource Management: Functions, Applications, Skill Development"
+        ]
+      }
+    ]
+  }
+]
