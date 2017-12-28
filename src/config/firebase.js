@@ -1,4 +1,5 @@
-var admin = require('firebase-admin')
+const admin = require('firebase-admin')
+const { initializeApp } = require('firebase')
 
 const getServiceAccount = () => ({
   type: 'service_account',
@@ -13,6 +14,15 @@ const getServiceAccount = () => ({
   client_x509_cert_url: process.env.CLIENT_X509_CERT_URL
 })
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyD6tp9IzTlBucVCnlMnxEJNeEdE1KQ-lEM',
+  authDomain: 'testing-firebase-env.firebaseapp.com',
+  databaseURL: 'https://testing-firebase-env.firebaseio.com',
+  storageBucket: '',
+  messagingSenderId: '1088175970844',
+  projectId: 'testing-firebase-env'
+}
+
 async function initializeFirebaseAdmin () {
   return admin.initializeApp({
     credential: admin.credential.cert(getServiceAccount()),
@@ -20,4 +30,8 @@ async function initializeFirebaseAdmin () {
   })
 }
 
-module.exports = { initializeFirebaseAdmin }
+async function initializeFirebase () {
+  return initializeApp(firebaseConfig)
+}
+
+module.exports = { initializeFirebaseAdmin, initializeFirebase }
