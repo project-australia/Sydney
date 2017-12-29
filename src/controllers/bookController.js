@@ -10,8 +10,12 @@ const evaluate = async (req, res) => {
                             .replace(/-/, '')
                             .trim()
 
-  const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
-  res.status(200).json(evaluation)
+  try {
+    const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
+    res.status(200).json(evaluation)
+  } catch (error) {
+    res.status(500).json('Error') //FIXME improve this
+  }
 }
 
 module.exports = {

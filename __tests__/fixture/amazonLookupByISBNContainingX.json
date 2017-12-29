@@ -1,0 +1,490 @@
+[
+  {
+    "ASIN": ["032157351X"],
+    "DetailPageURL": [
+      "https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=032157351X"
+    ],
+    "ItemLinks": [
+      {
+        "ItemLink": [
+          {
+            "Description": ["Technical Details"],
+            "URL": [
+              "https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/tech-data/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["Add To Baby Registry"],
+            "URL": [
+              "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=032157351X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["Add To Wedding Registry"],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=032157351X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["Add To Wishlist"],
+            "URL": [
+              "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=032157351X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["Tell A Friend"],
+            "URL": [
+              "https://www.amazon.com/gp/pdp/taf/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["All Customer Reviews"],
+            "URL": [
+              "https://www.amazon.com/review/product/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          },
+          {
+            "Description": ["All Offers"],
+            "URL": [
+              "https://www.amazon.com/gp/offer-listing/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+            ]
+          }
+        ]
+      }
+    ],
+    "SalesRank": ["13655"],
+    "SmallImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL75_.jpg"
+        ],
+        "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+        "Width": [{ "_": "54", "$": { "Units": "pixels" } }]
+      }
+    ],
+    "MediumImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL160_.jpg"
+        ],
+        "Height": [{ "_": "160", "$": { "Units": "pixels" } }],
+        "Width": [{ "_": "116", "$": { "Units": "pixels" } }]
+      }
+    ],
+    "LargeImage": [
+      {
+        "URL": [
+          "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL.jpg"
+        ],
+        "Height": [{ "_": "500", "$": { "Units": "pixels" } }],
+        "Width": [{ "_": "361", "$": { "Units": "pixels" } }]
+      }
+    ],
+    "ImageSets": [
+      {
+        "ImageSet": [
+          {
+            "$": { "Category": "variant" },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL._SL30_.jpg"
+                ],
+                "Height": [{ "_": "30", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "24", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "61", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "61", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL._SL110_.jpg"
+                ],
+                "Height": [{ "_": "110", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "89", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL._SL160_.jpg"
+                ],
+                "Height": [{ "_": "160", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "130", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/61PsY2AiJvL.jpg"
+                ],
+                "Height": [{ "_": "500", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "406", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "HiResImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/81oU71ufSOL.jpg"
+                ],
+                "Height": [{ "_": "1666", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "1353", "$": { "Units": "pixels" } }]
+              }
+            ]
+          },
+          {
+            "$": { "Category": "variant" },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL._SL30_.jpg"
+                ],
+                "Height": [{ "_": "30", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "22", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "56", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "56", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL._SL110_.jpg"
+                ],
+                "Height": [{ "_": "110", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "82", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL._SL160_.jpg"
+                ],
+                "Height": [{ "_": "160", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "120", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/31cT7VBl2zL.jpg"
+                ],
+                "Height": [{ "_": "500", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "375", "$": { "Units": "pixels" } }]
+              }
+            ]
+          },
+          {
+            "$": { "Category": "primary" },
+            "SwatchImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL30_.jpg"
+                ],
+                "Height": [{ "_": "30", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "22", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "SmallImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "54", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "ThumbnailImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL75_.jpg"
+                ],
+                "Height": [{ "_": "75", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "54", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "TinyImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL110_.jpg"
+                ],
+                "Height": [{ "_": "110", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "79", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "MediumImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SL160_.jpg"
+                ],
+                "Height": [{ "_": "160", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "116", "$": { "Units": "pixels" } }]
+              }
+            ],
+            "LargeImage": [
+              {
+                "URL": [
+                  "https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL.jpg"
+                ],
+                "Height": [{ "_": "500", "$": { "Units": "pixels" } }],
+                "Width": [{ "_": "361", "$": { "Units": "pixels" } }]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ItemAttributes": [
+      {
+        "Author": ["Robert Sedgewick", "Kevin Wayne"],
+        "Binding": ["Hardcover"],
+        "Brand": ["Addison-Wesley Professional"],
+        "EAN": ["9780321573513"],
+        "EANList": [
+          {
+            "EANListElement": [
+              "8601419534142",
+              "8601400041420",
+              "8601234571957",
+              "9780321573513"
+            ]
+          }
+        ],
+        "Edition": ["4th"],
+        "Feature": ["Addison-Wesley Professional"],
+        "IsAdultProduct": ["0"],
+        "ISBN": ["032157351X"],
+        "IsEligibleForTradeIn": ["1"],
+        "ItemDimensions": [
+          {
+            "Height": [{ "_": "920", "$": { "Units": "hundredths-inches" } }],
+            "Length": [{ "_": "760", "$": { "Units": "hundredths-inches" } }],
+            "Weight": [{ "_": "300", "$": { "Units": "Hundredths Pounds" } }],
+            "Width": [{ "_": "140", "$": { "Units": "hundredths-inches" } }]
+          }
+        ],
+        "Label": ["Addison-Wesley Professional"],
+        "Languages": [
+          {
+            "Language": [
+              { "Name": ["English"], "Type": ["Published"] },
+              { "Name": ["English"], "Type": ["Original Language"] },
+              { "Name": ["English"], "Type": ["Unknown"] }
+            ]
+          }
+        ],
+        "ListPrice": [
+          {
+            "Amount": ["8999"],
+            "CurrencyCode": ["USD"],
+            "FormattedPrice": ["$89.99"]
+          }
+        ],
+        "Manufacturer": ["Addison-Wesley Professional"],
+        "MPN": ["9780321573513"],
+        "NumberOfItems": ["1"],
+        "NumberOfPages": ["992"],
+        "PackageDimensions": [
+          {
+            "Height": [{ "_": "150", "$": { "Units": "hundredths-inches" } }],
+            "Length": [{ "_": "940", "$": { "Units": "hundredths-inches" } }],
+            "Weight": [{ "_": "320", "$": { "Units": "Hundredths Pounds" } }],
+            "Width": [{ "_": "720", "$": { "Units": "hundredths-inches" } }]
+          }
+        ],
+        "PackageQuantity": ["1"],
+        "PartNumber": ["9780321573513"],
+        "ProductGroup": ["Book"],
+        "ProductTypeName": ["ABIS_BOOK"],
+        "PublicationDate": ["2011-03-19"],
+        "Publisher": ["Addison-Wesley Professional"],
+        "Studio": ["Addison-Wesley Professional"],
+        "Title": ["Algorithms (4th Edition)"],
+        "TradeInValue": [
+          {
+            "Amount": ["4982"],
+            "CurrencyCode": ["USD"],
+            "FormattedPrice": ["$49.82"]
+          }
+        ]
+      }
+    ],
+    "OfferSummary": [
+      {
+        "LowestNewPrice": [
+          {
+            "Amount": ["5874"],
+            "CurrencyCode": ["USD"],
+            "FormattedPrice": ["$58.74"]
+          }
+        ],
+        "LowestUsedPrice": [
+          {
+            "Amount": ["4999"],
+            "CurrencyCode": ["USD"],
+            "FormattedPrice": ["$49.99"]
+          }
+        ],
+        "LowestCollectiblePrice": [
+          {
+            "Amount": ["5869"],
+            "CurrencyCode": ["USD"],
+            "FormattedPrice": ["$58.69"]
+          }
+        ],
+        "TotalNew": ["31"],
+        "TotalUsed": ["42"],
+        "TotalCollectible": ["1"],
+        "TotalRefurbished": ["0"]
+      }
+    ],
+    "Offers": [
+      {
+        "TotalOffers": ["3"],
+        "TotalOfferPages": ["1"],
+        "MoreOffersUrl": [
+          "https://www.amazon.com/gp/offer-listing/032157351X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=032157351X"
+        ],
+        "Offer": [
+          {
+            "OfferAttributes": [{ "Condition": ["New"] }],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "t8g8cApAMjHxbjm9H6SBCvIlBm2GzyEM7hOWmfclIYxUJd9c1LQiCpUbGcWLVk6Yu6ybxwesU%2FNY13r790TyztXaiR0sP0DXzcLT4mZRwLuUYIBFHKvdhw%3D%3D"
+                ],
+                "Price": [
+                  {
+                    "Amount": ["5874"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$58.74"]
+                  }
+                ],
+                "AmountSaved": [
+                  {
+                    "Amount": ["3125"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$31.25"]
+                  }
+                ],
+                "PercentageSaved": ["35"],
+                "Availability": ["Usually ships in 24 hours"],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": ["now"],
+                    "MinimumHours": ["0"],
+                    "MaximumHours": ["0"]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": ["1"],
+                "IsEligibleForPrime": ["1"]
+              }
+            ]
+          },
+          {
+            "OfferAttributes": [{ "Condition": ["Used"] }],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "t8g8cApAMjHxbjm9H6SBCvIlBm2GzyEMH%2BYTJxe%2BCVSBdxUFkm5d43%2FyZWlmBzfQQmtwSH4V1G79jydnhJqb%2BzE65ctWJhCwgUB4Zgp5Zil%2BHs12J5zPvt7TFQIoauwbZg3GDN6Dw7%2BjJXlGkrWyqw%3D%3D"
+                ],
+                "Price": [
+                  {
+                    "Amount": ["4999"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$49.99"]
+                  }
+                ],
+                "AmountSaved": [
+                  {
+                    "Amount": ["4000"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$40.00"]
+                  }
+                ],
+                "PercentageSaved": ["44"],
+                "Availability": ["Usually ships in 1-2 business days"],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": ["now"],
+                    "MinimumHours": ["24"],
+                    "MaximumHours": ["48"]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": ["0"],
+                "IsEligibleForPrime": ["0"]
+              }
+            ]
+          },
+          {
+            "OfferAttributes": [{ "Condition": ["Collectible"] }],
+            "OfferListing": [
+              {
+                "OfferListingId": [
+                  "t8g8cApAMjHxbjm9H6SBCvIlBm2GzyEMDGK9T9qjKUpHcqaOnlQea8eesgMIzsmfPY44CN9m%2BJgMiLqXBtmyYDcQjJwLp3eaKRtq7gwPFc%2FWrLU3Qv2iMD0jKOdXpX4TifjCYVA7UuOz8NTaj5NEMUUmywbM9wKr"
+                ],
+                "Price": [
+                  {
+                    "Amount": ["5869"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$58.69"]
+                  }
+                ],
+                "AmountSaved": [
+                  {
+                    "Amount": ["3130"],
+                    "CurrencyCode": ["USD"],
+                    "FormattedPrice": ["$31.30"]
+                  }
+                ],
+                "PercentageSaved": ["35"],
+                "Availability": ["Usually ships in 1-2 business days"],
+                "AvailabilityAttributes": [
+                  {
+                    "AvailabilityType": ["now"],
+                    "MinimumHours": ["24"],
+                    "MaximumHours": ["48"]
+                  }
+                ],
+                "IsEligibleForSuperSaverShipping": ["0"],
+                "IsEligibleForPrime": ["0"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

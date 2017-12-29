@@ -71,13 +71,14 @@ const evaluateBook = async (isbn) => {
   const bookLookUp = await AmazonClient.lookupByISBN(isbn)
 
   try {
-    const filteredByEAN = bookLookUp.filter(byEAN(isbn))
+    // FIXME: This should be a filter by paperback
+    // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
 
-    if (filteredByEAN.length === 0) {
-      throw new Error('Cannot find isbn inside amazon lookup')
-    }
+    // if (filteredByEAN.length === 0) {
+    //   throw new Error('Cannot find isbn inside amazon lookup')
+    // }
 
-    const bestOffer = filteredByEAN.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
+    const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
     const price = calculateBallardPrice(amazonPrice, ballardPercentage)
