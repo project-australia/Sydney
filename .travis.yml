@@ -11,7 +11,8 @@ before_install:
 install:
   - npm install
 script:
-  - npm run prepush
-  - npm run precommit
-after_success:
-  - npm run update-coverage
+  - npm test
+  - npm run lint:check
+env:
+  global:
+  - MONGO_TEST_URL=mongodb://127.0.0.1:27017

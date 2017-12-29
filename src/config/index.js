@@ -3,13 +3,10 @@ const { mongooseConfig } = require('./mongoose')
 const { initializeFirebaseAdmin, initializeFirebase } = require('./firebase')
 
 async function initialConfigurations () {
-  const result = dotenv.config()
+  dotenv.config()
+  const { NODE_ENV } = process.env
 
-  if (result.error) {
-    throw result.error
-  }
-
-  await mongooseConfig(process.env.NODE_ENV)
+  await mongooseConfig(NODE_ENV)
   await initializeFirebaseAdmin()
   await initializeFirebase()
 }
