@@ -69,8 +69,14 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
 
 const evaluateBook = async (isbn) => {
   const bookLookUp = await AmazonClient.lookupByISBN(isbn)
+
   try {
     const filteredByEAN = bookLookUp.filter(byEAN(isbn))
+
+    if (filteredByEAN.length === 0) {
+      throw new Error('Cannot find isbn inside amazon lookup')
+    }
+
     const bestOffer = filteredByEAN.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
