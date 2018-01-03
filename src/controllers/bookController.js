@@ -15,6 +15,7 @@ const evaluate = async (req, res) => {
     res.status(200).json(evaluation)
   } catch (error) {
     res.status(500).json('Error') //FIXME improve this
+    throw error
   }
 }
 
