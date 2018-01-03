@@ -5,9 +5,9 @@ const { initializeFirebaseAdmin, initializeFirebase } = require('./firebase')
 
 async function initialConfigurations () {
   const result = dotenv.config()
-  
+
   if (result.error) {
-    throw result.error
+    console.error('dotEnv error', result.error)
   }
 
   opbeat.start()
