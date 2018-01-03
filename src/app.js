@@ -6,10 +6,11 @@ const helmet = require('helmet')
 const { initialConfigurations } = require('./config')
 const { router } = require('./router')
 
-initialConfigurations()
+const configs = initialConfigurations()
 const app = express()
 
 app.disable('x-powered-by')
+app.use(configs.opbeat)
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
