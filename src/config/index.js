@@ -14,10 +14,6 @@ async function initialConfigurations () {
   await mongooseConfig(process.env.NODE_ENV)
   await initializeFirebaseAdmin()
   await initializeFirebase()
-
-  return {
-    opbeat: opbeat.middleware.express()
-  }
 }
 
 module.exports = { initialConfigurations }
