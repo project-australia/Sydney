@@ -1,0 +1,954 @@
+[{
+  "ASIN": ["037582278X"],
+  "DetailPageURL": ["https://www.amazon.com/Oh-Pets-You-Can-Get/dp/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=037582278X"],
+  "ItemLinks": [{
+    "ItemLink": [{
+      "Description": ["Technical Details"],
+      "URL": ["https://www.amazon.com/Oh-Pets-You-Can-Get/dp/tech-data/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Baby Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Wedding Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Wishlist"],
+      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Tell A Friend"],
+      "URL": ["https://www.amazon.com/gp/pdp/taf/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["All Customer Reviews"],
+      "URL": ["https://www.amazon.com/review/product/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["All Offers"],
+      "URL": ["https://www.amazon.com/gp/offer-listing/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }]
+  }],
+  "SalesRank": ["143548"],
+  "SmallImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+    "Height": [{
+      "_": "75",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "55",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "MediumImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL160_.jpg"],
+    "Height": [{
+      "_": "160",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "117",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "LargeImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL.jpg"],
+    "Height": [{
+      "_": "500",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "366",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "ImageSets": [{
+    "ImageSet": [{
+      "$": {
+        "Category": "variant"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "22",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "82",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "120",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "375",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }, {
+      "$": {
+        "Category": "primary"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "22",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "55",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "55",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "81",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "117",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "366",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }]
+  }],
+  "ItemAttributes": [{
+    "Author": ["Tish Rabe"],
+    "Binding": ["Hardcover"],
+    "Brand": ["Random House Books for Young Readers"],
+    "Creator": [{
+      "_": "Aristides Ruiz",
+      "$": {
+        "Role": "Illustrator"
+      }
+    }, {
+      "_": "Joe Mathieu",
+      "$": {
+        "Role": "Illustrator"
+      }
+    }],
+    "EAN": ["9780375822780"],
+    "EANList": [{
+      "EANListElement": ["9780375822780"]
+    }],
+    "ISBN": ["9780375822780"],
+    "ItemDimensions": [{
+      "Height": [{
+        "_": "931",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "681",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "49",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "34",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "Label": ["Random House Books for Young Readers"],
+    "Languages": [{
+      "Language": [{
+        "Name": ["English"],
+        "Type": ["Published"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Original Language"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Unknown"]
+      }]
+    }],
+    "ListPrice": [{
+      "Amount": ["999"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$9.99"]
+    }],
+    "Manufacturer": ["Random House Books for Young Readers"],
+    "MPN": ["FBA-|289756"],
+    "NumberOfItems": ["1"],
+    "NumberOfPages": ["48"],
+    "PackageDimensions": [{
+      "Height": [{
+        "_": "40",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "910",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "45",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "660",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "PackageQuantity": ["1"],
+    "PartNumber": ["FBA-|289756"],
+    "ProductGroup": ["Book"],
+    "ProductTypeName": ["ABIS_BOOK"],
+    "PublicationDate": ["2005-01-25"],
+    "Publisher": ["Random House Books for Young Readers"],
+    "ReleaseDate": ["2005-01-25"],
+    "Studio": ["Random House Books for Young Readers"],
+    "Title": ["Oh, the Pets You Can Get!: All About Our Animal Friends (Cat in the Hat's Learning Library)"]
+  }],
+  "OfferSummary": [{
+    "LowestNewPrice": [{
+      "Amount": ["354"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$3.54"]
+    }],
+    "LowestUsedPrice": [{
+      "Amount": ["10"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$0.10"]
+    }],
+    "LowestCollectiblePrice": [{
+      "Amount": ["949"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$9.49"]
+    }],
+    "TotalNew": ["62"],
+    "TotalUsed": ["115"],
+    "TotalCollectible": ["3"],
+    "TotalRefurbished": ["0"]
+  }],
+  "Offers": [{
+    "TotalOffers": ["3"],
+    "TotalOfferPages": ["1"],
+    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"],
+    "Offer": [{
+      "OfferAttributes": [{
+        "Condition": ["New"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3o7pb18AafVGYZqIonqthA5RBN3He6T71bTnmRUaVcbGoXzyvvVlVczhIZNOn2ZeeA2gbB%2FcBWNw6X9QXAGdp%2F1yfDJqp1WNifbh4Z2nN4%2BExT9y7EhfErMQ%3D%3D"],
+        "Price": [{
+          "Amount": ["354"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$3.54"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["645"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$6.45"]
+        }],
+        "PercentageSaved": ["65"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Used"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3oS5vCai0uEDlSveh%2BmJdvMnMTwt1NYjTzaIh383yB5ZQd85XXJRagPapT9azbGoUWZjPiRikjBeGdx7%2FEL4eIRO1jyeda9jH7KSDtoCm%2FZFyFjrWV7QISxQ%3D%3D"],
+        "Price": [{
+          "Amount": ["10"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$0.10"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["989"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$9.89"]
+        }],
+        "PercentageSaved": ["99"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Collectible"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3ofQ%2Fe0MFRYh3ILNq6OLzoH7k9hN%2F0JXpXvtYWhlI7XUWNs%2BIZn%2BkpEK81YGBYR2UqPMk59CAmX6vYiSbjlF4L9jyD%2BrCpe30kGeckLiD7p59PJOs%2BllDQa6%2FtA7pPZWYl"],
+        "Price": [{
+          "Amount": ["949"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$9.49"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["50"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$0.50"]
+        }],
+        "PercentageSaved": ["5"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }]
+  }]
+}]
+undefined
+TypeError: Cannot read property 'ItemAttributes' of undefined
+at getBookEditionFromEntireLookup(/Users/eduardomoroni / projects / project - australia / Sydney / src / services / bookEvaluation.js: 57: 35)
+at Object.evaluateBook(/Users/eduardomoroni / projects / project - australia / Sydney / src / services / bookEvaluation.js: 92: 21)
+at < anonymous >
+  at process._tickCallback(internal / process / next_tick.js: 188: 7)
+POST / books / 978 - 0375822780 / evaluation 500 663.027 ms - 7[{
+  "ASIN": ["037582278X"],
+  "DetailPageURL": ["https://www.amazon.com/Oh-Pets-You-Can-Get/dp/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=037582278X"],
+  "ItemLinks": [{
+    "ItemLink": [{
+      "Description": ["Technical Details"],
+      "URL": ["https://www.amazon.com/Oh-Pets-You-Can-Get/dp/tech-data/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Baby Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Wedding Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Add To Wishlist"],
+      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=037582278X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["Tell A Friend"],
+      "URL": ["https://www.amazon.com/gp/pdp/taf/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["All Customer Reviews"],
+      "URL": ["https://www.amazon.com/review/product/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }, {
+      "Description": ["All Offers"],
+      "URL": ["https://www.amazon.com/gp/offer-listing/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"]
+    }]
+  }],
+  "SalesRank": ["143548"],
+  "SmallImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+    "Height": [{
+      "_": "75",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "55",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "MediumImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL160_.jpg"],
+    "Height": [{
+      "_": "160",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "117",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "LargeImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL.jpg"],
+    "Height": [{
+      "_": "500",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "366",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "ImageSets": [{
+    "ImageSet": [{
+      "$": {
+        "Category": "variant"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "22",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "82",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "120",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/31SbpXA2QKL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "375",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }, {
+      "$": {
+        "Category": "primary"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "22",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "55",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "55",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "81",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "117",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51R4tMfq-IL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "366",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }]
+  }],
+  "ItemAttributes": [{
+    "Author": ["Tish Rabe"],
+    "Binding": ["Hardcover"],
+    "Brand": ["Random House Books for Young Readers"],
+    "Creator": [{
+      "_": "Aristides Ruiz",
+      "$": {
+        "Role": "Illustrator"
+      }
+    }, {
+      "_": "Joe Mathieu",
+      "$": {
+        "Role": "Illustrator"
+      }
+    }],
+    "EAN": ["9780375822780"],
+    "EANList": [{
+      "EANListElement": ["9780375822780"]
+    }],
+    "ISBN": ["9780375822780"],
+    "ItemDimensions": [{
+      "Height": [{
+        "_": "931",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "681",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "49",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "34",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "Label": ["Random House Books for Young Readers"],
+    "Languages": [{
+      "Language": [{
+        "Name": ["English"],
+        "Type": ["Published"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Original Language"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Unknown"]
+      }]
+    }],
+    "ListPrice": [{
+      "Amount": ["999"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$9.99"]
+    }],
+    "Manufacturer": ["Random House Books for Young Readers"],
+    "MPN": ["FBA-|289756"],
+    "NumberOfItems": ["1"],
+    "NumberOfPages": ["48"],
+    "PackageDimensions": [{
+      "Height": [{
+        "_": "40",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "910",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "45",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "660",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "PackageQuantity": ["1"],
+    "PartNumber": ["FBA-|289756"],
+    "ProductGroup": ["Book"],
+    "ProductTypeName": ["ABIS_BOOK"],
+    "PublicationDate": ["2005-01-25"],
+    "Publisher": ["Random House Books for Young Readers"],
+    "ReleaseDate": ["2005-01-25"],
+    "Studio": ["Random House Books for Young Readers"],
+    "Title": ["Oh, the Pets You Can Get!: All About Our Animal Friends (Cat in the Hat's Learning Library)"]
+  }],
+  "OfferSummary": [{
+    "LowestNewPrice": [{
+      "Amount": ["354"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$3.54"]
+    }],
+    "LowestUsedPrice": [{
+      "Amount": ["10"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$0.10"]
+    }],
+    "LowestCollectiblePrice": [{
+      "Amount": ["949"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$9.49"]
+    }],
+    "TotalNew": ["62"],
+    "TotalUsed": ["115"],
+    "TotalCollectible": ["3"],
+    "TotalRefurbished": ["0"]
+  }],
+  "Offers": [{
+    "TotalOffers": ["3"],
+    "TotalOfferPages": ["1"],
+    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/037582278X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=037582278X"],
+    "Offer": [{
+      "OfferAttributes": [{
+        "Condition": ["New"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3o7pb18AafVGYZqIonqthA5RBN3He6T71bTnmRUaVcbGoXzyvvVlVczhIZNOn2ZeeA2gbB%2FcBWNw6X9QXAGdp%2F1yfDJqp1WNifbh4Z2nN4%2BExT9y7EhfErMQ%3D%3D"],
+        "Price": [{
+          "Amount": ["354"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$3.54"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["645"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$6.45"]
+        }],
+        "PercentageSaved": ["65"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Used"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3oS5vCai0uEDlSveh%2BmJdvMnMTwt1NYjTzaIh383yB5ZQd85XXJRagPapT9azbGoUWZjPiRikjBeGdx7%2FEL4eIRO1jyeda9jH7KSDtoCm%2FZFyFjrWV7QISxQ%3D%3D"],
+        "Price": [{
+          "Amount": ["10"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$0.10"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["989"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$9.89"]
+        }],
+        "PercentageSaved": ["99"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Collectible"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["9Ph46DlOCJzSlhdG6Zb3u2YjKmC%2BGg3ofQ%2Fe0MFRYh3ILNq6OLzoH7k9hN%2F0JXpXvtYWhlI7XUWNs%2BIZn%2BkpEK81YGBYR2UqPMk59CAmX6vYiSbjlF4L9jyD%2BrCpe30kGeckLiD7p59PJOs%2BllDQa6%2FtA7pPZWYl"],
+        "Price": [{
+          "Amount": ["949"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$9.49"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["50"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$0.50"]
+        }],
+        "PercentageSaved": ["5"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }]
+  }]
+}]

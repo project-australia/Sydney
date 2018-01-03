@@ -45,13 +45,24 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
 const getAuthorFromEntireLookup = (bookLookupResult) => {
   const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Author
   const bookWithAuthors = _.find(bookLookupResult, byBookAuthor)
+
+  if (!bookWithAuthors) {
+    return bookWithAuthors
+  }
+
   const authors = bookWithAuthors.ItemAttributes[0].Author
   return authors
 }
 
 const getBookEditionFromEntireLookup = (bookLookupResult) => {
+
   const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Edition
   const bookWithEdition = _.find(bookLookupResult, byBookAuthor)
+
+  if (!bookWithEdition) {
+    return bookWithEdition
+  }
+
   const edition = bookWithEdition.ItemAttributes[0].Edition[0]
   return edition
 }
@@ -59,6 +70,10 @@ const getBookEditionFromEntireLookup = (bookLookupResult) => {
 const getImagesFromEntireLookup = (bookLookupResult) => {
   const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
   const bookWithImages = _.find(bookLookupResult, byImages)
+
+  if (!bookWithImages) {
+    return bookWithImages
+  }
 
   return {
     small: bookWithImages.SmallImage[0].URL[0],
@@ -89,7 +104,7 @@ const evaluateBook = async (isbn) => {
     const images = getImagesFromEntireLookup(bookLookUp)
     const edition = getBookEditionFromEntireLookup(bookLookUp)
     const id = isbn // FIXME: Refactor this
-    const description = null //  FIXME: we need to grab this from amazon api
+    const description = undefined //  FIXME: we need to grab this from amazon api
 
     return {
       id,
