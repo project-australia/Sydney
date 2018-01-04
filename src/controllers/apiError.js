@@ -1,10 +1,21 @@
+const opbeat = require('opbeat')
+
+// TODO: Test this
+const captureError = async (msg, err, req, res) => {
+  const error = new ApiError(err, 500, 'Failed during amazon lookup')
+  res.status(error.status).json(error)
+}
+
 class ApiError extends Error {
-  constructor (...args) {
-    super(...args)
-    this.name = 'ApiError'
-    this.message = args.userMessage
-    Error.captureStackTrace(this, ApiError)
+  constructor (error, status, message) {
+    super(error)
+    opbeat.captureError(error)
+    this.status = status || 500
+    this.stackTrace = error.stack.split('\n').slice(0, 2).join('')
+    this.name = this.constructor.name
+    this.userMessage = message || error.message
+    Error.captureStackTrace(this, this.constructor)
   }
 }
 
-module.exports = { ApiError }
+module.exports = { captureError }

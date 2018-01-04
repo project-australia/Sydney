@@ -59,7 +59,6 @@ const lowestUsedPriceOf = book =>
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
 const cheapestBook = (cheapearBook, currentBook) => {
-
   // TODO: Test scenario for this rule, Maybe remove this
   if (!currentBook.OfferSummary || currentBook.OfferSummary[0].LowestUsedPrice) {
     return cheapearBook
