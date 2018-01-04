@@ -2,6 +2,11 @@ const { ServiceError } = require('./serviceError')
 const _ = require('lodash')
 const AmazonClient = require('../clients/amazon')
 
+// TODO: Test this
+const amazonLookup = async (isbn) => {
+  return AmazonClient.lookupByISBN(isbn)
+}
+
 const evaluateBook = async (isbn) => {
   const bookLookUp = await AmazonClient.lookupByISBN(isbn)
 
@@ -135,7 +140,7 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
   }
 }
 
-module.exports = { evaluateBook }
+module.exports = { evaluateBook, amazonLookup }
 
 // If rank 1 - 600, 000 on Amazon
 // buy for 25 % of lowest price on Amazon
