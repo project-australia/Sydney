@@ -2,6 +2,45 @@ const { ServiceError } = require('./serviceError')
 const _ = require('lodash')
 const AmazonClient = require('../clients/amazon')
 
+const evaluateBook = async (isbn) => {
+  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
+
+  try {
+    // FIXME: This should be a filter by paperback
+    // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
+
+    // if (filteredByEAN.length === 0) {
+    //   throw new Error('Cannot find isbn inside amazon lookup')
+    // }
+
+    const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
+    const ballardPercentage = ballardPricePercetage(bestOffer)
+    const amazonPrice = getPrice(bestOffer)
+    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
+
+    const book = bestOffer.ItemAttributes[0]
+    const title = book.Title[0]
+    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
+    const images = getImagesFromEntireLookup(bookLookUp)
+    const edition = getBookEditionFromEntireLookup(bookLookUp)
+    const id = isbn // FIXME: Refactor this
+    const description = undefined //  FIXME: we need to grab this from amazon api
+
+    return {
+      id,
+      title,
+      price,
+      images,
+      authors,
+      description,
+      edition
+    }
+  } catch (error) {
+    console.error(error)
+    throw new ServiceError(error)
+  }
+}
+
 const byEAN = isbn => lookup => {
   const { ItemAttributes } = lookup
   const thereIsEANField = () => ItemAttributes[0].EAN
@@ -9,14 +48,28 @@ const byEAN = isbn => lookup => {
   return thereIsEANField() ? isSameIsbn() : false
 }
 
+// TODO: Test scenario for this rule
 const lowestUsedPriceOf = book =>
+  book.OfferSummary && book.OfferSummary[0].LowestUsedPrice && 
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
-const cheapestBook = (cheapearBook, currentBook) =>
-  lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook) ? cheapearBook : currentBook
+const cheapestBook = (cheapearBook, currentBook) => {
 
-const getPrice = book =>
-  Number(book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(1))
+  // TODO: Test scenario for this rule, Maybe remove this
+  if (!currentBook.OfferSummary || currentBook.OfferSummary[0].LowestUsedPrice) {
+    return cheapearBook
+  }
+  return lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook) ? cheapearBook : currentBook
+}
+
+// TODO: Test scenario for this rule
+const getPrice = book => {
+  try {
+    return Number(book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(1))
+  } catch (e) {
+    return undefined
+  }
+}
 
 const ballardPricePercetage = book => {
   const salesRank = book['SalesRank'][0]
@@ -79,45 +132,6 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
     small: bookWithImages.SmallImage[0].URL[0],
     medium: bookWithImages.MediumImage[0].URL[0],
     large: bookWithImages.LargeImage[0].URL[0]
-  }
-}
-
-const evaluateBook = async (isbn) => {
-  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
-
-  try {
-    // FIXME: This should be a filter by paperback
-    // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
-
-    // if (filteredByEAN.length === 0) {
-    //   throw new Error('Cannot find isbn inside amazon lookup')
-    // }
-
-    const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
-    const ballardPercentage = ballardPricePercetage(bestOffer)
-    const amazonPrice = getPrice(bestOffer)
-    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
-
-    const book = bestOffer.ItemAttributes[0]
-    const title = book.Title[0]
-    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
-    const images = getImagesFromEntireLookup(bookLookUp)
-    const edition = getBookEditionFromEntireLookup(bookLookUp)
-    const id = isbn // FIXME: Refactor this
-    const description = undefined //  FIXME: we need to grab this from amazon api
-
-    return {
-      id,
-      title,
-      price,
-      images,
-      authors,
-      description,
-      edition
-    }
-  } catch (error) {
-    console.error(error)
-    throw new ServiceError(error)
   }
 }
 
