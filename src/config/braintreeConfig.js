@@ -2,9 +2,7 @@ const { initializeGateway } = require('../services/brainTreeService')
 
 const initializeBrainTree = async () => {
   const gatewayConfig = {
-    merchantId: process.env.BRAINTREE_MERCHANT_ID,
-    privateKey: process.env.BRAINTREE_PRIVATE_KEY,
-    publicKey: process.env.BRAINTREE_PUBLIC_KEY
+    accessToken: process.env.PAYPAL_ACCESS_TOKEN
   }
 
   await initializeGateway(gatewayConfig)
