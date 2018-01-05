@@ -55,7 +55,7 @@ const byEAN = isbn => lookup => {
 
 // TODO: Test scenario for this rule
 const lowestUsedPriceOf = book =>
-  book.OfferSummary && book.OfferSummary[0].LowestUsedPrice && 
+  book.OfferSummary && book.OfferSummary[0].LowestUsedPrice &&
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
 const cheapestBook = (cheapearBook, currentBook) => {
@@ -112,7 +112,6 @@ const getAuthorFromEntireLookup = (bookLookupResult) => {
 }
 
 const getBookEditionFromEntireLookup = (bookLookupResult) => {
-
   const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Edition
   const bookWithEdition = _.find(bookLookupResult, byBookAuthor)
 

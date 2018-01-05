@@ -39,5 +39,4 @@ describe('Amazon API Service', () => {
     const book = await evaluateBook('9781483358505')
     expect(book.price).toEqual('16.89')
   })
-
 })

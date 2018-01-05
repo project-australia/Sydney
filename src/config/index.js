@@ -1,6 +1,8 @@
+
 const opbeat = require('opbeat')
 const dotenv = require('dotenv')
 const { mongooseConfig } = require('./mongoose')
+const { initializeBrainTree } = require('./braintreeConfig')
 const { initializeFirebaseAdmin, initializeFirebase } = require('./firebase')
 
 async function initialConfigurations () {
@@ -13,6 +15,7 @@ async function initialConfigurations () {
   opbeat.start()
   await mongooseConfig(process.env.NODE_ENV)
   await initializeFirebaseAdmin()
+  await initializeBrainTree()
   await initializeFirebase()
 }
 
