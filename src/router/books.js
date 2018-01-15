@@ -1,22 +1,12 @@
 const { Router } = require('express')
 const {
-  buy,
-  find,
-  rent,
-  sell,
-  donate,
-  details,
-  evaluate
+  evaluate,
+  lookup
 } = require('../controllers/bookController')
 
 const router = Router()
 
-router.get('/', find)
-router.get('/:isbn', details)
-router.post('/:isbn/rent', rent)
-router.post('/:isbn/sell', sell)
-router.post('/:isbn/buy', buy)
-router.post('/:isbn/donate', donate)
-router.get('/:isbn/evaluation', evaluate)
+router.post('/:isbn/evaluation', evaluate)
+router.post('/:isbn/lookup', lookup)
 
 module.exports = router

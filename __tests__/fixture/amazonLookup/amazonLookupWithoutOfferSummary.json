@@ -1,0 +1,1017 @@
+[{
+  "ASIN": ["B01MAZDMXM"],
+  "DetailPageURL": ["https://www.amazon.com/First-Words-Animals-Kissed-Bundle/dp/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B01MAZDMXM"],
+  "ItemLinks": [{
+    "ItemLink": [{
+      "Description": ["Technical Details"],
+      "URL": ["https://www.amazon.com/First-Words-Animals-Kissed-Bundle/dp/tech-data/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["Add To Baby Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B01MAZDMXM&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["Add To Wedding Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B01MAZDMXM&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["Add To Wishlist"],
+      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B01MAZDMXM&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["Tell A Friend"],
+      "URL": ["https://www.amazon.com/gp/pdp/taf/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["All Customer Reviews"],
+      "URL": ["https://www.amazon.com/review/product/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }, {
+      "Description": ["All Offers"],
+      "URL": ["https://www.amazon.com/gp/offer-listing/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"]
+    }]
+  }],
+  "SalesRank": ["906624"],
+  "SmallImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL75_.jpg"],
+    "Height": [{
+      "_": "57",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "75",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "MediumImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL160_.jpg"],
+    "Height": [{
+      "_": "122",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "160",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "LargeImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL.jpg"],
+    "Height": [{
+      "_": "380",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "500",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "ImageSets": [{
+    "ImageSet": [{
+      "$": {
+        "Category": "primary"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL30_.jpg"],
+        "Height": [{
+          "_": "23",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL75_.jpg"],
+        "Height": [{
+          "_": "57",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL75_.jpg"],
+        "Height": [{
+          "_": "57",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL110_.jpg"],
+        "Height": [{
+          "_": "84",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL160_.jpg"],
+        "Height": [{
+          "_": "122",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL.jpg"],
+        "Height": [{
+          "_": "380",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }]
+  }],
+  "ItemAttributes": [{
+    "Binding": ["Product Bundle"],
+    "Brand": ["Roaring Brook Press"],
+    "ProductGroup": ["Book"],
+    "ProductTypeName": ["ABIS_BOOK"],
+    "Title": ["First 100 Words, Pout Pout Fish, If Animals Kissed Good Night, Your Baby's First Word will be DADA and On the Night You Were Born Bundle"]
+  }],
+  "OfferSummary": [{
+    "LowestNewPrice": [{
+      "Amount": ["2870"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$28.70"]
+    }],
+    "TotalNew": ["1"],
+    "TotalUsed": ["0"],
+    "TotalCollectible": ["0"],
+    "TotalRefurbished": ["0"]
+  }],
+  "Offers": [{
+    "TotalOffers": ["1"],
+    "TotalOfferPages": ["1"],
+    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/B01MAZDMXM?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01MAZDMXM"],
+    "Offer": [{
+      "OfferAttributes": [{
+        "Condition": ["New"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["CN30j4y6nsfXccoqv%2F%2FsAbyr9GvDKAr174OGeHPe5qDoZtp6awByKAQGnTv79G6gVT0tUvVskXutjt1dtD9ewYr9jmgWS%2BS4YluiXL1Tg%2BAegMzaLCCnuw%3D%3D"],
+        "Price": [{
+          "Amount": ["2870"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$28.70"]
+        }],
+        "Availability": ["Usually ships in 24 hours"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["0"],
+          "MaximumHours": ["0"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["1"]
+      }]
+    }]
+  }]
+}, {
+  "ASIN": ["0312510780"],
+  "DetailPageURL": ["https://www.amazon.com/First-100-Words-Roger-Priddy/dp/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=0312510780"],
+  "ItemLinks": [{
+    "ItemLink": [{
+      "Description": ["Technical Details"],
+      "URL": ["https://www.amazon.com/First-100-Words-Roger-Priddy/dp/tech-data/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["Add To Baby Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=0312510780&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["Add To Wedding Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=0312510780&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["Add To Wishlist"],
+      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=0312510780&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["Tell A Friend"],
+      "URL": ["https://www.amazon.com/gp/pdp/taf/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["All Customer Reviews"],
+      "URL": ["https://www.amazon.com/review/product/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }, {
+      "Description": ["All Offers"],
+      "URL": ["https://www.amazon.com/gp/offer-listing/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"]
+    }]
+  }],
+  "SalesRank": ["40"],
+  "SmallImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL75_.jpg"],
+    "Height": [{
+      "_": "75",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "61",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "MediumImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL160_.jpg"],
+    "Height": [{
+      "_": "160",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "130",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "LargeImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL.jpg"],
+    "Height": [{
+      "_": "500",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "407",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "ImageSets": [{
+    "ImageSet": [{
+      "$": {
+        "Category": "variant"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "25",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "61",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "61",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "90",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "131",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51k%2Boj-E6XL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "409",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "HiResImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/81laF6TgsCL.jpg"],
+        "Height": [{
+          "_": "1711",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "1400",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }, {
+      "$": {
+        "Category": "variant"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "22",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "56",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "82",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "120",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/41nOoMA15xL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "375",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }, {
+      "$": {
+        "Category": "primary"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "24",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "61",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "61",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "90",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "130",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51AvKQWCl%2BL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "407",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "HiResImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/71gU40iqu5L.jpg"],
+        "Height": [{
+          "_": "1230",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "1000",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }]
+  }],
+  "ItemAttributes": [{
+    "Author": ["Roger Priddy"],
+    "Binding": ["Board book"],
+    "Brand": ["Roaring Brook Press"],
+    "CatalogNumberList": [{
+      "CatalogNumberListElement": ["ML-014", "POXM-0312510780", "XM-0312510780"]
+    }],
+    "Color": ["Multi"],
+    "EAN": ["9780312510787"],
+    "EANList": [{
+      "EANListElement": ["9780312510787"]
+    }],
+    "Edition": ["Brdbk"],
+    "Feature": ["Gift Package"],
+    "IsAdultProduct": ["0"],
+    "ISBN": ["0312510780"],
+    "ItemDimensions": [{
+      "Height": [{
+        "_": "618",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "485",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "55",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "96",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "Label": ["Priddy Books"],
+    "Languages": [{
+      "Language": [{
+        "Name": ["English"],
+        "Type": ["Published"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Original Language"]
+      }, {
+        "Name": ["English"],
+        "Type": ["Unknown"]
+      }]
+    }],
+    "ListPrice": [{
+      "Amount": ["599"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$5.99"]
+    }],
+    "Manufacturer": ["Priddy Books"],
+    "ManufacturerMaximumAge": [{
+      "_": "24",
+      "$": {
+        "Units": "months"
+      }
+    }],
+    "MPN": ["9780312510787"],
+    "NumberOfItems": ["1"],
+    "NumberOfPages": ["26"],
+    "PackageDimensions": [{
+      "Height": [{
+        "_": "94",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Length": [{
+        "_": "598",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }],
+      "Weight": [{
+        "_": "35",
+        "$": {
+          "Units": "Hundredths Pounds"
+        }
+      }],
+      "Width": [{
+        "_": "496",
+        "$": {
+          "Units": "hundredths-inches"
+        }
+      }]
+    }],
+    "PackageQuantity": ["1"],
+    "PartNumber": ["9780312510787"],
+    "ProductGroup": ["Book"],
+    "ProductTypeName": ["ABIS_BOOK"],
+    "PublicationDate": ["2011-05-10"],
+    "Publisher": ["Priddy Books"],
+    "ReleaseDate": ["2011-05-10"],
+    "Size": ["1 book"],
+    "Studio": ["Priddy Books"],
+    "Title": ["First 100 Words"]
+  }],
+  "OfferSummary": [{
+    "LowestNewPrice": [{
+      "Amount": ["300"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$3.00"]
+    }],
+    "LowestUsedPrice": [{
+      "Amount": ["125"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$1.25"]
+    }],
+    "LowestCollectiblePrice": [{
+      "Amount": ["800"],
+      "CurrencyCode": ["USD"],
+      "FormattedPrice": ["$8.00"]
+    }],
+    "TotalNew": ["80"],
+    "TotalUsed": ["101"],
+    "TotalCollectible": ["3"],
+    "TotalRefurbished": ["0"]
+  }],
+  "Offers": [{
+    "TotalOffers": ["3"],
+    "TotalOfferPages": ["1"],
+    "MoreOffersUrl": ["https://www.amazon.com/gp/offer-listing/0312510780?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=0312510780"],
+    "Offer": [{
+      "OfferAttributes": [{
+        "Condition": ["New"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["CN30j4y6nsd%2BiQE2xaK13wfRbVKMw55YGGFu8qHa1YXBHmwCe%2BKvhv0rufOXBfqgfPWs37ccr4Odm6b5YlO52EkSzYMmxzhSLIfPR6Aiweg9kzDm9o2Krx5FqEZk09edpsBLWBEtyJyHyMf5NcsBdlmK7UKrGyl2"],
+        "Price": [{
+          "Amount": ["300"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$3.00"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["299"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$2.99"]
+        }],
+        "PercentageSaved": ["50"],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Used"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["CN30j4y6nsd%2BiQE2xaK13wfRbVKMw55Y148d31EtRmVUXVk%2BKhAcTCOjvF%2FtGVS8MAqJA%2FWhNUL4kkx%2BzIVwl%2F1Tlj6sfCKCGB8XU64LpwvYkm1d9Atcl0CGjAkqZeovj7a9RW6W2%2BX4stlCdYBsyYGZrDE5a%2BEV"],
+        "Price": [{
+          "Amount": ["125"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$1.25"]
+        }],
+        "AmountSaved": [{
+          "Amount": ["474"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$4.74"]
+        }],
+        "PercentageSaved": ["79"],
+        "Availability": ["Usually ships in 24 hours"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["24"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }, {
+      "OfferAttributes": [{
+        "Condition": ["Collectible"]
+      }],
+      "OfferListing": [{
+        "OfferListingId": ["CN30j4y6nsd%2BiQE2xaK13wfRbVKMw55YPJTqNuZPFdKPFn%2FZH7hxxzQYmlM45lXLPSariX6qTTqQX35uqKCDOtHex2Ai196J7moOiZCnpa%2BGqQDNU94LLGLDPkwGfdTiqUyM3KYczLv7CG8V7ScB%2FKVYSVnSBlEO"],
+        "Price": [{
+          "Amount": ["800"],
+          "CurrencyCode": ["USD"],
+          "FormattedPrice": ["$8.00"]
+        }],
+        "Availability": ["Usually ships in 1-2 business days"],
+        "AvailabilityAttributes": [{
+          "AvailabilityType": ["now"],
+          "MinimumHours": ["24"],
+          "MaximumHours": ["48"]
+        }],
+        "IsEligibleForSuperSaverShipping": ["0"],
+        "IsEligibleForPrime": ["0"]
+      }]
+    }]
+  }]
+}, {
+  "ASIN": ["B0191K3HF4"],
+  "DetailPageURL": ["https://www.amazon.com/First-100-Words-Roger-Priddy-ebook/dp/B0191K3HF4?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B0191K3HF4"],
+  "ItemLinks": [{
+    "ItemLink": [{
+      "Description": ["Technical Details"],
+      "URL": ["https://www.amazon.com/First-100-Words-Roger-Priddy-ebook/dp/tech-data/B0191K3HF4?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["Add To Baby Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B0191K3HF4&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["Add To Wedding Registry"],
+      "URL": ["https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B0191K3HF4&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["Add To Wishlist"],
+      "URL": ["https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B0191K3HF4&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["Tell A Friend"],
+      "URL": ["https://www.amazon.com/gp/pdp/taf/B0191K3HF4?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["All Customer Reviews"],
+      "URL": ["https://www.amazon.com/review/product/B0191K3HF4?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }, {
+      "Description": ["All Offers"],
+      "URL": ["https://www.amazon.com/gp/offer-listing/B0191K3HF4?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0191K3HF4"]
+    }]
+  }],
+  "SalesRank": ["48933"],
+  "SmallImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL75_.jpg"],
+    "Height": [{
+      "_": "75",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "60",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "MediumImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL160_.jpg"],
+    "Height": [{
+      "_": "160",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "129",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "LargeImage": [{
+    "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL.jpg"],
+    "Height": [{
+      "_": "500",
+      "$": {
+        "Units": "pixels"
+      }
+    }],
+    "Width": [{
+      "_": "403",
+      "$": {
+        "Units": "pixels"
+      }
+    }]
+  }],
+  "ImageSets": [{
+    "ImageSet": [{
+      "$": {
+        "Category": "primary"
+      },
+      "SwatchImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL30_.jpg"],
+        "Height": [{
+          "_": "30",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "24",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "SmallImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "60",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "ThumbnailImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL75_.jpg"],
+        "Height": [{
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "60",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "TinyImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL110_.jpg"],
+        "Height": [{
+          "_": "110",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "89",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "MediumImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL._SL160_.jpg"],
+        "Height": [{
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "129",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "LargeImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/51nF98mpx%2BL.jpg"],
+        "Height": [{
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "403",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }],
+      "HiResImage": [{
+        "URL": ["https://images-na.ssl-images-amazon.com/images/I/71%2BHUbnQnZL.jpg"],
+        "Height": [{
+          "_": "1735",
+          "$": {
+            "Units": "pixels"
+          }
+        }],
+        "Width": [{
+          "_": "1400",
+          "$": {
+            "Units": "pixels"
+          }
+        }]
+      }]
+    }]
+  }],
+  "ItemAttributes": [{
+    "Author": ["Roger Priddy"],
+    "Binding": ["Kindle Edition"],
+    "Edition": ["Brdbk"],
+    "EISBN": ["9781250107763"],
+    "Format": ["Kindle eBook"],
+    "Label": ["Priddy Books"],
+    "Languages": [{
+      "Language": [{
+        "Name": ["English"],
+        "Type": ["Published"]
+      }]
+    }],
+    "Manufacturer": ["Priddy Books"],
+    "NumberOfPages": ["26"],
+    "ProductGroup": ["eBooks"],
+    "ProductTypeName": ["ABIS_EBOOKS"],
+    "PublicationDate": ["2015-12-15"],
+    "Publisher": ["Priddy Books"],
+    "ReleaseDate": ["2015-12-15"],
+    "Studio": ["Priddy Books"],
+    "Title": ["First 100 Words"]
+  }]
+}]

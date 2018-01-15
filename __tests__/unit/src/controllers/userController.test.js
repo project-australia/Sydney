@@ -27,7 +27,6 @@ const expectedProfile = {
 }
 const userId = expectedProfile.id
 describe('Configuration controller', () => {
-
   beforeAll(() => {
     UserService.createProfile = jest.fn()
     UserService.getProfile = jest.fn()
@@ -46,7 +45,7 @@ describe('Configuration controller', () => {
   xit('should signup a user', function () {
     FirebaseService.createUserWithEmailAndPassword.mockReturnValue('IDK')
     // expect(FirebaseService.createUserWithEmailAndPassword).toHaveBeenCalledWith(requestBody)
-  });
+  })
 
   it('should create a profile for a user', async () => {
     UserService.createProfile.mockReturnValue(expectedProfile)

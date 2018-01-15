@@ -2,6 +2,50 @@ const { ServiceError } = require('./serviceError')
 const _ = require('lodash')
 const AmazonClient = require('../clients/amazon')
 
+// TODO: Test this
+const amazonLookup = async (isbn) => {
+  return AmazonClient.lookupByISBN(isbn)
+}
+
+const evaluateBook = async (isbn) => {
+  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
+
+  try {
+    // FIXME: This should be a filter by paperback
+    // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
+
+    // if (filteredByEAN.length === 0) {
+    //   throw new Error('Cannot find isbn inside amazon lookup')
+    // }
+
+    const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
+    const ballardPercentage = ballardPricePercetage(bestOffer)
+    const amazonPrice = getPrice(bestOffer)
+    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
+
+    const book = bestOffer.ItemAttributes[0]
+    const title = book.Title[0]
+    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
+    const images = getImagesFromEntireLookup(bookLookUp)
+    const edition = getBookEditionFromEntireLookup(bookLookUp)
+    const id = isbn // FIXME: Refactor this
+    const description = undefined //  FIXME: we need to grab this from amazon api
+
+    return {
+      id,
+      title,
+      price,
+      images,
+      authors,
+      description,
+      edition
+    }
+  } catch (error) {
+    console.error(error)
+    throw new ServiceError(error)
+  }
+}
+
 const byEAN = isbn => lookup => {
   const { ItemAttributes } = lookup
   const thereIsEANField = () => ItemAttributes[0].EAN
@@ -9,14 +53,27 @@ const byEAN = isbn => lookup => {
   return thereIsEANField() ? isSameIsbn() : false
 }
 
+// TODO: Test scenario for this rule
 const lowestUsedPriceOf = book =>
+  book.OfferSummary && book.OfferSummary[0].LowestUsedPrice &&
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
-const cheapestBook = (cheapearBook, currentBook) =>
-  lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook) ? cheapearBook : currentBook
+const cheapestBook = (cheapearBook, currentBook) => {
+  // TODO: Test scenario for this rule, Maybe remove this
+  if (!currentBook.OfferSummary || currentBook.OfferSummary[0].LowestUsedPrice) {
+    return cheapearBook
+  }
+  return lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook) ? cheapearBook : currentBook
+}
 
-const getPrice = book =>
-  Number(book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(1))
+// TODO: Test scenario for this rule
+const getPrice = book => {
+  try {
+    return Number(book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(1))
+  } catch (e) {
+    return undefined
+  }
+}
 
 const ballardPricePercetage = book => {
   const salesRank = book['SalesRank'][0]
@@ -45,6 +102,11 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
 const getAuthorFromEntireLookup = (bookLookupResult) => {
   const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Author
   const bookWithAuthors = _.find(bookLookupResult, byBookAuthor)
+
+  if (!bookWithAuthors) {
+    return bookWithAuthors
+  }
+
   const authors = bookWithAuthors.ItemAttributes[0].Author
   return authors
 }
@@ -52,6 +114,11 @@ const getAuthorFromEntireLookup = (bookLookupResult) => {
 const getBookEditionFromEntireLookup = (bookLookupResult) => {
   const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Edition
   const bookWithEdition = _.find(bookLookupResult, byBookAuthor)
+
+  if (!bookWithEdition) {
+    return bookWithEdition
+  }
+
   const edition = bookWithEdition.ItemAttributes[0].Edition[0]
   return edition
 }
@@ -60,6 +127,10 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
   const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
   const bookWithImages = _.find(bookLookupResult, byImages)
 
+  if (!bookWithImages) {
+    return bookWithImages
+  }
+
   return {
     small: bookWithImages.SmallImage[0].URL[0],
     medium: bookWithImages.MediumImage[0].URL[0],
@@ -67,39 +138,7 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
   }
 }
 
-const evaluateBook = async (isbn) => {
-  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
-  try {
-    const filteredByEAN = bookLookUp.filter(byEAN(isbn))
-    const bestOffer = filteredByEAN.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
-    const ballardPercentage = ballardPricePercetage(bestOffer)
-    const amazonPrice = getPrice(bestOffer)
-    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
-
-    const book = bestOffer.ItemAttributes[0]
-    const title = book.Title[0]
-    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
-    const images = getImagesFromEntireLookup(bookLookUp)
-    const edition = getBookEditionFromEntireLookup(bookLookUp)
-    const id = isbn // FIXME: Refactor this
-    const description = null //  FIXME: we need to grab this from amazon api
-
-    return {
-      id,
-      title,
-      price,
-      images,
-      authors,
-      description,
-      edition
-    }
-  } catch (error) {
-    console.error(error)
-    throw new ServiceError(error)
-  }
-}
-
-module.exports = { evaluateBook }
+module.exports = { evaluateBook, amazonLookup }
 
 // If rank 1 - 600, 000 on Amazon
 // buy for 25 % of lowest price on Amazon

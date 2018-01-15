@@ -1,71 +1,38 @@
+const { captureError } = require('./apiError')
 const EvaluationService = require('../services/bookEvaluation')
-const { ApiError } = require('./apiError')
 
-const isInvalidISBN = (isbn, res) => {
-  if (isNaN(isbn)) {
-    res.status(400).json(new ApiError({message: 'Invalid ISBN, please check it out.'})).end()
-    return true
-  }
-  return false
-}
+// FIXME: Please, remove from the code and git history, my name is on it :(
+const formatIsbn = isbn => isbn.replace(/-/, '')
+  .replace(/-/, '')
+  .replace(/-/, '')
+  .replace(/-/, '')
+  .trim()
 
-const handleControllerErrors = function (error, res) {
-  const apiErrorModel = new ApiError(error)
-  if (error.name === 'ClientError') {
-    res.status(404).json(apiErrorModel) // FIXME: just an example of semantic status code
-  } else if (error.name === 'ServiceError') {
-    res.status(400).json(apiErrorModel) // FIXME: just an example of semantic status code
-  } else {
-    res.status(500).json(apiErrorModel) // FIXME: just an example of semantic status code
+const lookup = async (req, res) => {
+  const isbn = req.params.isbn
+  const formattedIsbn = formatIsbn(isbn)
+
+  try {
+    const evaluation = await EvaluationService.amazonLookup(formattedIsbn)
+    res.status(200).json(evaluation)
+  } catch (err) {
+    return captureError('book lookup', err, req, res)
   }
-  res.end()
 }
 
 const evaluate = async (req, res) => {
-  const isbn = req.query.isbn || req.params.isbn
-
-  if (isInvalidISBN(isbn, res)) {
-    return null
-  }
+  const isbn = req.params.isbn
+  const formattedIsbn = formatIsbn(isbn)
 
   try {
-    const evaluation = await EvaluationService.evaluateBook(isbn)
+    const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
     res.status(200).json(evaluation)
-  } catch (error) {
-    handleControllerErrors(error, res)
+  } catch (err) {
+    return captureError('book evaluation', err, req, res)
   }
-}
-
-const details = async (req, res) => {
-
-}
-
-const find = async (req, res) => {
-
-}
-
-const donate = async (req, res) => {
-
-}
-
-const rent = async (req, res) => {
-
-}
-
-const sell = async (req, res) => {
-
-}
-
-const buy = async (req, res) => {
-
 }
 
 module.exports = {
-  buy,
-  find,
-  rent,
-  sell,
-  donate,
-  details,
-  evaluate
+  evaluate,
+  lookup
 }
