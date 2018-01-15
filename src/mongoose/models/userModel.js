@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
-const {parserOptions} = require('../../config/mongoose')
+const { parserOptions } = require('../../config/mongoose')
 
 const Schema = mongoose.Schema
 
 const address = {city: {type: String, lowercase: true, trim: true}, street: {type: String, lowercase: true, trim: true}, number: {type: String, lowercase: true, trim: true}, zipCode: {type: String, lowercase: true, trim: true}, state: {type: String, lowercase: true, trim: true}}
 
+// TODO: add wallet to this model
 let UserProfileSchema = new Schema({
   _id: {type: String, trim: true, unique: true},
   referId: {type: String, trim: true, unique: true},
@@ -21,6 +22,6 @@ let UserProfileSchema = new Schema({
 
 UserProfileSchema.set('toJSON', parserOptions)
 UserProfileSchema.set('toObject', parserOptions)
-const collectionName = 'UserProfile'
+const collectionName = 'userProfile'
 
 module.exports = mongoose.model(collectionName, UserProfileSchema)
