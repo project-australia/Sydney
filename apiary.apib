@@ -5,15 +5,47 @@ HOST: https://project-australia.herokuapp.com/
 
 Project Australia documentation
 
+## Health [GET /health]
++ Response 200 (application/json)
+
+        {
+          "lastCommit": {
+            "hash": "ce0cf3a",
+            "message": "Merge pull request #666 from project-australia/apiary"
+          },
+          "upTime": 0,
+          "birthTime": "January 1th 2018, 0:00:01 am"
+        }
+
 ## Payments Collection [/payments]
 
-### Generate a token [GET]
+### Generate a token [GET /payments/token]
 
 + Response 200 (application/json)
 
         {
             "token": "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJhMjZmMjEzZmM2NGU1OTlkZmI0OGFmOWU5M2JmM2QxMzVlZTA5Mzg1OTg5NTk4ZjQzZjRkOTJmOTFjMjM2YzA3fGNyZWF0ZWRfYXQ9MjAxOC0wMS0wNVQxNToyMDo0MS44Mzg1NTI2OTIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWR3cTRneGN5ZzRiNmQzanFcdTAwMjZwdWJsaWNfa2V5PXgyNmI5cm4zdzl0c25weDkiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvZHdxNGd4Y3lnNGI2ZDNqcS9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2R3cTRneGN5ZzRiNmQzanEvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tL2R3cTRneGN5ZzRiNmQzanEifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoiRnJlZWxhbmNlIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJicmFpbnRyZWVDbGllbnRJZCI6Im1hc3RlcmNsaWVudDMiLCJiaWxsaW5nQWdyZWVtZW50c0VuYWJsZWQiOnRydWUsIm1lcmNoYW50QWNjb3VudElkIjoiZnJlZWxhbmNlIiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sIm1lcmNoYW50SWQiOiJkd3E0Z3hjeWc0YjZkM2pxIiwidmVubW8iOiJvZmYifQ=="
         }
+        
+## Configuration Collection [/configurations]
+
+### Get selling configuration [GET]
+
++ Response 200 (application/json)
+
+        false
+
+### Set selling configuration [POST]
+
++ Request (application/json)
+
+        {
+            "selling": true
+        }
+
++ Response 200 (application/json)
+
+        true
 
 ## User Collection [/users]
 
@@ -21,8 +53,8 @@ Project Australia documentation
 
 + Request (application/json)
 
-        {
-        }
+            {
+            }
 
 + Response 201 (application/json)
 
@@ -54,3 +86,699 @@ Project Australia documentation
             {
                 
             }
+
+## Books Collection [/books]
+
+### Get Ballard's evaluation [POST /books/:isbn/evaluation]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "id": "9780312510787",
+                "title": "First 100 Words, Pout Pout Fish, If Animals Kissed Good Night, Your Baby's First Word will be DADA and On the Night You Were Born Bundle",
+                "price": null,
+                "images": {
+                    "small": "https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL75_.jpg",
+                    "medium": "https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL._SL160_.jpg",
+                    "large": "https://images-na.ssl-images-amazon.com/images/I/51btjLJQHwL.jpg"
+                },
+                "authors": ["Roger Priddy"],
+                "edition": "Brdbk"
+            }
+
+### Get Amazon item lookup [POST /books/:isbn/lookup]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            [
+              {
+                "ASIN": [
+                  "148335850X"
+                ],
+                "DetailPageURL": [
+                  "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=148335850X"
+                ],
+                "ItemLinks": [
+                  {
+                    "ItemLink": [
+                      {
+                        "Description": [
+                          "Technical Details"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications/dp/tech-data/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "Add To Baby Registry"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "Add To Wedding Registry"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "Add To Wishlist"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=148335850X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "Tell A Friend"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/gp/pdp/taf/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "All Customer Reviews"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/review/product/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      },
+                      {
+                        "Description": [
+                          "All Offers"
+                        ],
+                        "URL": [
+                          "https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "SalesRank": [
+                  "560951"
+                ],
+                "SmallImage": [
+                  {
+                    "URL": [
+                      "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+                    ],
+                    "Height": [
+                      {
+                        "_": "75",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ],
+                    "Width": [
+                      {
+                        "_": "58",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "MediumImage": [
+                  {
+                    "URL": [
+                      "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL160_.jpg"
+                    ],
+                    "Height": [
+                      {
+                        "_": "160",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ],
+                    "Width": [
+                      {
+                        "_": "124",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "LargeImage": [
+                  {
+                    "URL": [
+                      "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL.jpg"
+                    ],
+                    "Height": [
+                      {
+                        "_": "500",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ],
+                    "Width": [
+                      {
+                        "_": "387",
+                        "$": {
+                          "Units": "pixels"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "ImageSets": [
+                  {
+                    "ImageSet": [
+                      {
+                        "$": {
+                          "Category": "primary"
+                        },
+                        "SwatchImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL30_.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "30",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "23",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "SmallImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "75",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "58",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "ThumbnailImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL75_.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "75",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "58",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "TinyImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL110_.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "110",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "85",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "MediumImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL._SL160_.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "160",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "124",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "LargeImage": [
+                          {
+                            "URL": [
+                              "https://images-na.ssl-images-amazon.com/images/I/51uSvYiXgyL.jpg"
+                            ],
+                            "Height": [
+                              {
+                                "_": "500",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ],
+                            "Width": [
+                              {
+                                "_": "387",
+                                "$": {
+                                  "Units": "pixels"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "ItemAttributes": [
+                  {
+                    "Author": [
+                      "Robert N. Lussier",
+                      "John R. Hendon"
+                    ],
+                    "Binding": [
+                      "Paperback"
+                    ],
+                    "Brand": [
+                      "Sage Publications Ltd"
+                    ],
+                    "EAN": [
+                      "9781483358505"
+                    ],
+                    "EANList": [
+                      {
+                        "EANListElement": [
+                          "9781483358505"
+                        ]
+                      }
+                    ],
+                    "Edition": [
+                      "1"
+                    ],
+                    "Feature": [
+                      "Sage Publications Ltd"
+                    ],
+                    "IsAdultProduct": [
+                      "0"
+                    ],
+                    "ISBN": [
+                      "148335850X"
+                    ],
+                    "ItemDimensions": [
+                      {
+                        "Height": [
+                          {
+                            "_": "1050",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ],
+                        "Length": [
+                          {
+                            "_": "825",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ],
+                        "Weight": [
+                          {
+                            "_": "0",
+                            "$": {
+                              "Units": "Hundredths Pounds"
+                            }
+                          }
+                        ],
+                        "Width": [
+                          {
+                            "_": "50",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "Label": [
+                      "SAGE Publications, Inc"
+                    ],
+                    "Languages": [
+                      {
+                        "Language": [
+                          {
+                            "Name": [
+                              "English"
+                            ],
+                            "Type": [
+                              "Published"
+                            ]
+                          },
+                          {
+                            "Name": [
+                              "English"
+                            ],
+                            "Type": [
+                              "Original Language"
+                            ]
+                          },
+                          {
+                            "Name": [
+                              "English"
+                            ],
+                            "Type": [
+                              "Unknown"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "ListPrice": [
+                      {
+                        "Amount": [
+                          "10300"
+                        ],
+                        "CurrencyCode": [
+                          "USD"
+                        ],
+                        "FormattedPrice": [
+                          "$103.00"
+                        ]
+                      }
+                    ],
+                    "Manufacturer": [
+                      "SAGE Publications, Inc"
+                    ],
+                    "NumberOfItems": [
+                      "1"
+                    ],
+                    "NumberOfPages": [
+                      "440"
+                    ],
+                    "PackageDimensions": [
+                      {
+                        "Height": [
+                          {
+                            "_": "73",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ],
+                        "Length": [
+                          {
+                            "_": "843",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ],
+                        "Weight": [
+                          {
+                            "_": "79",
+                            "$": {
+                              "Units": "Hundredths Pounds"
+                            }
+                          }
+                        ],
+                        "Width": [
+                          {
+                            "_": "585",
+                            "$": {
+                              "Units": "hundredths-inches"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "PackageQuantity": [
+                      "3"
+                    ],
+                    "ProductGroup": [
+                      "Book"
+                    ],
+                    "ProductTypeName": [
+                      "ABIS_BOOK"
+                    ],
+                    "PublicationDate": [
+                      "2016-01-22"
+                    ],
+                    "Publisher": [
+                      "SAGE Publications, Inc"
+                    ],
+                    "Studio": [
+                      "SAGE Publications, Inc"
+                    ],
+                    "Title": [
+                      "Fundamentals of Human Resource Management: Functions, Applications, Skill Development"
+                    ]
+                  }
+                ],
+                "OfferSummary": [
+                  {
+                    "LowestNewPrice": [
+                      {
+                        "Amount": [
+                          "7110"
+                        ],
+                        "CurrencyCode": [
+                          "USD"
+                        ],
+                        "FormattedPrice": [
+                          "$71.10"
+                        ]
+                      }
+                    ],
+                    "LowestUsedPrice": [
+                      {
+                        "Amount": [
+                          "6756"
+                        ],
+                        "CurrencyCode": [
+                          "USD"
+                        ],
+                        "FormattedPrice": [
+                          "$67.56"
+                        ]
+                      }
+                    ],
+                    "TotalNew": [
+                      "20"
+                    ],
+                    "TotalUsed": [
+                      "25"
+                    ],
+                    "TotalCollectible": [
+                      "0"
+                    ],
+                    "TotalRefurbished": [
+                      "0"
+                    ]
+                  }
+                ],
+                "Offers": [
+                  {
+                    "TotalOffers": [
+                      "2"
+                    ],
+                    "TotalOfferPages": [
+                      "1"
+                    ],
+                    "MoreOffersUrl": [
+                      "https://www.amazon.com/gp/offer-listing/148335850X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=148335850X"
+                    ],
+                    "Offer": [
+                      {
+                        "OfferAttributes": [
+                          {
+                            "Condition": [
+                              "New"
+                            ]
+                          }
+                        ],
+                        "OfferListing": [
+                          {
+                            "OfferListingId": [
+                              "VVyIz0o0y8GEEqfD6m74UW%2FgDx91gFOXiXJko%2FJtSBH%2F3RO7aG5bS%2Bxz8YkAIuGAhY4S8OaFbZJbddx60jLJ8HCp2kZQ03xFvmkXRPzoFyq3OMg1hNHqIcAsQkXFY2Gc5%2FGoWA17V46TJk%2FDZrqK%2Fw%3D%3D"
+                            ],
+                            "Price": [
+                              {
+                                "Amount": [
+                                  "7110"
+                                ],
+                                "CurrencyCode": [
+                                  "USD"
+                                ],
+                                "FormattedPrice": [
+                                  "$71.10"
+                                ]
+                              }
+                            ],
+                            "AmountSaved": [
+                              {
+                                "Amount": [
+                                  "3190"
+                                ],
+                                "CurrencyCode": [
+                                  "USD"
+                                ],
+                                "FormattedPrice": [
+                                  "$31.90"
+                                ]
+                              }
+                            ],
+                            "PercentageSaved": [
+                              "31"
+                            ],
+                            "Availability": [
+                              "Usually ships in 24 hours"
+                            ],
+                            "AvailabilityAttributes": [
+                              {
+                                "AvailabilityType": [
+                                  "now"
+                                ],
+                                "MinimumHours": [
+                                  "24"
+                                ],
+                                "MaximumHours": [
+                                  "24"
+                                ]
+                              }
+                            ],
+                            "IsEligibleForSuperSaverShipping": [
+                              "0"
+                            ],
+                            "IsEligibleForPrime": [
+                              "0"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "OfferAttributes": [
+                          {
+                            "Condition": [
+                              "Used"
+                            ]
+                          }
+                        ],
+                        "OfferListing": [
+                          {
+                            "OfferListingId": [
+                              "VVyIz0o0y8GEEqfD6m74UW%2FgDx91gFOXYmCRw3O7eGGbN8zZj6d14Qj2KMwd%2F7mjIrXU5f1JPcOStVvIhGWuAVUKLGq5D9CnKDQKOba3u%2BFVOKt6DwWljgBN9SRiCG7DNSq6Y%2BorUWjqBLiVWUJIXA%3D%3D"
+                            ],
+                            "Price": [
+                              {
+                                "Amount": [
+                                  "6756"
+                                ],
+                                "CurrencyCode": [
+                                  "USD"
+                                ],
+                                "FormattedPrice": [
+                                  "$67.56"
+                                ]
+                              }
+                            ],
+                            "AmountSaved": [
+                              {
+                                "Amount": [
+                                  "3544"
+                                ],
+                                "CurrencyCode": [
+                                  "USD"
+                                ],
+                                "FormattedPrice": [
+                                  "$35.44"
+                                ]
+                              }
+                            ],
+                            "PercentageSaved": [
+                              "34"
+                            ],
+                            "Availability": [
+                              "Usually ships in 1-2 business days"
+                            ],
+                            "AvailabilityAttributes": [
+                              {
+                                "AvailabilityType": [
+                                  "now"
+                                ],
+                                "MinimumHours": [
+                                  "24"
+                                ],
+                                "MaximumHours": [
+                                  "48"
+                                ]
+                              }
+                            ],
+                            "IsEligibleForSuperSaverShipping": [
+                              "0"
+                            ],
+                            "IsEligibleForPrime": [
+                              "0"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
