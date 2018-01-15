@@ -18,10 +18,12 @@ let BookSchema = new Schema({
   isbn: {type: String, trim: true, lowercase: true},
   edition: {type: String, trim: true, lowercase: true},
   images
-})
+}, {timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }}
+)
 
 BookSchema.set('toJSON', parserOptions)
 BookSchema.set('toObject', parserOptions)
-const collectionName = 'books'
+const bookCollection = 'books'
 
-module.exports = mongoose.model(collectionName, BookSchema)
+module.exports = mongoose.model(bookCollection, BookSchema)
+exports.bookCollection = bookCollection

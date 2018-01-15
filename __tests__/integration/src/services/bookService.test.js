@@ -1,7 +1,7 @@
 import { saveBook, eraseCollection } from '../../../../src/services/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
-const aBook = {
+export const aBook = {
   sellingPrice: 15.5,
   buyingPrice: 13.5,
   title: 'O Capital',
@@ -15,7 +15,7 @@ const aBook = {
   }
 }
 
-describe('User profile integration tests', () => {
+describe('Book integration tests', () => {
   beforeAll(async () => {
     await connectDB()
   })

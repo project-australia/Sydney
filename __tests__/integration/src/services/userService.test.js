@@ -2,7 +2,7 @@ import {createProfile, eraseCollection, findById, mapToMongoose} from '../../../
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
-const userProfile = {
+export const userProfile = {
   id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
   referredBy: 'DUDUZINHO',
   name: 'TALHATE',

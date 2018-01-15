@@ -22,6 +22,7 @@ let UserProfileSchema = new Schema({
 
 UserProfileSchema.set('toJSON', parserOptions)
 UserProfileSchema.set('toObject', parserOptions)
-const collectionName = 'userProfile'
+const userCollection = 'users'
 
-module.exports = mongoose.model(collectionName, UserProfileSchema)
+module.exports = mongoose.model(userCollection, UserProfileSchema)
+exports.userCollection = userCollection
