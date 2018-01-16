@@ -17,7 +17,8 @@ let BookSchema = new Schema({
   authors: [{type: String, lowercase: true, trim: true}],
   isbn: {type: String, trim: true, lowercase: true},
   edition: {type: String, trim: true, lowercase: true},
-  images
+  images,
+  bookCondition: {type: String, enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New']}
 }, {timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }}
 )
 

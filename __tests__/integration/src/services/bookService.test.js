@@ -12,7 +12,8 @@ export const aBook = {
     small: 'www.yyy.xxx',
     medium: 'www.aaa.com',
     large: 'www.bbb.io'
-  }
+  },
+  bookCondition: 'Used – Acceptable'
 }
 
 describe('Book integration tests', () => {
@@ -33,5 +34,6 @@ describe('Book integration tests', () => {
     expect(savedbook.id).toBeDefined()
     expect(savedbook.status).toEqual('UNAVAILABLE')
     expect(savedbook.images).toEqual(aBook.images)
+    expect(savedbook.bookCondition).toEqual(aBook.bookCondition)
   })
 })

@@ -24,6 +24,8 @@ let OrderSchema = new Schema({
   },
   items: [{type: Schema.ObjectId, ref: bookCollection}],
   shippingAdress: address
+}, {
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
 })
 
 OrderSchema.set('toJSON', parserOptions)
