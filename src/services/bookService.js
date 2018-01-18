@@ -12,7 +12,19 @@ async function eraseCollection (areYouSure) {
   }
 }
 
+async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
+  const searchParamLowerCase = searchParam.toLowerCase()
+  return BookModel.find({
+    $or: [
+      { isbn: searchParam },
+      { title: searchParamLowerCase },
+      { authors: { '$in': [ searchParamLowerCase ] } }
+    ]
+  }).exec()
+}
+
 module.exports = {
   saveBook,
-  eraseCollection
+  eraseCollection,
+  findBooksByAuthorOrIsnbOrTitle
 }
