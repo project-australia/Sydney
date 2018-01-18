@@ -1,4 +1,4 @@
-import { saveBook, eraseCollection } from '../../../../src/services/bookService'
+import { saveBook, eraseCollection, findBooksByAuthorOrIsnbOrTitle } from '../../../../src/services/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 export const aBook = {
@@ -14,6 +14,11 @@ export const aBook = {
     large: 'www.bbb.io'
   },
   bookCondition: 'Used – Acceptable'
+}
+const searchParam = {
+  title: 'O Capital',
+  author: 'Karl Max',
+  isbn: '1234567890'
 }
 
 describe('Book integration tests', () => {
@@ -35,5 +40,17 @@ describe('Book integration tests', () => {
     expect(savedbook.status).toEqual('UNAVAILABLE')
     expect(savedbook.images).toEqual(aBook.images)
     expect(savedbook.bookCondition).toEqual(aBook.bookCondition)
+  })
+
+  it('should find a books for isbn, author or name', async () => {
+    const savedbookForSearch = await saveBook(aBook)
+    const searchIsbn = await findBooksByAuthorOrIsnbOrTitle(searchParam.isbn)
+    const searchAuthor = await findBooksByAuthorOrIsnbOrTitle(searchParam.author)
+    const searchTitle = await findBooksByAuthorOrIsnbOrTitle(searchParam.title)
+
+    expect(savedbookForSearch.id).toBeDefined()
+    expect(searchIsbn[0].isbn).toEqual(searchParam.isbn)
+    expect(searchAuthor[0].authors).toEqual(expect.arrayContaining([searchParam.author.toLowerCase()]))
+    expect(searchTitle[0].title).toEqual(searchParam.title.toLowerCase())
   })
 })
