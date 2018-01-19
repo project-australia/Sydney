@@ -15,6 +15,7 @@ export const aBook = {
   },
   bookCondition: 'Used – Acceptable'
 }
+
 const searchParam = {
   title: 'O Capital',
   author: 'Karl Max',
@@ -38,6 +39,7 @@ describe('Book integration tests', () => {
     const savedbook = await saveBook(aBook)
     expect(savedbook.id).toBeDefined()
     expect(savedbook.status).toEqual('UNAVAILABLE')
+    expect(savedbook.featured).toBeFalsy()
     expect(savedbook.images).toEqual(aBook.images)
     expect(savedbook.bookCondition).toEqual(aBook.bookCondition)
   })
