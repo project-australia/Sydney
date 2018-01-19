@@ -1,6 +1,10 @@
 const { captureError } = require('./apiError')
 const EvaluationService = require('../services/bookEvaluation')
-const { findBooksByAuthorOrIsnbOrTitle, saveBook } = require('../services/bookService')
+const {
+  findBooksByAuthorOrIsnbOrTitle,
+  saveBook,
+  findRecentlyAddedBooks,
+  findFeaturedBooks } = require('../services/bookService')
 // FIXME: Please, remove from the code and git history, my name is on it :(
 const formatIsbn = isbn => isbn.replace(/-/, '')
   .replace(/-/, '')
@@ -52,9 +56,29 @@ const addNewBooks = async (req, res) => {
   }
 }
 
+const getFeaturedBooks = async (req, res) => {
+  try {
+    const featuredBooks = await findFeaturedBooks()
+    res.status(200).json(featuredBooks)
+  } catch (err) {
+    return captureError('error get featured books', err, req, res)
+  }
+}
+
+const getRecentlyAddedBooks = async (req, res) => {
+  try {
+    const recentlyAddedbooks = await findRecentlyAddedBooks()
+    res.status(200).json(recentlyAddedbooks)
+  } catch (err) {
+    return captureError('error get recently added books', err, req, res)
+  }
+}
+
 module.exports = {
   evaluate,
   lookup,
   findBookByParams,
-  addNewBooks
+  addNewBooks,
+  getFeaturedBooks,
+  getRecentlyAddedBooks
 }

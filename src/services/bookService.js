@@ -23,8 +23,18 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
   }).exec()
 }
 
+async function findRecentlyAddedBooks () {
+  return BookModel.find({}).sort({'createdAt': -1}).limit(20).exec()
+}
+
+async function findFeaturedBooks () {
+  return BookModel.find({ featured: true }).sort({'updatedAt': -1}).exec()
+}
+
 module.exports = {
   saveBook,
   eraseCollection,
-  findBooksByAuthorOrIsnbOrTitle
+  findBooksByAuthorOrIsnbOrTitle,
+  findRecentlyAddedBooks,
+  findFeaturedBooks
 }
