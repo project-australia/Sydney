@@ -67,7 +67,7 @@ describe('Book integration tests', () => {
     }
     const recentlyBooks = await findRecentlyAddedBooks()
     expect(recentlyBooks[0].isbn).toEqual(searchParam.isbn)
-    expect(recentlyBooks.length).toBeLessThan(21)
+    expect(recentlyBooks).toHaveLength(20)
   })
 
   it('should return all featured books', async () => {
@@ -77,6 +77,6 @@ describe('Book integration tests', () => {
       await saveBook(bookFeaturedTruthy)
     }
     const recentlyBooks = await findFeaturedBooks()
-    expect(recentlyBooks[0].featured).toBeTruthy()
+    expect(recentlyBooks).toHaveLength(5)
   })
 })
