@@ -2,6 +2,12 @@ const { captureError } = require('./apiError')
 const UserService = require('../services/userService')
 const FireBaseService = require('../services/firebase')
 
+const firebaseErrors = {
+  'auth/email-already-in-use': 409,
+  'auth/weak-password': 400,
+  'auth/invalid-email': 400
+}
+
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
@@ -26,13 +32,11 @@ const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
     const fireBaseUser = await FireBaseService.createUserWithEmailAndPassword(email, password)
-
-    // If you want create profile just after signin-up, uncomment code below
-    // req.body.id = fireBaseUser.uid
-    // return createProfile(req, res)
-    res.status(201).json(fireBaseUser)
+    req.body.id = fireBaseUser.uid
+    return createProfile(req, res)
   } catch (err) {
-    return captureError('Signing up user', err, req, res)
+    const { code, message } = err
+    return captureError(message, err, req, res, firebaseErrors[code])
   }
 }
 

@@ -24,7 +24,6 @@ async function createUserWithEmailAndPassword (email, password) {
     await sendEmailVerification(user)
     return user
   } catch (error) {
-    console.log(error)
     throw new ServiceError(error)
   }
 }
