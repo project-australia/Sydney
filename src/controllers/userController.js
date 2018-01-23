@@ -2,6 +2,11 @@ const { captureError } = require('./apiError')
 const UserService = require('../services/userService')
 const FireBaseService = require('../services/firebase')
 
+const firebaseErrors = {
+  'auth/email-already-in-use': 409,
+  'auth/weak-password': 400
+}
+
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
@@ -29,7 +34,8 @@ const signUp = async (req, res) => {
     req.body.id = fireBaseUser.uid
     return createProfile(req, res)
   } catch (err) {
-    return captureError('Signing up user', err, req, res)
+    const { code, message } = err
+    return captureError(message, err, req, res, firebaseErrors[code])
   }
 }
 

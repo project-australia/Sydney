@@ -94,6 +94,28 @@ Project Australia documentation
             	"id": "usDg1ay6wHhz360WY0JKubeMPTR2"
             }
 
++ Response 409 (application/json)
+
+    + Body
+
+            {
+            	"status": 409,
+            	"stackTrace": "ServiceError: The email address is already in use by another account.    at Object.createUserWithEmailAndPassword (/Users/eduardomoroni/projects/project-australia/Sydney/src/services/firebase.js:27:11)",
+            	"name": "ApiError",
+            	"userMessage": "The email address is already in use by another account."
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+            	"status": 400,
+            	"stackTrace": "ServiceError: Password should be at least 6 characters    at Object.createUserWithEmailAndPassword (/Users/eduardomoroni/projects/project-australia/Sydney/src/services/firebase.js:27:11)",
+            	"name": "ApiError",
+            	"userMessage": "Password should be at least 6 characters"
+            }
+
 ### Retrieve User Profile [GET /users/:id/profile]
 
 + Response 200 (application/json)
