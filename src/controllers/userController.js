@@ -4,7 +4,8 @@ const FireBaseService = require('../services/firebase')
 
 const firebaseErrors = {
   'auth/email-already-in-use': 409,
-  'auth/weak-password': 400
+  'auth/weak-password': 400,
+  'auth/invalid-email': 400
 }
 
 const getProfile = async (req, res) => {

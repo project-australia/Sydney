@@ -10,6 +10,7 @@ class ApiError extends Error {
   constructor (error, status, message) {
     super(error)
     opbeat.captureError(error)
+    this.rootCause = error
     this.status = status || 500
     this.stackTrace = error.stack.split('\n').slice(0, 2).join('')
     this.name = this.constructor.name
