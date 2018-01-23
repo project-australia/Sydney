@@ -43,7 +43,7 @@ describe('Configuration controller', () => {
   })
 
   xit('should signup a user', function () {
-    FirebaseService.createUserWithEmailAndPassword.mockReturnValue({id: 'testId'})
+    FirebaseService.createUserWithEmailAndPassword.mockReturnValue('IDK')
     // expect(FirebaseService.createUserWithEmailAndPassword).toHaveBeenCalledWith(requestBody)
   })
 

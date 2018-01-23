@@ -7,7 +7,7 @@ const bookUnderSalesRankThreshold = 0
 
 describe('Amazon API Service', () => {
   beforeAll(() => {
-    AmazonClient.lookupByISBN = jest.avfn()
+    AmazonClient.lookupByISBN = jest.fn()
   })
 
   it('should return all book\'s information', async () => {
