@@ -2,7 +2,7 @@ const opbeat = require('opbeat')
 
 // TODO: Test this
 const captureError = async (msg, err, req, res) => {
-  const error = new ApiError(err, 500, 'Failed during amazon lookup')
+  const error = new ApiError(err, 500, msg)
   res.status(error.status).json(error)
 }
 

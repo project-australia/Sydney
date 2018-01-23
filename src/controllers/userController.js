@@ -26,11 +26,8 @@ const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
     const fireBaseUser = await FireBaseService.createUserWithEmailAndPassword(email, password)
-
-    // If you want create profile just after signin-up, uncomment code below
-    // req.body.id = fireBaseUser.uid
-    // return createProfile(req, res)
-    res.status(201).json(fireBaseUser)
+    req.body.id = fireBaseUser.uid
+    return createProfile(req, res)
   } catch (err) {
     return captureError('Signing up user', err, req, res)
   }

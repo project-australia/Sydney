@@ -54,6 +54,20 @@ Project Australia documentation
 + Request (application/json)
 
             {
+                "referredBy": "DUDUZINHO",
+                "name": "TALHATE",
+                "email": "tasdasd67@yahoo.com",
+            		"password": "secure password",
+                "birthDate": "2017-12-27T17:00:04.376Z",
+                "telephone": "1234567890",
+                "school": "School of Life",
+                "address": {
+                "city": "Viana",
+                    "street": "fighter",
+                    "number": "666",
+                    "zipCode": "Zip",
+                    "state": "ES"
+            	}
             }
 
 + Response 201 (application/json)
@@ -61,7 +75,23 @@ Project Australia documentation
     + Body
 
             {
-                
+            	"referredBy": "DUDUZINHO",
+            	"name": "talhate",
+            	"email": "tasdasd67@yahoo.com",
+            	"birthDate": "2017-12-27T17:00:04.376Z",
+            	"telephone": "1234567890",
+            	"school": "school of life",
+            	"referId": "tasdasd67@yahoo.com",
+            	"address": {
+            		"city": "viana",
+            		"street": "fighter",
+            		"number": "666",
+            		"zipCode": "zip",
+            		"state": "es"
+            	},
+            	"club": "NONE",
+            	"role": "USER",
+            	"id": "usDg1ay6wHhz360WY0JKubeMPTR2"
             }
 
 ### Retrieve User Profile [GET /users/:id/profile]
