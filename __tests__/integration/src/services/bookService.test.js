@@ -1,4 +1,9 @@
-import { saveBook, eraseCollection, findBooksByAuthorOrIsnbOrTitle } from '../../../../src/services/bookService'
+import {
+  saveBook,
+  eraseCollection,
+  findBooksByAuthorOrIsnbOrTitle,
+  findRecentlyAddedBooks,
+  findFeaturedBooks } from '../../../../src/services/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 export const aBook = {
@@ -15,6 +20,7 @@ export const aBook = {
   },
   bookCondition: 'Used – Acceptable'
 }
+
 const searchParam = {
   title: 'O Capital',
   author: 'Karl Max',
@@ -38,6 +44,7 @@ describe('Book integration tests', () => {
     const savedbook = await saveBook(aBook)
     expect(savedbook.id).toBeDefined()
     expect(savedbook.status).toEqual('UNAVAILABLE')
+    expect(savedbook.featured).toBeFalsy()
     expect(savedbook.images).toEqual(aBook.images)
     expect(savedbook.bookCondition).toEqual(aBook.bookCondition)
   })
@@ -52,5 +59,24 @@ describe('Book integration tests', () => {
     expect(searchIsbn[0].isbn).toEqual(searchParam.isbn)
     expect(searchAuthor[0].authors).toEqual(expect.arrayContaining([searchParam.author.toLowerCase()]))
     expect(searchTitle[0].title).toEqual(searchParam.title.toLowerCase())
+  })
+
+  it('should return 20 recently added books', async () => {
+    for (let i = 0; i < 22; i++) {
+      await saveBook(aBook)
+    }
+    const recentlyBooks = await findRecentlyAddedBooks()
+    expect(recentlyBooks[0].isbn).toEqual(searchParam.isbn)
+    expect(recentlyBooks).toHaveLength(20)
+  })
+
+  it('should return all featured books', async () => {
+    for (let i = 0; i < 5; i++) {
+      const bookFeaturedTruthy = aBook
+      bookFeaturedTruthy.featured = true
+      await saveBook(bookFeaturedTruthy)
+    }
+    const recentlyBooks = await findFeaturedBooks()
+    expect(recentlyBooks).toHaveLength(5)
   })
 })
