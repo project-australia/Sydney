@@ -19,7 +19,13 @@ const getProfile = async (req, res) => {
 }
 
 const createProfile = async (req, res) => {
-  const { body } = req
+  const { body, params } = req
+  const id = params.id || body.id
+
+  if (!id) {
+    return captureError('Creating a profile without passing an ID', null, req, res, 400)
+  }
+
   try {
     const newProfile = await UserService.createProfile(body)
     res.status(201).json(newProfile)
