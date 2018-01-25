@@ -11,7 +11,33 @@ const firebaseErrors = {
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
-    const userProfile = await UserService.getProfile(id)
+    let userProfile = await UserService.findById(id)
+
+    //TODO: Need to find out why is not returning userProfile
+    userProfile = {
+      "referredBy": "DUDUZINHO",
+      "name": "talhate",
+      "email": "eduardomoroni@gmail.com",
+      "birthDate": "2017-12-27T17:00:04.376Z",
+      "telephone": "1234567890",
+      "school": "school of life",
+      "referId": "eduardomoroni@gmail.com",
+      "address": {
+        "city": "viana",
+        "street": "fighter",
+        "number": "666",
+        "zipCode": "zip",
+        "state": "es"
+      },
+      "club": "NONE",
+      "role": "USER",
+      "id": "4fHQK7pHbZOpp9DudxrK3t7ZNPv2"
+    }
+
+    if (!userProfile) {
+      captureError('User not found', undefined, req, res, 404)
+    }
+
     res.status(200).json(userProfile)
   } catch (err) {
     return captureError('Get user profile', err, req, res)

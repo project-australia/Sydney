@@ -1,8 +1,8 @@
 function notFound (req, res, next) {
-  let err = new Error('Not Found')
-  err.status = 404
-  res.json('not found')
-  next(err)
+  let error = new Error('Route not found')
+  error.status = 404
+  res.status(error.status).json(error)
+  next(error)
 }
 
 module.exports = { notFound }
