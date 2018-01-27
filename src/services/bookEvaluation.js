@@ -25,11 +25,12 @@ const evaluateBook = async (isbn) => {
 
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
-    const authors = book.Author ? book.Author[0] : getAuthorFromEntireLookup(bookLookUp)
+    const authors = book.Author ? book.Author : getAuthorFromEntireLookup(bookLookUp)
     const images = getImagesFromEntireLookup(bookLookUp)
     const edition = getBookEditionFromEntireLookup(bookLookUp)
     const id = isbn // FIXME: Refactor this
     const description = undefined //  FIXME: we need to grab this from amazon api
+    const dimensions = getBookDimensionsFromEntireLookup(bookLookUp)
 
     return {
       id,
@@ -38,7 +39,8 @@ const evaluateBook = async (isbn) => {
       images,
       authors,
       description,
-      edition
+      edition,
+      dimensions
     }
   } catch (error) {
     console.error(error)
@@ -123,6 +125,23 @@ const getBookEditionFromEntireLookup = (bookLookupResult) => {
   return edition
 }
 
+const getBookDimensionsFromEntireLookup = (bookLookupResult) => {
+  const byDimensions = book => book.ItemAttributes && book.ItemAttributes[0].ItemDimensions
+  const bookWithDimensions = _.find(bookLookupResult, byDimensions)
+
+  if (!bookWithDimensions) {
+    return bookWithDimensions
+  }
+
+  const dimensions = bookWithDimensions.ItemAttributes[0].ItemDimensions[0]
+  return {
+    height: parseFloat(dimensions.Height[0]['_']) / 100,
+    length: parseFloat(dimensions.Length[0]['_']) / 100,
+    width: parseFloat(dimensions.Width[0]['_']) / 100,
+    weight: parseFloat(dimensions.Weight[0]['_']) / 100
+  }
+}
+
 const getImagesFromEntireLookup = (bookLookupResult) => {
   const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
   const bookWithImages = _.find(bookLookupResult, byImages)
@@ -139,30 +158,3 @@ const getImagesFromEntireLookup = (bookLookupResult) => {
 }
 
 module.exports = { evaluateBook, amazonLookup }
-
-// If rank 1 - 600, 000 on Amazon
-// buy for 25 % of lowest price on Amazon
-// If rank 600, 001 - 900, 000 on Amazon
-// buy for 20 % of lowest price on Amazon
-
-// After a books is scanned, a non - member will see
-// For example:
-// For book 9781483358505 Fundamentals of Human Resource Management,
-// we are buying it for $18.28(25 % of current lowest price of 69.14 + 3.98 shipping)
-// the price of the book($18.28)
-// It should also show the 10 % More Club amount of $20.11 with the invitation to sign up
-
-// After a books is scanned, a 10 % member will see
-// For example:
-// For book 9781483358505 Fundamentals of Human Resource Management we are buying it for $18.28(25 % of current lowest price of 69.14 + 3.98 shipping)
-// the price of the book($18.28)
-// It should also show the 10 % More Club amount of $20.11
-// An invitation to 20 % More Club should say something like
-// Get More for yours books here’s how
-
-// After a books is scanned, a 20 % member will see
-// For example:
-// For book 9781483358505 Fundamentals of Human Resource Management we are buying it for $18.28(25 % of current lowest price of 69.14 + 3.98 shipping)
-// the price of the book($18.28)
-// It should also show the 20 % More Club amount of $21.94
-// It should also show the invitation to sign up to be a rep
