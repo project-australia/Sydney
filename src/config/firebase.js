@@ -16,24 +16,34 @@ const getServiceAccount = () => ({
   client_x509_cert_url: process.env.CLIENT_X509_CERT_URL || 'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-6lgtz%40testing-firebase-env.iam.gserviceaccount.com'
 })
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyD6tp9IzTlBucVCnlMnxEJNeEdE1KQ-lEM',
-  authDomain: 'testing-firebase-env.firebaseapp.com',
-  databaseURL: 'https://testing-firebase-env.firebaseio.com',
-  storageBucket: '',
-  messagingSenderId: '1088175970844',
-  projectId: 'testing-firebase-env'
-}
+const firebaseConfig = () => (
+  const {
+    FIREBASE_API_KEY,
+    FIREBASE_AUTH_DOMAIN,
+    FIREBASE_DATABASE_URL,
+    FIREBASE_PROJECT_ID,
+    FIREBASE_PROJECT_BUCKET,
+    FIREBASE_MESSAGIN_SENDER_ID
+  } = process.env
+
+  return {
+  apiKey: FIREBASE_API_KEY || 'AIzaSyD6tp9IzTlBucVCnlMnxEJNeEdE1KQ-lEM',
+  authDomain: FIREBASE_AUTH_DOMAIN || 'testing-firebase-env.firebaseapp.com',
+  databaseURL: FIREBASE_DATABASE_URL || 'https://testing-firebase-env.firebaseio.com',
+  storageBucket: FIREBASE_PROJECT_BUCKET || 'testing-firebase-env.appspot.com',
+  messagingSenderId: FIREBASE_MESSAGIN_SENDER_ID || '1088175970844',
+  projectId: FIREBASE_PROJECT_ID || 'testing-firebase-env'
+})
 
 async function initializeFirebaseAdmin () {
   return admin.initializeApp({
     credential: admin.credential.cert(getServiceAccount()),
-    databaseURL: process.env.DATABASE_URL
+    databaseURL: process.env.DATABASE_URL || 'https://testing-firebase-env.firebaseio.com'
   })
 }
 
 async function initializeFirebase () {
-  return initializeApp(firebaseConfig)
+  return initializeApp(firebaseConfig())
 }
 
 module.exports = { initializeFirebaseAdmin, initializeFirebase }
