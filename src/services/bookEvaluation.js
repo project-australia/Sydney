@@ -40,6 +40,7 @@ const evaluateBook = async (isbn) => {
       authors,
       description,
       edition,
+      isbn,
       dimensions
     }
   } catch (error) {
@@ -109,8 +110,7 @@ const getAuthorFromEntireLookup = (bookLookupResult) => {
     return bookWithAuthors
   }
 
-  const authors = bookWithAuthors.ItemAttributes[0].Author
-  return authors
+  return bookWithAuthors.ItemAttributes[0].Author
 }
 
 const getBookEditionFromEntireLookup = (bookLookupResult) => {
@@ -121,8 +121,7 @@ const getBookEditionFromEntireLookup = (bookLookupResult) => {
     return bookWithEdition
   }
 
-  const edition = bookWithEdition.ItemAttributes[0].Edition[0]
-  return edition
+  return bookWithEdition.ItemAttributes[0].Edition[0]
 }
 
 const getBookDimensionsFromEntireLookup = (bookLookupResult) => {
