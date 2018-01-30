@@ -68,6 +68,7 @@ const signUp = async (req, res) => {
     return createProfile(req, res)
   } catch (err) {
     const { code, message } = err
+    console.log('ERRRRRRO!', err)
     return captureError(message, err, req, res, firebaseErrors[code])
   }
 }
