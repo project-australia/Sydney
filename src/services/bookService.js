@@ -24,11 +24,11 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
 }
 
 async function findRecentlyAddedBooks () {
-  return BookModel.find({}).sort({'createdAt': -1}).limit(20).exec()
+  return BookModel.find({ status: 'AVAILABLE' }).sort({'createdAt': -1}).limit(20).exec()
 }
 
 async function findFeaturedBooks () {
-  return BookModel.find({ featured: true }).sort({'updatedAt': -1}).exec()
+  return BookModel.find({ featured: true, status: 'AVAILABLE' }).sort({'updatedAt': -1}).exec()
 }
 
 module.exports = {
