@@ -1,11 +1,13 @@
 class ServiceError extends Error {
-  constructor (err, ...args) {
-    super(err, ...args)
+  constructor (err) {
+    super(err.message)
     this.rootCause = err
-    this.name = 'ServiceError'
+    Error.captureStackTrace(this, ServiceError)
+
+    this.name = this.constructor.name
     this.code = err.code
     this.message = err.message
-    Error.captureStackTrace(this, ServiceError)
+    this.userMessage = err.message
   }
 }
 

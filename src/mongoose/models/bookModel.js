@@ -9,6 +9,13 @@ const images = {
   large: {type: String, trim: true}
 }
 
+const dimensions = {
+  height: {type: String, trim: true},
+  length: {type: String, trim: true},
+  width: {type: String, trim: true},
+  weight: {type: String, trim: true}
+}
+
 let BookSchema = new Schema({
   status: {type: String, enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'], default: 'UNAVAILABLE'},
   sellingPrice: {type: Number},
@@ -19,6 +26,7 @@ let BookSchema = new Schema({
   isbn: {type: String, trim: true, lowercase: true},
   edition: {type: String, trim: true, lowercase: true},
   images,
+  dimensions,
   bookCondition: {type: String, enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New']}
 }, {timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }}
 )

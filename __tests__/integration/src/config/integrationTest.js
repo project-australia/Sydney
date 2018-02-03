@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+const mongoose = require('mongoose')
 const { mongooseConfig } = require('../../../../src/config/mongoose')
 const { closeConnection } = require('../../../../src/mongoose')
 
@@ -9,5 +10,6 @@ export const connectDB = async () => {
 }
 
 export const closeDBConnection = () => {
+  mongoose.connection.db.dropDatabase()
   closeConnection()
 }
