@@ -17,7 +17,15 @@ let UserProfileSchema = new Schema({
   school: {type: String, lowercase: true, trim: true},
   role: {type: String, enum: ['OWNER', 'ADMIN', 'REP', 'USER'], default: 'USER'},
   club: {type: String, enum: ['TEN', 'TWENTY', 'NONE'], default: 'NONE'},
-  address: address
+  address: address,
+  wallet: {
+    ballance: {
+      type: Number
+    },
+    status: {
+      type: String, enum: ['PENDING', 'NONE'], default: 'NONE'
+    }
+  }
 })
 
 UserProfileSchema.set('toJSON', parserOptions)

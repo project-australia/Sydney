@@ -29,6 +29,7 @@
     "moment": "^2.18.1",
     "mongoose": "^4.11.12",
     "morgan": "~1.8.1",
+    "nodemailer": "^4.4.2",
     "opbeat": "^4.16.0"
   },
   "devDependencies": {

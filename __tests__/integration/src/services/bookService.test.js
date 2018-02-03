@@ -63,7 +63,9 @@ describe('Book integration tests', () => {
 
   it('should return 20 recently added books', async () => {
     for (let i = 0; i < 22; i++) {
-      await saveBook(aBook)
+      const bookRecentlyTruthy = aBook
+      bookRecentlyTruthy.status = 'AVAILABLE'
+      await saveBook(bookRecentlyTruthy)
     }
     const recentlyBooks = await findRecentlyAddedBooks()
     expect(recentlyBooks[0].isbn).toEqual(searchParam.isbn)
@@ -74,6 +76,7 @@ describe('Book integration tests', () => {
     for (let i = 0; i < 5; i++) {
       const bookFeaturedTruthy = aBook
       bookFeaturedTruthy.featured = true
+      bookFeaturedTruthy.status = 'AVAILABLE'
       await saveBook(bookFeaturedTruthy)
     }
     const recentlyBooks = await findFeaturedBooks()
