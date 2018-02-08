@@ -1,4 +1,4 @@
-import {createProfile, eraseCollection, findById, updateById, mapToMongoose} from '../../../../src/services/userService'
+import {createProfile, eraseCollection, findById, updateProfile, mapToMongoose} from '../../../../src/services/userService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 
 const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
@@ -15,7 +15,6 @@ export const userProfile = {
 
 const newAddress = {city: 'Toronto', street: 'mortal kombat', number: '000', zipCode: '123456', state: 'SP'}
 export const updateUserProfile = {
-  id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
   telephone: '9999999',
   school: 'School of Rock',
   address: newAddress
@@ -53,9 +52,9 @@ describe('User profile integration tests', () => {
 
   it('should update an user profile by Id', async () => {
     await createProfile(userProfile)
-    const updatedUser = await updateById(updateUserProfile)
+    const updatedUser = await updateProfile(userProfile.id, updateUserProfile)
     expect(updatedUser.telephone).toEqual(updateUserProfile.telephone)
-    // expect(updatedUser.school).toEqual(updateUserProfile.school)
-    // expect(updatedUser.address.city).toEqual(newAddress.city)
+    expect(updatedUser.school).toEqual(updateUserProfile.school)
+    expect(updatedUser.address.city).toEqual(newAddress.city)
   })
 })
