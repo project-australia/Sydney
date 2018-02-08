@@ -37,10 +37,15 @@ async function findById (id) {
   return UserProfileModel.findById(id)
 }
 
+async function updateProfile (id, userProfile) {
+  return UserProfileModel.findOneAndUpdate({ _id: id }, { $set: userProfile }, { new: true })
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
   eraseCollection,
   findById,
+  updateProfile,
   mapToMongoose
 }

@@ -39,6 +39,18 @@ const createProfile = async (req, res) => {
   }
 }
 
+const updateProfile = async (req, res) => {
+  const { body, params } = req
+  const id = params.id
+
+  try {
+    const updatedProfile = await UserService.updateProfile(id, body)
+    res.status(200).json(updatedProfile)
+  } catch (err) {
+    return captureError('Updating profile', err, req, res)
+  }
+}
+
 const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
@@ -55,5 +67,6 @@ const signUp = async (req, res) => {
 module.exports = {
   getProfile,
   createProfile,
+  updateProfile,
   signUp
 }
