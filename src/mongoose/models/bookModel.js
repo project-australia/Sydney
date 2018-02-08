@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { parserOptions } = require('../../config/mongoose')
+const {parserOptions} = require('../../config/mongoose')
 
 const Schema = mongoose.Schema
 
@@ -27,8 +27,12 @@ let BookSchema = new Schema({
   edition: {type: String, trim: true, lowercase: true},
   images,
   dimensions,
-  condition: {type: String, enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New'], required: true}
-}, {timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }}
+  condition: {
+    type: String,
+    enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New'],
+    required: true
+  }
+}, {timestamps: {createdAt: 'createdAt', updatedAt: 'updatedAt'}}
 )
 
 BookSchema.set('toJSON', parserOptions)
