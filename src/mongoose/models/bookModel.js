@@ -21,13 +21,13 @@ let BookSchema = new Schema({
   sellingPrice: {type: Number},
   buyingPrice: {type: Number},
   featured: {type: Boolean, default: false},
-  title: {type: String, trim: true, lowercase: true},
+  title: {type: String, trim: true, lowercase: true, required: true},
   authors: [{type: String, lowercase: true, trim: true}],
-  isbn: {type: String, trim: true, lowercase: true},
+  isbn: {type: String, trim: true, lowercase: true, required: true},
   edition: {type: String, trim: true, lowercase: true},
   images,
   dimensions,
-  bookCondition: {type: String, enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New']}
+  condition: {type: String, enum: ['Used – Acceptable', 'Used – Good', 'Used – Very Good', 'Used – Like New', 'New'], required: true}
 }, {timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }}
 )
 
