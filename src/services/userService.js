@@ -11,15 +11,15 @@ const createReferId = profile => {
   profile.referId = profile.email
 }
 
-function mapToMongoose (profile) {
-  const clone = { ...profile }
+function mapToMongoose (profile, id) {
+  const clone = { ...profile, id }
   changeIdField(clone)
   createReferId(clone)
   return clone
 }
 
-async function createProfile (profile) {
-  const awesomeInstance = new UserProfileModel(mapToMongoose(profile))
+async function createProfile (profile, id) {
+  const awesomeInstance = new UserProfileModel(mapToMongoose(profile, id))
   return awesomeInstance.save()
 }
 

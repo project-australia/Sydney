@@ -23,28 +23,6 @@ const getProfile = async (req, res) => {
   }
 }
 
-const createProfile = async (req, res) => {
-  const { body, params } = req
-  const id = params.id
-
-  if (!id) {
-    return captureError(
-      'Creating a profile without passing an ID',
-      null,
-      req,
-      res,
-      400
-    )
-  }
-
-  try {
-    const newProfile = await UserService.createProfile(body)
-    res.status(201).json(newProfile)
-  } catch (err) {
-    return captureError('Creating profile', err, req, res)
-  }
-}
-
 const updateProfile = async (req, res) => {
   const { body, params } = req
   const id = params.id
@@ -64,13 +42,33 @@ const signUp = async (req, res) => {
       email,
       password
     )
-
-    req.body.id = fireBaseUser.uid
+    req.params.id = fireBaseUser.uid
     return createProfile(req, res)
   } catch (err) {
     const { code, message } = err
-    console.log('ERRRRRRO!', err)
     return captureError(message, err, req, res, firebaseErrors[code])
+  }
+}
+
+const createProfile = async (req, res) => {
+  const { body, params } = req
+  const id = params.id
+
+  if (!id) {
+    return captureError(
+      'Creating a profile without passing an ID',
+      null,
+      req,
+      res,
+      400
+    )
+  }
+
+  try {
+    const newProfile = await UserService.createProfile(body, id)
+    res.status(201).json(newProfile)
+  } catch (err) {
+    return captureError('Creating profile', err, req, res)
   }
 }
 
