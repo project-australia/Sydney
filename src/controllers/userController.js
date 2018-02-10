@@ -64,6 +64,7 @@ const signUp = async (req, res) => {
       email,
       password
     )
+
     req.body.id = fireBaseUser.uid
     return createProfile(req, res)
   } catch (err) {

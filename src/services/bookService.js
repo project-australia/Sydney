@@ -1,4 +1,4 @@
-const BookModel = require('../mongoose/models/bookModel')
+const BookModel = require('./database/models/bookModel')
 
 const ALL = {}
 

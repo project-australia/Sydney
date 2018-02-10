@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { userCollection } = require('./userModel')
 const { bookCollection } = require('./bookModel')
-const { parserOptions } = require('../../config/mongoose')
+const { parserOptions } = require('../../../config/mongoose')
 const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema

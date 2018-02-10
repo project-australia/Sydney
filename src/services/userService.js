@@ -1,4 +1,4 @@
-const UserProfileModel = require('../mongoose/models/userModel')
+const UserProfileModel = require('./database/models/userModel')
 
 const ALL = {}
 

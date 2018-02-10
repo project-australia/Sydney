@@ -1,4 +1,4 @@
-const OrderModel = require('../mongoose/models/orderModel')
+const OrderModel = require('./database/models/orderModel')
 const { findById } = require('./userService')
 
 const ALL = {}

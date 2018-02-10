@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const validate = require('express-validation')
-const newOrder = require('../joi/routes/createOrder')
+const newOrder = require('./validation/createOrder')
 const { createOrder } = require('../controllers/orderController')
 
 const router = Router({ mergeParams: true })

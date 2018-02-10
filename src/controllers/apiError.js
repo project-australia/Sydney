@@ -23,7 +23,10 @@ class ApiError extends Error {
         .slice(0, 2)
         .join('')
     Error.captureStackTrace(this, this.constructor)
-    opbeat.captureError(error)
+
+    if (process.env.NODE_ENV === 'production') {
+      opbeat.captureError(error)
+    }
   }
 }
 

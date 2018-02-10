@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const address = require('../domain/address')
+const address = require('./address')
 
 module.exports = {
   body: {
