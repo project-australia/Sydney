@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const blueBird = require('bluebird')
 const { connectMongo } = require('../mongoose')
 
-async function mongooseConfig (environment) {
+async function connect (environment) {
   if (environment === 'test') { return }
 
   const options = { useMongoClient: true, promiseLibrary: blueBird }
@@ -24,4 +24,4 @@ const parserOptions = {
   }
 }
 
-module.exports = { mongooseConfig, parserOptions }
+module.exports = { mongooseConfig: connect, parserOptions }

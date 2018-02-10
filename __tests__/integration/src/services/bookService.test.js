@@ -5,21 +5,7 @@ import {
   findRecentlyAddedBooks,
   findFeaturedBooks } from '../../../../src/services/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
-
-export const aBook = {
-  sellingPrice: 15.5,
-  buyingPrice: 13.5,
-  title: 'O Capital',
-  authors: ['Karl Max', 'Eduardo Moroni'],
-  isbn: '1234567890',
-  edition: 'A primeira',
-  images: {
-    small: 'www.yyy.xxx',
-    medium: 'www.aaa.com',
-    large: 'www.bbb.io'
-  },
-  bookCondition: 'Used – Acceptable'
-}
+import { aBook } from '../../../fixture/model/book.fixture';
 
 const searchParam = {
   title: 'O Capital',
@@ -40,7 +26,7 @@ describe('Book integration tests', () => {
     await eraseCollection(true)
   })
 
-  it('should save a book to DB', async () => {
+  it.only('should save a book to DB', async () => {
     const savedbook = await saveBook(aBook)
     expect(savedbook.id).toBeDefined()
     expect(savedbook.status).toEqual('UNAVAILABLE')

@@ -2,16 +2,9 @@ const mongoose = require('mongoose')
 const { userCollection } = require('./userModel')
 const { bookCollection } = require('./bookModel')
 const { parserOptions } = require('../../config/mongoose')
+const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema
-
-const address = {
-  city: {type: String, lowercase: true, trim: true, required: true},
-  street: {type: String, lowercase: true, trim: true, required: true},
-  number: {type: String, lowercase: true, trim: true, required: true},
-  zipCode: {type: String, lowercase: true, trim: true, required: true},
-  state: {type: String, lowercase: true, trim: true, required: true}
-}
 
 let OrderSchema = new Schema({
   customerId: {type: String, ref: userCollection, required: true},

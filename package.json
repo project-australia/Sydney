@@ -10,7 +10,7 @@
     "commitizen": "git cz",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jest ./__tests__/unit/",
-    "test:integration": "jest ./__tests__/integration/",
+    "test:integration": "jest ./__tests__/integration/ --runInBand --forceExit",
     "test:watch": "jest --watch"
   },
   "dependencies": {

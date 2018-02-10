@@ -26,6 +26,7 @@ const expectedProfile = {
   }
 }
 const userId = expectedProfile.id
+
 describe('Configuration controller', () => {
   beforeAll(() => {
     UserService.createProfile = jest.fn()
@@ -34,10 +35,10 @@ describe('Configuration controller', () => {
   })
 
   it('should get a user profile', async () => {
-    UserService.getProfile.mockReturnValue(expectedProfile)
+      UserService.findById.mockReturnValue(expectedProfile)
     const response = await request(app).get(`/users/${userId}/profile`)
 
-    expect(UserService.getProfile).toHaveBeenCalledWith(userId)
+    expect(UserService.findById).toHaveBeenCalledWith(userId)
     expect(response.statusCode).toEqual(200)
     expect(response.body).toEqual(expectedProfile)
   })
@@ -50,10 +51,9 @@ describe('Configuration controller', () => {
   it('should create a profile for a user', async () => {
     UserService.createProfile.mockReturnValue(expectedProfile)
     const requestBody = {
-      id: userId,
       name: 'talhate',
       email: 't@yahoo.com',
-      birthDate: '2017/12/30',
+      birthDate: new Date,
       telephone: '1234567890',
       school: 'school of life',
       address: {

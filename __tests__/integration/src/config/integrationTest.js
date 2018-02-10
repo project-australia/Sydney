@@ -6,10 +6,14 @@ const { closeConnection } = require('../../../../src/mongoose')
 dotenv.config()
 
 export const connectDB = async () => {
+  mongoose.connection.on('open', dropDatabase)
   await mongooseConfig('integration-test')
 }
 
-export const closeDBConnection = () => {
-  mongoose.connection.db.dropDatabase()
+export const closeDBConnection = async () => {
   closeConnection()
+}
+
+const dropDatabase = () => {
+  mongoose.connection.db.dropDatabase()
 }

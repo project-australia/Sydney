@@ -1,8 +1,8 @@
 import amazon from 'amazon-product-api'
 
 import { lookupByISBN } from '../../../../src/clients/amazon'
-import amazonLookupByISBN from '../../../fixture/amazonLookupByISBN'
-import amazonLookupError from '../../../fixture/amazonLookupError'
+import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
+import amazonLookupError from '../../../fixture/amazonLookup/amazonLookupError'
 import { ClientError } from '../../../../src/clients/clientError'
 
 jest.mock('amazon-product-api')
@@ -10,6 +10,7 @@ jest.mock('amazon-product-api')
 const mock = {
   itemLookup: jest.fn()
 }
+
 
 describe('Amazon API client', () => {
   beforeAll(() => {

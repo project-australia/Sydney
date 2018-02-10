@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 const { parserOptions } = require('../../config/mongoose')
+const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema
-
-const address = {city: {type: String, lowercase: true, trim: true}, street: {type: String, lowercase: true, trim: true}, number: {type: String, lowercase: true, trim: true}, zipCode: {type: String, lowercase: true, trim: true}, state: {type: String, lowercase: true, trim: true}}
 
 // TODO: add wallet to this model
 let UserProfileSchema = new Schema({

@@ -10,10 +10,10 @@ const images = {
 }
 
 const dimensions = {
-  height: {type: String, trim: true},
-  length: {type: String, trim: true},
-  width: {type: String, trim: true},
-  weight: {type: String, trim: true}
+  height: {type: Number, trim: true},
+  length: {type: Number, trim: true},
+  width: {type: Number, trim: true},
+  weight: {type: Number, trim: true}
 }
 
 let BookSchema = new Schema({

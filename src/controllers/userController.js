@@ -25,7 +25,7 @@ const getProfile = async (req, res) => {
 
 const createProfile = async (req, res) => {
   const { body, params } = req
-  const id = params.id || body.id
+  const id = params.id
 
   if (!id) {
     return captureError('Creating a profile without passing an ID', null, req, res, 400)

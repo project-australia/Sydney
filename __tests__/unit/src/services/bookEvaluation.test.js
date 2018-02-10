@@ -1,5 +1,5 @@
 import AmazonClient from '../../../../src/clients/amazon'
-import amazonLookupByISBN from '../../../fixture/amazonLookupByISBN'
+import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
 import { evaluateBook } from '../../../../src/services/bookEvaluation'
 jest.mock('../../../../src/clients/amazon')
 
@@ -10,7 +10,7 @@ describe('Amazon API Service', () => {
     AmazonClient.lookupByISBN = jest.fn()
   })
 
-  it.only('should return all book\'s information', async () => {
+  it('should return all book\'s information', async () => {
     AmazonClient.lookupByISBN.mockReturnValue(Promise.resolve(amazonLookupByISBN))
     const isbn = '9781483358505'
 
