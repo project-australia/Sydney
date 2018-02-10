@@ -23,7 +23,8 @@ describe('Order integration tests', () => {
     const anOrder = {
       customerId: userProfile.id,
       transactionId: 'some-random-id',
-      type: 'RENT',
+      orderType: 'RENT',
+      shippingMethod: 'SHIPPED',
       items: [savedbook],
       shippingAddress: address
     }
@@ -32,7 +33,7 @@ describe('Order integration tests', () => {
 
     expect(savedOrder.id).toBeDefined()
     expect(savedOrder.customerId).toEqual(savedUser.id)
-    expect(savedOrder.type).toEqual(anOrder.type)
+    expect(savedOrder.orderType).toEqual(anOrder.orderType)
     expect(savedOrder.transactionId).toEqual(anOrder.transactionId)
     expect(savedOrder.shippingAddress).toEqual(address)
   })

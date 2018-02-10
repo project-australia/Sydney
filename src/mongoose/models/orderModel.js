@@ -7,8 +7,9 @@ const { address } = require('./addressModel')
 const Schema = mongoose.Schema
 
 let OrderSchema = new Schema({
+  // TODO: Isso deveria ser um Schema.ObjectId ?
   customerId: {type: String, ref: userCollection, required: true},
-  type: {type: String, enum: ['RENT', 'BUY', 'SELL', 'DONATE'], required: true},
+  orderType: {type: String, enum: ['RENT', 'BUY', 'SELL', 'DONATE'], required: true},
   transactionId: {type: String, trim: true},
   status: {
     type: String,
@@ -16,6 +17,7 @@ let OrderSchema = new Schema({
     default: 'WAITING_PAYMENT'
   },
   items: [{type: Schema.ObjectId, ref: bookCollection}],
+  shippingMethod: {type: String, enum: ['IN_PERSON', 'SHIPPED'], required: true},
   shippingAddress: address
 }, {
   timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }

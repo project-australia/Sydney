@@ -11,7 +11,10 @@ async function initialConfigurations () {
     console.error('dotEnv error', result.error)
   }
 
-  opbeat.start()
+  if (process.env.NODE_ENV === 'production') {
+    opbeat.start()
+  }
+
   await mongooseConfig(process.env.NODE_ENV)
   await initializeFirebaseAdmin()
   await initializeFirebase()
