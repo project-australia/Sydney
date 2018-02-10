@@ -8,15 +8,15 @@ const Schema = mongoose.Schema
 
 let OrderSchema = new Schema({
   customerId: {type: String, ref: userCollection, required: true},
-  type: {type: String, enum: ['RENT', 'BUY', 'SELL'], required: true},
-  trackingPaymentId: {type: String, trim: true},
+  type: {type: String, enum: ['RENT', 'BUY', 'SELL', 'DONATE'], required: true},
+  transactionId: {type: String, trim: true},
   status: {
     type: String,
     enum: ['WAITING_PAYMENT', 'PAYMENT_CONFIRMED', 'CANCELLED', 'RECEIVED', 'SHIPPED'],
     default: 'WAITING_PAYMENT'
   },
   items: [{type: Schema.ObjectId, ref: bookCollection}],
-  shippingAdress: address
+  shippingAddress: address
 }, {
   timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
 })

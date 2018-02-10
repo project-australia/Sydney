@@ -1,4 +1,4 @@
-export const address = {
+exports.address = {
   city: {type: String, lowercase: true, trim: true},
   street: {type: String, lowercase: true, trim: true},
   number: {type: String, lowercase: true, trim: true},

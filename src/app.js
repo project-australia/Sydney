@@ -15,7 +15,7 @@ app.use(ignoreFavicon)
 app.disable('x-powered-by')
 app.use(opbeat.middleware.express())
 app.use(logger('dev'))
-app.use(bodyParser.json())
+app.use(bodyParser.json({type: () => true}))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())
 
