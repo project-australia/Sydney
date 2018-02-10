@@ -1,4 +1,3 @@
-
 const opbeat = require('opbeat')
 const dotenv = require('dotenv')
 const { mongooseConfig } = require('./mongoose')

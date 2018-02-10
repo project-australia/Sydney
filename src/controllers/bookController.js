@@ -4,13 +4,16 @@ const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,
   findRecentlyAddedBooks,
-  findFeaturedBooks } = require('../services/bookService')
+  findFeaturedBooks
+} = require('../services/bookService')
 // FIXME: Please, remove from the code and git history, my name is on it :(
-const formatIsbn = isbn => isbn.replace(/-/, '')
-  .replace(/-/, '')
-  .replace(/-/, '')
-  .replace(/-/, '')
-  .trim()
+const formatIsbn = isbn =>
+  isbn
+    .replace(/-/, '')
+    .replace(/-/, '')
+    .replace(/-/, '')
+    .replace(/-/, '')
+    .trim()
 
 const lookup = async (req, res) => {
   const isbn = req.params.isbn

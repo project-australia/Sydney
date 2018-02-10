@@ -17,7 +17,8 @@ const mailOptions = {
   to: 'hebertporto@gmail.com', // list of receivers (who receives)
   subject: 'Hello ', // Subject line
   text: 'Hello world ', // plaintext body
-  html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+  html:
+    '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
 }
 
 // send mail with defined transport object

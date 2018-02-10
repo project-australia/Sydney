@@ -1,5 +1,8 @@
 const { Router } = require('express')
-const { getSellingToggle, setSellingToggle } = require('../controllers/configurationsController')
+const {
+  getSellingToggle,
+  setSellingToggle
+} = require('../controllers/configurationsController')
 
 const router = Router()
 

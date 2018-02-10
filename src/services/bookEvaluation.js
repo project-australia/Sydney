@@ -3,11 +3,11 @@ const _ = require('lodash')
 const AmazonClient = require('../clients/amazon')
 
 // TODO: Test this
-const amazonLookup = async (isbn) => {
+const amazonLookup = async isbn => {
   return AmazonClient.lookupByISBN(isbn)
 }
 
-const evaluateBook = async (isbn) => {
+const evaluateBook = async isbn => {
   const bookLookUp = await AmazonClient.lookupByISBN(isbn)
 
   try {
@@ -25,7 +25,9 @@ const evaluateBook = async (isbn) => {
 
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
-    const authors = book.Author ? book.Author : getAuthorFromEntireLookup(bookLookUp)
+    const authors = book.Author
+      ? book.Author
+      : getAuthorFromEntireLookup(bookLookUp)
     const images = getImagesFromEntireLookup(bookLookUp)
     const edition = getBookEditionFromEntireLookup(bookLookUp)
     const id = isbn // FIXME: Refactor this
@@ -49,30 +51,33 @@ const evaluateBook = async (isbn) => {
   }
 }
 
-const byEAN = isbn => lookup => {
-  const { ItemAttributes } = lookup
-  const thereIsEANField = () => ItemAttributes[0].EAN
-  const isSameIsbn = () => lookup.ItemAttributes[0].EAN[0] === isbn
-  return thereIsEANField() ? isSameIsbn() : false
-}
-
 // TODO: Test scenario for this rule
 const lowestUsedPriceOf = book =>
-  book.OfferSummary && book.OfferSummary[0].LowestUsedPrice &&
+  book.OfferSummary &&
+  book.OfferSummary[0].LowestUsedPrice &&
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
 const cheapestBook = (cheapearBook, currentBook) => {
   // TODO: Test scenario for this rule, Maybe remove this
-  if (!currentBook.OfferSummary || currentBook.OfferSummary[0].LowestUsedPrice) {
+  if (
+    !currentBook.OfferSummary ||
+    currentBook.OfferSummary[0].LowestUsedPrice
+  ) {
     return cheapearBook
   }
-  return lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook) ? cheapearBook : currentBook
+  return lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook)
+    ? cheapearBook
+    : currentBook
 }
 
 // TODO: Test scenario for this rule
 const getPrice = book => {
   try {
-    return Number(book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(1))
+    return Number(
+      book['OfferSummary'][0]['LowestUsedPrice'][0]['FormattedPrice'][0].substr(
+        1
+      )
+    )
   } catch (e) {
     return undefined
   }
@@ -102,8 +107,9 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
   return Number(amazonPrice * ballardPercentage * userDiscout()).toFixed(2)
 }
 
-const getAuthorFromEntireLookup = (bookLookupResult) => {
-  const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Author
+const getAuthorFromEntireLookup = bookLookupResult => {
+  const byBookAuthor = book =>
+    book.ItemAttributes && book.ItemAttributes[0].Author
   const bookWithAuthors = _.find(bookLookupResult, byBookAuthor)
 
   if (!bookWithAuthors) {
@@ -113,8 +119,9 @@ const getAuthorFromEntireLookup = (bookLookupResult) => {
   return bookWithAuthors.ItemAttributes[0].Author
 }
 
-const getBookEditionFromEntireLookup = (bookLookupResult) => {
-  const byBookAuthor = book => book.ItemAttributes && book.ItemAttributes[0].Edition
+const getBookEditionFromEntireLookup = bookLookupResult => {
+  const byBookAuthor = book =>
+    book.ItemAttributes && book.ItemAttributes[0].Edition
   const bookWithEdition = _.find(bookLookupResult, byBookAuthor)
 
   if (!bookWithEdition) {
@@ -124,8 +131,9 @@ const getBookEditionFromEntireLookup = (bookLookupResult) => {
   return bookWithEdition.ItemAttributes[0].Edition[0]
 }
 
-const getBookDimensionsFromEntireLookup = (bookLookupResult) => {
-  const byDimensions = book => book.ItemAttributes && book.ItemAttributes[0].ItemDimensions
+const getBookDimensionsFromEntireLookup = bookLookupResult => {
+  const byDimensions = book =>
+    book.ItemAttributes && book.ItemAttributes[0].ItemDimensions
   const bookWithDimensions = _.find(bookLookupResult, byDimensions)
 
   if (!bookWithDimensions) {
@@ -141,8 +149,9 @@ const getBookDimensionsFromEntireLookup = (bookLookupResult) => {
   }
 }
 
-const getImagesFromEntireLookup = (bookLookupResult) => {
-  const byImages = book => book.SmallImage && book.MediumImage && book.LargeImage
+const getImagesFromEntireLookup = bookLookupResult => {
+  const byImages = book =>
+    book.SmallImage && book.MediumImage && book.LargeImage
   const bookWithImages = _.find(bookLookupResult, byImages)
 
   if (!bookWithImages) {

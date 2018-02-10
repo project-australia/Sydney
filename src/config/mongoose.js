@@ -3,10 +3,15 @@ const blueBird = require('bluebird')
 const { connectMongo } = require('../mongoose')
 
 async function connect (environment) {
-  if (environment === 'test') { return }
+  if (environment === 'test') {
+    return
+  }
 
   const options = { useMongoClient: true, promiseLibrary: blueBird }
-  let mongoURL = environment === 'integration-test' ? process.env.MONGO_TEST_URL : process.env.MONGO_URL
+  let mongoURL =
+    environment === 'integration-test'
+      ? process.env.MONGO_TEST_URL
+      : process.env.MONGO_URL
   mongoose.Promise = blueBird
 
   await connectMongo(mongoURL, options)

@@ -16,7 +16,12 @@ class ApiError extends Error {
     this.userMessage = message || error.message
     this.rootCause = error
 
-    this.stackTrace = error.stack && error.stack.split('\n').slice(0, 2).join('')
+    this.stackTrace =
+      error.stack &&
+      error.stack
+        .split('\n')
+        .slice(0, 2)
+        .join('')
     Error.captureStackTrace(this, this.constructor)
     opbeat.captureError(error)
   }

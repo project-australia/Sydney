@@ -11,7 +11,9 @@
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jest ./__tests__/unit/",
     "test:integration": "jest ./__tests__/integration/ --runInBand --forceExit",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "reformat-code": "npm run prettier && npm run lint:fix",
+    "prettier": "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
     "amazon-product-api": "^0.4.4",

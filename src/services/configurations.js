@@ -1,7 +1,7 @@
 let isSellingAvailable = false
 
 const getSelling = () => isSellingAvailable
-const setSelling = (toggleValue) => {
+const setSelling = toggleValue => {
   isSellingAvailable = !!toggleValue
   return isSellingAvailable
 }

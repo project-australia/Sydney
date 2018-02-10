@@ -12,7 +12,7 @@ const createReferId = profile => {
 }
 
 function mapToMongoose (profile) {
-  const clone = {...profile}
+  const clone = { ...profile }
   changeIdField(clone)
   createReferId(clone)
   return clone
@@ -38,7 +38,11 @@ async function findById (id) {
 }
 
 async function updateProfile (id, userProfile) {
-  return UserProfileModel.findOneAndUpdate({ _id: id }, { $set: userProfile }, { new: true })
+  return UserProfileModel.findOneAndUpdate(
+    { _id: id },
+    { $set: userProfile },
+    { new: true }
+  )
 }
 
 module.exports = {

@@ -35,7 +35,7 @@ describe('Configuration controller', () => {
   })
 
   it('should get a user profile', async () => {
-      UserService.findById.mockReturnValue(expectedProfile)
+    UserService.findById.mockReturnValue(expectedProfile)
     const response = await request(app).get(`/users/${userId}/profile`)
 
     expect(UserService.findById).toHaveBeenCalledWith(userId)
@@ -53,7 +53,7 @@ describe('Configuration controller', () => {
     const requestBody = {
       name: 'talhate',
       email: 't@yahoo.com',
-      birthDate: new Date,
+      birthDate: new Date(),
       telephone: '1234567890',
       school: 'school of life',
       address: {

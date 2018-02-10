@@ -1,7 +1,19 @@
-import {createProfile, eraseCollection, findById, updateProfile, mapToMongoose} from '../../../../src/services/userService'
-import { closeDBConnection, connectDB } from '../config/integrationTest'
+import {
+  createProfile,
+  eraseCollection,
+  findById,
+  updateProfile,
+  mapToMongoose
+} from '../../../../src/services/userService'
+import { connectDB } from '../config/integrationTest'
 
-const address = {city: 'Viana', street: 'fighter', number: '666', zipCode: 'Zip', state: 'ES'}
+const address = {
+  city: 'Viana',
+  street: 'fighter',
+  number: '666',
+  zipCode: 'Zip',
+  state: 'ES'
+}
 export const userProfile = {
   id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
   referredBy: 'DUDUZINHO',
@@ -13,7 +25,13 @@ export const userProfile = {
   address: address
 }
 
-const newAddress = {city: 'Toronto', street: 'mortal kombat', number: '000', zipCode: '123456', state: 'SP'}
+const newAddress = {
+  city: 'Toronto',
+  street: 'mortal kombat',
+  number: '000',
+  zipCode: '123456',
+  state: 'SP'
+}
 export const updateUserProfile = {
   telephone: '9999999',
   school: 'School of Rock',

@@ -2,7 +2,12 @@ const { Router } = require('express')
 const validate = require('express-validation')
 const signUpValidation = require('../joi/routes/signUpFormValidation')
 const profileValidation = require('../joi/routes/profileValidation')
-const { createProfile, updateProfile, getProfile, signUp } = require('../controllers/userController')
+const {
+  createProfile,
+  updateProfile,
+  getProfile,
+  signUp
+} = require('../controllers/userController')
 
 const router = Router()
 

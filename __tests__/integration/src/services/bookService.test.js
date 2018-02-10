@@ -3,9 +3,10 @@ import {
   eraseCollection,
   findBooksByAuthorOrIsnbOrTitle,
   findRecentlyAddedBooks,
-  findFeaturedBooks } from '../../../../src/services/bookService'
+  findFeaturedBooks
+} from '../../../../src/services/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
-import { aBook } from '../../../fixture/model/book.fixture';
+import { aBook } from '../../../fixture/model/book.fixture'
 
 const searchParam = {
   title: 'O Capital',
@@ -38,12 +39,16 @@ describe('Book integration tests', () => {
   it('should find a books for isbn, author or name', async () => {
     const savedbookForSearch = await saveBook(aBook)
     const searchIsbn = await findBooksByAuthorOrIsnbOrTitle(searchParam.isbn)
-    const searchAuthor = await findBooksByAuthorOrIsnbOrTitle(searchParam.author)
+    const searchAuthor = await findBooksByAuthorOrIsnbOrTitle(
+      searchParam.author
+    )
     const searchTitle = await findBooksByAuthorOrIsnbOrTitle(searchParam.title)
 
     expect(savedbookForSearch.id).toBeDefined()
     expect(searchIsbn[0].isbn).toEqual(searchParam.isbn)
-    expect(searchAuthor[0].authors).toEqual(expect.arrayContaining([searchParam.author.toLowerCase()]))
+    expect(searchAuthor[0].authors).toEqual(
+      expect.arrayContaining([searchParam.author.toLowerCase()])
+    )
     expect(searchTitle[0].title).toEqual(searchParam.title.toLowerCase())
   })
 

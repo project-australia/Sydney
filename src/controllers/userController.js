@@ -28,7 +28,13 @@ const createProfile = async (req, res) => {
   const id = params.id
 
   if (!id) {
-    return captureError('Creating a profile without passing an ID', null, req, res, 400)
+    return captureError(
+      'Creating a profile without passing an ID',
+      null,
+      req,
+      res,
+      400
+    )
   }
 
   try {
@@ -54,7 +60,10 @@ const updateProfile = async (req, res) => {
 const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
-    const fireBaseUser = await FireBaseService.createUserWithEmailAndPassword(email, password)
+    const fireBaseUser = await FireBaseService.createUserWithEmailAndPassword(
+      email,
+      password
+    )
     req.body.id = fireBaseUser.uid
     return createProfile(req, res)
   } catch (err) {

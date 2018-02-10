@@ -21,7 +21,9 @@ describe('Configuration controller', () => {
 
   it('should change selling toggle', async () => {
     ConfigurationService.setSelling.mockReturnValue(false)
-    const response = await request(app).put(`/configurations/sellings`).send({selling: false})
+    const response = await request(app)
+      .put(`/configurations/sellings`)
+      .send({ selling: false })
 
     expect(response.body).toEqual(false)
     expect(response.statusCode).toEqual(200)

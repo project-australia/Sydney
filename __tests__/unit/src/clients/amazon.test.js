@@ -11,7 +11,6 @@ const mock = {
   itemLookup: jest.fn()
 }
 
-
 describe('Amazon API client', () => {
   beforeAll(() => {
     amazon.createClient = () => mock
@@ -36,6 +35,8 @@ describe('Amazon API client', () => {
     mock.itemLookup.mockReturnValue(Promise.reject(amazonLookupError))
     const itemId = 'INVALID_ISBN'
 
-    await expect(lookupByISBN(itemId)).rejects.toEqual(new ClientError(amazonLookupError))
+    await expect(lookupByISBN(itemId)).rejects.toEqual(
+      new ClientError(amazonLookupError)
+    )
   })
 })

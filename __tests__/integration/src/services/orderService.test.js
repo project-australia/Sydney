@@ -1,9 +1,12 @@
-import { saveOrder, eraseCollection } from '../../../../src/services/orderService'
+import {
+  saveOrder,
+  eraseCollection
+} from '../../../../src/services/orderService'
 import { connectDB } from '../config/integrationTest'
 import { userProfile } from './userService.test'
 import { saveBook } from '../../../../src/services/bookService'
 import { createProfile } from '../../../../src/services/userService'
-import { aBook } from '../../../fixture/model/book.fixture';
+import { aBook } from '../../../fixture/model/book.fixture'
 
 describe('Order integration tests', () => {
   beforeAll(async () => {
@@ -14,7 +17,13 @@ describe('Order integration tests', () => {
     await eraseCollection(true)
   })
 
-  const address = {city: 'viana', street: 'fighter', number: '666', zipCode: 'zip', state: 'es'}
+  const address = {
+    city: 'viana',
+    street: 'fighter',
+    number: '666',
+    zipCode: 'zip',
+    state: 'es'
+  }
 
   it('should save an order to DB', async () => {
     const savedbook = await saveBook(aBook)

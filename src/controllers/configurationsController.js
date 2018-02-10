@@ -6,7 +6,9 @@ const getSellingToggle = async (req, res) => {
 }
 
 const setSellingToggle = async (req, res) => {
-  const isSellingAvailable = await ConfigurationService.setSelling(req.body.selling)
+  const isSellingAvailable = await ConfigurationService.setSelling(
+    req.body.selling
+  )
   res.status(200).json(isSellingAvailable)
 }
 
