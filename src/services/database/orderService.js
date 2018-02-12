@@ -1,4 +1,4 @@
-const OrderModel = require('./database/models/orderModel')
+const OrderModel = require('./models/orderModel')
 const { findById } = require('./userService')
 
 const saveOrder = async (requestBody, customerId) => {

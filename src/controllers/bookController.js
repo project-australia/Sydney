@@ -1,19 +1,12 @@
 const { captureError } = require('./apiError')
-const EvaluationService = require('../services/bookEvaluation')
+const EvaluationService = require('../services/evaluation')
 const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,
   findRecentlyAddedBooks,
   findFeaturedBooks
-} = require('../services/bookService')
-// FIXME: Please, remove from the code and git history, my name is on it :(
-const formatIsbn = isbn =>
-  isbn
-    .replace(/-/, '')
-    .replace(/-/, '')
-    .replace(/-/, '')
-    .replace(/-/, '')
-    .trim()
+} = require('../services/database/bookService')
+const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
 
 const lookup = async (req, res) => {
   const isbn = req.params.isbn

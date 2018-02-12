@@ -1,4 +1,4 @@
-import AmazonClient from '../../../../src/clients/amazon'
+import AmazonClient from '../../../../src/services/amazon'
 import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
 import { evaluateBook } from '../../../../src/services/bookEvaluation'
 jest.mock('../../../../src/clients/amazon')

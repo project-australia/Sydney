@@ -6,7 +6,7 @@ const {
   addNewBooks,
   getFeaturedBooks,
   getRecentlyAddedBooks
-} = require('../controllers/bookController')
+} = require('../bookController')
 
 const router = Router()
 // TODO: Remove these URLs from post route

@@ -2,7 +2,7 @@ const { Router } = require('express')
 const {
   getSellingToggle,
   setSellingToggle
-} = require('../controllers/configurationsController')
+} = require('../configurationsController')
 
 const router = Router()
 

@@ -4,7 +4,7 @@ import {
   findById,
   updateProfile,
   mapToMongoose
-} from '../../../../src/services/userService'
+} from '../../../../src/services/database/userService'
 import {closeDBConnection, connectDB} from '../config/integrationTest'
 
 const address = {

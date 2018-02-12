@@ -7,7 +7,7 @@ const {
   updateProfile,
   getProfile,
   signUp
-} = require('../controllers/userController')
+} = require('../userController')
 
 const router = Router()
 

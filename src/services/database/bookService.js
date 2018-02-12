@@ -1,6 +1,4 @@
-const BookModel = require('./database/models/bookModel')
-
-const ALL = {}
+const BookModel = require('./models/bookModel')
 
 async function saveBook (book) {
   return new BookModel(book).save()

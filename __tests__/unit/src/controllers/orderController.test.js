@@ -2,7 +2,7 @@ import {orderUpdatedResponse, updateOrderStatusRequest} from "../../../fixture/m
 
 const request = require('supertest')
 const app = require('../../../../src/app')
-const OrderService = require('../../../../src/services/orderService')
+const OrderService = require('../../../../src/services/database/orderService')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
 const { newOrderRequest } = require('../../../fixture/model/order.fixture')
 

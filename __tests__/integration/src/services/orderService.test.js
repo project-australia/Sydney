@@ -1,11 +1,11 @@
 import {
   saveOrder,
   updateOrder
-} from '../../../../src/services/orderService'
+} from '../../../../src/services/database/orderService'
 import { connectDB } from '../config/integrationTest'
 import { userProfile } from './userService.test'
-import { saveBook } from '../../../../src/services/bookService'
-import { createProfile } from '../../../../src/services/userService'
+import { saveBook } from '../../../../src/services/database/bookService'
+import { createProfile } from '../../../../src/services/database/userService'
 import { aBook } from '../../../fixture/model/book.fixture'
 
 describe('Order service integration tests', () => {

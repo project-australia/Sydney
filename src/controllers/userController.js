@@ -1,5 +1,5 @@
 const { captureError } = require('./apiError')
-const UserService = require('../services/userService')
+const UserService = require('../services/database/userService')
 const FireBaseService = require('../services/firebase')
 
 const firebaseErrors = {

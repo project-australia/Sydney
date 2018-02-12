@@ -1,4 +1,4 @@
-const OrderService = require('../services/orderService')
+const OrderService = require('../services/database/orderService')
 const { captureError } = require('./apiError')
 
 const createOrder = async (req, res) => {

@@ -4,7 +4,7 @@ import {
   findBooksByAuthorOrIsnbOrTitle,
   findRecentlyAddedBooks,
   findFeaturedBooks
-} from '../../../../src/services/bookService'
+} from '../../../../src/services/database/bookService'
 import { closeDBConnection, connectDB } from '../config/integrationTest'
 import { aBook } from '../../../fixture/model/book.fixture'
 

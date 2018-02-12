@@ -1,6 +1,6 @@
 const { ServiceError } = require('./serviceError')
 const _ = require('lodash')
-const AmazonClient = require('../clients/amazon')
+const AmazonClient = require('./amazon')
 
 // TODO: Test this
 const amazonLookup = async isbn => {
@@ -13,10 +13,6 @@ const evaluateBook = async isbn => {
   try {
     // FIXME: This should be a filter by paperback
     // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
-
-    // if (filteredByEAN.length === 0) {
-    //   throw new Error('Cannot find isbn inside amazon lookup')
-    // }
 
     const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
     const ballardPercentage = ballardPricePercetage(bestOffer)
