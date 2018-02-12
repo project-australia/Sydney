@@ -42,6 +42,8 @@ const signUp = async (req, res) => {
       email,
       password
     )
+
+    // FIXME: This is a bad smell
     req.params.id = fireBaseUser.uid
     return createProfile(req, res)
   } catch (err) {

@@ -27,12 +27,6 @@ async function findAllUsers () {
   return UserProfileModel.find(ALL)
 }
 
-async function eraseCollection (areYouSure) {
-  if (areYouSure && process.env.NODE_ENV !== 'production') {
-    await UserProfileModel.remove(ALL)
-  }
-}
-
 async function findById (id) {
   return UserProfileModel.findById(id)
 }
@@ -48,7 +42,6 @@ async function updateProfile (id, userProfile) {
 module.exports = {
   createProfile,
   findAllUsers,
-  eraseCollection,
   findById,
   updateProfile,
   mapToMongoose

@@ -1,6 +1,6 @@
 import {
   saveOrder,
-  eraseCollection
+  updateOrder
 } from '../../../../src/services/orderService'
 import { connectDB } from '../config/integrationTest'
 import { userProfile } from './userService.test'
@@ -8,13 +8,9 @@ import { saveBook } from '../../../../src/services/bookService'
 import { createProfile } from '../../../../src/services/userService'
 import { aBook } from '../../../fixture/model/book.fixture'
 
-describe('Order integration tests', () => {
+describe('Order service integration tests', () => {
   beforeAll(async () => {
     await connectDB()
-  })
-
-  beforeEach(async () => {
-    await eraseCollection(true)
   })
 
   const address = {
@@ -45,5 +41,9 @@ describe('Order integration tests', () => {
     expect(savedOrder.orderType).toEqual(anOrder.orderType)
     expect(savedOrder.transactionId).toEqual(anOrder.transactionId)
     expect(savedOrder.shippingAddress).toEqual(address)
+  })
+
+  it.skip('should update order status', async () => {
+    updateOrder('ORDER_ID', 'STATUS')
   })
 })

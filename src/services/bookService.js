@@ -6,12 +6,6 @@ async function saveBook (book) {
   return new BookModel(book).save()
 }
 
-async function eraseCollection (areYouSure) {
-  if (areYouSure && process.env.NODE_ENV !== 'production') {
-    await BookModel.remove(ALL)
-  }
-}
-
 async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
   const searchParamLowerCase = searchParam.toLowerCase()
   return BookModel.find({
@@ -38,7 +32,6 @@ async function findFeaturedBooks () {
 
 module.exports = {
   saveBook,
-  eraseCollection,
   findBooksByAuthorOrIsnbOrTitle,
   findRecentlyAddedBooks,
   findFeaturedBooks

@@ -5,7 +5,7 @@ import {
   updateProfile,
   mapToMongoose
 } from '../../../../src/services/userService'
-import { connectDB } from '../config/integrationTest'
+import {closeDBConnection, connectDB} from '../config/integrationTest'
 
 const address = {
   city: 'Viana',
@@ -14,8 +14,10 @@ const address = {
   zipCode: 'Zip',
   state: 'ES'
 }
+
 export const userProfile = {
   id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
+  _id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',
   referredBy: 'DUDUZINHO',
   name: 'TALHATE',
   email: 't@yahoo.com',
@@ -44,7 +46,7 @@ describe('User profile integration tests', () => {
   })
 
   afterAll(() => {
-    // closeDBConnection()
+    closeDBConnection()
   })
 
   beforeEach(async () => {

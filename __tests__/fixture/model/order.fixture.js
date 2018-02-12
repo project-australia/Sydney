@@ -28,3 +28,26 @@ export const newOrderRequest = {
     state: 'ES'
   }
 }
+
+export const updateOrderStatusRequest = {
+  status: 'PAYMENT_CONFIRMED',
+  transactionId: 'ID'
+}
+
+export const orderUpdatedResponse = {
+  updatedAt: '2018-02-10T13:03:21.419Z',
+  createdAt: '2018-02-10T13:03:21.419Z',
+  orderType: 'DONATE',
+  shippingMethod: 'SHIPPED',
+  customerId: 'X13v1lep1PTaKKHjZYkZFXbYQHn2',
+  shippingAddress: {
+    city: 'viana',
+    street: 'fighter',
+    number: '666',
+    zipCode: 'zip',
+    state: 'es'
+  },
+  items: ['5a7a2f563b29000014678917'],
+  status: 'PAYMENT_CONFIRMED',
+  id: '5a7eed99599f0a1effc47e7b'
+}

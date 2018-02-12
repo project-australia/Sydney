@@ -1,10 +1,11 @@
 const { Router } = require('express')
 const validate = require('express-validation')
-const newOrder = require('./validation/createOrder')
-const { createOrder } = require('../controllers/orderController')
+const { create, update } = require('./validation/orderRoutes')
+const { createOrder, updateOrder } = require('../controllers/orderController')
 
 const router = Router({ mergeParams: true })
 
-router.post('/', validate(newOrder), createOrder)
+router.post('/', validate(create), createOrder)
+router.put('/:orderId/', validate(update), updateOrder)
 
 module.exports = router

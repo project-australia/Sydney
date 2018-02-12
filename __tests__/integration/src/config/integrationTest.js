@@ -11,6 +11,7 @@ export const connectDB = async () => {
 }
 
 export const closeDBConnection = async () => {
+  mongoose.connection.on('close', dropDatabase)
   closeConnection()
 }
 

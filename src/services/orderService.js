@@ -1,8 +1,6 @@
 const OrderModel = require('./database/models/orderModel')
 const { findById } = require('./userService')
 
-const ALL = {}
-
 const saveOrder = async (requestBody, customerId) => {
   const customer = await findById(customerId)
 
@@ -14,13 +12,19 @@ const saveOrder = async (requestBody, customerId) => {
   }
 }
 
-async function eraseCollection (areYouSure) {
-  if (areYouSure && process.env.NODE_ENV !== 'production') {
-    await OrderModel.remove(ALL)
-  }
+const updateOrder = async (id, status, transactionId) => {
+  const findOneAndUpdate = await OrderModel.findOneAndUpdate(
+    { _id: id },
+    { $set: { status, transactionId } },
+    { new: true }
+  )
+
+  console.log('findOneAndUpdate', findOneAndUpdate)
+
+  return findOneAndUpdate
 }
 
 module.exports = {
-  saveOrder,
-  eraseCollection
+  updateOrder,
+  saveOrder
 }

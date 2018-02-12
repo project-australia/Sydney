@@ -8,6 +8,12 @@ const Schema = mongoose.Schema
 
 let OrderSchema = new Schema(
   {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      index: true,
+      required: true,
+      auto: true
+    },
     // TODO: Isso deveria ser um Schema.ObjectId ?
     customerId: { type: String, ref: userCollection, required: true },
     orderType: {

@@ -1,3 +1,5 @@
+import { createProfileRequestBody } from '../../../fixture/model/user.fixture'
+
 const request = require('supertest')
 const app = require('../../../../src/app')
 const UserService = require('../../../../src/services/userService')
@@ -43,33 +45,17 @@ describe('Configuration controller', () => {
     expect(response.body).toEqual(expectedProfile)
   })
 
-  xit('should signup a user', function () {
-    FirebaseService.createUserWithEmailAndPassword.mockReturnValue('IDK')
-    // expect(FirebaseService.createUserWithEmailAndPassword).toHaveBeenCalledWith(requestBody)
-  })
-
   it('should create a profile for a user', async () => {
     UserService.createProfile.mockReturnValue(expectedProfile)
-    const requestBody = {
-      name: 'talhate',
-      email: 't@yahoo.com',
-      birthDate: new Date(),
-      telephone: '1234567890',
-      school: 'school of life',
-      address: {
-        city: 'viana',
-        street: 'fighter',
-        number: '666',
-        zipCode: 'zip',
-        state: 'es'
-      }
-    }
 
     const response = await request(app)
       .post(`/users/${userId}/profile`)
-      .send(requestBody)
+      .send(createProfileRequestBody)
 
-    expect(UserService.createProfile).toHaveBeenCalledWith(requestBody)
+    expect(UserService.createProfile).toHaveBeenCalledWith(
+      createProfileRequestBody,
+      userId
+    )
     expect(response.statusCode).toEqual(201)
     expect(response.body).toEqual(expectedProfile)
   })
