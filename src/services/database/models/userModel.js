@@ -29,6 +29,9 @@ let UserProfileSchema = new Schema({
       type: String,
       enum: ['PENDING', 'NONE'],
       default: 'NONE'
+    },
+    paypalAccount: {
+      type: String
     }
   }
 })
