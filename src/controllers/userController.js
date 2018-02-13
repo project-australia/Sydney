@@ -35,6 +35,18 @@ const updateProfile = async (req, res) => {
   }
 }
 
+const requestWithdraw = async (req, res) => {
+  const { body, params } = req
+  const id = params.id
+
+  try {
+    const updatedProfile = await UserService.requestWithdraw(id, body)
+    res.status(200).json(updatedProfile)
+  } catch (err) {
+    return captureError('Requesting Withdraw', err, req, res)
+  }
+}
+
 const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
@@ -78,5 +90,6 @@ module.exports = {
   getProfile,
   createProfile,
   updateProfile,
+  requestWithdraw,
   signUp
 }

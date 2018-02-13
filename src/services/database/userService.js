@@ -39,10 +39,22 @@ async function updateProfile (id, userProfile) {
   )
 }
 
+async function requestWithdraw (id, wallet) {
+  return UserProfileModel.findOneAndUpdate(
+    { _id: id },
+    { $set: {
+      'wallet.status': 'PENDING',
+      'wallet.paypalAccount': wallet.paypalAccount
+    }},
+    { new: true }
+  )
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
   findById,
   updateProfile,
+  requestWithdraw,
   mapToMongoose
 }
