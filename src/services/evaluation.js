@@ -17,7 +17,7 @@ const evaluateBook = async isbn => {
     const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
-    const price = calculateBallardPrice(amazonPrice, ballardPercentage)
+    const price = {sell: calculateBallardPrice(amazonPrice, ballardPercentage)}
 
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]

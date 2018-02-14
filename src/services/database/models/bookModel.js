@@ -29,8 +29,11 @@ let BookSchema = new Schema(
       enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
       default: 'UNAVAILABLE'
     },
-    sellingPrice: { type: Number },
-    buyingPrice: { type: Number },
+    price: {
+      sell: { type: Number },
+      buy: { type: Number },
+      rent: { type: Number }
+    },
     featured: { type: Boolean, default: false },
     title: { type: String, trim: true, lowercase: true, required: true },
     authors: [{ type: String, lowercase: true, trim: true }],

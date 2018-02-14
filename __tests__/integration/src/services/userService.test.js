@@ -3,8 +3,10 @@ import {
   eraseCollection,
   findById,
   updateProfile,
+  requestWithdraw,
   mapToMongoose
 } from '../../../../src/services/database/userService'
+
 import {closeDBConnection, connectDB} from '../config/integrationTest'
 
 const address = {
@@ -46,7 +48,7 @@ describe('User profile integration tests', () => {
   })
 
   afterAll(() => {
-    closeDBConnection()
+    // closeDBConnection()
   })
 
   beforeEach(async () => {
@@ -76,5 +78,12 @@ describe('User profile integration tests', () => {
     expect(updatedUser.telephone).toEqual(updateUserProfile.telephone)
     expect(updatedUser.school).toEqual(updateUserProfile.school)
     expect(updatedUser.address.city).toEqual(newAddress.city)
+  })
+
+  it('should request withdraw', async () => {
+    await createProfile(userProfile)
+    const updatedUser = await requestWithdraw(userProfile.id, { paypalAccount: 'hebert' })
+    expect(updatedUser.wallet.status).toEqual('PENDING')
+    expect(updatedUser.wallet.paypalAccount).toEqual('hebert')
   })
 })
