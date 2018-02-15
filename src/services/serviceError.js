@@ -1,5 +1,5 @@
 class ServiceError extends Error {
-  constructor (err) {
+  constructor (err, status) {
     super(err.message)
     this.rootCause = err
     Error.captureStackTrace(this, ServiceError)
@@ -8,6 +8,7 @@ class ServiceError extends Error {
     this.code = err.code
     this.message = err.message
     this.userMessage = err.message
+    this.status = status
   }
 }
 

@@ -2,22 +2,38 @@ const { ServiceError } = require('./serviceError')
 const _ = require('lodash')
 const AmazonClient = require('./amazon')
 
-// TODO: Test this
 const amazonLookup = async isbn => {
   return AmazonClient.lookupByISBN(isbn)
 }
 
+const byHasLowestUsedPriceField = book =>
+  book.OfferSummary &&
+  book.OfferSummary[0].LowestUsedPrice &&
+  book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
+
+const byLowestUsedPrice = (acc, element) => {
+  const accPriceAmount = acc.OfferSummary[0].LowestUsedPrice[0].Amount;
+  const elementPriceAmount = element.OfferSummary[0].LowestUsedPrice[0].Amount;
+  return Number(accPriceAmount) < Number(elementPriceAmount) ? acc : element
+};
+
 const evaluateBook = async isbn => {
-  const bookLookUp = await AmazonClient.lookupByISBN(isbn)
+  let bookLookUp = []
 
   try {
-    // FIXME: This should be a filter by paperback
-    // const filteredByEAN = bookLookUp.filter(byEAN(isbn))
+    bookLookUp = await AmazonClient.lookupByISBN(isbn)
+  } catch (err) {
+    throw new ServiceError(new Error('ISBN Not Found'), 404)
+  }
 
-    const bestOffer = bookLookUp.reduce(cheapestBook) // FIXME: Reduce by highest salesrank
+  try {
+    const filteredByLowestUsedPriceField = bookLookUp.filter(byHasLowestUsedPriceField)
+    const bestOffer = filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0])
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
-    const price = {sell: calculateBallardPrice(amazonPrice, ballardPercentage)}
+    const price = {
+      sell: calculateBallardPrice(amazonPrice, ballardPercentage)
+    }
 
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
@@ -26,12 +42,10 @@ const evaluateBook = async isbn => {
       : getAuthorFromEntireLookup(bookLookUp)
     const images = getImagesFromEntireLookup(bookLookUp)
     const edition = getBookEditionFromEntireLookup(bookLookUp)
-    const id = isbn // FIXME: Refactor this
     const description = undefined //  FIXME: we need to grab this from amazon api
     const dimensions = getBookDimensionsFromEntireLookup(bookLookUp)
 
     return {
-      id,
       title,
       price,
       images,
@@ -42,31 +56,10 @@ const evaluateBook = async isbn => {
       dimensions
     }
   } catch (error) {
-    console.error(error)
     throw new ServiceError(error)
   }
 }
 
-// TODO: Test scenario for this rule
-const lowestUsedPriceOf = book =>
-  book.OfferSummary &&
-  book.OfferSummary[0].LowestUsedPrice &&
-  book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
-
-const cheapestBook = (cheapearBook, currentBook) => {
-  // TODO: Test scenario for this rule, Maybe remove this
-  if (
-    !currentBook.OfferSummary ||
-    currentBook.OfferSummary[0].LowestUsedPrice
-  ) {
-    return cheapearBook
-  }
-  return lowestUsedPriceOf(cheapearBook) < lowestUsedPriceOf(currentBook)
-    ? cheapearBook
-    : currentBook
-}
-
-// TODO: Test scenario for this rule
 const getPrice = book => {
   try {
     return Number(
@@ -90,17 +83,12 @@ const ballardPricePercetage = book => {
   }
 }
 
-const userDiscout = () => {
-  // If a user is 10% member or 20% member, this is the place to put code.
-  return 1
-}
-
 const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
   if (!ballardPercentage) {
     return null
   }
 
-  return Number(amazonPrice * ballardPercentage * userDiscout()).toFixed(2)
+  return Number(amazonPrice * ballardPercentage).toFixed(2)
 }
 
 const getAuthorFromEntireLookup = bookLookupResult => {

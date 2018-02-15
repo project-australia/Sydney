@@ -790,13 +790,13 @@
         "LowestUsedPrice": [
           {
             "Amount": [
-              "6427"
+              "2000"
             ],
             "CurrencyCode": [
               "USD"
             ],
             "FormattedPrice": [
-              "$64.27"
+              "$20.00"
             ]
           }
         ],

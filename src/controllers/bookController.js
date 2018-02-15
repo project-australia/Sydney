@@ -16,7 +16,7 @@ const lookup = async (req, res) => {
     const evaluation = await EvaluationService.amazonLookup(formattedIsbn)
     res.status(200).json(evaluation)
   } catch (err) {
-    return captureError('book lookup', err, req, res)
+    return captureError('book lookup', err, req, res, err.status)
   }
 }
 
@@ -28,7 +28,7 @@ const evaluate = async (req, res) => {
     const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
     res.status(200).json(evaluation)
   } catch (err) {
-    return captureError('book evaluation', err, req, res)
+    return captureError(undefined, err, req, res)
   }
 }
 
