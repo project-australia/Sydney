@@ -12,10 +12,10 @@ const byHasLowestUsedPriceField = book =>
   book.OfferSummary[0].LowestUsedPrice[0].Amount[0]
 
 const byLowestUsedPrice = (acc, element) => {
-  const accPriceAmount = acc.OfferSummary[0].LowestUsedPrice[0].Amount;
-  const elementPriceAmount = element.OfferSummary[0].LowestUsedPrice[0].Amount;
+  const accPriceAmount = acc.OfferSummary[0].LowestUsedPrice[0].Amount
+  const elementPriceAmount = element.OfferSummary[0].LowestUsedPrice[0].Amount
   return Number(accPriceAmount) < Number(elementPriceAmount) ? acc : element
-};
+}
 
 const evaluateBook = async isbn => {
   let bookLookUp = []
@@ -28,8 +28,8 @@ const evaluateBook = async isbn => {
 
   try {
     const filteredByLowestUsedPriceField = bookLookUp.filter(byHasLowestUsedPriceField)
-    console.log('filteredByLowestUsedPriceField', filteredByLowestUsedPriceField)
-    const bestOffer = filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0])
+    const totalOffers = filteredByLowestUsedPriceField.length
+    const bestOffer = totalOffers > 1 ? filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0]) : filteredByLowestUsedPriceField
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
     const price = {
