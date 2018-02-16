@@ -28,6 +28,7 @@ const evaluateBook = async isbn => {
 
   try {
     const filteredByLowestUsedPriceField = bookLookUp.filter(byHasLowestUsedPriceField)
+    console.log('filteredByLowestUsedPriceField', filteredByLowestUsedPriceField)
     const bestOffer = filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0])
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
