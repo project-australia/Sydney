@@ -28,14 +28,12 @@ const evaluateBook = async isbn => {
 
   try {
     const filteredByLowestUsedPriceField = bookLookUp.filter(byHasLowestUsedPriceField)
-    const totalOffers = filteredByLowestUsedPriceField.length
-    const bestOffer = totalOffers > 1 ? filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0]) : filteredByLowestUsedPriceField
+    const bestOffer = filteredByLowestUsedPriceField.reduce(byLowestUsedPrice, filteredByLowestUsedPriceField[0])
     const ballardPercentage = ballardPricePercetage(bestOffer)
     const amazonPrice = getPrice(bestOffer)
     const price = {
       sell: calculateBallardPrice(amazonPrice, ballardPercentage)
     }
-
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
     const authors = book.Author
@@ -45,7 +43,6 @@ const evaluateBook = async isbn => {
     const edition = getBookEditionFromEntireLookup(bookLookUp)
     const description = undefined //  FIXME: we need to grab this from amazon api
     const dimensions = getBookDimensionsFromEntireLookup(bookLookUp)
-
     return {
       title,
       price,
@@ -125,7 +122,7 @@ const getBookDimensionsFromEntireLookup = bookLookupResult => {
     return bookWithDimensions
   }
 
-  const dimensions = bookWithDimensions.ItemAttributes[0].ItemDimensions[0]
+  const dimensions = bookWithDimensions.ItemAttributes[0].PackageDimensions[0]
   return {
     height: parseFloat(dimensions.Height[0]['_']) / 100,
     length: parseFloat(dimensions.Length[0]['_']) / 100,
