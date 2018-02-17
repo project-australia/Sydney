@@ -34,6 +34,7 @@ const evaluateBook = async isbn => {
     const price = {
       sell: calculateBallardPrice(amazonPrice, ballardPercentage)
     }
+    console.log('price', price)
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
     const authors = book.Author
@@ -86,7 +87,7 @@ const calculateBallardPrice = (amazonPrice, ballardPercentage) => {
     return null
   }
 
-  return Number(amazonPrice * ballardPercentage).toFixed(2)
+  return Number((amazonPrice * ballardPercentage).toFixed(2))
 }
 
 const getAuthorFromEntireLookup = bookLookupResult => {
