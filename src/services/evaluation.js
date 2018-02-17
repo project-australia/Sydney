@@ -45,6 +45,7 @@ const evaluateBook = async isbn => {
     const description = undefined //  FIXME: we need to grab this from amazon api
     const dimensions = getBookDimensionsFromEntireLookup(bookLookUp)
     return {
+      id: new Date(),
       title,
       price,
       images,
