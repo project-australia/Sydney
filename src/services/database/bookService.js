@@ -17,14 +17,13 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
   }).exec()
 }
 
-
-// TODO: Simplify this to findBy
 async function findByIsbn (isbn) {
-  return BookModel.find({
+  const books = await BookModel.find({
     $or: [
       { isbn: formatIsbn(isbn) }
     ]
   }).exec()
+  return books && books[0]
 }
 
 async function findRecentlyAddedBooks () {
