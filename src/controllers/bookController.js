@@ -3,6 +3,7 @@ const EvaluationService = require('../services/evaluation')
 const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,
+  findByIsbn,
   findRecentlyAddedBooks,
   findFeaturedBooks
 } = require('../services/database/bookService')
@@ -42,6 +43,17 @@ const findBookByParams = async (req, res) => {
   }
 }
 
+const findBookByIsbn = async (req, res) => {
+  const isbn = req.params.isbn
+
+  try {
+    const booksFound = await findByIsbn(isbn)
+    res.status(200).json(booksFound)
+  } catch (err) {
+    return captureError('books not founds', err, req, res)
+  }
+}
+
 const addNewBooks = async (req, res) => {
   const { books } = req.body
   try {
@@ -76,5 +88,6 @@ module.exports = {
   findBookByParams,
   addNewBooks,
   getFeaturedBooks,
+  findBookByIsbn,
   getRecentlyAddedBooks
 }

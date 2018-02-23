@@ -1,5 +1,7 @@
 const BookModel = require('./models/bookModel')
 
+const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
+
 async function saveBook (book) {
   return new BookModel(book).save()
 }
@@ -11,6 +13,16 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
       { isbn: searchParam },
       { title: searchParamLowerCase },
       { authors: { $in: [searchParamLowerCase] } }
+    ]
+  }).exec()
+}
+
+
+// TODO: Simplify this to findBy
+async function findByIsbn (isbn) {
+  return BookModel.find({
+    $or: [
+      { isbn: formatIsbn(isbn) }
     ]
   }).exec()
 }
@@ -32,5 +44,6 @@ module.exports = {
   saveBook,
   findBooksByAuthorOrIsnbOrTitle,
   findRecentlyAddedBooks,
-  findFeaturedBooks
+  findFeaturedBooks,
+  findByIsbn
 }

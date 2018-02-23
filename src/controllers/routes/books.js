@@ -4,6 +4,7 @@ const {
   lookup,
   findBookByParams,
   addNewBooks,
+  findBookByIsbn,
   getFeaturedBooks,
   getRecentlyAddedBooks
 } = require('../bookController')
@@ -16,7 +17,7 @@ router.post('/search', findBookByParams)
 
 router.get('/:isbn/evaluation', evaluate)
 router.get('/:isbn/lookup', lookup)
-router.get('/search', findBookByParams)
+router.get('/:isbn', findBookByIsbn)
 
 router.post('/', addNewBooks)
 router.get('/featured', getFeaturedBooks)
