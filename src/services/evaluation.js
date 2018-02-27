@@ -34,7 +34,6 @@ const evaluateBook = async isbn => {
     const price = {
       sell: calculateBallardPrice(amazonPrice, ballardPercentage)
     }
-    console.log('price', price)
     const book = bestOffer.ItemAttributes[0]
     const title = book.Title[0]
     const authors = book.Author

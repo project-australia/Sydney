@@ -36,8 +36,8 @@ const evaluate = async (req, res) => {
 const findBookByParams = async (req, res) => {
   const { searchParam } = req.body
   try {
-    const foundedBooks = await findBooksByAuthorOrIsnbOrTitle(searchParam)
-    res.status(200).json(foundedBooks)
+    const foundBooks = await findBooksByAuthorOrIsnbOrTitle(searchParam)
+    res.status(200).json(foundBooks)
   } catch (err) {
     return captureError('books not founds', err, req, res)
   }
@@ -48,7 +48,12 @@ const findBookByIsbn = async (req, res) => {
 
   try {
     const booksFound = await findByIsbn(isbn)
-    res.status(200).json(booksFound)
+    if (booksFound) {
+      res.status(200).json(booksFound)
+    } else {
+      const message = 'Book not found'
+      return captureError(message, new Error(message), req, res, 404)
+    }
   } catch (err) {
     return captureError('books not founds', err, req, res)
   }
