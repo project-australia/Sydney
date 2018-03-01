@@ -3,6 +3,12 @@ const { captureError } = require('./apiError')
 
 const createOrder = async (req, res) => {
   try {
+    if (req.body.orderType === 'SELL') {
+      res.status(200).json({ message: 'NOT IMPLEMENTED'})
+      console.log('CREATING SELLING ORDER', req.body)
+      return
+    }
+
     const order = await OrderService.saveOrder(req.body, req.params.id)
     res.status(201).json(order)
   } catch (err) {
@@ -30,6 +36,7 @@ const updateOrder = async (req, res) => {
       status,
       transactionId
     )
+
     res.status(200).json(order)
   } catch (err) {
     return captureError('Updating order', err, req, res)

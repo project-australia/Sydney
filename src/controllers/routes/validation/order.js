@@ -13,7 +13,7 @@ module.exports = Joi.object()
     customerId: Joi.string(),
     transactionId: Joi.string(),
     shippingMethod: Joi.string()
-      .valid('IN_PERSON', 'STANDARD', 'EXPEDITE')
+      .valid('IN_PERSON', 'STANDARD', 'EXPEDITE', 'SHIPPO')
       .required(),
     shippingAddress: address,
     status: Joi.string().valid(

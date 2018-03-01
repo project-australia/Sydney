@@ -36,7 +36,7 @@ let OrderSchema = new Schema(
     items: [{ type: Schema.ObjectId, ref: bookCollection }],
     shippingMethod: {
       type: String,
-      enum: ['IN_PERSON', 'STANDARD', 'EXPEDITE'],
+      enum: ['IN_PERSON', 'STANDARD', 'EXPEDITE', 'SHIPPO'],
       required: true
     },
     shippingAddress: address
