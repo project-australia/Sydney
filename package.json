@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "DEBUG=sydney:* node -r dotenv/config ./src/server.js",
+    "docker:start": "sh scripts/docker.sh",
     "dev": "DEBUG=sydney:* nodemon -r dotenv/config ./src/server.js",
     "dev-win": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js --exec babel-node",
     "lint:check": "eslint ./src/ ./__tests__/",
@@ -58,7 +59,7 @@
     "prettier": "^1.10.2"
   },
   "engines": {
-    "node": "8.9.1",
+    "node": "8.9.4",
     "npm": "5.5.1"
   },
   "jest": {
