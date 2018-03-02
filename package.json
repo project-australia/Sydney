@@ -5,6 +5,7 @@
     "start": "DEBUG=sydney:* node -r dotenv/config ./src/server.js",
     "docker:start": "sh scripts/docker.sh",
     "dev": "DEBUG=sydney:* nodemon -r dotenv/config ./src/server.js",
+    "docker:dev": "docker-compose up",
     "dev-win": "cross-env DEBUG=commonwealth:* nodemon --debug ./src/server.js --exec babel-node",
     "lint:check": "eslint ./src/ ./__tests__/",
     "lint:fix": "eslint --fix ./src/ ./__tests__/",

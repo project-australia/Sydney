@@ -7,3 +7,4 @@ src/config/secrets/
 .vscode
 *.lock
 .env
+database/

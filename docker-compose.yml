@@ -1,0 +1,28 @@
+# This still experimental, I have to find out how to bind container src folder to host src folder
+version: "3.5"
+services:
+  app:
+    container_name: sydney
+    build: Dockerfile
+    command: ["npm", "run", "dev"]
+    ports:
+      - "3000:3000"
+    links:
+      - database
+    env_file:
+      - .env
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+    volumes:
+      - type: bind
+        source: ./src
+        target: /usr/src/app/src
+  database:
+    container_name: mongo
+    image: mongo
+    logging:
+      driver: "none"
+    volumes:
+      - ./database:/data/db
+    ports:
+      - "27017:27017"
