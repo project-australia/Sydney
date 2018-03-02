@@ -1,11 +1,10 @@
 import {
   saveBook,
-  eraseCollection,
   findBooksByAuthorOrIsnbOrTitle,
   findRecentlyAddedBooks,
   findFeaturedBooks
 } from '../../../../src/services/database/bookService'
-import { closeDBConnection, connectDB } from '../config/integrationTest'
+import { connectDB } from '../config/integrationTest'
 import { aBook } from '../../../fixture/model/book.fixture'
 
 const searchParam = {
@@ -17,14 +16,6 @@ const searchParam = {
 describe('Book integration tests', () => {
   beforeAll(async () => {
     await connectDB()
-  })
-
-  afterAll(() => {
-    closeDBConnection()
-  })
-
-  beforeEach(async () => {
-    await eraseCollection(true)
   })
 
   it.only('should save a book to DB', async () => {

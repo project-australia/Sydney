@@ -1,13 +1,12 @@
 import {
   createProfile,
-  eraseCollection,
   findById,
   updateProfile,
   requestWithdraw,
   mapToMongoose
 } from '../../../../src/services/database/userService'
 
-import {closeDBConnection, connectDB} from '../config/integrationTest'
+import {connectDB} from '../config/integrationTest'
 
 const address = {
   city: 'Viana',
@@ -45,14 +44,6 @@ export const updateUserProfile = {
 describe('User profile integration tests', () => {
   beforeAll(async () => {
     await connectDB()
-  })
-
-  afterAll(() => {
-    // closeDBConnection()
-  })
-
-  beforeEach(async () => {
-    await eraseCollection(true)
   })
 
   it('should save an User profile to DB', async () => {
