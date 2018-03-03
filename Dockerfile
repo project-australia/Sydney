@@ -1,5 +1,5 @@
 FROM node:carbon AS sydney
-WORKDIR /usr/src/app
+WORKDIR /usr/projects/app
 
 COPY package*.json ./
 RUN npm install

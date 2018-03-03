@@ -3,7 +3,7 @@ services:
   app:
     container_name: sydney
     build: .
-    command: ["npm", "run", "dev"]
+    command: ["npm", "run", "ci"]
     ports:
       - "3000:3000"
     links:
