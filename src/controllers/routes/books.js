@@ -12,7 +12,7 @@ const {
 const router = Router()
 
 router.post('/', addNewBooks)
-router.post('/search', findBookByParams)
+router.get('/search', findBookByParams)
 router.get('/featured', getFeaturedBooks)
 router.get('/recentlyAdded', getRecentlyAddedBooks)
 
