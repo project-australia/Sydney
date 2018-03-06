@@ -8,11 +8,12 @@ async function saveBook (book) {
 
 async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
   const searchParamLowerCase = searchParam.toLowerCase()
+  const regexpParam = { $regex: new RegExp(searchParamLowerCase, 'ig') }
   return BookModel.find({
     $or: [
       { isbn: searchParam },
-      { title: searchParamLowerCase },
-      { authors: { $in: [searchParamLowerCase] } }
+      { title: regexpParam },
+      { authors: regexpParam }
     ]
   }).exec()
 }
