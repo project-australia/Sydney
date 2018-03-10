@@ -39,6 +39,7 @@ let BookSchema = new Schema(
     authors: [{ type: String, lowercase: true, trim: true }],
     isbn: { type: String, trim: true, lowercase: true, required: true },
     edition: { type: String, trim: true, lowercase: true },
+    about: { type: String, trim: true },
     images,
     dimensions,
     condition: {
