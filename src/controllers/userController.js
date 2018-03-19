@@ -47,6 +47,7 @@ const requestWithdraw = async (req, res) => {
   }
 }
 
+// TODO: Essa funcao tem que conseguir criar o profile com dados os dados que virao do signup form
 const signUp = async (req, res) => {
   const { email, password } = req.body
   try {
