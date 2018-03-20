@@ -10,7 +10,9 @@ describe('Book Lookup Builder', () => {
   it('should create a book with desired lowest used price', () => {
     const desiredLowestPrice = 15.22
     const formattedPrice = `$${Number(desiredLowestPrice).toFixed(2)}`
-    const book = new BookLookupBuilder().withLowestPrice(desiredLowestPrice).build()
+    const book = new BookLookupBuilder()
+      .withLowestPrice(desiredLowestPrice)
+      .build()
 
     const lowestUsedPrice = book.OfferSummary[0].LowestUsedPrice[0]
     expect(lowestUsedPrice.Amount[0]).toEqual(String(desiredLowestPrice))
@@ -25,7 +27,10 @@ describe('Book Lookup Builder', () => {
     const desiredLowestPrice = 15.22
     const desiredSalesRank = 1000
 
-    const book = new BookLookupBuilder().withSalesRank(desiredSalesRank).withLowestPrice(desiredLowestPrice).build()
+    const book = new BookLookupBuilder()
+      .withSalesRank(desiredSalesRank)
+      .withLowestPrice(desiredLowestPrice)
+      .build()
 
     const bookPrice = book.Offers[0].Offer[0].OfferListing[0].Price[0]
     expect(bookPrice.Amount).toEqual(String(desiredLowestPrice))

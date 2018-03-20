@@ -6,7 +6,7 @@ import {
   mapToMongoose
 } from '../../../../src/services/database/userService'
 
-import {connectDB} from '../config/integrationTest'
+import { connectDB } from '../config/integrationTest'
 
 const address = {
   city: 'Viana',
@@ -73,7 +73,9 @@ describe('User profile integration tests', () => {
 
   it('should request withdraw', async () => {
     await createProfile(userProfile)
-    const updatedUser = await requestWithdraw(userProfile.id, { paypalAccount: 'hebert' })
+    const updatedUser = await requestWithdraw(userProfile.id, {
+      paypalAccount: 'hebert'
+    })
     expect(updatedUser.wallet.status).toEqual('PENDING')
     expect(updatedUser.wallet.paypalAccount).toEqual('hebert')
   })

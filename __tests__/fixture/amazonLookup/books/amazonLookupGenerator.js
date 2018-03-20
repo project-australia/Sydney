@@ -10,7 +10,7 @@ export class BookLookupBuilder {
   }
 
   withSalesRank (salesRank) {
-    this.book.SalesRank = [ String(salesRank) ]
+    this.book.SalesRank = [String(salesRank)]
     return this
   }
 
@@ -19,8 +19,8 @@ export class BookLookupBuilder {
     const amount = String(price)
 
     const lowestUsedPrice = this.book.OfferSummary[0].LowestUsedPrice[0]
-    lowestUsedPrice.FormattedPrice = [ formattedPrice ]
-    lowestUsedPrice.Amount = [ amount ]
+    lowestUsedPrice.FormattedPrice = [formattedPrice]
+    lowestUsedPrice.Amount = [amount]
 
     const bookPrice = this.book.Offers[0].Offer[0].OfferListing[0].Price[0]
     bookPrice.FormattedPrice = formattedPrice

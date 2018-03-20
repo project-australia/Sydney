@@ -51,9 +51,7 @@ describe('Amazon API Service', () => {
   })
 
   it.skip('should throw ISBN not found when amazon return empty array', async () => {
-    AmazonClient.lookupByISBN.mockReturnValue(
-      Promise.resolve([])
-    )
+    AmazonClient.lookupByISBN.mockReturnValue(Promise.resolve([]))
 
     expect(async () => {
       await evaluateBook('9781483358505')

@@ -1,4 +1,7 @@
-import {orderUpdatedResponse, updateOrderStatusRequest} from "../../../fixture/model/order.fixture";
+import {
+  orderUpdatedResponse,
+  updateOrderStatusRequest
+} from '../../../fixture/model/order.fixture'
 
 const request = require('supertest')
 const app = require('../../../../src/app')

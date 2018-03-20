@@ -42,10 +42,12 @@ async function updateProfile (id, userProfile) {
 async function requestWithdraw (id, wallet) {
   return UserProfileModel.findOneAndUpdate(
     { _id: id },
-    { $set: {
-      'wallet.status': 'PENDING',
-      'wallet.paypalAccount': wallet.paypalAccount
-    }},
+    {
+      $set: {
+        'wallet.status': 'PENDING',
+        'wallet.paypalAccount': wallet.paypalAccount
+      }
+    },
     { new: true }
   )
 }
