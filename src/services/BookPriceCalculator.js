@@ -5,9 +5,9 @@ export const NOT_INTERESTED_IN_THIS_BOOK = undefined
 export const ACCEPT_AS_DONATION = 0
 
 const notInterestedIn = ({ salesRank, price }) => {
-  if (salesRank > 1200) {
+  if (salesRank > 1200000) {
     return true
-  } else if (salesRank > 900) {
+  } else if (salesRank > 900000) {
     return price < 20
   }
 
@@ -15,9 +15,9 @@ const notInterestedIn = ({ salesRank, price }) => {
 }
 
 const isInterestedInDonation = ({ salesRank, price }) => {
-  if (salesRank <= 900) {
+  if (salesRank <= 900000) {
     return price >= 10 && price < 20
-  } else if (salesRank < 1200) {
+  } else if (salesRank < 1200000) {
     return price > 20
   }
 
@@ -25,11 +25,11 @@ const isInterestedInDonation = ({ salesRank, price }) => {
 }
 
 const ballardSellingPercentage = (salesRank, price) => {
-  if (salesRank <= 199) {
+  if (salesRank <= 199999) {
     return price > 30 ? THIRTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank <= 499 && salesRank >= 200) {
+  } else if (salesRank <= 499999 && salesRank >= 200) {
     return price > 30 ? TWENTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank <= 900 && salesRank >= 500) {
+  } else if (salesRank <= 900000 && salesRank >= 500000) {
     return TWENTY_PERCENT
   }
 
