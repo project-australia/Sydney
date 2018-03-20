@@ -42,6 +42,6 @@ describe('Book Lookup Domain Object', () => {
   })
 
   it('should expose lowest price', () => {
-    expect(bookLookup.lowestUsedPrice).toEqual(25.50)
+    expect(bookLookup.lowestUsedPrice).toEqual(25.5)
   })
 })

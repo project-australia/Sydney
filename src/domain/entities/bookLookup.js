@@ -27,32 +27,20 @@ export class BookLookup {
       _ => _.ItemAttributes[0].PackageDimensions[0]
     )
 
-    const height = idx(
-      dimensions,
-      _ => parseFloat(dimensions.Height[0]['_']) / 100
-    )
-    const length = idx(
-      dimensions,
-      _ => parseFloat(dimensions.Length[0]['_']) / 100
-    )
-    const width = idx(
-      dimensions,
-      _ => parseFloat(dimensions.Width[0]['_']) / 100
-    )
-    const weight = idx(
-      dimensions,
-      _ => parseFloat(dimensions.Weight[0]['_']) / 100
-    )
+    const height = idx(dimensions, _ => dimensions.Height[0]['_'])
+    const length = idx(dimensions, _ => dimensions.Length[0]['_'])
+    const width = idx(dimensions, _ => dimensions.Width[0]['_'])
+    const weight = idx(dimensions, _ => dimensions.Weight[0]['_'])
 
     if (!height || !length || !width || !weight) {
       return undefined
     }
 
     return {
-      height,
-      length,
-      width,
-      weight
+      height: parseFloat(height) / 100,
+      length: parseFloat(length) / 100,
+      width: parseFloat(width) / 100,
+      weight: parseFloat(weight) / 100
     }
   }
 
@@ -80,12 +68,12 @@ export class BookLookup {
   }
 
   get lowestUsedPrice () {
-    const price = idx(this, _ => _.formattedLowestUsedPrice.substr(1));
+    const price = idx(this, _ => _.formattedLowestUsedPrice.substr(1))
     return price && Number(price)
   }
 
   get authors () {
-    return idx(this.book, _ => _.Author)
+    return idx(this.book, _ => _.ItemAttributes[0].Author)
   }
 
   get edition () {

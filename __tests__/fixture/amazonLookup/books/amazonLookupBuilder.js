@@ -1,9 +1,9 @@
-// TODO: refactor this to domain bookLookup
 import PaperBackBook from './paperback'
+import _ from 'lodash'
 
 export class BookLookupBuilder {
   constructor () {
-    this.book = Object.assign({}, PaperBackBook)
+    this.book = _.cloneDeep(PaperBackBook)
   }
 
   build () {
