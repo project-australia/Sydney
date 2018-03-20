@@ -13,7 +13,8 @@ export class AmazonLookup {
   }
 
   get bookLookupWithLowestUsedPrice () {
-    const toLowestPriceLookup = (lowest, current) => lowest.lowestUsedPrice < current.lowestUsedPrice ? lowest : current
+    const toLowestPriceLookup = (lowest, current) =>
+      lowest.lowestUsedPrice < current.lowestUsedPrice ? lowest : current
     return this.lookups.reduce(toLowestPriceLookup, this.lookups[0])
   }
 

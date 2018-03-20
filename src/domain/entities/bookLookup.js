@@ -9,6 +9,11 @@ export class BookLookup {
     return this.binding === 'Paperback'
   }
 
+  get salesRank () {
+    const salesRank = idx(this.book, _ => _.SalesRank[0])
+    return Number(salesRank)
+  }
+
   get images () {
     const small = idx(this.book, _ => _.SmallImage[0].URL[0])
     const medium = idx(this.book, _ => _.MediumImage[0].URL[0])
@@ -70,6 +75,10 @@ export class BookLookup {
   get lowestUsedPrice () {
     const price = idx(this, _ => _.formattedLowestUsedPrice.substr(1))
     return price && Number(price)
+  }
+
+  get price () {
+    return this.lowestUsedPrice
   }
 
   get authors () {

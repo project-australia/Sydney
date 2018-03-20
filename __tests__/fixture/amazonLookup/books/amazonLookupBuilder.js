@@ -1,3 +1,4 @@
+import { BookLookup } from '../../../../src/domain/entities/bookLookup'
 import PaperBackBook from './paperback'
 import _ from 'lodash'
 
@@ -8,6 +9,10 @@ export class BookLookupBuilder {
 
   build () {
     return this.book
+  }
+
+  buildLookup () {
+    return new BookLookup(this.book)
   }
 
   withSalesRank (salesRank) {

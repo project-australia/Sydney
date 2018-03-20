@@ -41,6 +41,10 @@ describe('Book Lookup Domain Object', () => {
     expect(bookLookup.isPaperback()).toEqual(true)
   })
 
+  it('should expose books salesRank', () => {
+    expect(bookLookup.salesRank).toEqual(198999)
+  })
+
   it('should expose lowest price', () => {
     expect(bookLookup.lowestUsedPrice).toEqual(25.5)
   })

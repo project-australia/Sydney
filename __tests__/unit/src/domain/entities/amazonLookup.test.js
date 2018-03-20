@@ -2,11 +2,14 @@ import { BookLookup } from '../../../../../src/domain/entities/bookLookup'
 import PaperbackLookupJSON from '../../../../fixture/amazonLookup/books/paperback'
 import KindleLookupJSON from '../../../../fixture/amazonLookup/books/kindleEbook'
 import { AmazonLookup } from '../../../../../src/domain/entities/amazonLookup'
-import { BookLookupBuilder } from '../../../../fixture/amazonLookup/books/amazonLookupBuilder';
+import { BookLookupBuilder } from '../../../../fixture/amazonLookup/books/amazonLookupBuilder'
 
 describe('Amazon Books Lookup Domain Object', () => {
   it('should filter paperback books', () => {
-    const amazonLookup = new AmazonLookup([PaperbackLookupJSON, KindleLookupJSON])
+    const amazonLookup = new AmazonLookup([
+      PaperbackLookupJSON,
+      KindleLookupJSON
+    ])
     expect(amazonLookup.lookups).toEqual([new BookLookup(PaperbackLookupJSON)])
   })
 
@@ -18,7 +21,9 @@ describe('Amazon Books Lookup Domain Object', () => {
     const JSONRepresentation = [fiveBucksBook, tenBucksBook, twentyBucksBook]
     const amazonLookup = new AmazonLookup(JSONRepresentation)
 
-    expect(amazonLookup.bookLookupWithLowestUsedPrice).toEqual(new BookLookup(fiveBucksBook))
+    expect(amazonLookup.bookLookupWithLowestUsedPrice).toEqual(
+      new BookLookup(fiveBucksBook)
+    )
   })
 
   it('should get book dimensions', () => {
