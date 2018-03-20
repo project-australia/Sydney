@@ -1,7 +1,7 @@
 import AmazonClient from '../../../../src/services/amazon'
 import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
 import { evaluateBook } from '../../../../src/services/evaluation'
-import {ServiceError} from "../../../../src/services/serviceError";
+import { ServiceError } from '../../../../src/services/serviceError'
 jest.mock('../../../../src/services/amazon')
 
 const bookUnderSalesRankThreshold = 0

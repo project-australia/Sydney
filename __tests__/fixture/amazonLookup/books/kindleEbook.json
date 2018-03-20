@@ -1,0 +1,375 @@
+{
+  "ASIN": [
+    "B06Y3BFTQ2"
+  ],
+  "DetailPageURL": [
+    "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B06Y3BFTQ2"
+  ],
+  "ItemLinks": [
+    {
+      "ItemLink": [
+        {
+          "Description": [
+            "Technical Details"
+          ],
+          "URL": [
+            "https://www.amazon.com/Fundamentals-Human-Resource-Management-Applications-ebook/dp/tech-data/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Baby Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wedding Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wishlist"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B06Y3BFTQ2&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "Tell A Friend"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/pdp/taf/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "All Customer Reviews"
+          ],
+          "URL": [
+            "https://www.amazon.com/review/product/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        },
+        {
+          "Description": [
+            "All Offers"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/offer-listing/B06Y3BFTQ2?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06Y3BFTQ2"
+          ]
+        }
+      ]
+    }
+  ],
+  "SmallImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "58",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "MediumImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "124",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "LargeImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+      ],
+      "Height": [
+        {
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "386",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "ImageSets": [
+    {
+      "ImageSet": [
+        {
+          "$": {
+            "Category": "primary"
+          },
+          "SwatchImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL30_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "30",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "23",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "SmallImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "58",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "ThumbnailImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "58",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "TinyImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL110_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "110",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "85",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "MediumImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "160",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "124",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "LargeImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "500",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "386",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "HiResImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/91drlKzIpUL.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "2560",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "1978",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ItemAttributes": [
+    {
+      "Author": [
+        "Robert N. Lussier",
+        "John R. Hendon"
+      ],
+      "Binding": [
+        "Kindle Edition"
+      ],
+      "Edition": [
+        "1"
+      ],
+      "EISBN": [
+        "9781506331812"
+      ],
+      "Format": [
+        "Kindle eBook"
+      ],
+      "Label": [
+        "SAGE Publications, Inc"
+      ],
+      "Languages": [
+        {
+          "Language": [
+            {
+              "Name": [
+                "English"
+              ],
+              "Type": [
+                "Published"
+              ]
+            }
+          ]
+        }
+      ],
+      "Manufacturer": [
+        "SAGE Publications, Inc"
+      ],
+      "NumberOfPages": [
+        "440"
+      ],
+      "ProductGroup": [
+        "eBooks"
+      ],
+      "ProductTypeName": [
+        "ABIS_EBOOKS"
+      ],
+      "PublicationDate": [
+        "2015-11-26"
+      ],
+      "Publisher": [
+        "SAGE Publications, Inc"
+      ],
+      "ReleaseDate": [
+        "2015-11-26"
+      ],
+      "Studio": [
+        "SAGE Publications, Inc"
+      ],
+      "Title": [
+        "Fundamentals of Human Resource Management: Functions, Applications, Skill Development"
+      ]
+    }
+  ]
+}
