@@ -5,7 +5,9 @@ export class BookLookup {
     this.book = lookupJsonRepresentation
   }
 
-  isPaperBack = () => this.binding === 'Paperback'
+  isPaperback () {
+    return this.binding === 'Paperback'
+  }
 
   get images () {
     const small = idx(this.book, _ => _.SmallImage[0].URL[0])
@@ -20,22 +22,46 @@ export class BookLookup {
   }
 
   get dimensions () {
-    const dimensions = idx(this.book, _ => _.ItemAttributes[0].PackageDimensions[0])
+    const dimensions = idx(
+      this.book,
+      _ => _.ItemAttributes[0].PackageDimensions[0]
+    )
+
+    const height = idx(
+      dimensions,
+      _ => parseFloat(dimensions.Height[0]['_']) / 100
+    )
+    const length = idx(
+      dimensions,
+      _ => parseFloat(dimensions.Length[0]['_']) / 100
+    )
+    const width = idx(
+      dimensions,
+      _ => parseFloat(dimensions.Width[0]['_']) / 100
+    )
+    const weight = idx(
+      dimensions,
+      _ => parseFloat(dimensions.Weight[0]['_']) / 100
+    )
+
+    if (!height || !length || !width || !weight) {
+      return undefined
+    }
 
     return {
-      height: parseFloat(dimensions.Height[0]['_']) / 100,
-      length: parseFloat(dimensions.Length[0]['_']) / 100,
-      width: parseFloat(dimensions.Width[0]['_']) / 100,
-      weight: parseFloat(dimensions.Weight[0]['_']) / 100
+      height,
+      length,
+      width,
+      weight
     }
   }
 
   get description () {
-    return idx(this.book, _ => _.ItemAttributes[0].Title[0])
+    return undefined
   }
 
   get title () {
-    return undefined
+    return idx(this.book, _ => _.ItemAttributes[0].Title[0])
   }
 
   get isbn () {
@@ -47,11 +73,15 @@ export class BookLookup {
   }
 
   get formattedLowestUsedPrice () {
-    return idx(this.book, _ => _.OfferSummary[0].LowestUsedPrice[0].FormattedPrice[0])
+    return idx(
+      this.book,
+      _ => _.OfferSummary[0].LowestUsedPrice[0].FormattedPrice[0]
+    )
   }
 
   get lowestUsedPrice () {
-    return idx(this, _ => _.formattedLowestUsedPrice.substr(1))
+    const price = idx(this, _ => _.formattedLowestUsedPrice.substr(1));
+    return price && Number(price)
   }
 
   get authors () {

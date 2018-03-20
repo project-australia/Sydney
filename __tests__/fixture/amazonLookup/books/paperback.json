@@ -70,6 +70,247 @@
   "SalesRank": [
     "198999"
   ],
+  "SmallImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "58",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "MediumImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "124",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "LargeImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+      ],
+      "Height": [
+        {
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "386",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "ImageSets": [
+    {
+      "ImageSet": [
+        {
+          "$": {
+            "Category": "primary"
+          },
+          "SwatchImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL30_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "30",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "23",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "SmallImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "58",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "ThumbnailImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "58",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "TinyImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL110_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "110",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "85",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "MediumImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL._SL160_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "160",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "124",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "LargeImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/519E5eZgjGL.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "500",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "386",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "HiResImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/91drlKzIpUL.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "2560",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "1978",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "ItemAttributes": [
     {
       "Binding": [
@@ -90,6 +331,42 @@
       ],
       "PackageQuantity": [
         "1"
+      ],
+      "PackageDimensions": [
+        {
+          "Height": [
+            {
+              "_": "73",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Length": [
+            {
+              "_": "843",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Weight": [
+            {
+              "_": "79",
+              "$": {
+                "Units": "Hundredths Pounds"
+              }
+            }
+          ],
+          "Width": [
+            {
+              "_": "585",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ]
+        }
       ],
       "ProductGroup": [
         "Book"
@@ -123,13 +400,13 @@
       "LowestUsedPrice": [
         {
           "Amount": [
-            "2000"
+            "2550"
           ],
           "CurrencyCode": [
             "USD"
           ],
           "FormattedPrice": [
-            "$20.00"
+            "$25.50"
           ]
         }
       ],
