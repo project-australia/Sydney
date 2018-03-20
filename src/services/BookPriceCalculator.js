@@ -1,8 +1,22 @@
-const TWENTY_PERCENT = 0.2
-const TWENTY_FIVE_PERCENT = 0.25
-const THIRTY_FIVE_PERCENT = 0.35
 export const NOT_INTERESTED_IN_THIS_BOOK = undefined
 export const ACCEPT_AS_DONATION = 0
+const THIRTY_FIVE_PERCENT = 0.35
+const TWENTY_FIVE_PERCENT = 0.25
+const TWENTY_PERCENT = 0.2
+
+export class BookPriceCalculator {
+  static calculate (book) {
+    if (isInterestedInDonation(book)) {
+      return ACCEPT_AS_DONATION
+    }
+
+    if (notInterestedIn(book)) {
+      return NOT_INTERESTED_IN_THIS_BOOK
+    }
+
+    return calculateBallardSellingPrice(book)
+  }
+}
 
 const notInterestedIn = ({ salesRank, price }) => {
   if (salesRank > 1200000) {
@@ -38,18 +52,4 @@ const ballardSellingPercentage = (salesRank, price) => {
 
 const calculateBallardSellingPrice = ({ salesRank, price }) => {
   return price - price * ballardSellingPercentage(salesRank, price)
-}
-
-export class BookPriceCalculator {
-  static calculate (book) {
-    if (isInterestedInDonation(book)) {
-      return ACCEPT_AS_DONATION
-    }
-
-    if (notInterestedIn(book)) {
-      return NOT_INTERESTED_IN_THIS_BOOK
-    }
-
-    return calculateBallardSellingPrice(book)
-  }
 }
