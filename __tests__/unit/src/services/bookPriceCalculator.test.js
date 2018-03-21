@@ -82,7 +82,9 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(199999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * pricePercentage)
+      expect(calculate(anotherBook)).toEqual(
+        anotherBook.price * pricePercentage
+      )
     })
 
     it('salesRank <= 199999 and price > $30, 35% PRICE', () => {
@@ -106,7 +108,7 @@ describe('Book Evaluation Pricing Rules', () => {
     })
 
     it('200000 >= salesRank >= 499999 and $20 >= price >= $30, 20% PRICE', () => {
-      const pricePercentage = 0.80
+      const pricePercentage = 0.8
 
       const book = new BookLookupBuilder()
         .withLowestPrice(20.0)
@@ -119,28 +121,32 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(499999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * pricePercentage)
+      expect(calculate(anotherBook)).toEqual(
+        anotherBook.price * pricePercentage
+      )
     })
 
     it('200000 >= salesRank >= 499999 and price > $30, 25% PRICE', () => {
       const pricePercentage = 0.75
 
       const book = new BookLookupBuilder()
-        .withLowestPrice(31.00)
+        .withLowestPrice(31.0)
         .withSalesRank(200000)
         .buildLookup()
       expect(calculate(book)).toEqual(book.price * pricePercentage)
 
       const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(31.00)
+        .withLowestPrice(31.0)
         .withSalesRank(499999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * pricePercentage)
+      expect(calculate(anotherBook)).toEqual(
+        anotherBook.price * pricePercentage
+      )
     })
 
     it('500000 >= salesRank >= 900000 and price > $30, 20% PRICE', () => {
-      const pricePercentage = 0.80
+      const pricePercentage = 0.8
 
       const book = new BookLookupBuilder()
         .withLowestPrice(31.0)
@@ -153,7 +159,9 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(899999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * pricePercentage)
+      expect(calculate(anotherBook)).toEqual(
+        anotherBook.price * pricePercentage
+      )
     })
   })
 })
