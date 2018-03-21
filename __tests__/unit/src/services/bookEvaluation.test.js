@@ -1,10 +1,7 @@
 import AmazonClient from '../../../../src/services/amazon'
 import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
 import { evaluateBook } from '../../../../src/services/evaluation'
-import { ServiceError } from '../../../../src/services/serviceError'
 jest.mock('../../../../src/services/amazon')
-
-const bookUnderSalesRankThreshold = 0
 
 describe('Amazon API Service', () => {
   beforeAll(() => {
@@ -39,5 +36,4 @@ describe('Amazon API Service', () => {
     expect(book.dimensions.width).toEqual(5.85)
     expect(book.dimensions.weight).toEqual(0.79)
   })
-
 })
