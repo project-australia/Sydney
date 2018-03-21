@@ -27,6 +27,7 @@
     "firebase-admin": "5.5.1",
     "git-last-commit": "^0.3.0",
     "helmet": "^3.8.1",
+    "idx": "^2.2.0",
     "joi": "^13.1.1",
     "lodash": "^4.17.4",
     "moment": "^2.21.0",
