@@ -105,12 +105,12 @@ describe('Book Evaluation Pricing Rules', () => {
       expect(calculate(book)).toEqual(book.price * pricePercentage)
     })
 
-    it('200 >= salesRank >= 499999 and $20 >= price >= $30, 20% PRICE', () => {
+    it('200000 >= salesRank >= 499999 and $20 >= price >= $30, 20% PRICE', () => {
       const pricePercentage = 0.80
 
       const book = new BookLookupBuilder()
         .withLowestPrice(20.0)
-        .withSalesRank(200)
+        .withSalesRank(200000)
         .buildLookup()
       expect(calculate(book)).toEqual(book.price * pricePercentage)
 

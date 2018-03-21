@@ -39,11 +39,11 @@ const isInterestedInDonation = ({ salesRank, price }) => {
 }
 
 const ballardSellingPercentage = (salesRank, price) => {
-  if (salesRank <= 199999) {
+  if (salesRank < 200000) {
     return price > 30 ? THIRTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank <= 499999 && salesRank >= 200) {
+  } else if (salesRank >= 200000 && salesRank < 500000) {
     return price > 30 ? TWENTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank <= 900000 && salesRank >= 500000) {
+  } else if (salesRank >= 500000 && salesRank <= 900000) {
     return TWENTY_PERCENT
   }
 
