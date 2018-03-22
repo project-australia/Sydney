@@ -1,4 +1,6 @@
-language: javascript
+language: node_js
+node_js:
+  - "8"
 branches:
   only:
   - master
@@ -11,7 +13,8 @@ before_install:
 install:
   - npm install
 script:
-  - npm run prepush
-  - npm run precommit
-after_success:
-  - npm run update-coverage
+  - npm run lint:check
+  - npm run test:unit
+notifications:
+    webhooks: https://www.travisbuddy.com/
+    on_success: never
