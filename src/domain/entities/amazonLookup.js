@@ -2,7 +2,7 @@ const idx = require('idx')
 const { BookLookup } = require('./bookLookup')
 
 class AmazonLookup {
-  constructor (amazonLookupJSONRepresentation) {
+  constructor (amazonLookupJSONRepresentation = []) {
     this.lookups = amazonLookupJSONRepresentation
       .map(book => new BookLookup(book))
       .filter(book => book.isPaperback())

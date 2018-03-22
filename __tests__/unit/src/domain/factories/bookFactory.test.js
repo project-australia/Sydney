@@ -12,9 +12,11 @@ describe('Amazon Lookup Mapper', () => {
 
     const book = AmazonLookupMapper.toBook(amazonLookup)
     expect(book.isbn).toEqual('148335850X')
-    expect(book.prices).toEqual({sell: 20.4})
+    expect(book.prices).toEqual({ sell: 20.4 })
     expect(book.description).toEqual(undefined)
-    expect(book.title).toEqual('Fundamentals Of Human Resource Management Functions, Applications, Skill Development')
+    expect(book.title).toEqual(
+      'Fundamentals Of Human Resource Management Functions, Applications, Skill Development'
+    )
     expect(book.authors).toEqual(amazonLookup.bookAuthors)
     expect(book.edition).toEqual(amazonLookup.bookEdition)
     expect(book.dimensions).toEqual(amazonLookup.bookDimensions)
