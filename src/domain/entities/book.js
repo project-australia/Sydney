@@ -1,4 +1,4 @@
-export class Book {
+class Book {
   constructor ({
     id,
     isbn,
@@ -20,4 +20,8 @@ export class Book {
     this.dimensions = dimensions
     this.prices = prices
   }
+}
+
+module.exports = {
+  Book
 }

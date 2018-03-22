@@ -1,7 +1,7 @@
-import { BookPriceCalculator } from '../../services/BookPriceCalculator'
-import { Book, Images, Prices, Dimensions } from '../entities'
+const { BookPriceCalculator } = require('../../services/BookPriceCalculator')
+const { Book, Images, Prices, Dimensions } = require('../entities')
 
-export class AmazonLookupMapper {
+class AmazonLookupMapper {
   static toBook (lookup) {
     const bookLookup = lookup.bookLookupWithLowestUsedPrice
     const isbn = bookLookup.isbn
@@ -26,4 +26,8 @@ export class AmazonLookupMapper {
       prices
     })
   }
+}
+
+module.exports = {
+  AmazonLookupMapper
 }

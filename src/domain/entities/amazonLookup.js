@@ -1,7 +1,7 @@
-import idx from 'idx'
-import { BookLookup } from './bookLookup'
+const idx = require('idx')
+const { BookLookup } = require('./bookLookup')
 
-export class AmazonLookup {
+class AmazonLookup {
   constructor (amazonLookupJSONRepresentation) {
     this.lookups = amazonLookupJSONRepresentation
       .map(book => new BookLookup(book))
@@ -37,4 +37,8 @@ export class AmazonLookup {
     const booksWithImages = this.lookups.filter(book => book.images)
     return idx(booksWithImages, _ => _[0].images)
   }
+}
+
+module.exports = {
+  AmazonLookup
 }

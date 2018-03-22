@@ -1,10 +1,10 @@
-export const NOT_INTERESTED_IN_THIS_BOOK = undefined
-export const ACCEPT_AS_DONATION = 0
+const NOT_INTERESTED_IN_THIS_BOOK = undefined
 const THIRTY_FIVE_PERCENT = 0.35
 const TWENTY_FIVE_PERCENT = 0.25
+const ACCEPT_AS_DONATION = 0
 const TWENTY_PERCENT = 0.2
 
-export class BookPriceCalculator {
+class BookPriceCalculator {
   static calculate (book) {
     if (isInterestedInDonation(book)) {
       return ACCEPT_AS_DONATION
@@ -52,4 +52,10 @@ const ballardSellingPercentage = (salesRank, price) => {
 
 const calculateBallardSellingPrice = ({ salesRank, price }) => {
   return price - price * ballardSellingPercentage(salesRank, price)
+}
+
+module.exports = {
+  BookPriceCalculator,
+  NOT_INTERESTED_IN_THIS_BOOK,
+  ACCEPT_AS_DONATION
 }
