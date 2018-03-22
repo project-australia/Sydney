@@ -1,9 +1,9 @@
-import { AmazonLookup } from './amazonLookup'
-import { BookLookup } from './bookLookup'
-import { Dimensions } from './dimensions'
-import { Images } from './images'
-import { Prices } from './prices'
-import { Book } from './book'
+const { AmazonLookup } = require('./amazonLookup')
+const { BookLookup } = require('./bookLookup')
+const { Dimensions } = require('./dimensions')
+const { Images } = require('./images')
+const { Prices } = require('./prices')
+const { Book } = require('./book')
 
 module.exports = {
   AmazonLookup,

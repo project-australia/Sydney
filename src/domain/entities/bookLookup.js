@@ -1,6 +1,6 @@
-import idx from 'idx'
+const idx = require('idx')
 
-export class BookLookup {
+class BookLookup {
   constructor (lookupJsonRepresentation) {
     this.book = lookupJsonRepresentation
   }
@@ -88,4 +88,8 @@ export class BookLookup {
   get edition () {
     return idx(this.book, _ => _.ItemAttributes[0].Edition)
   }
+}
+
+module.exports = {
+  BookLookup
 }
