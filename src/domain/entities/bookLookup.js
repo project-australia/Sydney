@@ -86,7 +86,7 @@ class BookLookup {
   }
 
   get edition () {
-    return idx(this.book, _ => _.ItemAttributes[0].Edition)
+    return idx(this.book, _ => _.ItemAttributes[0].Edition[0])
   }
 }
 
