@@ -1,21 +1,23 @@
 export class Book {
-  id
-  title
-  images
-  authors
-  edition
-  isbn
-  dimensions
-  price
-
-  constructor (id, title, images, authors, edition, isbn, dimensions, price) {
+  constructor ({
+    id,
+    isbn,
+    title,
+    authors,
+    edition,
+    images,
+    description,
+    dimensions,
+    prices
+  }) {
     this.id = id
     this.title = title
-    this.images = images
     this.authors = authors
     this.edition = edition
     this.isbn = isbn
+    this.description = description
+    this.images = images
     this.dimensions = dimensions
-    this.price = price
+    this.prices = prices
   }
 }

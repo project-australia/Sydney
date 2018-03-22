@@ -1,6 +1,4 @@
-export class Price {
-  sell
-
+export class Prices {
   constructor (sell) {
     this.sell = sell
   }
