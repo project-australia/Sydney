@@ -16,6 +16,12 @@ const dimensions = {
   weight: { type: Number, trim: true }
 }
 
+const prices = {
+  sell: { type: Number },
+  buy: { type: Number },
+  rent: { type: Number }
+}
+
 let BookSchema = new Schema(
   {
     _id: {
@@ -29,17 +35,13 @@ let BookSchema = new Schema(
       enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
       default: 'UNAVAILABLE'
     },
-    price: {
-      sell: { type: Number },
-      buy: { type: Number },
-      rent: { type: Number }
-    },
     featured: { type: Boolean, default: false },
     title: { type: String, trim: true, lowercase: true, required: true },
     authors: [{ type: String, lowercase: true, trim: true }],
     isbn: { type: String, trim: true, lowercase: true, required: true },
     edition: { type: String, trim: true, lowercase: true },
     about: { type: String, trim: true },
+    prices,
     images,
     dimensions,
     condition: {

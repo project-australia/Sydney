@@ -1,6 +1,8 @@
 class Prices {
-  constructor (sell) {
+  constructor ({ sell, buy, rent }) {
     this.sell = sell
+    this.buy = buy
+    this.rent = rent
   }
 }
 
