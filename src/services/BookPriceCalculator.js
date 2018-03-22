@@ -5,13 +5,13 @@ const ACCEPT_AS_DONATION = 0
 const TWENTY_PERCENT = 0.2
 
 class BookPriceCalculator {
-  static calculate (book) {
-    if (isInterestedInDonation(book)) {
-      return ACCEPT_AS_DONATION
+  static calculate(book) {
+    if (!book.price || notInterestedIn(book)) {
+      return NOT_INTERESTED_IN_THIS_BOOK
     }
 
-    if (notInterestedIn(book)) {
-      return NOT_INTERESTED_IN_THIS_BOOK
+    if (isInterestedInDonation(book)) {
+      return ACCEPT_AS_DONATION
     }
 
     return calculateBallardSellingPrice(book)

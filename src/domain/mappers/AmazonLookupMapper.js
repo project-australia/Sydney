@@ -12,7 +12,7 @@ class AmazonLookupMapper {
     const images = new Images(lookup.bookImages)
     const dimensions = new Dimensions(lookup.bookDimensions)
     const sellingPrice = BookPriceCalculator.calculate(bookLookup)
-    const prices = new Prices(sellingPrice)
+    const prices = new Prices({sell: sellingPrice})
 
     return new Book({
       id: new Date(),

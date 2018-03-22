@@ -1,6 +1,6 @@
 class Prices {
   constructor ({ sell, buy, rent }) {
-    this.sell = sell
+    this.sell = Number(sell.toFixed(2))
     this.buy = buy
     this.rent = rent
   }
