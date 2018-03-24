@@ -21,6 +21,7 @@ describe('Order controller', () => {
   })
 
   it('should create SELLING order for given user', async () => {
+    const { items, shippingMethod, shippingAddress } = newSellingOrderRequest
     OrderService.createSellOrder.mockReturnValue(newOrderResponse)
     const response = await request(app)
       .post(`/users/${userId}/orders`)
@@ -28,10 +29,16 @@ describe('Order controller', () => {
 
     expect(response.statusCode).toEqual(201)
     expect(response.body).toEqual(newOrderResponse)
-    expect(OrderService.createSellOrder).toHaveBeenCalledWith(newSellingOrderRequest, userId)
+    expect(OrderService.createSellOrder).toHaveBeenCalledWith(
+      userId,
+      items,
+      shippingMethod,
+      shippingAddress
+    )
   })
 
   it('should create BUYING order for given user', async () => {
+    const { items, shippingMethod, shippingAddress } = newBuyingOrderRequest
     OrderService.createBuyOrder.mockReturnValue(newOrderResponse)
     const response = await request(app)
       .post(`/users/${userId}/orders`)
@@ -39,7 +46,12 @@ describe('Order controller', () => {
 
     expect(response.statusCode).toEqual(201)
     expect(response.body).toEqual(newOrderResponse)
-    expect(OrderService.createBuyOrder).toHaveBeenCalledWith(newBuyingOrderRequest, userId)
+    expect(OrderService.createBuyOrder).toHaveBeenCalledWith(
+      userId,
+      items,
+      shippingMethod,
+      shippingAddress
+    )
   })
 
   it('should update order for given user', async () => {
