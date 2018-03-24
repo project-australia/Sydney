@@ -103,6 +103,5 @@ module.exports = {
   updateProfile,
   requestWithdraw,
   getAll,
-  deleteProfile,
   signUp
 }
