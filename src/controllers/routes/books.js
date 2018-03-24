@@ -6,15 +6,13 @@ const {
   addNewBooks,
   findBookByIsbn,
   getFeaturedBooks,
-  getRecentlyAddedBooks,
-  findBookById
+  getRecentlyAddedBooks
 } = require('../bookController')
 
 const router = Router()
 
 router.post('/', addNewBooks)
 router.get('/search', findBookByParams)
-router.get('/:id', findBookById)
 router.get('/featured', getFeaturedBooks)
 router.get('/recentlyAdded', getRecentlyAddedBooks)
 
