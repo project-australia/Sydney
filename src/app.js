@@ -4,6 +4,7 @@ const logger = require('morgan')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
 const ignoreFavicon = require('./config/middlewares/ignoreFavIcon')
+const cors = require('cors')
 
 const { initialConfigurations } = require('./config')
 const { router } = require('./controllers/routes')
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(logger('dev'))
+app.use(cors())
 app.use(bodyParser.json({ type: () => true }))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())
