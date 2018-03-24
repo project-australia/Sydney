@@ -5,7 +5,8 @@ const {
   saveBook,
   findByIsbn,
   findRecentlyAddedBooks,
-  findFeaturedBooks
+  findFeaturedBooks,
+  findById
 } = require('../services/database/bookService')
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
 
@@ -28,6 +29,17 @@ const evaluate = async (req, res) => {
   try {
     const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
     res.status(200).json(evaluation)
+  } catch (err) {
+    return captureError(undefined, err, req, res)
+  }
+}
+
+const findBookById = async (req, res) => {
+  const id = req.params.id
+
+  try {
+    const book = await findById(id)
+    res.status(200).json(book)
   } catch (err) {
     return captureError(undefined, err, req, res)
   }
@@ -95,5 +107,6 @@ module.exports = {
   addNewBooks,
   getFeaturedBooks,
   findBookByIsbn,
-  getRecentlyAddedBooks
+  getRecentlyAddedBooks,
+  findBookById
 }
