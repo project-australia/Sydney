@@ -5,29 +5,41 @@ import {
 
 const request = require('supertest')
 const app = require('../../../../src/app')
-const OrderService = require('../../../../src/services/database/orderService')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
-const { newOrderRequest } = require('../../../fixture/model/order.fixture')
+const OrderService = require('../../../../src/services/database/orderService')
+const { newSellingOrderRequest, newBuyingOrderRequest } = require('../../../fixture/model/order.fixture')
 
-jest.mock('../../../../src/services/orderService')
+jest.mock('../../../../src/services/database/orderService')
 
 const userId = newOrderResponse.customerId
 
-describe('Configuration controller', () => {
+describe('Order controller', () => {
   beforeAll(() => {
-    OrderService.saveOrder = jest.fn()
+    OrderService.createSellOrder = jest.fn()
+    OrderService.createBuyOrder = jest.fn()
     OrderService.updateOrder = jest.fn()
   })
 
-  it('should create new order for given user', async () => {
-    OrderService.saveOrder.mockReturnValue(newOrderResponse)
+  it('should create SELLING order for given user', async () => {
+    OrderService.createSellOrder.mockReturnValue(newOrderResponse)
     const response = await request(app)
       .post(`/users/${userId}/orders`)
-      .send(newOrderRequest)
+      .send(newSellingOrderRequest)
 
     expect(response.statusCode).toEqual(201)
     expect(response.body).toEqual(newOrderResponse)
-    expect(OrderService.saveOrder).toHaveBeenCalledWith(newOrderRequest, userId)
+    expect(OrderService.createSellOrder).toHaveBeenCalledWith(newSellingOrderRequest, userId)
+  })
+
+  it('should create BUYING order for given user', async () => {
+    OrderService.createBuyOrder.mockReturnValue(newOrderResponse)
+    const response = await request(app)
+      .post(`/users/${userId}/orders`)
+      .send(newBuyingOrderRequest)
+
+    expect(response.statusCode).toEqual(201)
+    expect(response.body).toEqual(newOrderResponse)
+    expect(OrderService.createBuyOrder).toHaveBeenCalledWith(newBuyingOrderRequest, userId)
   })
 
   it('should update order for given user', async () => {
