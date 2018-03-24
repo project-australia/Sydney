@@ -28,7 +28,7 @@ async function findAllUsers () {
 }
 
 async function findById (id) {
-  return UserProfileModel.findOneAndRemove()
+  return UserProfileModel.findById(id)
 }
 
 async function updateProfile (id, userProfile) {
@@ -39,8 +39,8 @@ async function updateProfile (id, userProfile) {
   )
 }
 
-async function deleteProfile (id) {
-  return UserProfileModel({ _id: id })
+async function deleteProfile (id, userProfile) {
+  return UserProfileModel.findOneAndRemove({ _id: id })
 }
 
 async function requestWithdraw (id, wallet) {
