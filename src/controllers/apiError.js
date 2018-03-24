@@ -25,6 +25,8 @@ class ApiError extends Error {
 
     if (process.env.NODE_ENV === 'production') {
       opbeat.captureError(error)
+    } else {
+      console.log(error)
     }
   }
 }
