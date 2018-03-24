@@ -11,7 +11,12 @@ const createBuyOrder = async (
   const buyingBooks = items.filter(item => item.type === 'BUY').map(item => changeAvailability(item.book.id, 'SOLD'))
   const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
 
-  return saveOrder(customerId, orderItems, shippingMethod, shippingAddress, 'BUY')
+  const savedOrder = await saveOrder(customerId, orderItems, shippingMethod, shippingAddress, 'BUY')
+
+  // TODO: HEBERT AJUDA EU
+  // MANDAR EMAIL DE CONFIRMACAO DE ORDER
+
+  return savedOrder
 }
 
 const createSellOrder = async (
