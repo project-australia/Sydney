@@ -2,8 +2,6 @@ const request = require('supertest')
 const app = require('../../../../src/app')
 const ConfigurationService = require('../../../../src/services/configurations')
 
-jest.mock('../../../../src/services/bookEvaluation')
-
 describe('Configuration controller', () => {
   beforeAll(() => {
     ConfigurationService.getSelling = jest.fn()

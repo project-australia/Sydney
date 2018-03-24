@@ -1,4 +1,4 @@
-import { BookLookupBuilder } from '../../../fixture/amazonLookup/books/amazonLookupGenerator'
+import { BookLookupBuilder } from '../../../fixture/amazonLookup/books/amazonLookupBuilder'
 
 describe('Book Lookup Builder', () => {
   it('should create a book with desired sales rank', () => {

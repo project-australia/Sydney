@@ -2,8 +2,6 @@ import amazon from 'amazon-product-api'
 
 import { lookupByISBN } from '../../../../src/services/amazon'
 import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
-import amazonLookupError from '../../../fixture/amazonLookup/amazonLookupError'
-import { ClientError } from '../../../../src/clients/clientError'
 
 jest.mock('amazon-product-api')
 
@@ -29,14 +27,5 @@ describe('Amazon API client', () => {
 
     expect(lookup).toEqual(amazonLookupByISBN)
     expect(mock.itemLookup).toHaveBeenCalledWith(expectedParams)
-  })
-
-  it('should encapsulate an external error into a representation', async () => {
-    mock.itemLookup.mockReturnValue(Promise.reject(amazonLookupError))
-    const itemId = 'INVALID_ISBN'
-
-    await expect(lookupByISBN(itemId)).rejects.toEqual(
-      new ClientError(amazonLookupError)
-    )
   })
 })

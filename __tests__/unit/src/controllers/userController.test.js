@@ -5,7 +5,7 @@ const app = require('../../../../src/app')
 const UserService = require('../../../../src/services/database/userService')
 const FirebaseService = require('../../../../src/services/firebase')
 
-jest.mock('../../../../src/services/userService')
+jest.mock('../../../../src/services/database/userService')
 jest.mock('../../../../src/services/firebase')
 
 const expectedProfile = {

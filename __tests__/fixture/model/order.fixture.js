@@ -1,32 +1,3 @@
-const aBook = {
-  "id": "2018-03-24T14:17:05.720Z",
-  "condition": "New",
-  "title": "Student Solutions Manual for Stewart's Single Variable Calculus: Early Transcendentals, 8th (James Stewart Calculus)",
-  "authors": [
-    "James Stewart",
-    "Jeffrey A. Cole",
-    "Daniel Drucker",
-    "Daniel Anderson"
-  ],
-  "edition": "8",
-  "isbn": "1305272420",
-  "images": {
-    "small": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL._SL75_.jpg",
-    "medium": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL._SL160_.jpg",
-    "large": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL.jpg"
-  },
-  "dimensions": {
-    "height": 1.1,
-    "length": 9.9,
-    "width": 8,
-    "weight": 1.65
-  },
-  "prices": {
-    "sell": 26.02
-  }
-}
-
-
 export const newOrderResponse = {
   updatedAt: '2018-02-10T13:03:21.419Z',
   createdAt: '2018-02-10T13:03:21.419Z',
@@ -36,7 +7,6 @@ export const newOrderResponse = {
   shippingAddress: {
     city: 'viana',
     street: 'fighter',
-    number: '666',
     zipCode: 'zip',
     state: 'es'
   },
@@ -136,7 +106,38 @@ export const newRentingOrderRequest = {
 
 export const newBuyingOrderRequest = {
   orderType: 'BUY',
-  items: [aBook],
+  items: [{
+    "type": "SELL",
+    "id": "2018-03-24T11:05:38.622Z",
+    "book": {
+      "id": "2018-03-24T14:17:05.720Z",
+      "condition": "New",
+      "title": "Student Solutions Manual for Stewarts Single Variable Calculus: Early Transcendentals, 8th (James Stewart Calculus)",
+      "authors": [
+        "James Stewart",
+        "Jeffrey A. Cole",
+        "Daniel Drucker",
+        "Daniel Anderson"
+      ],
+      "edition": "8",
+      "isbn": "1305272420",
+      "images": {
+        "small": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL._SL75_.jpg",
+        "medium": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL._SL160_.jpg",
+        "large": "https://images-na.ssl-images-amazon.com/images/I/51BUXoQVslL.jpg"
+      },
+      "dimensions": {
+        "height": 1.1,
+        "length": 9.9,
+        "width": 8,
+        "weight": 1.65
+      },
+      "prices": {
+        "sell": 26.02
+      }
+    }
+  }
+  ],
   shippingMethod: 'IN_PERSON',
   shippingAddress: {
     city: 'Viana',
