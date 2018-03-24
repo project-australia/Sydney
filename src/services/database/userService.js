@@ -28,7 +28,7 @@ async function findAllUsers () {
 }
 
 async function findById (id) {
-  return UserProfileModel.findById(id)
+  return UserProfileModel.findOneAndRemove()
 }
 
 async function updateProfile (id, userProfile) {
@@ -37,6 +37,10 @@ async function updateProfile (id, userProfile) {
     { $set: userProfile },
     { new: true }
   )
+}
+
+async function deleteProfile (id) {
+  return UserProfileModel({ _id: id })
 }
 
 async function requestWithdraw (id, wallet) {
@@ -58,5 +62,6 @@ module.exports = {
   findById,
   updateProfile,
   requestWithdraw,
+  deleteProfile,
   mapToMongoose
 }

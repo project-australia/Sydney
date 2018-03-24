@@ -18,6 +18,17 @@ const getAll = async (req, res) => {
   }
 }
 
+const deleteProfile = async (req, res) => {
+  const { id } = req.params
+  try {
+    let userProfile = await UserService.deleteProfile(id)
+
+    res.status(200).json(userProfile)
+  } catch (err) {
+    return captureError('Get user profile', err, req, res)
+  }
+}
+
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
@@ -103,5 +114,6 @@ module.exports = {
   updateProfile,
   requestWithdraw,
   getAll,
+  deleteProfile,
   signUp
 }

@@ -8,7 +8,8 @@ const {
   getProfile,
   requestWithdraw,
   signUp,
-  getAll
+  getAll,
+  deleteProfile
 } = require('../userController')
 
 const router = Router()
@@ -19,5 +20,6 @@ router.post('/:id/profile', validate(profileValidation), createProfile)
 router.put('/:id/profile', updateProfile)
 router.put('/:id/requestwithdraw', requestWithdraw)
 router.get('/:id/profile', getProfile)
+router.delete('/:id/profile', deleteProfile)
 
 module.exports = router
