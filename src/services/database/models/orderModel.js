@@ -43,6 +43,7 @@ let OrderSchema = new Schema(
       enum: VALID_SHIPPING_METHODS,
       required: true
     },
+    total: { type: Number },
     shippingAddress: address
   },
   {
