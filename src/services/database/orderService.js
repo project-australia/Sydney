@@ -1,5 +1,5 @@
 const { saveBooks, changeAvailability } = require('./bookService')
-const OrderModel = require('./models/orderModel')
+const { OrderModel } = require('./models/orderModel')
 
 const createBuyOrder = async (
   customerId,

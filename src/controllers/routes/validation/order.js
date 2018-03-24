@@ -1,27 +1,22 @@
-const Joi = require('joi')
 const book = require('./book')
+const Joi = require('joi')
 const address = require('./address')
+const { VALID_ORDER_TYPES, VALID_SHIPPING_METHODS, VALID_ORDER_STATUS } = require('../../../services/database/models/orderModel')
 
+const orderItems = Joi.object().keys({
+  book,
+  id: Joi.string().required(),
+  type: Joi.string().valid(...VALID_ORDER_TYPES).required()
+})
+
+// TODO: Existe dois tipo de validacao de ROTA para UPDATE e para POST
 module.exports = Joi.object()
   .keys({
-    items: Joi.array()
-      .items(Joi.string(), book)
-      .required(),
-    orderType: Joi.string()
-      .valid('RENT', 'BUY', 'SELL', 'DONATE')
-      .required(),
-    customerId: Joi.string(),
-    transactionId: Joi.string(),
-    shippingMethod: Joi.string()
-      .valid('IN_PERSON', 'STANDARD', 'EXPEDITE', 'SHIPPO')
-      .required(),
+    items: Joi.array().items(orderItems).required(),
+    orderType: Joi.string().valid(...VALID_ORDER_TYPES).required(),
+    shippingMethod: Joi.string().valid(...VALID_SHIPPING_METHODS).required(),
     shippingAddress: address,
-    status: Joi.string().valid(
-      'WAITING_PAYMENT',
-      'PAYMENT_CONFIRMED',
-      'CANCELLED',
-      'RECEIVED',
-      'SHIPPED'
-    )
+    transactionId: Joi.string(),
+    status: Joi.string().valid(...VALID_ORDER_STATUS)
   })
   .required()
