@@ -39,10 +39,6 @@ async function updateProfile (id, userProfile) {
   )
 }
 
-async function deleteProfile (id, userProfile) {
-  return UserProfileModel.findOneAndRemove({ _id: id })
-}
-
 async function requestWithdraw (id, wallet) {
   return UserProfileModel.findOneAndUpdate(
     { _id: id },
@@ -62,6 +58,5 @@ module.exports = {
   findById,
   updateProfile,
   requestWithdraw,
-  deleteProfile,
   mapToMongoose
 }
