@@ -7,11 +7,13 @@ const {
   updateProfile,
   getProfile,
   requestWithdraw,
-  signUp
+  signUp,
+  getAll
 } = require('../userController')
 
 const router = Router()
 
+router.get('/', getAll)
 router.post('/', validate(signUpValidation), signUp)
 router.post('/:id/profile', validate(profileValidation), createProfile)
 router.put('/:id/profile', updateProfile)

@@ -8,6 +8,16 @@ const firebaseErrors = {
   'auth/invalid-email': 400
 }
 
+const getAll = async (req, res) => {
+  try {
+    let users = await UserService.findAllUsers()
+
+    res.status(200).json(users)
+  } catch (err) {
+    return captureError('Get All Users', err, req, res)
+  }
+}
+
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
@@ -92,5 +102,6 @@ module.exports = {
   createProfile,
   updateProfile,
   requestWithdraw,
+  getAll,
   signUp
 }
