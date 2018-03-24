@@ -17,9 +17,9 @@ app.disable('x-powered-by')
 
 if (process.env.NODE_ENV === 'production') {
   app.use(opbeat.middleware.express())
-} else {
-  app.use(cors())
 }
+
+app.use(cors())
 
 app.use(logger('dev'))
 app.use(bodyParser.json({ type: () => true }))
