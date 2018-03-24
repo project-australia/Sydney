@@ -33,10 +33,20 @@ const getProfile = async (req, res) => {
   }
 }
 
+const findUsersByParams = async (req, res) => {
+  const { searchParam } = req.query
+  try {
+    const foundUsers = await UserService.findUsersByNameOrEmailOrSchool(searchParam)
+    res.status(200).json(foundUsers)
+  } catch (err) {
+    return captureError('users not founds', err, req, res)
+  }
+}
+
 const updateProfile = async (req, res) => {
   const { body, params } = req
   const id = params.id
-
+  console.log('atualizando profile')
   try {
     const updatedProfile = await UserService.updateProfile(id, body)
     res.status(200).json(updatedProfile)
@@ -103,5 +113,6 @@ module.exports = {
   updateProfile,
   requestWithdraw,
   getAll,
+  findUsersByParams,
   signUp
 }

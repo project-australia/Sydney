@@ -27,6 +27,17 @@ async function findAllUsers () {
   return UserProfileModel.find(ALL)
 }
 
+async function findUsersByNameOrEmailOrSchool (searchParam) {
+  const regexpParam = { $regex: new RegExp(searchParam, 'ig') }
+  return UserProfileModel.find({
+    $or: [
+      { name: searchParam },
+      { email: regexpParam },
+      { school: regexpParam }
+    ]
+  }).exec()
+}
+
 async function findById (id) {
   return UserProfileModel.findById(id)
 }
@@ -58,5 +69,6 @@ module.exports = {
   findById,
   updateProfile,
   requestWithdraw,
-  mapToMongoose
+  mapToMongoose,
+  findUsersByNameOrEmailOrSchool
 }

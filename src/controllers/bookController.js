@@ -38,7 +38,6 @@ const findBookByParams = async (req, res) => {
   try {
     const foundBooks = await findBooksByAuthorOrIsnbOrTitle(searchParam)
     res.status(200).json(foundBooks)
-    // res.status(200).json({searchParam})
   } catch (err) {
     return captureError('books not founds', err, req, res)
   }

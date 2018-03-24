@@ -8,12 +8,15 @@ const {
   getProfile,
   requestWithdraw,
   signUp,
-  getAll
+  getAll,
+  findUsersByParams
 } = require('../userController')
 
 const router = Router()
 
 router.get('/', getAll)
+router.get('/search', findUsersByParams)
+
 router.post('/', validate(signUpValidation), signUp)
 router.post('/:id/profile', validate(profileValidation), createProfile)
 router.put('/:id/profile', updateProfile)
