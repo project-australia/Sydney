@@ -19,7 +19,7 @@ router.post('/', validate(signUpValidation), signUp)
 router.post('/:id/profile', validate(profileValidation), createProfile)
 router.put('/:id/profile', updateProfile)
 router.put('/:id/requestwithdraw', requestWithdraw)
-router.get('/:id/profile', getProfile)
 router.delete('/:id/profile', deleteProfile)
+router.get('/:id/profile', getProfile)
 
 module.exports = router
