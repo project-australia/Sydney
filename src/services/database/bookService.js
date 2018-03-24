@@ -49,6 +49,7 @@ async function findById (id) {
 }
 
 async function changeAvailability (id, status) {
+  console.log('CHANGING AVAILABILITY', id, status)
   return BookModel.findOneAndUpdate(
     { _id: id },
     {
@@ -60,18 +61,12 @@ async function changeAvailability (id, status) {
   )
 }
 
-async function markBooksAsUnavailable (bookList) {
-  const promises = bookList.map(book => changeAvailability(book.id, 'UNAVALIABLE'))
-  return Promise.all(promises)
-}
-
 module.exports = {
   findBooksByAuthorOrIsnbOrTitle,
   findByIsbn,
   findFeaturedBooks,
   findRecentlyAddedBooks,
   changeAvailability,
-  markBooksAsUnavailable,
   saveBook,
   findById,
   saveBooks

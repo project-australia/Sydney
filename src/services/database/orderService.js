@@ -1,5 +1,30 @@
-const { markBooksAsUnavailable, saveBooks } = require('./bookService')
+const { saveBooks, changeAvailability } = require('./bookService')
 const OrderModel = require('./models/orderModel')
+
+const createBuyOrder = async (
+  customerId,
+  items,
+  shippingMethod,
+  shippingAddress
+) => {
+  const rentingBooks = items.filter(item => item.type === 'RENT').map(item => changeAvailability(item.book.id, 'RENTED'))
+  const buyingBooks = items.filter(item => item.type === 'BUY').map(item => changeAvailability(item.book.id, 'SOLD'))
+  const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
+
+  return saveOrder(customerId, orderItems, shippingMethod, shippingAddress, 'BUY')
+}
+
+const createSellOrder = async (
+  customerId,
+  items,
+  shippingMethod,
+  shippingAddress
+) => {
+  const booksFromItem = items.map(item => item.book)
+  const books = await saveBooks(booksFromItem)
+
+  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
+}
 
 const saveOrder = async (
   customerId,
@@ -8,8 +33,6 @@ const saveOrder = async (
   shippingAddress,
   orderType
 ) => {
-  await markBooksAsUnavailable(items)
-
   const order = {
     customerId,
     items: items.map(book => book.id),
@@ -27,29 +50,6 @@ const updateOrder = async (id, status, transactionId) => {
     { $set: { status, transactionId } },
     { new: true }
   )
-}
-
-const createBuyOrder = async (
-  customerId,
-  items,
-  shippingMethod,
-  shippingAddress
-) => {
-  // TODO: Precisa de alguma forma de diferenciar isso, na mesa request vira items RENT e items BUY
-  // items -> [{ type: 'BUY', id: '5a7a2d4df45d530014007b88', book: [Object] }, { type: 'RENT', id: '5a7a2d4df45d530014007b88', book: [Object] }]
-  return saveOrder(customerId, items, shippingMethod, shippingAddress, 'BUY')
-}
-
-const createSellOrder = async (
-  customerId,
-  items,
-  shippingMethod,
-  shippingAddress
-) => {
-  const booksFromItem = items.map(item => item.book)
-  const books = await saveBooks(booksFromItem)
-
-  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
 module.exports = {
