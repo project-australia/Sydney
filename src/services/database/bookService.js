@@ -48,24 +48,29 @@ async function findById (id) {
   return BookModel.findById(id)
 }
 
-async function markBookAsUnavailable (id) {
-  const book = await findById(id)
-  // TODO: HEBERT AJUDA EU
-  // TODO: ATUALIZA O STATUS DO LIVRO PARA UNAVAILABLE
-  return book
+async function changeAvailability (id, status) {
+  return BookModel.findOneAndUpdate(
+    { _id: id },
+    {
+      $set: {
+        status
+      }
+    },
+    { new: true }
+  )
 }
 
 async function markBooksAsUnavailable (bookList) {
-  const promises = bookList.map(book => markBookAsUnavailable(book.id))
+  const promises = bookList.map(book => changeAvailability(book.id, 'UNAVALIABLE'))
   return Promise.all(promises)
 }
-
+ta
 module.exports = {
   findBooksByAuthorOrIsnbOrTitle,
   findByIsbn,
   findFeaturedBooks,
   findRecentlyAddedBooks,
-  markBookAsUnavailable,
+  changeAvailability,
   markBooksAsUnavailable,
   saveBook,
   findById,
