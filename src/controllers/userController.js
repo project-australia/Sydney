@@ -18,6 +18,15 @@ const getAll = async (req, res) => {
   }
 }
 
+const requestRep = async (req, res) => {
+  try {
+    // TODO: PRECISA SER IMPLEMENTADO
+    res.status(200).json({todo: 'NOT IMPLEMENTED YET'})
+  } catch (err) {
+    return captureError('Get All Users', err, req, res)
+  }
+}
+
 const getProfile = async (req, res) => {
   const { id } = req.params
   try {
@@ -111,6 +120,7 @@ module.exports = {
   getProfile,
   createProfile,
   updateProfile,
+  requestRep,
   requestWithdraw,
   getAll,
   findUsersByParams,
