@@ -64,7 +64,7 @@ async function markBooksAsUnavailable (bookList) {
   const promises = bookList.map(book => changeAvailability(book.id, 'UNAVALIABLE'))
   return Promise.all(promises)
 }
-ta
+
 module.exports = {
   findBooksByAuthorOrIsnbOrTitle,
   findByIsbn,
