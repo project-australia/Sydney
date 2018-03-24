@@ -23,6 +23,12 @@ const createSellOrder = async (
   const booksFromItem = items.map(item => item.book)
   const books = await saveBooks(booksFromItem)
 
+  if (shippingMethod === 'SHIPPO'){
+    // TODO: HEBERT AJUDA EU
+    // CRIAR O LABEL
+    // ENVIAR O LABEL POR EMAIL
+  }
+
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
