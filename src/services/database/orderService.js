@@ -1,30 +1,59 @@
+const { markBooksAsUnavailable, saveBooks } = require('./bookService')
 const OrderModel = require('./models/orderModel')
-const { findById } = require('./userService')
 
-const saveOrder = async (requestBody, customerId) => {
-  const customer = await findById(customerId)
+const saveOrder = async (
+  customerId,
+  items,
+  shippingMethod,
+  shippingAddress,
+  orderType
+) => {
+  await markBooksAsUnavailable(items)
 
-  if (customer && customer.id) {
-    const order = Object.assign({}, requestBody, { customerId: customer.id })
-    return new OrderModel(order).save()
-  } else {
-    throw new Error(`User ${customerId} Not Found`)
+  const order = {
+    customerId,
+    items: items.map(book => book.id),
+    shippingMethod,
+    shippingAddress,
+    orderType
   }
+
+  return new OrderModel(order).save()
 }
 
 const updateOrder = async (id, status, transactionId) => {
-  const findOneAndUpdate = await OrderModel.findOneAndUpdate(
+  return OrderModel.findOneAndUpdate(
     { _id: id },
     { $set: { status, transactionId } },
     { new: true }
   )
+}
 
-  console.log('findOneAndUpdate', findOneAndUpdate)
+const createBuyOrder = async (
+  customerId,
+  items,
+  shippingMethod,
+  shippingAddress
+) => {
+  // TODO: Precisa de alguma forma de diferenciar isso, na mesa request vira items RENT e items BUY
+  // items -> [{ type: 'BUY', id: '5a7a2d4df45d530014007b88', book: [Object] }, { type: 'RENT', id: '5a7a2d4df45d530014007b88', book: [Object] }]
+  return saveOrder(customerId, items, shippingMethod, shippingAddress, 'BUY')
+}
 
-  return findOneAndUpdate
+const createSellOrder = async (
+  customerId,
+  items,
+  shippingMethod,
+  shippingAddress
+) => {
+  const booksFromItem = items.map(item => item.book)
+  const books = await saveBooks(booksFromItem)
+
+  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
 module.exports = {
   updateOrder,
-  saveOrder
+  createBuyOrder,
+  createSellOrder
 }

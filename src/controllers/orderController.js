@@ -3,15 +3,24 @@ const { captureError } = require('./apiError')
 
 const createOrder = async (req, res) => {
   try {
-    const orderRequest = req.body
+    const { orderType, items, shippingMethod, shippingAddress } = req.body
     const customerId = req.params.id
-    const orderType = orderRequest.orderType
-    
+
     if (orderType === 'SELL') {
-      const order = await OrderService.createSellOrder(orderRequest, customerId)
+      const order = await OrderService.createSellOrder(
+        customerId,
+        items,
+        shippingMethod,
+        shippingAddress
+      )
       res.status(201).json(order)
     } else if (orderType === 'BUY') {
-      const order = await OrderService.createBuyOrder(orderRequest, customerId)
+      const order = await OrderService.createBuyOrder(
+        customerId,
+        items,
+        shippingMethod,
+        shippingAddress
+      )
       res.status(201).json(order)
     } else {
       captureError('Invalid OrderType', undefined, req, res, 400)
