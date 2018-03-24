@@ -7,11 +7,21 @@ const createBuyOrder = async (
   shippingMethod,
   shippingAddress
 ) => {
-  const rentingBooks = items.filter(item => item.type === 'RENT').map(item => changeAvailability(item.book.id, 'RENTED'))
-  const buyingBooks = items.filter(item => item.type === 'BUY').map(item => changeAvailability(item.book.id, 'SOLD'))
+  const rentingBooks = items
+    .filter(item => item.type === 'RENT')
+    .map(item => changeAvailability(item.book.id, 'RENTED'))
+  const buyingBooks = items
+    .filter(item => item.type === 'BUY')
+    .map(item => changeAvailability(item.book.id, 'SOLD'))
   const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
 
-  const savedOrder = await saveOrder(customerId, orderItems, shippingMethod, shippingAddress, 'BUY')
+  const savedOrder = await saveOrder(
+    customerId,
+    orderItems,
+    shippingMethod,
+    shippingAddress,
+    'BUY'
+  )
 
   // TODO: HEBERT AJUDA EU
   // MANDAR EMAIL DE CONFIRMACAO DE ORDER
@@ -28,7 +38,7 @@ const createSellOrder = async (
   const booksFromItem = items.map(item => item.book)
   const books = await saveBooks(booksFromItem)
 
-  if (shippingMethod === 'SHIPPO'){
+  if (shippingMethod === 'SHIPPO') {
     // TODO: HEBERT AJUDA EU
     // CRIAR O LABEL
     // ENVIAR O LABEL POR EMAIL

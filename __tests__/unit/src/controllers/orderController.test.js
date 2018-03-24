@@ -7,7 +7,10 @@ const request = require('supertest')
 const app = require('../../../../src/app')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
 const OrderService = require('../../../../src/services/database/orderService')
-const { newSellingOrderRequest, newBuyingOrderRequest } = require('../../../fixture/model/order.fixture')
+const {
+  newSellingOrderRequest,
+  newBuyingOrderRequest
+} = require('../../../fixture/model/order.fixture')
 
 jest.mock('../../../../src/services/database/orderService')
 
