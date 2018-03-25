@@ -73,8 +73,22 @@ const updateOrder = async (id, status, transactionId) => {
   )
 }
 
+const findAll = async () => {
+  return OrderModel.aggregate([
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'customerId',
+        foreignField: '_id',
+        as: 'user'
+      }
+    }
+  ])
+}
+
 module.exports = {
   updateOrder,
   createBuyOrder,
-  createSellOrder
+  createSellOrder,
+  findAll
 }

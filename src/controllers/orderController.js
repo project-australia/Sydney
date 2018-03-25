@@ -53,7 +53,18 @@ const updateOrder = async (req, res) => {
   }
 }
 
+const getAll = async (req, res) => {
+  try {
+    let orders = await OrderService.findAll()
+
+    res.status(200).json(orders)
+  } catch (err) {
+    return captureError('Get All Orders', err, req, res)
+  }
+}
+
 module.exports = {
   createOrder,
-  updateOrder
+  updateOrder,
+  getAll
 }

@@ -24,7 +24,6 @@ let OrderSchema = new Schema(
       required: true,
       auto: true
     },
-    // TODO: Isso deveria ser um Schema.ObjectId ?
     customerId: { type: String, ref: userCollection, required: true },
     orderType: {
       type: String,

@@ -15,6 +15,7 @@ router.use('/configurations', configurations)
 router.use('/health', health)
 router.use('/users', users)
 router.use('/users/:id/orders', orders)
+router.use('/orders', orders)
 
 router.use(notFound)
 router.use(errorHandler)
