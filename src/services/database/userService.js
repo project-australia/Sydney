@@ -67,6 +67,11 @@ async function getCustomerEmail (id) {
   return profile.email
 }
 
+async function findUserNetwork (id) {
+  const customerEmail = await getCustomerEmail(id)
+  return UserProfileModel.find({ referredBy: customerEmail })
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
@@ -75,5 +80,6 @@ module.exports = {
   requestWithdraw,
   mapToMongoose,
   getCustomerEmail,
+  findUserNetwork,
   findUsersByNameOrEmailOrSchool
 }

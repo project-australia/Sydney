@@ -10,6 +10,7 @@ const {
   requestWithdraw,
   signUp,
   getAll,
+  userNetwork,
   findUsersByParams
 } = require('../userController')
 
@@ -24,5 +25,6 @@ router.put('/:id/profile', updateProfile)
 router.put('/:id/representant', requestRep)
 router.put('/:id/requestwithdraw', requestWithdraw)
 router.get('/:id/profile', getProfile)
+router.get('/:id/network', userNetwork)
 
 module.exports = router

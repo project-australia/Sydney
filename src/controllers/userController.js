@@ -126,6 +126,22 @@ const createProfile = async (req, res) => {
   }
 }
 
+const userNetwork = async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const userNetworks = await UserService.findUserNetwork(id)
+    res.status(200).json(userNetworks)
+  } catch (err) {
+    return captureError(
+      'Error during retrieving user network',
+      err,
+      req,
+      res
+    )
+  }
+}
+
 module.exports = {
   getProfile,
   createProfile,
@@ -133,6 +149,7 @@ module.exports = {
   requestRep,
   requestWithdraw,
   getAll,
+  userNetwork,
   findUsersByParams,
   signUp
 }
