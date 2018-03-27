@@ -166,7 +166,7 @@ module.exports = {
   requestRep,
   requestWithdraw,
   getAll,
-  userOrders
+  userOrders,
   userNetwork,
   findUsersByParams,
   signUp
