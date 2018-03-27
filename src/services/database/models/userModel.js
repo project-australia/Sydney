@@ -4,7 +4,6 @@ const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema
 
-// TODO: add wallet to this model
 let UserProfileSchema = new Schema({
   _id: { type: String, trim: true, unique: true },
   referId: { type: String, trim: true, unique: true },
@@ -20,7 +19,7 @@ let UserProfileSchema = new Schema({
     default: 'USER'
   },
   club: { type: String, enum: ['TEN', 'TWENTY', 'NONE'], default: 'NONE' },
-  address: address,
+  address,
   wallet: {
     ballance: {
       type: Number

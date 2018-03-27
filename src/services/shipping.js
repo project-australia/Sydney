@@ -24,7 +24,7 @@ const addressTo = {
   email: 'hebertporto@gmail.com'
 }
 
-const parcel = {
+const parcelSample = {
   length: '5',
   width: '5',
   height: '5',
@@ -33,27 +33,60 @@ const parcel = {
   mass_unit: 'lb'
 }
 
-shippo.shipment.create(
-  {
-    address_from: addressFrom,
-    address_to: addressTo,
-    parcels: [parcel],
-    async: false
-  },
-  (err, shipment) => {
-    var rate = shipment.rates[0]
-    console.log('transcption shippiment', err)
-    // Purchase the desired rate.
-    shippo.transaction.create(
-      {
-        rate: rate.object_id,
-        label_file_type: 'PDF',
-        async: false
-      },
-      (err, transaction) => {
-        console.log('transcption shippiment', err)
-        console.log('transcption shippiment', transaction)
-      }
-    )
+const generateShippingLabel = async (
+  from = addressFrom,
+  to = addressTo,
+  parcel = parcelSample
+) => {
+  const {
+    tracking_url_provider,
+    label_url,
+    tracking_number,
+    address_from,
+    address_to,
+    address_return
+  } = await shippo.shipment.create(
+    {
+      address_from: from,
+      address_to: to,
+      parcels: [parcel],
+      async: true
+    },
+    firstRate
+  )
+
+  return {
+    trackingUrl: tracking_url_provider,
+    labelUrl: label_url,
+    trackingNumber: tracking_number,
+    addresses: {
+      from: address_from,
+      to: address_to,
+      return: address_return
+    }
   }
-)
+}
+
+const firstRate = async (err, shipment) => {
+  if (err) {
+    console.error('Error during generating Label', err)
+  }
+
+  return shippo.transaction.create(
+    {
+      rate: shipment.rates[0].object_id,
+      label_file_type: 'PDF',
+      async: true
+    },
+    onError
+  )
+}
+
+const onError = (err, transaction) => {
+  console.log('transcption shippiment', err)
+  console.log('transcption shippiment', transaction)
+};
+
+module.exports = {
+  generateShippingLabel
+}

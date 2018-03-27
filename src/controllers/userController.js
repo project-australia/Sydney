@@ -21,7 +21,7 @@ const getAll = async (req, res) => {
 const requestRep = async (req, res) => {
   try {
     // TODO: PRECISA SER IMPLEMENTADO
-    res.status(200).json({todo: 'NOT IMPLEMENTED YET'})
+    res.status(200).json({ todo: 'NOT IMPLEMENTED YET' })
   } catch (err) {
     return captureError('Get All Users', err, req, res)
   }
@@ -45,7 +45,9 @@ const getProfile = async (req, res) => {
 const findUsersByParams = async (req, res) => {
   const { searchParam } = req.query
   try {
-    const foundUsers = await UserService.findUsersByNameOrEmailOrSchool(searchParam)
+    const foundUsers = await UserService.findUsersByNameOrEmailOrSchool(
+      searchParam
+    )
     res.status(200).json(foundUsers)
   } catch (err) {
     return captureError('users not founds', err, req, res)
@@ -112,7 +114,12 @@ const createProfile = async (req, res) => {
     const newProfile = await UserService.createProfile(body, id)
     res.status(201).json(newProfile)
   } catch (err) {
-    return captureError('Creating profile', err, req, res)
+    return captureError(
+      'Error during creating a profile, try it out in a few',
+      err,
+      req,
+      res
+    )
   }
 }
 

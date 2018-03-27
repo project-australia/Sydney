@@ -1,4 +1,5 @@
 const { saveBooks, changeAvailability } = require('./bookService')
+const { generateShippingLabel } = require('../shipping')
 const { OrderModel } = require('./models/orderModel')
 
 const createBuyOrder = async (
@@ -39,9 +40,7 @@ const createSellOrder = async (
   const books = await saveBooks(booksFromItem)
 
   if (shippingMethod === 'SHIPPO') {
-    // TODO: HEBERT AJUDA EU
-    // CRIAR O LABEL
-    // ENVIAR O LABEL POR EMAIL
+    const label = await generateShippingLabel()
   }
 
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')

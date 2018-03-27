@@ -35,7 +35,8 @@
     "mongoose": "^4.11.12",
     "morgan": "~1.8.1",
     "nodemailer": "^4.4.2",
-    "opbeat": "^4.16.0"
+    "opbeat": "^4.16.0",
+    "shippo": "^1.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
