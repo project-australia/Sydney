@@ -80,6 +80,10 @@ const updateOrder = async (id, status, transactionId) => {
   )
 }
 
+const findOrdersByUserId = async (customerId) => {
+  return OrderModel.find({ customerId })
+}
+
 const findAll = async () => {
   return OrderModel.aggregate([
     {
@@ -126,20 +130,6 @@ module.exports = {
   updateOrder,
   createBuyOrder,
   createSellOrder,
-  findAll
+  findAll,
+  findOrdersByUserId
 }
-
-// db.grupos.aggregate([
-//   {$lookup:{
-//     from:'times'
-//    , let:{times:'$times'}
-//    , pipeline:[
-//     {$match:{
-//      $expr:{
-//       $in:['$nome','$$times']
-//      }
-//     }}
-//    ]
-//    , as: 'times'
-//   }}
-//  ])

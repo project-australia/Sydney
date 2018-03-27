@@ -1,5 +1,6 @@
 const { captureError } = require('./apiError')
 const UserService = require('../services/database/userService')
+const OrderService = require('../services/database/orderService')
 const FireBaseService = require('../services/firebase')
 
 const firebaseErrors = {
@@ -142,6 +143,22 @@ const userNetwork = async (req, res) => {
   }
 }
 
+const userOrders = async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const orders = await OrderService.findOrdersByUserId(id)
+    res.status(200).json(orders)
+  } catch (err) {
+    return captureError(
+      'Error during retrieving user orders',
+      err,
+      req,
+      res
+    )
+  }
+}
+
 module.exports = {
   getProfile,
   createProfile,
@@ -149,6 +166,7 @@ module.exports = {
   requestRep,
   requestWithdraw,
   getAll,
+  userOrders
   userNetwork,
   findUsersByParams,
   signUp

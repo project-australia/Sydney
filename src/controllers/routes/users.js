@@ -11,6 +11,7 @@ const {
   signUp,
   getAll,
   userNetwork,
+  userOrders,
   findUsersByParams
 } = require('../userController')
 
@@ -26,5 +27,6 @@ router.put('/:id/representant', requestRep)
 router.put('/:id/requestwithdraw', requestWithdraw)
 router.get('/:id/profile', getProfile)
 router.get('/:id/network', userNetwork)
+router.get('/:id/order', userOrders)
 
 module.exports = router
