@@ -48,6 +48,10 @@ async function findById (id) {
   return BookModel.findById(id)
 }
 
+async function findAll () {
+  return BookModel.find({})
+}
+
 async function changeAvailability (id, status) {
   console.log('CHANGING AVAILABILITY', id, status)
   return BookModel.findOneAndUpdate(
@@ -69,5 +73,6 @@ module.exports = {
   changeAvailability,
   saveBook,
   findById,
+  findAll,
   saveBooks
 }

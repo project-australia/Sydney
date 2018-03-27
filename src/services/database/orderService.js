@@ -83,6 +83,35 @@ const findAll = async () => {
         as: 'user'
       }
     }
+    // {
+    //   $lookup: {
+    //     from: 'books',
+    //     let: {'items': '$items'},
+    //     pipeline: [
+    //       {$match: {
+    //         $expr: {
+    //           $in: ['$_id', '$$items']
+    //         }
+    //       }}
+    //     ],
+    //     as: 'booksList'
+    //   }
+    // }
+    // {
+    //   $unwind: '$items'
+    // },
+    // {
+    //   $lookup:
+    //     {
+    //       from: 'books',
+    //       localField: 'items',
+    //       foreignField: '_id',
+    //       as: 'booksOrdered'
+    //     }
+    // },
+    // {
+    //   $match: { 'booksOrdered': { $ne: [] } }
+    // }
   ])
 }
 
@@ -92,3 +121,18 @@ module.exports = {
   createSellOrder,
   findAll
 }
+
+// db.grupos.aggregate([
+//   {$lookup:{
+//     from:'times'
+//    , let:{times:'$times'}
+//    , pipeline:[
+//     {$match:{
+//      $expr:{
+//       $in:['$nome','$$times']
+//      }
+//     }}
+//    ]
+//    , as: 'times'
+//   }}
+//  ])
