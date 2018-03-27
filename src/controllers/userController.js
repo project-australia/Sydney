@@ -147,6 +147,8 @@ const userOrders = async (req, res) => {
   const { id } = req.params
 
   try {
+    // FIXME: Esse endpoint está expondo coisas além do necessario
+    // como informacoes do usuario, refatorar isso.
     const orders = await OrderService.findOrdersByUserId(id)
     res.status(200).json(orders)
   } catch (err) {

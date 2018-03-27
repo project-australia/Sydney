@@ -33,8 +33,7 @@ let BookSchema = new Schema(
     status: {
       type: String,
       enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
-      // TODO: REMOVE THIS BEFORE GOING PROD
-      default: 'AVAILABLE' // IT SHOULD'VE BE 'UNAVAILABLE'
+      default: 'UNAVAILABLE'
     },
     featured: { type: Boolean, default: false },
     title: { type: String, trim: true, lowercase: true, required: true },
