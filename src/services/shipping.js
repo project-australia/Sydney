@@ -2,6 +2,7 @@ const shippo = require('shippo')(
   'shippo_test_4528a0e5077a93caee2a563d404739896cda6c12'
 )
 
+// TODO: Remove This
 const addressFrom = {
   name: 'Shawn Ippotle',
   street1: '215 Clayton St.',
@@ -13,6 +14,7 @@ const addressFrom = {
   email: 'shippotle@goshippo.com'
 }
 
+// TODO: Remove This
 const addressTo = {
   name: 'Mr Hebert Porto',
   street1: '223 E. Concord Street',
@@ -24,6 +26,7 @@ const addressTo = {
   email: 'hebertporto@gmail.com'
 }
 
+// TODO: Remove This
 const parcelSample = {
   length: '5',
   width: '5',
@@ -38,6 +41,20 @@ const generateShippingLabel = async (
   to = addressTo,
   parcel = parcelSample
 ) => {
+  const shipment = await shippo.shipment.create(
+    {
+      address_from: from,
+      address_to: to,
+      parcels: [parcel],
+      async: false
+    },
+    firstRate
+  )
+
+  if (shipment.status !== 'SUCCESS') {
+    throw new Error('Failed on creating shipping label')
+  }
+
   const {
     tracking_url_provider,
     label_url,
@@ -45,15 +62,7 @@ const generateShippingLabel = async (
     address_from,
     address_to,
     address_return
-  } = await shippo.shipment.create(
-    {
-      address_from: from,
-      address_to: to,
-      parcels: [parcel],
-      async: true
-    },
-    firstRate
-  )
+  } = shipment
 
   return {
     trackingUrl: tracking_url_provider,
@@ -72,20 +81,18 @@ const firstRate = async (err, shipment) => {
     console.error('Error during generating Label', err)
   }
 
-  return shippo.transaction.create(
-    {
-      rate: shipment.rates[0].object_id,
-      label_file_type: 'PDF',
-      async: true
-    },
-    onError
-  )
-}
+  const {
+    tracking_url_provider,
+    tracking_number,
+    label_url
+  } = await shippo.transaction.create({
+    rate: shipment.rates[0].object_id,
+    label_file_type: 'PDF',
+    async: false
+  })
 
-const onError = (err, transaction) => {
-  console.log('transcption shippiment', err)
-  console.log('transcption shippiment', transaction)
-};
+  return { tracking_url_provider, tracking_number, label_url }
+}
 
 module.exports = {
   generateShippingLabel

@@ -81,6 +81,7 @@ const requestWithdraw = async (req, res) => {
 // TODO: Essa funcao tem que conseguir criar o profile com dados os dados que virao do signup form
 const signUp = async (req, res) => {
   const { email, password } = req.body
+
   try {
     const fireBaseUser = await FireBaseService.createUserWithEmailAndPassword(
       email,
@@ -89,6 +90,8 @@ const signUp = async (req, res) => {
 
     // FIXME: This is a bad smell
     req.params.id = fireBaseUser.uid
+
+    console.log('Firebase id', fireBaseUser.uid)
     return createProfile(req, res)
   } catch (err) {
     const { code, message } = err

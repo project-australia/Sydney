@@ -1,30 +1,47 @@
 const nodemailer = require('nodemailer')
 
-// Create the transporter with the required configuration for Gmail
-// change the user and pass !
 const transporter = nodemailer.createTransport({
   host: 'smtp.zoho.com',
   port: 465,
-  secure: true, // use SSL
+  secure: true,
   auth: {
     user: 'hebert@feracode.com',
     pass: 'feracode123!!'
   }
 })
 
-const mailOptions = {
-  from: '"Our Code World " <hebert@feracode.com>', // sender address (who sends)
-  to: 'hebertporto@gmail.com', // list of receivers (who receives)
-  subject: 'Hello ', // Subject line
-  text: 'Hello world ', // plaintext body
-  html:
-    '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+const sendMail = async (to, subject, text, html) => {
+  const mailOptions = {
+    from: '"Ballard Books" <hebert@feracode.com>',
+    to,
+    subject,
+    text,
+    html
+  }
+
+  return transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      // TODO: Should we throw an error? or don't sending email doesnt mean an error
+      console.log(error)
+    }
+  })
 }
 
-// send mail with defined transport object
-transporter.sendMail(mailOptions, (error, info) => {
-  if (error) {
-    return console.log(error)
-  }
-  console.log('Message sent: ' + info.response)
-})
+const sendShippingLabelTo = async (to, label) => {
+  const subject = 'Your Shipping Label is HERE'
+  const text = label
+  const html = `<h1> ${label} </h1>`
+  return sendMail(to, subject, text, html)
+}
+
+const sendOrderConfirmationEmailTo = async (to, order) => {
+  const subject = 'Order Confirmation'
+  const text = JSON.stringify(order)
+  const html = `<h1> ${JSON.stringify(order)} </h1>`
+  return sendMail(to, subject, text, html)
+}
+
+module.exports = {
+  sendShippingLabelTo,
+  sendOrderConfirmationEmailTo
+}

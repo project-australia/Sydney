@@ -1,7 +1,13 @@
+const { getCustomerEmail } = require('./userService')
+const {
+  sendShippingLabelTo,
+  sendOrderConfirmationEmailTo
+} = require('../mailer')
 const { saveBooks, changeAvailability } = require('./bookService')
 const { generateShippingLabel } = require('../shipping')
 const { OrderModel } = require('./models/orderModel')
 
+// FIXME: We have bussiness logic tight with Data Access logic, this isn't good
 const createBuyOrder = async (
   customerId,
   items,
@@ -24,8 +30,8 @@ const createBuyOrder = async (
     'BUY'
   )
 
-  // TODO: HEBERT AJUDA EU
-  // MANDAR EMAIL DE CONFIRMACAO DE ORDER
+  const customerEmail = await getCustomerEmail(customerId)
+  await sendOrderConfirmationEmailTo(customerEmail, savedOrder)
 
   return savedOrder
 }
@@ -41,6 +47,8 @@ const createSellOrder = async (
 
   if (shippingMethod === 'SHIPPO') {
     const label = await generateShippingLabel()
+    const customerEmail = await getCustomerEmail(customerId)
+    sendShippingLabelTo(customerEmail, label.labelUrl)
   }
 
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')

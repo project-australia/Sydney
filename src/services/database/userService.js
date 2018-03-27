@@ -62,6 +62,11 @@ async function requestWithdraw (id, wallet) {
   )
 }
 
+async function getCustomerEmail (id) {
+  const profile = await findById(id)
+  return profile.email
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
@@ -69,5 +74,6 @@ module.exports = {
   updateProfile,
   requestWithdraw,
   mapToMongoose,
+  getCustomerEmail,
   findUsersByNameOrEmailOrSchool
 }
