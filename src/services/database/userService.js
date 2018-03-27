@@ -19,8 +19,7 @@ function mapToMongoose (profile, id) {
 }
 
 async function createProfile (profile, id) {
-  const awesomeInstance = new UserProfileModel(mapToMongoose(profile, id))
-  return awesomeInstance.save()
+  return new UserProfileModel(mapToMongoose(profile, id)).save()
 }
 
 async function findAllUsers () {

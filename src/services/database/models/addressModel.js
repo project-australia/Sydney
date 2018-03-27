@@ -1,6 +1,6 @@
 exports.address = {
-  city: { type: String, lowercase: true, trim: true, required: true },
-  street: { type: String, lowercase: true, trim: true, required: true },
-  zipCode: { type: String, lowercase: true, trim: true, required: true },
-  state: { type: String, lowercase: true, trim: true, required: true }
+  city: { type: String, lowercase: true, trim: true },
+  street: { type: String, lowercase: true, trim: true },
+  zipCode: { type: String, lowercase: true, trim: true },
+  state: { type: String, lowercase: true, trim: true }
 }
