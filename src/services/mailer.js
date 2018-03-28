@@ -1,30 +1,24 @@
-const nodemailer = require('nodemailer')
+const sgMail = require('@sendgrid/mail')
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: 'hebert@feracode.com',
-    pass: 'feracode123!!'
-  }
-})
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+// const msg = {
+//   to: 'test@example.com',
+//   from: 'test@example.com',
+//   subject: 'Sending with SendGrid is Fun',
+//   text: 'and easy to do anywhere, even with Node.js',
+//   html: '<strong>and easy to do anywhere, even with Node.js</strong>'
+// }
 
 const sendMail = async (to, subject, text, html) => {
   const mailOptions = {
-    from: '"Ballard Books" <hebert@feracode.com>',
+    from: '"Ballard Books" <ballardbooks@feracode.com>',
     to,
     subject,
     text,
     html
   }
-
-  return transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      // TODO: Should we throw an error? or don't sending email doesnt mean an error
-      console.log(error)
-    }
-  })
+  return sgMail.send(mailOptions)
 }
 
 const sendShippingLabelTo = async (to, label) => {

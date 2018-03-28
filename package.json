@@ -16,6 +16,7 @@
     "prettier": "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "amazon-product-api": "^0.4.4",
     "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
