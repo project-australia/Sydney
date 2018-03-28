@@ -1,16 +1,28 @@
 import { BookLookup } from '../../../../../src/domain/entities/bookLookup'
+import LooseLeafLookupJSON from '../../../../fixture/amazonLookup/books/looseLeaf'
+import HardCoverLookupJSON from '../../../../fixture/amazonLookup/books/hardCover'
+import SpiralBoundLookupJSON from '../../../../fixture/amazonLookup/books/spiralBound'
 import PaperbackLookupJSON from '../../../../fixture/amazonLookup/books/paperback'
 import KindleLookupJSON from '../../../../fixture/amazonLookup/books/kindleEbook'
 import { AmazonLookup } from '../../../../../src/domain/entities/amazonLookup'
 import { BookLookupBuilder } from '../../../../fixture/amazonLookup/books/amazonLookupBuilder'
 
 describe('Amazon Books Lookup Domain Object', () => {
-  it('should filter paperback books', () => {
+  it('should filter paperback, hard cover, spiral bound books', () => {
     const amazonLookup = new AmazonLookup([
-      PaperbackLookupJSON,
-      KindleLookupJSON
+      KindleLookupJSON,
+      LooseLeafLookupJSON,
+      HardCoverLookupJSON,
+      SpiralBoundLookupJSON,
+      PaperbackLookupJSON
     ])
-    expect(amazonLookup.lookups).toEqual([new BookLookup(PaperbackLookupJSON)])
+
+    expect(amazonLookup.lookups).toEqual([
+      new BookLookup(LooseLeafLookupJSON),
+      new BookLookup(HardCoverLookupJSON),
+      new BookLookup(SpiralBoundLookupJSON),
+      new BookLookup(PaperbackLookupJSON)
+    ])
   })
 
   it('should return book lookup with lowest used price', () => {

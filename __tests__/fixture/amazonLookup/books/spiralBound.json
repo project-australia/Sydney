@@ -1,0 +1,652 @@
+{
+  "ASIN": [
+    "076385199X"
+  ],
+  "DetailPageURL": [
+    "https://www.amazon.com/Signature-Microsoft-Word-2013-files/dp/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=076385199X"
+  ],
+  "ItemLinks": [
+    {
+      "ItemLink": [
+        {
+          "Description": [
+            "Technical Details"
+          ],
+          "URL": [
+            "https://www.amazon.com/Signature-Microsoft-Word-2013-files/dp/tech-data/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Baby Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=076385199X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wedding Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=076385199X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wishlist"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=076385199X&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "Tell A Friend"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/pdp/taf/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "All Customer Reviews"
+          ],
+          "URL": [
+            "https://www.amazon.com/review/product/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        },
+        {
+          "Description": [
+            "All Offers"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/offer-listing/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+          ]
+        }
+      ]
+    }
+  ],
+  "SalesRank": [
+    "201823"
+  ],
+  "SmallImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL75_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "59",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "MediumImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL160_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "125",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "LargeImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL.jpg"
+      ],
+      "Height": [
+        {
+          "_": "500",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "392",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "ImageSets": [
+    {
+      "ImageSet": [
+        {
+          "$": {
+            "Category": "primary"
+          },
+          "SwatchImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL30_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "30",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "24",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "SmallImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "59",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "ThumbnailImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "59",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "TinyImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL110_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "110",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "86",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "MediumImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL._SL160_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "160",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "125",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "LargeImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/41aSC3xn7DL.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "500",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "392",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ItemAttributes": [
+    {
+      "Author": [
+        "Nita Rutkosky",
+        "Audrey Rutkosky Roggenkamp"
+      ],
+      "Binding": [
+        "Spiral-bound"
+      ],
+      "Brand": [
+        "Brand: Paradigm Publishing, Inc."
+      ],
+      "EAN": [
+        "9780763851996"
+      ],
+      "EANList": [
+        {
+          "EANListElement": [
+            "9780763851996"
+          ]
+        }
+      ],
+      "Feature": [
+        "Used Book in Good Condition"
+      ],
+      "ISBN": [
+        "076385199X"
+      ],
+      "IsEligibleForTradeIn": [
+        "1"
+      ],
+      "ItemDimensions": [
+        {
+          "Height": [
+            {
+              "_": "1098",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Length": [
+            {
+              "_": "0",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Weight": [
+            {
+              "_": "515",
+              "$": {
+                "Units": "Hundredths Pounds"
+              }
+            }
+          ],
+          "Width": [
+            {
+              "_": "976",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ]
+        }
+      ],
+      "Label": [
+        "EMC Paradigm,US"
+      ],
+      "Languages": [
+        {
+          "Language": [
+            {
+              "Name": [
+                "English"
+              ],
+              "Type": [
+                "Published"
+              ]
+            },
+            {
+              "Name": [
+                "Unknown"
+              ],
+              "Type": [
+                "Unknown"
+              ]
+            }
+          ]
+        }
+      ],
+      "ListPrice": [
+        {
+          "Amount": [
+            "7149"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$71.49"
+          ]
+        }
+      ],
+      "Manufacturer": [
+        "EMC Paradigm,US"
+      ],
+      "NumberOfItems": [
+        "1"
+      ],
+      "NumberOfPages": [
+        "1152"
+      ],
+      "PackageDimensions": [
+        {
+          "Height": [
+            {
+              "_": "220",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Length": [
+            {
+              "_": "1130",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Weight": [
+            {
+              "_": "515",
+              "$": {
+                "Units": "Hundredths Pounds"
+              }
+            }
+          ],
+          "Width": [
+            {
+              "_": "1000",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ]
+        }
+      ],
+      "PackageQuantity": [
+        "1"
+      ],
+      "ProductGroup": [
+        "Book"
+      ],
+      "ProductTypeName": [
+        "ABIS_BOOK"
+      ],
+      "PublicationDate": [
+        "2013-07-01"
+      ],
+      "Publisher": [
+        "EMC Paradigm,US"
+      ],
+      "Studio": [
+        "EMC Paradigm,US"
+      ],
+      "Title": [
+        "Signature Series: Microsoft (R)Word 2013: Text with data files CD"
+      ],
+      "TradeInValue": [
+        {
+          "Amount": [
+            "750"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$7.50"
+          ]
+        }
+      ]
+    }
+  ],
+  "OfferSummary": [
+    {
+      "LowestNewPrice": [
+        {
+          "Amount": [
+            "8652"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$86.52"
+          ]
+        }
+      ],
+      "LowestUsedPrice": [
+        {
+          "Amount": [
+            "1679"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$16.79"
+          ]
+        }
+      ],
+      "TotalNew": [
+        "8"
+      ],
+      "TotalUsed": [
+        "37"
+      ],
+      "TotalCollectible": [
+        "0"
+      ],
+      "TotalRefurbished": [
+        "0"
+      ]
+    }
+  ],
+  "Offers": [
+    {
+      "TotalOffers": [
+        "2"
+      ],
+      "TotalOfferPages": [
+        "1"
+      ],
+      "MoreOffersUrl": [
+        "https://www.amazon.com/gp/offer-listing/076385199X?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=076385199X"
+      ],
+      "Offer": [
+        {
+          "OfferAttributes": [
+            {
+              "Condition": [
+                "New"
+              ]
+            }
+          ],
+          "OfferListing": [
+            {
+              "OfferListingId": [
+                "FsEHfFPTpT158sHoKNEPhP%2F%2BKRlPeG7FzDjKDrVbdlKWgkMEOzbzpwuOgNjWYNtEA4pRVtjFZYQmxKAt4FvpRZsXsKgIXPFqrdVMyxRVS%2FGot1dRH5I%2FGfq4gus3tk96FVydj9THZsJLYYRuh8FLqA%3D%3D"
+              ],
+              "Price": [
+                {
+                  "Amount": [
+                    "8652"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$86.52"
+                  ]
+                }
+              ],
+              "Availability": [
+                "Usually ships in 1-2 business days"
+              ],
+              "AvailabilityAttributes": [
+                {
+                  "AvailabilityType": [
+                    "now"
+                  ],
+                  "MinimumHours": [
+                    "24"
+                  ],
+                  "MaximumHours": [
+                    "48"
+                  ]
+                }
+              ],
+              "IsEligibleForSuperSaverShipping": [
+                "0"
+              ],
+              "IsEligibleForPrime": [
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "OfferAttributes": [
+            {
+              "Condition": [
+                "Used"
+              ]
+            }
+          ],
+          "OfferListing": [
+            {
+              "OfferListingId": [
+                "FsEHfFPTpT158sHoKNEPhP%2F%2BKRlPeG7F0JJ8tuHPz%2FcH%2BRduzUx6SoJCenb5OtPstSZ5ipzrpGYlRg%2BhS6HIdwNoh56O7oUhk9%2FpvCVz1veqaOn1elobTwD3lrZEnqYzGnlGBUag3Evq4YroDcEy%2Bbz%2FDclSEVaI"
+              ],
+              "Price": [
+                {
+                  "Amount": [
+                    "1679"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$16.79"
+                  ]
+                }
+              ],
+              "AmountSaved": [
+                {
+                  "Amount": [
+                    "5470"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$54.70"
+                  ]
+                }
+              ],
+              "PercentageSaved": [
+                "77"
+              ],
+              "Availability": [
+                "Usually ships in 24 hours"
+              ],
+              "AvailabilityAttributes": [
+                {
+                  "AvailabilityType": [
+                    "now"
+                  ],
+                  "MinimumHours": [
+                    "24"
+                  ],
+                  "MaximumHours": [
+                    "24"
+                  ]
+                }
+              ],
+              "IsEligibleForSuperSaverShipping": [
+                "0"
+              ],
+              "IsEligibleForPrime": [
+                "0"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

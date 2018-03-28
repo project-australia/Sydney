@@ -80,7 +80,7 @@ const updateOrder = async (id, status, transactionId) => {
   )
 }
 
-const findOrdersByUserId = async (customerId) => {
+const findOrdersByUserId = async customerId => {
   return OrderModel.find({ customerId })
 }
 

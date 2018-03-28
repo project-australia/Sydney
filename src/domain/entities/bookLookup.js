@@ -9,6 +9,18 @@ class BookLookup {
     return this.binding === 'Paperback'
   }
 
+  isLooseLeaf () {
+    return this.binding === 'Loose Leaf'
+  }
+
+  isHardCover () {
+    return this.binding === 'Hardcover'
+  }
+
+  isSpiralBound () {
+    return this.binding === 'Spiral-bound'
+  }
+
   get salesRank () {
     const salesRank = idx(this.book, _ => _.SalesRank[0])
     return Number(salesRank)

@@ -5,10 +5,16 @@ class AmazonLookup {
   constructor (amazonLookupJSONRepresentation = []) {
     this.lookups = amazonLookupJSONRepresentation
       .map(book => new BookLookup(book))
-      .filter(book => book.isPaperback())
+      .filter(
+        book =>
+          book.isPaperback() ||
+          book.isSpiralBound() ||
+          book.isHardCover() ||
+          book.isLooseLeaf()
+      )
 
     if (this.lookups.length === 0) {
-      throw new Error('Paperback book not found')
+      throw new Error('No valid books found')
     }
   }
 
