@@ -19,7 +19,7 @@ const dimensions = {
 const prices = {
   sell: { type: Number },
   // TODO: REMOVE THIS BEFORE GOING PROD
-  buy: { type: Number, default: 15.50 },
+  buy: { type: Number, default: 15.5 },
   // TODO: REMOVE THIS BEFORE GOING PROD
   rent: { type: Number, default: 7.35 }
 }

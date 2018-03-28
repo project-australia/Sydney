@@ -134,12 +134,7 @@ const userNetwork = async (req, res) => {
     const userNetworks = await UserService.findUserNetwork(id)
     res.status(200).json(userNetworks)
   } catch (err) {
-    return captureError(
-      'Error during retrieving user network',
-      err,
-      req,
-      res
-    )
+    return captureError('Error during retrieving user network', err, req, res)
   }
 }
 
@@ -152,12 +147,7 @@ const userOrders = async (req, res) => {
     const orders = await OrderService.findOrdersByUserId(id)
     res.status(200).json(orders)
   } catch (err) {
-    return captureError(
-      'Error during retrieving user orders',
-      err,
-      req,
-      res
-    )
+    return captureError('Error during retrieving user orders', err, req, res)
   }
 }
 

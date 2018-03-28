@@ -1,0 +1,604 @@
+{
+  "ASIN": [
+    "1680043307"
+  ],
+  "DetailPageURL": [
+    "https://www.amazon.com/Panorama-5th-Ed-Looseleaf-Textbook/dp/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=1680043307"
+  ],
+  "ItemLinks": [
+    {
+      "ItemLink": [
+        {
+          "Description": [
+            "Technical Details"
+          ],
+          "URL": [
+            "https://www.amazon.com/Panorama-5th-Ed-Looseleaf-Textbook/dp/tech-data/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Baby Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=1680043307&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wedding Registry"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=1680043307&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "Add To Wishlist"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=1680043307&SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "Tell A Friend"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/pdp/taf/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "All Customer Reviews"
+          ],
+          "URL": [
+            "https://www.amazon.com/review/product/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        },
+        {
+          "Description": [
+            "All Offers"
+          ],
+          "URL": [
+            "https://www.amazon.com/gp/offer-listing/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+          ]
+        }
+      ]
+    }
+  ],
+  "SalesRank": [
+    "670538"
+  ],
+  "SmallImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL75_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "75",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "61",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "MediumImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL160_.jpg"
+      ],
+      "Height": [
+        {
+          "_": "160",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "130",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "LargeImage": [
+    {
+      "URL": [
+        "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L.jpg"
+      ],
+      "Height": [
+        {
+          "_": "326",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ],
+      "Width": [
+        {
+          "_": "264",
+          "$": {
+            "Units": "pixels"
+          }
+        }
+      ]
+    }
+  ],
+  "ImageSets": [
+    {
+      "ImageSet": [
+        {
+          "$": {
+            "Category": "primary"
+          },
+          "SwatchImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL30_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "30",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "24",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "SmallImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "61",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "ThumbnailImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL75_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "75",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "61",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "TinyImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL110_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "110",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "89",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "MediumImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L._SL160_.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "160",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "130",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ],
+          "LargeImage": [
+            {
+              "URL": [
+                "https://images-na.ssl-images-amazon.com/images/I/51w0OgJTQ3L.jpg"
+              ],
+              "Height": [
+                {
+                  "_": "326",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ],
+              "Width": [
+                {
+                  "_": "264",
+                  "$": {
+                    "Units": "pixels"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ItemAttributes": [
+    {
+      "Author": [
+        "Donley Blanco"
+      ],
+      "Binding": [
+        "Loose Leaf"
+      ],
+      "EAN": [
+        "9781680043303"
+      ],
+      "EANList": [
+        {
+          "EANListElement": [
+            "9781680043303"
+          ]
+        }
+      ],
+      "Edition": [
+        "5th"
+      ],
+      "ISBN": [
+        "1680043307"
+      ],
+      "ItemDimensions": [
+        {
+          "Weight": [
+            {
+              "_": "265",
+              "$": {
+                "Units": "Hundredths Pounds"
+              }
+            }
+          ]
+        }
+      ],
+      "NumberOfItems": [
+        "1"
+      ],
+      "PackageDimensions": [
+        {
+          "Height": [
+            {
+              "_": "70",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Length": [
+            {
+              "_": "1060",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ],
+          "Weight": [
+            {
+              "_": "265",
+              "$": {
+                "Units": "Hundredths Pounds"
+              }
+            }
+          ],
+          "Width": [
+            {
+              "_": "870",
+              "$": {
+                "Units": "hundredths-inches"
+              }
+            }
+          ]
+        }
+      ],
+      "ProductGroup": [
+        "Book"
+      ],
+      "ProductTypeName": [
+        "BOOKS_1973_AND_LATER"
+      ],
+      "PublicationDate": [
+        "2016"
+      ],
+      "Title": [
+        "Panorama 5th Ed Looseleaf Textbook"
+      ]
+    }
+  ],
+  "OfferSummary": [
+    {
+      "LowestNewPrice": [
+        {
+          "Amount": [
+            "13861"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$138.61"
+          ]
+        }
+      ],
+      "LowestUsedPrice": [
+        {
+          "Amount": [
+            "9591"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$95.91"
+          ]
+        }
+      ],
+      "LowestCollectiblePrice": [
+        {
+          "Amount": [
+            "18500"
+          ],
+          "CurrencyCode": [
+            "USD"
+          ],
+          "FormattedPrice": [
+            "$185.00"
+          ]
+        }
+      ],
+      "TotalNew": [
+        "6"
+      ],
+      "TotalUsed": [
+        "29"
+      ],
+      "TotalCollectible": [
+        "1"
+      ],
+      "TotalRefurbished": [
+        "0"
+      ]
+    }
+  ],
+  "Offers": [
+    {
+      "TotalOffers": [
+        "3"
+      ],
+      "TotalOfferPages": [
+        "1"
+      ],
+      "MoreOffersUrl": [
+        "https://www.amazon.com/gp/offer-listing/1680043307?SubscriptionId=AKIAIPPXODCERGHPQNIQ&tag=ballardbooks-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=1680043307"
+      ],
+      "Offer": [
+        {
+          "OfferAttributes": [
+            {
+              "Condition": [
+                "New"
+              ]
+            }
+          ],
+          "OfferListing": [
+            {
+              "OfferListingId": [
+                "%2B6v%2BMAlUlGRkR7BfM8Ni6qweE5jd6v5UPMJrmI4nasBg66wXpwBuK%2B%2Fs7SZFOqcOBMEonzDyh2%2BFe4NK4Sj7EyDXlJI75vN7hIRAKSbp7%2BehdzoNvvE%2FkybdyKYju%2FT%2B9WQhnb5B7SZJDQ0vts1r7Q%3D%3D"
+              ],
+              "Price": [
+                {
+                  "Amount": [
+                    "13861"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$138.61"
+                  ]
+                }
+              ],
+              "Availability": [
+                "Usually ships in 24 hours"
+              ],
+              "AvailabilityAttributes": [
+                {
+                  "AvailabilityType": [
+                    "now"
+                  ],
+                  "MinimumHours": [
+                    "24"
+                  ],
+                  "MaximumHours": [
+                    "24"
+                  ]
+                }
+              ],
+              "IsEligibleForSuperSaverShipping": [
+                "0"
+              ],
+              "IsEligibleForPrime": [
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "OfferAttributes": [
+            {
+              "Condition": [
+                "Used"
+              ]
+            }
+          ],
+          "OfferListing": [
+            {
+              "OfferListingId": [
+                "%2B6v%2BMAlUlGRkR7BfM8Ni6qweE5jd6v5ULSuso7gU5bZbe4z4E1%2BAGjqqejxdFrpKdcVGco3qvwYnSihXDlVyDUOEYhWwy9dC%2FWpmZeBppPFANwKmtE70%2FZtglL%2F4%2FEgAfv8y3MJ57jarm8LP4GB%2B7A9Ngyr4MsYy"
+              ],
+              "Price": [
+                {
+                  "Amount": [
+                    "9591"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$95.91"
+                  ]
+                }
+              ],
+              "Availability": [
+                "Usually ships in 1-2 business days"
+              ],
+              "AvailabilityAttributes": [
+                {
+                  "AvailabilityType": [
+                    "now"
+                  ],
+                  "MinimumHours": [
+                    "24"
+                  ],
+                  "MaximumHours": [
+                    "48"
+                  ]
+                }
+              ],
+              "IsEligibleForSuperSaverShipping": [
+                "0"
+              ],
+              "IsEligibleForPrime": [
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "OfferAttributes": [
+            {
+              "Condition": [
+                "Collectible"
+              ]
+            }
+          ],
+          "OfferListing": [
+            {
+              "OfferListingId": [
+                "%2B6v%2BMAlUlGRkR7BfM8Ni6qweE5jd6v5UdvqDv13qiVtLgY6TxkGD025jDlHCJwWZ5alrMJpaxC9V9CQF%2FNsMVTgnXBYIgC30rhMtkuHsIsSxRBHGqSDxTzy7GflklPFWTS4m5UVv7y2KYuwijF4jqEDbgu%2Bnp94M"
+              ],
+              "Price": [
+                {
+                  "Amount": [
+                    "18500"
+                  ],
+                  "CurrencyCode": [
+                    "USD"
+                  ],
+                  "FormattedPrice": [
+                    "$185.00"
+                  ]
+                }
+              ],
+              "Availability": [
+                "Usually ships in 1-2 business days"
+              ],
+              "AvailabilityAttributes": [
+                {
+                  "AvailabilityType": [
+                    "now"
+                  ],
+                  "MinimumHours": [
+                    "24"
+                  ],
+                  "MaximumHours": [
+                    "48"
+                  ]
+                }
+              ],
+              "IsEligibleForSuperSaverShipping": [
+                "0"
+              ],
+              "IsEligibleForPrime": [
+                "0"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
