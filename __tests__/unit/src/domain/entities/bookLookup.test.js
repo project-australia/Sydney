@@ -1,6 +1,7 @@
 import { BookLookup } from '../../../../../src/domain/entities/bookLookup'
 import PaperbackLookupJSON from '../../../../fixture/amazonLookup/books/paperback'
 import LooseLeafLookupJSON from '../../../../fixture/amazonLookup/books/looseLeaf'
+import HardCoverLookupJSON from '../../../../fixture/amazonLookup/books/hardCover'
 
 describe('Book Lookup Domain Object', () => {
   let bookLookup
@@ -12,6 +13,16 @@ describe('Book Lookup Domain Object', () => {
 
     it('should know if lookup is Loose Leaf', () => {
       expect(bookLookup.isLooseLeaf()).toEqual(true)
+    })
+  })
+
+  describe('Hard Cover Book', () => {
+    beforeAll(() => {
+      bookLookup = new BookLookup(HardCoverLookupJSON)
+    })
+
+    it('should know if lookup is Hard Cover', () => {
+      expect(bookLookup.isHardCover()).toEqual(true)
     })
   })
 

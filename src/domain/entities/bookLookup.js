@@ -13,6 +13,10 @@ class BookLookup {
     return this.binding === 'Loose Leaf'
   }
 
+  isHardCover () {
+    return this.binding === 'Hardcover'
+  }
+
   get salesRank () {
     const salesRank = idx(this.book, _ => _.SalesRank[0])
     return Number(salesRank)
