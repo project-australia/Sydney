@@ -2,9 +2,20 @@ import { BookLookup } from '../../../../../src/domain/entities/bookLookup'
 import PaperbackLookupJSON from '../../../../fixture/amazonLookup/books/paperback'
 import LooseLeafLookupJSON from '../../../../fixture/amazonLookup/books/looseLeaf'
 import HardCoverLookupJSON from '../../../../fixture/amazonLookup/books/hardCover'
+import SpiralBoundLookupJSON from '../../../../fixture/amazonLookup/books/spiralBound'
 
 describe('Book Lookup Domain Object', () => {
   let bookLookup
+
+  describe('Spiral Bound Book', () => {
+    beforeAll(() => {
+      bookLookup = new BookLookup(SpiralBoundLookupJSON)
+    })
+
+    it('should know if lookup is Spiral Bound', () => {
+      expect(bookLookup.isSpiralBound()).toEqual(true)
+    })
+  })
 
   describe('Loose Leaf Book', () => {
     beforeAll(() => {
