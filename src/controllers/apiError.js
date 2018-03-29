@@ -9,19 +9,13 @@ const captureError = async (msg, err = {}, req, res, status) => {
 class ApiError extends Error {
   constructor (error, status, message) {
     super(error.message)
-    this.status = status || error.status || 500
-    this.name = this.constructor.name
     this.message = message || error.message
     this.userMessage = message || error.message
+    this.name = this.constructor.name
+    this.status = status || error.status || 500
     this.rootCause = error
 
-    this.stackTrace =
-      error.stack &&
-      error.stack
-        .split('\n')
-        .slice(0, 2)
-        .join('')
-    Error.captureStackTrace(this, this.constructor)
+    captureStackTrace(this, error.stack)
 
     if (process.env.NODE_ENV === 'production') {
       opbeat.captureError(error)
@@ -29,6 +23,17 @@ class ApiError extends Error {
       console.log(error)
     }
   }
+}
+
+const captureStackTrace = (instance, stack) => {
+  if (stack) {
+    instance.stackTrace = stack
+      .split('\n')
+      .slice(0, 2)
+      .join('')
+  }
+
+  Error.captureStackTrace(instance, instance.constructor)
 }
 
 module.exports = { captureError }

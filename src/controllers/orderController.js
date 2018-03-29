@@ -1,11 +1,13 @@
 const OrderService = require('../services/database/orderService')
 const { captureError } = require('./apiError')
 
-const createOrder = async (req, res) => {
-  try {
-    const { orderType, items, shippingMethod, shippingAddress } = req.body
-    const customerId = req.params.id
+const { UNAVAILABLE_ITEMS } = OrderService
 
+const createOrder = async (req, res) => {
+  const { orderType, items, shippingMethod, shippingAddress } = req.body
+  const customerId = req.params.id
+
+  try {
     if (orderType === 'SELL') {
       const order = await OrderService.createSellOrder(
         customerId,
@@ -26,6 +28,10 @@ const createOrder = async (req, res) => {
       captureError('Invalid OrderType', undefined, req, res, 400)
     }
   } catch (err) {
+    if (err.message === UNAVAILABLE_ITEMS) {
+      return captureError(UNAVAILABLE_ITEMS, err, req, res, 409)
+    }
+
     return captureError('Creating order', err, req, res)
   }
 }
