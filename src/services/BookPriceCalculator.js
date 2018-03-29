@@ -51,11 +51,14 @@ const ballardSellingPercentage = (salesRank, price) => {
 }
 
 const calculateBallardSellingPrice = ({ salesRank, price }) => {
-  return price - price * ballardSellingPercentage(salesRank, price)
+  return price * ballardSellingPercentage(salesRank, price)
 }
 
 module.exports = {
   BookPriceCalculator,
   NOT_INTERESTED_IN_THIS_BOOK,
-  ACCEPT_AS_DONATION
+  THIRTY_FIVE_PERCENT,
+  TWENTY_FIVE_PERCENT,
+  ACCEPT_AS_DONATION,
+  TWENTY_PERCENT
 }
