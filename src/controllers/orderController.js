@@ -32,7 +32,7 @@ const createOrder = async (req, res) => {
       return captureError(UNAVAILABLE_ITEMS, err, req, res, 409)
     }
 
-    return captureError('Creating order', err, req, res)
+    return captureError('Error during creating an order', err, req, res)
   }
 }
 

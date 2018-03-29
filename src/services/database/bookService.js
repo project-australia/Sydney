@@ -53,7 +53,6 @@ async function findAll () {
 }
 
 async function changeAvailability (id, status) {
-  console.log('CHANGING AVAILABILITY', id, status)
   return BookModel.findOneAndUpdate(
     { _id: id },
     {

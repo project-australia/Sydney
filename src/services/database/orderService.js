@@ -3,7 +3,7 @@ const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
 } = require('../mailer')
-const { saveBooks, changeAvailability } = require('./bookService')
+const { saveBooks, changeAvailability, findById } = require('./bookService')
 const { generateShippingLabel } = require('../shipping')
 const { OrderModel } = require('./models/orderModel')
 
@@ -17,7 +17,7 @@ const createBuyOrder = async (
   shippingMethod,
   shippingAddress
 ) => {
-  if (someItemsAreNotAvailable(items)) {
+  if (await someItemsAreNotAvailable(items)) {
     throw new Error(UNAVAILABLE_ITEMS)
   }
 
@@ -37,8 +37,12 @@ const createBuyOrder = async (
     'BUY'
   )
 
-  const customerEmail = await getCustomerEmail(customerId)
-  await sendOrderConfirmationEmailTo(customerEmail, savedOrder)
+  try {
+    const customerEmail = await getCustomerEmail(customerId)
+    await sendOrderConfirmationEmailTo(customerEmail, savedOrder)
+  } catch (err) {
+    await markOrderAsEmailFailure(savedOrder)
+  }
 
   return savedOrder
 }
@@ -53,9 +57,15 @@ const createSellOrder = async (
   const books = await saveBooks(booksFromItem)
 
   if (shippingMethod === 'SHIPPO') {
-    const label = await generateShippingLabel()
-    const customerEmail = await getCustomerEmail(customerId)
-    sendShippingLabelTo(customerEmail, label.labelUrl)
+    try {
+      const label = await generateShippingLabel()
+      const customerEmail = await getCustomerEmail(customerId)
+      sendShippingLabelTo(customerEmail, label.labelUrl)
+    } catch (err) {
+      // TODO: Nesse caso ainda nao temos a order, possivelmente precisamos passar um parametro
+      // para proxima funcao dizendo que já falho ao enviar email
+      // await markOrderAsEmailFailure()
+    }
   }
 
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
@@ -79,8 +89,15 @@ const saveOrder = async (
   return new OrderModel(order).save()
 }
 
+const markOrderAsEmailFailure = async (order) => {
+  // TODO: Need to implement this
+}
+
 const someItemsAreNotAvailable = async (items) => {
-  return true
+  const promises = items.map(item => findById(item.id))
+  const books = await Promise.all(promises)
+  const isAvailable = book => book.status === 'AVAILABLE'
+  return !books.every(isAvailable)
 }
 
 const updateOrder = async (id, status, transactionId) => {
