@@ -90,7 +90,12 @@ const saveOrder = async (
 }
 
 const markOrderAsEmailFailure = async order => {
-  // TODO: Need to implement this
+  const { id } = order
+  return OrderModel.findOneAndUpdate(
+    { _id: id },
+    { $set: { emailSent: false } },
+    { new: true }
+  )
 }
 
 const someItemsAreNotAvailable = async items => {
