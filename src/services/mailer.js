@@ -6,26 +6,28 @@ function createEmailBody (body) {
   const { orderType, status, shippingMethod } = body.fulfillmentValue
   const { state, city, zipCode, street } = body.fulfillmentValue.shippingAddress
 
-  const shippingMethodChoose = (shippingType) => {
-    const address =  `<h5>Shipping Address</h5>
+  const shippingMethodChoose = shippingType => {
+    const address = `<h5>Shipping Address</h5>
     <p>City: ${state}</p>
     <p>State: ${city}</p>
     <p>Street: ${zipCode}</p>
     <p>Zipcode: ${street}</p>`
 
-    const defaulContact = '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
-    return shippingMethod === 'IN_PERSON' ? defaulContact :address
+    const defaulContact =
+      '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
+    return shippingMethod === 'IN_PERSON' ? defaulContact : address
   }
 
-  const listBooks = (listBooks) => {
-    const address =  `<h5>Shipping Address</h5>
+  const listBooks = listBooks => {
+    const address = `<h5>Shipping Address</h5>
     <p>City: ${state}</p>
     <p>State: ${city}</p>
     <p>Street: ${zipCode}</p>
     <p>Zipcode: ${street}</p>`
 
-    const defaulContact = '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
-    return shippingMethod === 'IN_PERSON' ? defaulContact :address
+    const defaulContact =
+      '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
+    return shippingMethod === 'IN_PERSON' ? defaulContact : address
   }
 
   const formatedBody = `

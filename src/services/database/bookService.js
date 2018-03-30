@@ -21,9 +21,7 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
       { title: regexpParam },
       { authors: regexpParam }
     ],
-    $and: [
-      { status: 'AVAILABLE' }
-    ]
+    $and: [{ status: 'AVAILABLE' }]
   }).exec()
 }
 
