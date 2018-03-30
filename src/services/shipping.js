@@ -3,18 +3,6 @@ const shippo = require('shippo')(
 )
 
 // TODO: Remove This
-const addressFrom = {
-  name: 'Shawn Ippotle',
-  street1: '215 Clayton St.',
-  city: 'San Francisco',
-  state: 'CA',
-  zip: '94117',
-  country: 'US',
-  phone: '+1 555 341 9393',
-  email: 'shippotle@goshippo.com'
-}
-
-// TODO: Remove This
 const addressTo = {
   name: 'Mr Hebert Porto',
   street1: '223 E. Concord Street',
@@ -37,7 +25,7 @@ const parcelSample = {
 }
 
 const generateShippingLabel = async (
-  from = addressFrom,
+  from,
   to = addressTo,
   parcel = parcelSample
 ) => {

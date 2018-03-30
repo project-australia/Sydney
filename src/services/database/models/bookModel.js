@@ -18,10 +18,8 @@ const dimensions = {
 
 const prices = {
   sell: { type: Number },
-  // TODO: REMOVE THIS BEFORE GOING PROD
-  buy: { type: Number, default: 15.5 },
-  // TODO: REMOVE THIS BEFORE GOING PROD
-  rent: { type: Number, default: 7.35 }
+  buy: { type: Number },
+  rent: { type: Number }
 }
 
 let BookSchema = new Schema(
@@ -35,11 +33,9 @@ let BookSchema = new Schema(
     status: {
       type: String,
       enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
-      // TODO: REMOVE THIS BEFORE GOING PROD
-      default: 'AVAILABLE' // IT SHOULD'VE BE 'UNAVAILABLE'
+      default: 'UNAVAILABLE'
     },
-    // TODO: REMOVE THIS BEFORE GOING PROD
-    featured: { type: Boolean, default: true }, // IT SHOULD'VE BE false
+    featured: { type: Boolean, default: false },
     title: { type: String, trim: true, lowercase: true, required: true },
     authors: [{ type: String, lowercase: true, trim: true }],
     isbn: { type: String, trim: true, lowercase: true, required: true },

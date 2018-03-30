@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node -r dotenv/config ./src/server.js",
     "dev": "nodemon -r dotenv/config ./src/server.js",
+    "production": "node -r dotenv/config ./src/server.js dotenv_config_path='.env.production'",
     "docker:start": "sh scripts/docker.sh",
     "docker:dev": "docker-compose up",
     "lint:check": "eslint ./src/ ./__tests__/",
