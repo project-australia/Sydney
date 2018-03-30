@@ -10,7 +10,6 @@ const { OrderModel } = require('./models/orderModel')
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
 
 // FIXME: We have bussiness logic tight with Data Access logic, this isn't good
-
 const createBuyOrder = async (
   customerId,
   items,
@@ -29,22 +28,13 @@ const createBuyOrder = async (
     .map(item => changeAvailability(item.book.id, 'SOLD'))
   const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
 
-  const savedOrder = await saveOrder(
+  return saveOrder(
     customerId,
     orderItems,
     shippingMethod,
     shippingAddress,
     'BUY'
   )
-
-  try {
-    const customerEmail = await getCustomerEmail(customerId)
-    await sendOrderConfirmationEmailTo(customerEmail, savedOrder)
-  } catch (err) {
-    await markOrderAsEmailFailure(savedOrder)
-  }
-
-  return savedOrder
 }
 
 const createSellOrder = async (
@@ -71,6 +61,7 @@ const createSellOrder = async (
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
+// FIXME: Data modeling with Bussiness rule
 const saveOrder = async (
   customerId,
   items,
@@ -86,14 +77,28 @@ const saveOrder = async (
     orderType
   }
 
-  return new OrderModel(order).save()
+  let orderSaved = new OrderModel(order).save()
+
+  try {
+    const customerEmail = await getCustomerEmail(customerId)
+    await sendOrderConfirmationEmailTo(customerEmail, orderSaved)
+  } catch (err) {
+    await markOrderAsEmailFailure(orderSaved)
+  }
+
+  return orderSaved
 }
 
-const markOrderAsEmailFailure = async (order) => {
-  // TODO: Need to implement this
+const markOrderAsEmailFailure = async order => {
+  const { id } = order
+  return OrderModel.findOneAndUpdate(
+    { _id: id },
+    { $set: { emailSent: false } },
+    { new: true }
+  )
 }
 
-const someItemsAreNotAvailable = async (items) => {
+const someItemsAreNotAvailable = async items => {
   const promises = items.map(item => findById(item.id))
   const books = await Promise.all(promises)
   const isAvailable = book => book.status === 'AVAILABLE'

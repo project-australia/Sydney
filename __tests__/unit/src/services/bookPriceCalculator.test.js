@@ -83,9 +83,7 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(199999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(
-        anotherBook.price * TWENTY_PERCENT
-      )
+      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
     })
 
     it('salesRank <= 199999 and price > $30, 35% PRICE', () => {
@@ -116,9 +114,7 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(499999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(
-        anotherBook.price * TWENTY_PERCENT
-      )
+      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
     })
 
     it('200000 >= salesRank >= 499999 and price > $30, 25% PRICE', () => {
@@ -150,9 +146,7 @@ describe('Book Evaluation Pricing Rules', () => {
         .withSalesRank(899999)
         .buildLookup()
 
-      expect(calculate(anotherBook)).toEqual(
-        anotherBook.price * TWENTY_PERCENT
-      )
+      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
     })
   })
 })
