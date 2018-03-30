@@ -1,6 +1,5 @@
 const opbeat = require('opbeat')
 
-// TODO: improve signature, it's bad
 const captureError = async (msg, err = {}, req, res, status) => {
   const error = new ApiError(err, status, msg)
   res.status(error.status).json(error)
