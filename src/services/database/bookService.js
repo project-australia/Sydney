@@ -64,6 +64,13 @@ async function changeAvailability (id, status) {
     { new: true }
   )
 }
+async function updateBook (id, book) {
+  return BookModel.findOneAndUpdate(
+    { _id: id },
+    { $set: book },
+    { new: true }
+  )
+}
 
 module.exports = {
   findBooksByAuthorOrIsnbOrTitle,
@@ -74,5 +81,6 @@ module.exports = {
   saveBook,
   findById,
   findAll,
-  saveBooks
+  saveBooks,
+  updateBook
 }
