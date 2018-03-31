@@ -13,7 +13,6 @@ before_install:
 install:
   - npm install
 script:
-  - npm run lint:check
   - npm run test:unit
 notifications:
     webhooks: https://www.travisbuddy.com/
