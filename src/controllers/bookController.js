@@ -6,7 +6,9 @@ const {
   findByIsbn,
   findRecentlyAddedBooks,
   findFeaturedBooks,
-  findAll
+  findAll,
+  updateBook,
+  findBooksByIds
 } = require('../services/database/bookService')
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
 
@@ -70,6 +72,16 @@ const addNewBooks = async (req, res) => {
   }
 }
 
+const findBooksByArrayOfIds = async (req, res) => {
+  const booksId = req.body
+  try {
+    const books = await findBooksByIds(booksId)
+    res.status(200).json(books)
+  } catch (err) {
+    return captureError('books search by ids not found', err, req, res)
+  }
+}
+
 const getFeaturedBooks = async (req, res) => {
   try {
     const featuredBooks = await findFeaturedBooks()
@@ -96,6 +108,18 @@ const findAllBooks = async (req, res) => {
     return captureError('error get all books', err, req, res)
   }
 }
+
+const updateABook = async (req, res) => {
+  const id = req.params.id
+  const bookToUpdate = req.body
+  try {
+    const book = await updateBook(id, bookToUpdate)
+    res.status(200).json(book)
+  } catch (err) {
+    return captureError('error update a book', err, req, res)
+  }
+}
+
 module.exports = {
   evaluate,
   lookup,
@@ -104,5 +128,7 @@ module.exports = {
   getFeaturedBooks,
   findBookByIsbn,
   getRecentlyAddedBooks,
-  findAllBooks
+  findAllBooks,
+  updateABook,
+  findBooksByArrayOfIds
 }

@@ -69,7 +69,19 @@ const getAll = async (req, res) => {
   }
 }
 
+const confirmOrder = async (req, res) => {
+  const { orderId } = req.params
+  const body = req.body
+
+  try {
+    res.status(200).json({message: 'NOT IMPLEMENTED YET', orderId, body })
+  } catch (err) {
+    return captureError('Order Confirmation', err, req, res)
+  }
+}
+
 module.exports = {
+  confirmOrder,
   createOrder,
   updateOrder,
   getAll

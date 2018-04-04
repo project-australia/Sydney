@@ -1,4 +1,4 @@
-const BookModel = require('./models/bookModel')
+const { BookModel } = require('./models/bookModel')
 
 // FIXME: temos isso aqui 15x no codigo
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
@@ -53,6 +53,12 @@ async function findAll () {
   return BookModel.find({})
 }
 
+async function findBooksByIds (booksIds) {
+  return BookModel.find({
+    _id: { $in: booksIds }
+  })
+}
+
 async function changeAvailability (id, status) {
   return BookModel.findOneAndUpdate(
     { _id: id },
@@ -61,6 +67,13 @@ async function changeAvailability (id, status) {
         status
       }
     },
+    { new: true }
+  )
+}
+async function updateBook (id, book) {
+  return BookModel.findOneAndUpdate(
+    { _id: id },
+    { $set: book },
     { new: true }
   )
 }
@@ -74,5 +87,7 @@ module.exports = {
   saveBook,
   findById,
   findAll,
-  saveBooks
+  saveBooks,
+  updateBook,
+  findBooksByIds
 }

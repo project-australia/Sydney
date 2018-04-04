@@ -22,6 +22,15 @@ const prices = {
   rent: { type: Number }
 }
 
+const BOOK_STATUSES = ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE']
+const BOOK_CONDITIONS = [
+  'Used – Acceptable',
+  'Used – Good',
+  'Used – Very Good',
+  'Used – Like New',
+  'New'
+]
+
 let BookSchema = new Schema(
   {
     _id: {
@@ -32,7 +41,7 @@ let BookSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
+      enum: BOOK_STATUSES,
       default: 'UNAVAILABLE'
     },
     featured: { type: Boolean, default: false },
@@ -46,13 +55,7 @@ let BookSchema = new Schema(
     dimensions,
     condition: {
       type: String,
-      enum: [
-        'Used – Acceptable',
-        'Used – Good',
-        'Used – Very Good',
-        'Used – Like New',
-        'New'
-      ],
+      enum: BOOK_CONDITIONS,
       required: true
     }
   },
@@ -63,5 +66,9 @@ BookSchema.set('toJSON', parserOptions)
 BookSchema.set('toObject', parserOptions)
 const bookCollection = 'books'
 
-module.exports = mongoose.model(bookCollection, BookSchema)
-exports.bookCollection = bookCollection
+module.exports = {
+  BookModel: mongoose.model(bookCollection, BookSchema),
+  BOOK_CONDITIONS,
+  BOOK_STATUSES,
+  bookCollection
+}

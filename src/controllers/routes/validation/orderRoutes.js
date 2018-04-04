@@ -1,5 +1,9 @@
 const Joi = require('joi')
 const order = require('./order')
+const {
+  BOOK_STATUSES,
+  BOOK_CONDITIONS
+} = require('../../../services/database/models/bookModel')
 
 exports.create = {
   body: order
@@ -14,6 +18,25 @@ exports.update = {
       'CANCELLED',
       'RECEIVED',
       'SHIPPED'
+    )
+  }
+}
+
+exports.confirmation = {
+  body: {
+    books: Joi.array().items(
+      Joi.object()
+        .keys({
+          id: Joi.string().required(),
+          condition: Joi.string().valid(...BOOK_CONDITIONS),
+          status: Joi.string().valid(...BOOK_STATUSES),
+          prices: Joi.object().keys({
+            sell: Joi.number().required(),
+            rent: Joi.number().required(),
+            buy: Joi.number().required()
+          })
+        })
+        .required()
     )
   }
 }
