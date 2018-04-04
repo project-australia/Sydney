@@ -22,6 +22,7 @@ const prices = {
   rent: { type: Number }
 }
 
+const VALID_BOOK_CONDITIONS = ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE']
 let BookSchema = new Schema(
   {
     _id: {
@@ -32,7 +33,7 @@ let BookSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ['RENTED', 'AVAILABLE', 'SOLD', 'UNAVAILABLE'],
+      enum: VALID_BOOK_CONDITIONS,
       default: 'UNAVAILABLE'
     },
     featured: { type: Boolean, default: false },
@@ -65,3 +66,4 @@ const bookCollection = 'books'
 
 module.exports = mongoose.model(bookCollection, BookSchema)
 exports.bookCollection = bookCollection
+exports.VALID_BOOK_CONDITIONS = VALID_BOOK_CONDITIONS
