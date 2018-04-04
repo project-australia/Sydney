@@ -1,4 +1,4 @@
-const BookModel = require('./models/bookModel')
+const { BookModel } = require('./models/bookModel')
 
 // FIXME: temos isso aqui 15x no codigo
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
