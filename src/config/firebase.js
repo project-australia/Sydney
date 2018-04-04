@@ -35,6 +35,7 @@ const firebaseConfig = () => {
 }
 
 async function initializeFirebaseAdmin() {
+  return // TODO: Disabling firebase admin
   return admin.initializeApp({
     credential: admin.credential.cert(getServiceAccount()),
     databaseURL: process.env.FIREBASE_DATABASE_URL
