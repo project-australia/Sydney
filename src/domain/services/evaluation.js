@@ -1,5 +1,5 @@
-const { AmazonLookupMapper } = require('../domain/mappers/AmazonLookupMapper')
-const { AmazonLookup } = require('../domain/entities/amazonLookup')
+const { AmazonLookupMapper } = require('../mappers/AmazonLookupMapper')
+const { AmazonLookup } = require('../entities/amazonLookup')
 const { ServiceError } = require('./serviceError')
 const AmazonClient = require('./amazon')
 

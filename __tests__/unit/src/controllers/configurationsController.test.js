@@ -1,6 +1,6 @@
 const request = require('supertest')
 const app = require('../../../../src/app')
-const ConfigurationService = require('../../../../src/services/configurations')
+const ConfigurationService = require('../../../../src/domain/services/configurations')
 
 describe('Configuration controller', () => {
   beforeAll(() => {

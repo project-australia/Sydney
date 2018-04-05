@@ -1,5 +1,5 @@
 const { captureError } = require('./apiError')
-const EvaluationService = require('../../services/evaluation')
+const EvaluationService = require('../../domain/services/evaluation')
 const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,

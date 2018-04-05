@@ -6,7 +6,7 @@ import {
   TWENTY_FIVE_PERCENT,
   ACCEPT_AS_DONATION,
   TWENTY_PERCENT
-} from '../../../../src/services/BookPriceCalculator'
+} from '../../../../src/domain/services/BookPriceCalculator'
 
 const calculate = BookPriceCalculator.calculate
 

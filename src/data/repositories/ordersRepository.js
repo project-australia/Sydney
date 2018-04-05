@@ -2,14 +2,14 @@ const { getCustomerEmail, addMoneyToUserWallet } = require('./booksRepository')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
-} = require('../../services/mailer')
+} = require('../../domain/services/mailer')
 const {
   saveBooks,
   changeAvailability,
   findById,
   updateBooks
 } = require('./booksRepository')
-const { generateShippingLabel } = require('../../services/shipping')
+const { generateShippingLabel } = require('../../domain/services/shipping')
 const { OrderModel } = require('./models/orderModel')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
