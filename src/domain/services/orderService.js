@@ -69,11 +69,11 @@ const createSellOrder = async (
 
 const confirmOrder = async (userId, orderId, books) => {
   const updatedOrder = updateOrder(orderId, { status: 'RECEIVED' })
-  const totalSellingPrice = books.reduce(
+  const updatedBooks = await updateBooks(books)
+  const totalSellingPrice = updatedBooks.reduce(
     (acc, { prices }) => acc + prices.sell,
     0
   )
-  const updatedBooks = await updateBooks(books)
   const updatedUser = await addMoneyToUserWallet(userId, totalSellingPrice)
   const firstTierRep = await getWhoIndicatedUser(userId)
 
