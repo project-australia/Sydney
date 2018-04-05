@@ -51,7 +51,10 @@ const updateOrder = async (req, res) => {
       )
     }
 
-    const order = await OrderService.updateOrder(orderId, { status, transactionId })
+    const order = await OrderService.updateOrder(orderId, {
+      status,
+      transactionId
+    })
 
     res.status(200).json(order)
   } catch (err) {

@@ -3,7 +3,12 @@ const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
 } = require('../mailer')
-const { saveBooks, changeAvailability, findById, updateBooks } = require('./bookService')
+const {
+  saveBooks,
+  changeAvailability,
+  findById,
+  updateBooks
+} = require('./bookService')
 const { generateShippingLabel } = require('../shipping')
 const { OrderModel } = require('./models/orderModel')
 
@@ -63,7 +68,10 @@ const createSellOrder = async (
 
 const confirmOrder = async (userId, orderId, books) => {
   const updatedOrder = updateOrder(orderId, { status: 'RECEIVED' })
-  const totalSellingPrice = books.reduce((acc, { prices }) => acc + prices.sell, 0)
+  const totalSellingPrice = books.reduce(
+    (acc, { prices }) => acc + prices.sell,
+    0
+  )
   const updatedBooks = await updateBooks(books)
 
   const updatedUser = await addMoneyToUserWallet(userId, totalSellingPrice)

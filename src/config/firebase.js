@@ -34,7 +34,7 @@ const firebaseConfig = () => {
   }
 }
 
-async function initializeFirebaseAdmin() {
+async function initializeFirebaseAdmin () {
   return // TODO: Disabling firebase admin
   return admin.initializeApp({
     credential: admin.credential.cert(getServiceAccount()),
@@ -42,7 +42,7 @@ async function initializeFirebaseAdmin() {
   })
 }
 
-async function initializeFirebase() {
+async function initializeFirebase () {
   return initializeApp(firebaseConfig())
 }
 

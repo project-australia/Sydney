@@ -64,11 +64,7 @@ async function changeAvailability (id, status) {
 }
 
 async function updateBook (id, book) {
-  return BookModel.findOneAndUpdate(
-    { _id: id },
-    { $set: book },
-    { new: true }
-  )
+  return BookModel.findOneAndUpdate({ _id: id }, { $set: book }, { new: true })
 }
 
 async function updateBooks (books) {
