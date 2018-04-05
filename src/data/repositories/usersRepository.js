@@ -37,6 +37,10 @@ async function findUsersByNameOrEmailOrSchool (searchParam) {
   }).exec()
 }
 
+async function findUserBy (param) {
+  return UserProfileModel.find({ param }).exec()
+}
+
 async function findById (id) {
   return UserProfileModel.findById(id)
 }
@@ -88,9 +92,15 @@ async function addMoneyToUserWallet (id, money) {
   }
 }
 
+const getWhoIndicatedUser = async (userId) => {
+  const user = await findById(userId)
+  return findUserBy({ referId: user.referredBy })
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
+  getWhoIndicatedUser,
   findById,
   updateProfile,
   requestWithdraw,

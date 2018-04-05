@@ -1,5 +1,5 @@
 const { markOrderAsEmailFailure, updateOrder, save, findAll } = require('../../data/repositories/ordersRepository')
-const { getCustomerEmail, addMoneyToUserWallet } = require('../../data/repositories/usersRepository')
+const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
@@ -13,6 +13,8 @@ const {
 const { generateShippingLabel } = require('../../domain/services/shipping')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
+const FIRST_TIER_COMMISSION_RATE = 0.05
+const SECOND_TIER_COMMISSION_RATE = 0.02
 
 const createBuyOrder = async (
   customerId,
@@ -72,14 +74,18 @@ const confirmOrder = async (userId, orderId, books) => {
     0
   )
   const updatedBooks = await updateBooks(books)
-
   const updatedUser = await addMoneyToUserWallet(userId, totalSellingPrice)
+  const firstTierRep = await getWhoIndicatedUser(userId)
 
-  // TODO: find Tier 1 REP
-  // TODO: add money to tier 1 Rep Wallet
+  if (firstTierRep) {
+    let firstTierId = firstTierRep.id
+    await addMoneyToUserWallet(firstTierId, totalSellingPrice * FIRST_TIER_COMMISSION_RATE)
 
-  // TODO: find Tier 2 REP
-  // TODO: add money to tier 2 Rep Wallet
+    const secondTierRep = await getWhoIndicatedUser(firstTierId)
+    if (firstTierId) {
+      await addMoneyToUserWallet(secondTierRep, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
+    }
+  }
 
   return {
     order: updatedOrder,
@@ -88,7 +94,6 @@ const confirmOrder = async (userId, orderId, books) => {
   }
 }
 
-// FIXME: Data modeling with Bussiness rule
 const saveOrder = async (
   customerId,
   items,
