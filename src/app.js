@@ -3,10 +3,10 @@ const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
-const ignoreFavicon = require('./config/middlewares/ignoreFavIcon')
+const ignoreFavicon = require('./presentation/config/middlewares/ignoreFavIcon')
 const cors = require('cors')
 
-const { initialConfigurations } = require('./config')
+const { initialConfigurations } = require('./data/config')
 const { router } = require('./controllers/routes')
 
 initialConfigurations()

@@ -1,6 +1,6 @@
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
-const { mongooseConfig } = require('../../../../src/config/mongoose')
+const { mongooseConfig } = require('../../../../src/data/config/mongoose')
 const { closeConnection } = require('../../../../src/services/database')
 
 dotenv.config()

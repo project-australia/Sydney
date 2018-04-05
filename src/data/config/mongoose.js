@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const blueBird = require('bluebird')
-const { connectMongo } = require('../services/database')
+const { connectMongo } = require('../../services/database/index')
 
 async function connect (environment) {
   if (environment === 'test') {
