@@ -6,7 +6,7 @@ import {
 const request = require('supertest')
 const app = require('../../../../src/app')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
-const OrderService = require('../../../../src/services/database/orderService')
+const OrderService = require('../../../../src/data/repositories/orderService')
 const {
   newSellingOrderRequest,
   newBuyingOrderRequest

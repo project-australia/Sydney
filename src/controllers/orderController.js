@@ -1,4 +1,4 @@
-const OrderService = require('../services/database/orderService')
+const OrderService = require('../data/repositories/ordersRepository')
 const { captureError } = require('./apiError')
 
 const { UNAVAILABLE_ITEMS } = OrderService
