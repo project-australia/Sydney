@@ -1,5 +1,5 @@
 const { captureError } = require('./apiError')
-const EvaluationService = require('../services/evaluation')
+const EvaluationService = require('../../services/evaluation')
 const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,
@@ -9,7 +9,7 @@ const {
   findAll,
   updateBook,
   findBooksByIds
-} = require('../data/repositories/booksRepository')
+} = require('../../data/repositories/booksRepository')
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
 
 const lookup = async (req, res) => {

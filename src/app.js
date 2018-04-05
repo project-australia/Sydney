@@ -1,13 +1,13 @@
-const opbeat = require('opbeat')
-const express = require('express')
-const logger = require('morgan')
 const bodyParser = require('body-parser')
+const express = require('express')
+const opbeat = require('opbeat')
+const logger = require('morgan')
 const helmet = require('helmet')
-const ignoreFavicon = require('./presentation/config/middlewares/ignoreFavIcon')
 const cors = require('cors')
 
 const { initialConfigurations } = require('./data/config')
-const { router } = require('./controllers/routes')
+const { router } = require('./presentation/controllers/routes')
+const ignoreFavicon = require('./presentation/config/middlewares/ignoreFavIcon')
 
 initialConfigurations()
 const app = express()

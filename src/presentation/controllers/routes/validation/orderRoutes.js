@@ -3,7 +3,7 @@ const order = require('./order')
 const {
   BOOK_STATUSES,
   BOOK_CONDITIONS
-} = require('../../../data/repositories/models/bookModel')
+} = require('../../../../data/repositories/models/bookModel')
 
 exports.create = {
   body: order

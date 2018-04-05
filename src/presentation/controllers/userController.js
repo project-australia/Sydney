@@ -1,7 +1,7 @@
 const { captureError } = require('./apiError')
-const FireBaseService = require('../services/firebase')
-const UserService = require('../data/repositories/usersRepository')
-const OrderService = require('../data/repositories/ordersRepository')
+const FireBaseService = require('../../services/firebase')
+const UserService = require('../../data/repositories/usersRepository')
+const OrderService = require('../../data/repositories/ordersRepository')
 
 const firebaseErrors = {
   'auth/email-already-in-use': 409,
