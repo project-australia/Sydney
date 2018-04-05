@@ -49,6 +49,10 @@ async function updateProfile (id, userProfile) {
   )
 }
 
+async function updateWalletBalance (id, balance) {
+  return updateProfile(id, { wallet: { balance } })
+}
+
 async function requestWithdraw (id, wallet) {
   return UserProfileModel.findOneAndUpdate(
     { _id: id },
@@ -72,6 +76,18 @@ async function findUserNetwork (id) {
   return UserProfileModel.find({ referredBy: customerEmail })
 }
 
+async function addMoneyToUserWallet (id, money) {
+  const user = await findById(id)
+  const previousBalance = user.wallet.balance || 0
+  const currentBalance = Number(previousBalance + money)
+
+  if (isNaN(currentBalance)) {
+    throw new Error('Error during add balance to user account')
+  } else {
+    return updateWalletBalance(id, currentBalance)
+  }
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
@@ -81,5 +97,6 @@ module.exports = {
   mapToMongoose,
   getCustomerEmail,
   findUserNetwork,
+  addMoneyToUserWallet,
   findUsersByNameOrEmailOrSchool
 }

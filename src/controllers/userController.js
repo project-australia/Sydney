@@ -91,7 +91,6 @@ const signUp = async (req, res) => {
     // FIXME: This is a bad smell
     req.params.id = fireBaseUser.uid
 
-    console.log('Firebase id', fireBaseUser.uid)
     return createProfile(req, res)
   } catch (err) {
     const { code, message } = err

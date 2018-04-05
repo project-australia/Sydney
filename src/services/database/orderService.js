@@ -1,9 +1,9 @@
-const { getCustomerEmail } = require('./userService')
+const { getCustomerEmail, addMoneyToUserWallet } = require('./userService')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
 } = require('../mailer')
-const { saveBooks, changeAvailability, findById } = require('./bookService')
+const { saveBooks, changeAvailability, findById, updateBooks } = require('./bookService')
 const { generateShippingLabel } = require('../shipping')
 const { OrderModel } = require('./models/orderModel')
 
@@ -61,6 +61,26 @@ const createSellOrder = async (
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
+const confirmOrder = async (userId, orderId, books) => {
+  const updatedOrder = updateOrder(orderId, { status: 'RECEIVED' })
+  const totalSellingPrice = books.reduce((acc, { prices }) => acc + prices.sell, 0)
+  const updatedBooks = await updateBooks(books)
+
+  const updatedUser = await addMoneyToUserWallet(userId, totalSellingPrice)
+
+  // TODO: find Tier 1 REP
+  // TODO: add money to tier 1 Rep Wallet
+
+  // TODO: find Tier 2 REP
+  // TODO: add money to tier 2 Rep Wallet
+
+  return {
+    order: updatedOrder,
+    user: updatedUser,
+    books: updatedBooks
+  }
+}
+
 // FIXME: Data modeling with Bussiness rule
 const saveOrder = async (
   customerId,
@@ -105,10 +125,10 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
-const updateOrder = async (id, status, transactionId) => {
+const updateOrder = async (id, order) => {
   return OrderModel.findOneAndUpdate(
     { _id: id },
-    { $set: { status, transactionId } },
+    { $set: order },
     { new: true }
   )
 }
@@ -136,5 +156,6 @@ module.exports = {
   createBuyOrder,
   createSellOrder,
   findAll,
+  confirmOrder,
   findOrdersByUserId
 }

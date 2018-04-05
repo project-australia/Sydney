@@ -21,7 +21,7 @@ let UserProfileSchema = new Schema({
   club: { type: String, enum: ['TEN', 'TWENTY', 'NONE'], default: 'NONE' },
   address,
   wallet: {
-    ballance: {
+    balance: {
       type: Number
     },
     status: {
