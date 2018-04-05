@@ -6,7 +6,7 @@ const {
   updateOrder,
   getAll,
   confirmOrder
-} = require('../orderController')
+} = require('../controllers/orderController')
 
 const router = Router({ mergeParams: true })
 

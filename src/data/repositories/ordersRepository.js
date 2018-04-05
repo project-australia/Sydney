@@ -10,7 +10,7 @@ const {
   updateBooks
 } = require('./booksRepository')
 const { generateShippingLabel } = require('../../domain/services/shipping')
-const { OrderModel } = require('./models/orderModel')
+const { OrderModel } = require('../models/orderModel')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
 

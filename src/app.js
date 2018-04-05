@@ -6,8 +6,8 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 const { initialConfigurations } = require('./data/config')
-const { router } = require('./presentation/controllers/routes')
-const ignoreFavicon = require('./presentation/config/middlewares/ignoreFavIcon')
+const { router } = require('./presentation/routes')
+const ignoreFavicon = require('./presentation/middlewares/ignoreFavIcon')
 
 initialConfigurations()
 const app = express()
