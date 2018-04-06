@@ -1,3 +1,4 @@
+const OrderRepository = require('../../data/repositories/ordersRepository')
 const { markOrderAsEmailFailure, updateOrder, save, findAll } = require('../../data/repositories/ordersRepository')
 const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
 const {
@@ -68,6 +69,12 @@ const createSellOrder = async (
 }
 
 const confirmOrder = async (userId, orderId, books) => {
+  const order = await OrderRepository.findById(orderId)
+
+  if (order.status === 'RECEIVED') {
+    throw new Error('Trying to confirm and order which is already confirmed')
+  }
+
   const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
   const updatedBooks = await updateBooks(books)
   const totalSellingPrice = updatedBooks.reduce(

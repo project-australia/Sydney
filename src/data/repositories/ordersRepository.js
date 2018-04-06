@@ -27,6 +27,10 @@ const findAll = async () => {
   ])
 }
 
+async function findById (id) {
+  return OrderModel.findById(id)
+}
+
 const markOrderAsEmailFailure = async order => {
   const { id } = order
   return OrderModel.findOneAndUpdate(
@@ -39,6 +43,7 @@ const markOrderAsEmailFailure = async order => {
 module.exports = {
   updateOrder,
   findAll,
+  findById,
   save,
   markOrderAsEmailFailure,
   findOrdersByUserId
