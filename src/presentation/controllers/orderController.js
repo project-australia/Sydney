@@ -77,8 +77,8 @@ const confirmOrder = async (req, res) => {
   const { books } = req.body
 
   try {
-    const orderAfterConfirmation = OrderService.confirmOrder(id, orderId, books)
-    res.status(200).json({ order: orderAfterConfirmation })
+    const response = await OrderService.confirmOrder(id, orderId, books)
+    res.status(200).json(response)
   } catch (err) {
     return captureError('Order Confirmation Error', err, req, res)
   }

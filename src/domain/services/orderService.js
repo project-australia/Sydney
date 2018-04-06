@@ -68,7 +68,7 @@ const createSellOrder = async (
 }
 
 const confirmOrder = async (userId, orderId, books) => {
-  const updatedOrder = updateOrder(orderId, { status: 'RECEIVED' })
+  const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
   const updatedBooks = await updateBooks(books)
   const totalSellingPrice = updatedBooks.reduce(
     (acc, { prices }) => acc + prices.sell,
@@ -80,10 +80,10 @@ const confirmOrder = async (userId, orderId, books) => {
   if (firstTierRep) {
     let firstTierId = firstTierRep.id
     await addMoneyToUserWallet(firstTierId, totalSellingPrice * FIRST_TIER_COMMISSION_RATE)
-
     const secondTierRep = await getWhoIndicatedUser(firstTierId)
-    if (firstTierId) {
-      await addMoneyToUserWallet(secondTierRep, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
+
+    if (secondTierRep) {
+      await addMoneyToUserWallet(secondTierRep.id, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
     }
   }
 

@@ -38,7 +38,7 @@ async function findUsersByNameOrEmailOrSchool (searchParam) {
 }
 
 async function findUserBy (param) {
-  return UserProfileModel.find({ param }).exec()
+  return UserProfileModel.findOne(param)
 }
 
 async function findById (id) {
@@ -54,7 +54,8 @@ async function updateProfile (id, userProfile) {
 }
 
 async function updateWalletBalance (id, balance) {
-  return updateProfile(id, { wallet: { balance } })
+  const balanceTruncated = balance ? Number(balance.toFixed(2)) : 0
+  return updateProfile(id, { wallet: { balance: balanceTruncated } })
 }
 
 async function requestWithdraw (id, wallet) {
@@ -82,6 +83,11 @@ async function findUserNetwork (id) {
 
 async function addMoneyToUserWallet (id, money) {
   const user = await findById(id)
+
+  if (!user) {
+    throw new Error('User not Found')
+  }
+
   const previousBalance = user.wallet.balance || 0
   const currentBalance = Number(previousBalance + money)
 
