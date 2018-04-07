@@ -1,4 +1,5 @@
 const { sendMail } = require('../../data/vendors/sendgrid')
+const { htmlTemplate } = require('../assets/emailTemplate')
 
 /*
  *
@@ -16,6 +17,13 @@ const { sendMail } = require('../../data/vendors/sendgrid')
  *  Todos precisam de um Header Default
  *
 */
+
+const testShipping = () => {
+  console.log('SENDING EMAIL')
+  return sendMail('eduardomoroni@gmail.com', 'Testando order', htmlTemplate)
+}
+
+testShipping()
 
 const sendShippingLabelTo = async (to, label) => {
   const subject = 'Your Shipping Label is HERE'

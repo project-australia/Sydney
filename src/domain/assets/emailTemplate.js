@@ -289,6 +289,25 @@ const htmlHead = `
 </head>
 `
 
+const footer = `
+<tr>
+    <td align='center' valign='top' width='100%' style='background-color: #f7f7f7; height: 100px;'>
+      <center>
+        <table cellspacing='0' cellpadding='0' width='600' class='w320'>
+          <tr>
+            <td style='padding: 25px 0 25px'>
+              <strong>Ballard Books</strong><br/>
+              ADDRESS PLACEHOLDER LINE ONE <br/>
+              ADDRESS PLACEHOLDER LINE TWO <br/><br/>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+`
+
+// OrderId + Date Order
 const orderInfo = `
   <td class='mini-container-right'>
     <table cellpadding='0' cellspacing='0' width='100%'>
@@ -367,7 +386,7 @@ const header = `
   </tr>
 `
 
-const bar = `
+const topBar = `
 <tr>
     <td align='left' valign='top' width='100%'
         style='background:repeat-x url(http://s3.amazonaws.com/swu-filepicker/4E687TRe69Ld95IDWyEg_bg_top_02.jpg) #ffffff;'>
@@ -409,22 +428,78 @@ const bar = `
   </tr>
 `
 
-const footer = `
+const tableHeader = `
 <tr>
-    <td align='center' valign='top' width='100%' style='background-color: #f7f7f7; height: 100px;'>
-      <center>
-        <table cellspacing='0' cellpadding='0' width='600' class='w320'>
-          <tr>
-            <td style='padding: 25px 0 25px'>
-              <strong>Awesome Inc</strong><br/>
-              1234 Awesome St <br/>
-              Wonderland <br/><br/>
-            </td>
-          </tr>
-        </table>
-      </center>
-    </td>
-  </tr>
+  <td class='title-dark' width='300'>
+    Item
+  </td>
+  <td class='title-dark' width='163'>
+    Qty
+  </td>
+  <td class='title-dark' width='97'>
+    Total
+  </td>
+</tr>
+`
+
+const tableItemOne = `
+<tr>
+  <td class='item-col item'>
+    <table cellspacing='0' cellpadding='0' width='100%'>
+      <tr>
+        <td class='mobile-hide-img'>
+          <a href=''><img width='110' height='92'
+                          src='http://s3.amazonaws.com/swu-filepicker/RPezUIwPRv8pjatAAH1E_item_images_19.jpg'
+                          alt='item1'></a>
+        </td>
+        <td class='product'>
+          <span style='color: #4d4d4d; font-weight:bold;'>Golden Earings</span> <br/>
+          Hot city looks
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td class='item-col quantity'>
+    1
+  </td>
+  <td class='item-col'>
+    $3.50
+  </td>
+</tr>
+`
+
+const tableItemTwo = `
+<tr>
+  <td class='item-col item'>
+    <table cellspacing='0' cellpadding='0' width='100%'>
+      <tr>
+        <td class='mobile-hide-img'>
+          <a href=''><img width='110' height='92'
+                          src='http://s3.amazonaws.com/swu-filepicker/9wRy50HQTg2CTyZA5Ozi_item_images_16.jpg'
+                          alt='item2'></a>
+        </td>
+        <td class='product'>
+          <span style='color: #4d4d4d; font-weight: bold;'>Pink Shoes</span> <br/>
+          Newest styles
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td class='item-col quantity'>
+    1
+  </td>
+  <td class='item-col price'>
+    $10.50
+  </td>
+</tr>
+`
+
+const orderPricingInfo = `
+<td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
+  <span class='total-space'>$13.02</span> <br/>
+  <span class='total-space'>$1.00</span> <br/>
+  <span class='total-space' style='font-weight:bold; color: #4d4d4d'>$15.77</span>
+</td>
 `
 
 const itemsTable = `
@@ -433,66 +508,9 @@ const itemsTable = `
     <tr>
       <td class='item-table'>
         <table cellspacing='0' cellpadding='0' width='100%'>
-          <tr>
-            <td class='title-dark' width='300'>
-              Item
-            </td>
-            <td class='title-dark' width='163'>
-              Qty
-            </td>
-            <td class='title-dark' width='97'>
-              Total
-            </td>
-          </tr>
-
-          <tr>
-            <td class='item-col item'>
-              <table cellspacing='0' cellpadding='0' width='100%'>
-                <tr>
-                  <td class='mobile-hide-img'>
-                    <a href=''><img width='110' height='92'
-                                    src='http://s3.amazonaws.com/swu-filepicker/RPezUIwPRv8pjatAAH1E_item_images_19.jpg'
-                                    alt='item1'></a>
-                  </td>
-                  <td class='product'>
-                    <span style='color: #4d4d4d; font-weight:bold;'>Golden Earings</span> <br/>
-                    Hot city looks
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td class='item-col quantity'>
-              1
-            </td>
-            <td class='item-col'>
-              $3.50
-            </td>
-          </tr>
-
-          <tr>
-            <td class='item-col item'>
-              <table cellspacing='0' cellpadding='0' width='100%'>
-                <tr>
-                  <td class='mobile-hide-img'>
-                    <a href=''><img width='110' height='92'
-                                    src='http://s3.amazonaws.com/swu-filepicker/9wRy50HQTg2CTyZA5Ozi_item_images_16.jpg'
-                                    alt='item2'></a>
-                  </td>
-                  <td class='product'>
-                    <span style='color: #4d4d4d; font-weight: bold;'>Pink Shoes</span> <br/>
-                    Newest styles
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td class='item-col quantity'>
-              1
-            </td>
-            <td class='item-col price'>
-              $10.50
-            </td>
-          </tr>
-
+          ${tableHeader}
+          ${tableItemOne}
+          ${tableItemTwo}
           <tr>
             <td class='item-col item mobile-row-padding'></td>
             <td class='item-col quantity'></td>
@@ -505,16 +523,10 @@ const itemsTable = `
             <td class='item-col quantity'
                 style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
               <span class='total-space'>Subtotal</span> <br/>
-              <span class='total-space'>Tax</span> <br/>
               <span class='total-space'>Shipping</span> <br/>
               <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
             </td>
-            <td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
-              <span class='total-space'>$13.02</span> <br/>
-              <span class='total-space'>$0.75</span> <br/>
-              <span class='total-space'>$1.00</span> <br/>
-              <span class='total-space' style='font-weight:bold; color: #4d4d4d'>$15.77</span>
-            </td>
+            ${orderPricingInfo}
           </tr>
         </table>
       </td>
@@ -523,14 +535,13 @@ const itemsTable = `
 </center>
 `
 
-const html = `
+const htmlTemplate = `
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
   'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 ${htmlHead}
   <body bgcolor='#f7f7f7'>
   <table align='center' cellpadding='0' cellspacing='0' class='container-for-gmail-android' width='100%'>
-    ${bar}
     ${header}
     <tr>
       <td align='center' valign='top' width='100%'
@@ -544,3 +555,7 @@ ${htmlHead}
   </body>
 </html>
 `
+
+module.exports = {
+  htmlTemplate
+}

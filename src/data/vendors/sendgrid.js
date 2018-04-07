@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-const sendMail = async (to, subject, text, html) => {
+const sendMail = async (to, subject, html, text) => {
   const mailOptions = {
     from: '"Ballard Books" <ballardbooks@feracode.com>',
     to,
