@@ -147,7 +147,7 @@ const findAll = async () => {
   orders.forEach(order => {
     order.id = order._id
     delete order._id
-    delete order._v
+    delete order.__v
 
     if (order.user[0]) {
       order.user = order.user[0]
