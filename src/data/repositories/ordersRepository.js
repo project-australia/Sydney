@@ -10,7 +10,16 @@ const updateOrder = async (id, order) => {
 }
 
 const findOrdersByUserId = async customerId => {
-  return OrderModel.find({ customerId })
+  const orders = await OrderModel.find({ customerId })
+  const booksPromises = orders.map(order => findBooksByIds(order.items))
+  const books = await Promise.all(booksPromises)
+
+  const ordersWithBooks = orders.map((order, index) => {
+    order.items = books[index]
+    return order
+  })
+
+  return ordersWithBooks
 }
 
 const save = async order => new OrderModel(order).save()
@@ -29,11 +38,7 @@ const findAllOrders = async () => {
 }
 
 async function findById (id) {
-  const orders = await OrderModel.findById(id)
-  orders.forEach(async order => {
-    order.books = await findBooksByIds()
-  })
-  return orders
+  return OrderModel.findById(id)
 }
 
 const markOrderAsEmailFailure = async order => {
