@@ -1,5 +1,6 @@
 const createOrderTemplate = (order, items, shippingAddress) => {
-  const itemsTable = createItemsTable(order, items, shippingAddress)
+  const itemsTable = createItemsTable(order, items)
+  const header = createHeader(order, shippingAddress)
 
   return `
     <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
@@ -48,8 +49,7 @@ const createItemsTable = (order, items) => {
               <tr>
                 <td class='item-col item'>
                 </td>
-                <td class='item-col quantity'
-                    style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
+                <td class='item-col quantity' style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
                   <span class='total-space'>Subtotal</span> <br/>
                   <span class='total-space'>Shipping</span> <br/>
                   <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
@@ -94,6 +94,67 @@ const createOrderPricingInfo = (subTotal, shipping, total) => {
       <span class='total-space'>${subTotal}</span> <br/>
       <span class='total-space'>${shipping}</span> <br/>
       <span class='total-space' style='font-weight:bold; color: #4d4d4d'>${total}</span>
+    </td>
+`
+}
+
+const createHeader = (order, shippingAddress) => {
+  const address = createShippingAddress(shippingAddress)
+
+  return `
+    <tr>
+      <td align='center' valign='top' width='100%' style='background-color: #f7f7f7;' class='content-padding'>
+        <center>
+          <table cellspacing='0' cellpadding='0' width='600' class='w320'>
+            <tr>
+              <td class='header-lg'>
+                Thank you for your order!
+              </td>
+            </tr>
+            <tr>
+              <td class='free-text'>
+                We'll let you know as soon as your items have shipped. To change or view your order, please view your
+                account by clicking the button below.
+              </td>
+            </tr>
+            <tr>
+              <td class='w320'>
+                <table cellpadding='0' cellspacing='0' width='100%'>
+                  <tr>
+                    ${address}
+                    ${orderInfo}
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </td>
+    </tr>
+`
+}
+
+const createShippingAddress = ({ street, city, zipCode, state }) => {
+  return `
+    <td class='mini-container-left'>
+      <table cellpadding='0' cellspacing='0' width='100%'>
+        <tr>
+          <td class='mini-block-padding'>
+            <table cellspacing='0' cellpadding='0' width='100%'
+                   style='border-collapse:separate !important;'>
+              <tr>
+                <td class='mini-block'>
+                  <span class='header-sm'>Shipping Address</span><br/>
+                  ${street} <br/>
+                  ${city} <br/>
+                  ${zipCode} <br/>
+                  ${state} <br/>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </td>
 `
 }
@@ -429,61 +490,6 @@ const orderInfo = `
       </tr>
     </table>
   </td>
-`
-
-const shippingAddress = `
-  <td class='mini-container-left'>
-    <table cellpadding='0' cellspacing='0' width='100%'>
-      <tr>
-        <td class='mini-block-padding'>
-          <table cellspacing='0' cellpadding='0' width='100%'
-                 style='border-collapse:separate !important;'>
-            <tr>
-              <td class='mini-block'>
-                <span class='header-sm'>Shipping Address</span><br/>
-                Jane Doe <br/>
-                123 Street <br/>
-                Victoria, BC <br/>
-                Canada
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </td>
-`
-
-const header = `
-  <tr>
-    <td align='center' valign='top' width='100%' style='background-color: #f7f7f7;' class='content-padding'>
-      <center>
-        <table cellspacing='0' cellpadding='0' width='600' class='w320'>
-          <tr>
-            <td class='header-lg'>
-              Thank you for your order!
-            </td>
-          </tr>
-          <tr>
-            <td class='free-text'>
-              We'll let you know as soon as your items have shipped. To change or view your order, please view your
-              account by clicking the button below.
-            </td>
-          </tr>
-          <tr>
-            <td class='w320'>
-              <table cellpadding='0' cellspacing='0' width='100%'>
-                <tr>
-                  ${shippingAddress}
-                  ${orderInfo}
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </center>
-    </td>
-  </tr>
 `
 
 const tableHeader = `
