@@ -1,10 +1,10 @@
 const OrderRepository = require('../../data/repositories/ordersRepository')
-const { markOrderAsEmailFailure, updateOrder, save, findAll } = require('../../data/repositories/ordersRepository')
+const { markOrderAsEmailFailure, updateOrder, save, findAllOrders } = require('../../data/repositories/ordersRepository')
 const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
-} = require('../../domain/services/mailer')
+} = require('../../data/vendors/mailer')
 const {
   saveBooks,
   changeAvailability,
@@ -140,6 +140,23 @@ const someItemsAreNotAvailable = async items => {
   const books = await Promise.all(promises)
   const isAvailable = book => book.status === 'AVAILABLE'
   return !books.every(isAvailable)
+}
+
+const findAll = async () => {
+  const orders = await findAllOrders()
+  orders.forEach(order => {
+    order.id = order._id
+    delete order._id
+    delete order._v
+
+    if (order.user[0]) {
+      order.user = order.user[0]
+      order.user.id = order.user._id
+      delete order.user._id
+    }
+  })
+
+  return orders
 }
 
 module.exports = {

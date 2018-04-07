@@ -14,7 +14,7 @@ const findOrdersByUserId = async customerId => {
 
 const save = async (order) => new OrderModel(order).save()
 
-const findAll = async () => {
+const findAllOrders = async () => {
   return OrderModel.aggregate([
     {
       $lookup: {
@@ -42,7 +42,7 @@ const markOrderAsEmailFailure = async order => {
 
 module.exports = {
   updateOrder,
-  findAll,
+  findAllOrders,
   findById,
   save,
   markOrderAsEmailFailure,
