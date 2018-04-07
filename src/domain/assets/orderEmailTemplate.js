@@ -25,7 +25,8 @@ const createOrderTemplate = (order, items, shippingAddress) => {
 }
 
 const createItemsTable = (order, items) => {
-  const orderPricingInfo = createOrderPricingInfo('$10.00', '$5.00', '$15.00')
+  // FIXMED: a order nao esta vindo com informacoes sobre total
+  const orderPricingInfo = createOrderPricingInfo(order.prices.total)
   const itemsTableRows = items
     .map(({ title, price, imageUrl, subTitle }) =>
       createItemsTableRows(title, price, imageUrl, subTitle)
@@ -45,17 +46,7 @@ const createItemsTable = (order, items) => {
                 <td class='item-col quantity'></td>
                 <td class='item-col price'></td>
               </tr>
-    
-              <tr>
-                <td class='item-col item'>
-                </td>
-                <td class='item-col quantity' style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
-                  <span class='total-space'>Subtotal</span> <br/>
-                  <span class='total-space'>Shipping</span> <br/>
-                  <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
-                </td>
-                ${orderPricingInfo}
-              </tr>
+              ${orderPricingInfo}
             </table>
           </td>
         </tr>
@@ -82,20 +73,25 @@ const createItemsTableRows = (title, price, imageUrl, subTitle) => {
       </td>
       <td class='item-col quantity'></td>
       <td class='item-col'>
-        ${price}
+        $ ${price}
       </td>
     </tr>
 `
 }
 
-const createOrderPricingInfo = (subTotal, shipping, total) => {
-  return `
-    <td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
-      <span class='total-space'>${subTotal}</span> <br/>
-      <span class='total-space'>${shipping}</span> <br/>
-      <span class='total-space' style='font-weight:bold; color: #4d4d4d'>${total}</span>
-    </td>
-`
+const createOrderPricingInfo = (total) => {
+  return !!total ? `
+    <tr>
+      <td class='item-col item'>
+      </td>
+      <td class='item-col quantity' style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
+        <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
+      </td>
+      <td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
+        <span class='total-space' style='font-weight:bold; color: #4d4d4d'>${total}</span>
+      </td>
+    </tr>  
+` : ''
 }
 
 const createHeader = (order, shippingAddress) => {
