@@ -458,9 +458,9 @@ const footer = `
         <table cellspacing='0' cellpadding='0' width='600' class='w320'>
           <tr>
             <td style='padding: 25px 0 25px'>
-              <strong>Ballard Books</strong><br/>
-              ADDRESS PLACEHOLDER LINE ONE <br/>
-              ADDRESS PLACEHOLDER LINE TWO <br/><br/>
+              <strong>© 2018 Ballard Books LLC. All rights reserved.</strong><br/>
+                Info@BallardBooks.com <br/>
+                503-899-5875 <br/><br/>
             </td>
           </tr>
         </table>
