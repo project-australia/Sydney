@@ -13,7 +13,7 @@ const {
   userNetwork,
   userOrders,
   findUsersByParams
-} = require('../userController')
+} = require('../controllers/userController')
 
 const router = Router()
 

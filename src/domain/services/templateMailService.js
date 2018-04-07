@@ -1,20 +1,21 @@
-const createEmailBody = (body) => {
+const createEmailBody = body => {
   const { orderType, status, shippingMethod } = body.fulfillmentValue
   const { state, city, zipCode, street } = body.fulfillmentValue.shippingAddress
 
-  const shippingMethodChoose = (shippingType) => {
+  const shippingMethodChoose = shippingType => {
     const address = `<h5>Shipping Address</h5>
     <p>City: ${state}</p>
     <p>State: ${city}</p>
     <p>Street: ${zipCode}</p>
     <p>Zipcode: ${street}</p>`
 
-    const defaulContact = '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
+    const defaulContact =
+      '<h5>Contact </h5><p>PLease, Call to (222) 222 222 2222 and call to schedule a time to finalize the transaction</p>'
     return shippingMethod === 'IN_PERSON' ? defaulContact : address
   }
 
   // TODO: Ajustar Preço para Buy e Rent também
-  const listBooks = (listBooks) => {
+  const listBooks = listBooks => {
     const listItem = listBooks.map(book => {
       return `
         <h3>Title: ${book.name}</h3>

@@ -1,4 +1,4 @@
-const { BookPriceCalculator } = require('../../services/BookPriceCalculator')
+const { BookPriceCalculator } = require('../services/BookPriceCalculator')
 const { Book, Images, Prices, Dimensions } = require('../entities')
 
 class AmazonLookupMapper {

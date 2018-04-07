@@ -1,7 +1,7 @@
 const { captureError } = require('./apiError')
-const UserService = require('../services/database/userService')
-const OrderService = require('../services/database/orderService')
-const FireBaseService = require('../services/firebase')
+const FireBaseService = require('../../domain/services/firebase')
+const UserService = require('../../data/repositories/usersRepository')
+const OrderService = require('../../data/repositories/ordersRepository')
 
 const firebaseErrors = {
   'auth/email-already-in-use': 409,
@@ -91,7 +91,6 @@ const signUp = async (req, res) => {
     // FIXME: This is a bad smell
     req.params.id = fireBaseUser.uid
 
-    console.log('Firebase id', fireBaseUser.uid)
     return createProfile(req, res)
   } catch (err) {
     const { code, message } = err

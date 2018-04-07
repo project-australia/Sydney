@@ -5,7 +5,7 @@ const {
   VALID_ORDER_TYPES,
   VALID_SHIPPING_METHODS,
   VALID_ORDER_STATUS
-} = require('../../../services/database/models/orderModel')
+} = require('../../../data/models/orderModel')
 
 const orderItems = Joi.object().keys({
   book,

@@ -4,7 +4,7 @@ import {
   updateProfile,
   requestWithdraw,
   mapToMongoose
-} from '../../../../src/services/database/userService'
+} from '../../../../src/data/repositories/userService'
 
 import { connectDB } from '../config/integrationTest'
 

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { parserOptions } = require('../../../config/mongoose')
+const { parserOptions } = require('../config/mongoose')
 const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema
@@ -21,8 +21,9 @@ let UserProfileSchema = new Schema({
   club: { type: String, enum: ['TEN', 'TWENTY', 'NONE'], default: 'NONE' },
   address,
   wallet: {
-    ballance: {
-      type: Number
+    balance: {
+      type: Number,
+      default: 0
     },
     status: {
       type: String,

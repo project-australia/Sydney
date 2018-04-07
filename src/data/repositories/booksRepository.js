@@ -1,4 +1,4 @@
-const { BookModel } = require('./models/bookModel')
+const { BookModel } = require('../models/bookModel')
 
 // FIXME: temos isso aqui 15x no codigo
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
@@ -60,22 +60,16 @@ async function findBooksByIds (booksIds) {
 }
 
 async function changeAvailability (id, status) {
-  return BookModel.findOneAndUpdate(
-    { _id: id },
-    {
-      $set: {
-        status
-      }
-    },
-    { new: true }
-  )
+  return updateBook(id, { status })
 }
+
 async function updateBook (id, book) {
-  return BookModel.findOneAndUpdate(
-    { _id: id },
-    { $set: book },
-    { new: true }
-  )
+  return BookModel.findOneAndUpdate({ _id: id }, { $set: book }, { new: true })
+}
+
+async function updateBooks (books) {
+  const promises = books.map(book => updateBook(book.id, book))
+  return Promise.all(promises)
 }
 
 module.exports = {
@@ -86,6 +80,7 @@ module.exports = {
   changeAvailability,
   saveBook,
   findById,
+  updateBooks,
   findAll,
   saveBooks,
   updateBook,

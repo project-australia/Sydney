@@ -1,4 +1,4 @@
-const UserProfileModel = require('./models/userModel')
+const UserProfileModel = require('../models/userModel')
 
 const ALL = {}
 
@@ -37,6 +37,10 @@ async function findUsersByNameOrEmailOrSchool (searchParam) {
   }).exec()
 }
 
+async function findUserBy (param) {
+  return UserProfileModel.findOne(param)
+}
+
 async function findById (id) {
   return UserProfileModel.findById(id)
 }
@@ -47,6 +51,11 @@ async function updateProfile (id, userProfile) {
     { $set: userProfile },
     { new: true }
   )
+}
+
+async function updateWalletBalance (id, balance) {
+  const balanceTruncated = balance ? Number(balance.toFixed(2)) : 0
+  return updateProfile(id, { wallet: { balance: balanceTruncated } })
 }
 
 async function requestWithdraw (id, wallet) {
@@ -72,14 +81,38 @@ async function findUserNetwork (id) {
   return UserProfileModel.find({ referredBy: customerEmail })
 }
 
+async function addMoneyToUserWallet (id, money) {
+  const user = await findById(id)
+
+  if (!user) {
+    throw new Error('User not Found')
+  }
+
+  const previousBalance = user.wallet.balance || 0
+  const currentBalance = Number(previousBalance + money)
+
+  if (isNaN(currentBalance)) {
+    throw new Error('Error during add balance to user account')
+  } else {
+    return updateWalletBalance(id, currentBalance)
+  }
+}
+
+const getWhoIndicatedUser = async (userId) => {
+  const user = await findById(userId)
+  return findUserBy({ referId: user.referredBy })
+}
+
 module.exports = {
   createProfile,
   findAllUsers,
+  getWhoIndicatedUser,
   findById,
   updateProfile,
   requestWithdraw,
   mapToMongoose,
   getCustomerEmail,
   findUserNetwork,
+  addMoneyToUserWallet,
   findUsersByNameOrEmailOrSchool
 }

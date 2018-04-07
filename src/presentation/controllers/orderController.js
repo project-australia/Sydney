@@ -1,4 +1,4 @@
-const OrderService = require('../services/database/orderService')
+const OrderService = require('../../domain/services/orderService')
 const { captureError } = require('./apiError')
 
 const { UNAVAILABLE_ITEMS } = OrderService
@@ -51,7 +51,10 @@ const updateOrder = async (req, res) => {
       )
     }
 
-    const order = await OrderService.updateOrder(orderId, status, transactionId)
+    const order = await OrderService.updateOrder(orderId, {
+      status,
+      transactionId
+    })
 
     res.status(200).json(order)
   } catch (err) {
@@ -70,13 +73,14 @@ const getAll = async (req, res) => {
 }
 
 const confirmOrder = async (req, res) => {
-  const { orderId } = req.params
-  const body = req.body
+  const { orderId, id } = req.params
+  const { books } = req.body
 
   try {
-    res.status(200).json({message: 'NOT IMPLEMENTED YET', orderId, body })
+    const response = await OrderService.confirmOrder(id, orderId, books)
+    res.status(200).json(response)
   } catch (err) {
-    return captureError('Order Confirmation', err, req, res)
+    return captureError('Order Confirmation Error', err, req, res)
   }
 }
 

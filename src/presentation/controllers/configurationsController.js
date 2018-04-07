@@ -1,4 +1,4 @@
-const ConfigurationService = require('../services/configurations')
+const ConfigurationService = require('../../domain/services/configurations')
 
 const getSellingToggle = async (req, res) => {
   const isSellingAvailable = await ConfigurationService.getSelling()

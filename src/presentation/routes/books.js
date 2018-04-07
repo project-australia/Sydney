@@ -10,7 +10,7 @@ const {
   findAllBooks,
   updateABook,
   findBooksByArrayOfIds
-} = require('../bookController')
+} = require('../controllers/bookController')
 
 const router = Router()
 

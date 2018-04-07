@@ -1,15 +1,22 @@
-const { getCustomerEmail } = require('./userService')
+const OrderRepository = require('../../data/repositories/ordersRepository')
+const { markOrderAsEmailFailure, updateOrder, save, findAll } = require('../../data/repositories/ordersRepository')
+const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
-} = require('../mailer')
-const { saveBooks, changeAvailability, findById } = require('./bookService')
-const { generateShippingLabel } = require('../shipping')
-const { OrderModel } = require('./models/orderModel')
+} = require('../../domain/services/mailer')
+const {
+  saveBooks,
+  changeAvailability,
+  findById,
+  updateBooks
+} = require('../../data/repositories/booksRepository')
+const { generateShippingLabel } = require('../../domain/services/shipping')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
+const FIRST_TIER_COMMISSION_RATE = 0.05
+const SECOND_TIER_COMMISSION_RATE = 0.02
 
-// FIXME: We have bussiness logic tight with Data Access logic, this isn't good
 const createBuyOrder = async (
   customerId,
   items,
@@ -61,7 +68,39 @@ const createSellOrder = async (
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
-// FIXME: Data modeling with Bussiness rule
+const confirmOrder = async (userId, orderId, books) => {
+  const order = await OrderRepository.findById(orderId)
+
+  if (order.status === 'RECEIVED') {
+    throw new Error('Trying to confirm and order which is already confirmed')
+  }
+
+  const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
+  const updatedBooks = await updateBooks(books)
+  const totalSellingPrice = updatedBooks.reduce(
+    (acc, { prices }) => acc + prices.sell,
+    0
+  )
+  const updatedUser = await addMoneyToUserWallet(userId, totalSellingPrice)
+  const firstTierRep = await getWhoIndicatedUser(userId)
+
+  if (firstTierRep) {
+    let firstTierId = firstTierRep.id
+    await addMoneyToUserWallet(firstTierId, totalSellingPrice * FIRST_TIER_COMMISSION_RATE)
+    const secondTierRep = await getWhoIndicatedUser(firstTierId)
+
+    if (secondTierRep) {
+      await addMoneyToUserWallet(secondTierRep.id, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
+    }
+  }
+
+  return {
+    order: updatedOrder,
+    user: updatedUser,
+    books: updatedBooks
+  }
+}
+
 const saveOrder = async (
   customerId,
   items,
@@ -77,7 +116,7 @@ const saveOrder = async (
     orderType
   }
 
-  let orderSaved = new OrderModel(order).save()
+  let orderSaved = await save(order)
 
   try {
     const customerEmail = await getCustomerEmail(customerId)
@@ -89,15 +128,6 @@ const saveOrder = async (
   return orderSaved
 }
 
-const markOrderAsEmailFailure = async order => {
-  const { id } = order
-  return OrderModel.findOneAndUpdate(
-    { _id: id },
-    { $set: { emailSent: false } },
-    { new: true }
-  )
-}
-
 const someItemsAreNotAvailable = async items => {
   const promises = items.map(item => findById(item.id))
   const books = await Promise.all(promises)
@@ -105,36 +135,11 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
-const updateOrder = async (id, status, transactionId) => {
-  return OrderModel.findOneAndUpdate(
-    { _id: id },
-    { $set: { status, transactionId } },
-    { new: true }
-  )
-}
-
-const findOrdersByUserId = async customerId => {
-  return OrderModel.find({ customerId })
-}
-
-const findAll = async () => {
-  return OrderModel.aggregate([
-    {
-      $lookup: {
-        from: 'users',
-        localField: 'customerId',
-        foreignField: '_id',
-        as: 'user'
-      }
-    }
-  ])
-}
-
 module.exports = {
   UNAVAILABLE_ITEMS,
-  updateOrder,
   createBuyOrder,
   createSellOrder,
-  findAll,
-  findOrdersByUserId
+  confirmOrder,
+  updateOrder, // TODO: remove this proxy behaviour
+  findAll // TODO: remove this proxy behaviour
 }
