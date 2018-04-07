@@ -127,7 +127,7 @@ const saveOrder = async (
 
   try {
     const customerEmail = await getCustomerEmail(customerId)
-    await sendOrderConfirmationEmailTo(customerEmail, orderSaved)
+    await sendOrderConfirmationEmailTo(customerEmail, orderSaved, items)
   } catch (err) {
     await markOrderAsEmailFailure(orderSaved)
   }

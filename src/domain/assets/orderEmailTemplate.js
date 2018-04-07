@@ -1,3 +1,103 @@
+const createOrderTemplate = (order, items, shippingAddress) => {
+  const itemsTable = createItemsTable(order, items, shippingAddress)
+
+  return `
+    <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+      'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+    <html xmlns='http://www.w3.org/1999/xhtml'>
+    ${htmlHead}
+      <body bgcolor='#f7f7f7'>
+      <table align='center' cellpadding='0' cellspacing='0' class='container-for-gmail-android' width='100%'>
+        ${header}
+        <tr>
+          <td align='center' valign='top' width='100%'
+              style='background-color: #ffffff;  border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;'>
+            ${itemsTable}
+          </td>
+        </tr>
+        ${footer}
+      </table>
+      </div>
+      </body>
+    </html>
+`
+}
+
+const createItemsTable = (order, items) => {
+  const orderPricingInfo = createOrderPricingInfo('$10.00', '$5.00', '$15.00')
+  const itemsTableRows = items
+    .map(({ title, price, imageUrl, subTitle }) =>
+      createItemsTableRows(title, price, imageUrl, subTitle)
+    )
+    .join('')
+
+  return `
+    <center>
+      <table cellpadding='0' cellspacing='0' width='600' class='w320'>
+        <tr>
+          <td class='item-table'>
+            <table cellspacing='0' cellpadding='0' width='100%'>
+              ${tableHeader}
+              ${itemsTableRows}
+              <tr>
+                <td class='item-col item mobile-row-padding'></td>
+                <td class='item-col quantity'></td>
+                <td class='item-col price'></td>
+              </tr>
+    
+              <tr>
+                <td class='item-col item'>
+                </td>
+                <td class='item-col quantity'
+                    style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
+                  <span class='total-space'>Subtotal</span> <br/>
+                  <span class='total-space'>Shipping</span> <br/>
+                  <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
+                </td>
+                ${orderPricingInfo}
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+</center>
+`
+}
+
+const createItemsTableRows = (title, price, imageUrl, subTitle) => {
+  return `
+    <tr>
+      <td class='item-col item'>
+        <table cellspacing='0' cellpadding='0' width='100%'>
+          <tr>
+            <td class='mobile-hide-img'>
+              <a href=''><img width='110' height='92' src='${imageUrl}' alt='item1'></a>
+            </td>
+            <td class='product'>
+              <span style='color: #4d4d4d; font-weight:bold;'>${title}</span> <br/>
+              ${subTitle}
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td class='item-col quantity'></td>
+      <td class='item-col'>
+        ${price}
+      </td>
+    </tr>
+`
+}
+
+const createOrderPricingInfo = (subTotal, shipping, total) => {
+  return `
+    <td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
+      <span class='total-space'>${subTotal}</span> <br/>
+      <span class='total-space'>${shipping}</span> <br/>
+      <span class='total-space' style='font-weight:bold; color: #4d4d4d'>${total}</span>
+    </td>
+`
+}
+
 const htmlHead = `
 <head>
   <style type='text/css'>
@@ -391,129 +491,13 @@ const tableHeader = `
   <td class='title-dark' width='300'>
     Item
   </td>
-  <td class='title-dark' width='163'>
-    Qty
-  </td>
+  <td class='title-dark' width='163'></td>
   <td class='title-dark' width='97'>
     Total
   </td>
 </tr>
 `
 
-const tableItemOne = `
-<tr>
-  <td class='item-col item'>
-    <table cellspacing='0' cellpadding='0' width='100%'>
-      <tr>
-        <td class='mobile-hide-img'>
-          <a href=''><img width='110' height='92'
-                          src='http://s3.amazonaws.com/swu-filepicker/RPezUIwPRv8pjatAAH1E_item_images_19.jpg'
-                          alt='item1'></a>
-        </td>
-        <td class='product'>
-          <span style='color: #4d4d4d; font-weight:bold;'>Golden Earings</span> <br/>
-          Hot city looks
-        </td>
-      </tr>
-    </table>
-  </td>
-  <td class='item-col quantity'>
-    1
-  </td>
-  <td class='item-col'>
-    $3.50
-  </td>
-</tr>
-`
-
-const tableItemTwo = `
-<tr>
-  <td class='item-col item'>
-    <table cellspacing='0' cellpadding='0' width='100%'>
-      <tr>
-        <td class='mobile-hide-img'>
-          <a href=''><img width='110' height='92'
-                          src='http://s3.amazonaws.com/swu-filepicker/9wRy50HQTg2CTyZA5Ozi_item_images_16.jpg'
-                          alt='item2'></a>
-        </td>
-        <td class='product'>
-          <span style='color: #4d4d4d; font-weight: bold;'>Pink Shoes</span> <br/>
-          Newest styles
-        </td>
-      </tr>
-    </table>
-  </td>
-  <td class='item-col quantity'>
-    1
-  </td>
-  <td class='item-col price'>
-    $10.50
-  </td>
-</tr>
-`
-
-const orderPricingInfo = `
-<td class='item-col price' style='text-align: left; border-top: 1px solid #cccccc;'>
-  <span class='total-space'>$13.02</span> <br/>
-  <span class='total-space'>$1.00</span> <br/>
-  <span class='total-space' style='font-weight:bold; color: #4d4d4d'>$15.77</span>
-</td>
-`
-
-const itemsTable = `
-<center>
-  <table cellpadding='0' cellspacing='0' width='600' class='w320'>
-    <tr>
-      <td class='item-table'>
-        <table cellspacing='0' cellpadding='0' width='100%'>
-          ${tableHeader}
-          ${tableItemOne}
-          ${tableItemTwo}
-          <tr>
-            <td class='item-col item mobile-row-padding'></td>
-            <td class='item-col quantity'></td>
-            <td class='item-col price'></td>
-          </tr>
-
-          <tr>
-            <td class='item-col item'>
-            </td>
-            <td class='item-col quantity'
-                style='text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;'>
-              <span class='total-space'>Subtotal</span> <br/>
-              <span class='total-space'>Shipping</span> <br/>
-              <span class='total-space' style='font-weight: bold; color: #4d4d4d'>Total</span>
-            </td>
-            ${orderPricingInfo}
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</center>
-`
-
-const htmlTemplate = `
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
-  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml'>
-${htmlHead}
-  <body bgcolor='#f7f7f7'>
-  <table align='center' cellpadding='0' cellspacing='0' class='container-for-gmail-android' width='100%'>
-    ${header}
-    <tr>
-      <td align='center' valign='top' width='100%'
-          style='background-color: #ffffff;  border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;'>
-        ${itemsTable}
-      </td>
-    </tr>
-    ${footer}
-  </table>
-  </div>
-  </body>
-</html>
-`
-
 module.exports = {
-  htmlTemplate
+  createOrderTemplate
 }
