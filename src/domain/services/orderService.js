@@ -4,7 +4,7 @@ const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require(
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
-} = require('../../data/vendors/sendgrid')
+} = require('../services/orderMailingService')
 const {
   saveBooks,
   changeAvailability,
