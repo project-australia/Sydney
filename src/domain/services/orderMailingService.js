@@ -1,4 +1,6 @@
-const { OrderEmailTemplateBuilder } = require('./orderEmailTemplateBuilder')
+const {
+  OrderEmailTemplateBuilder
+} = require('../builders/orderEmailTemplateBuilder')
 const { sendMail } = require('../../data/vendors/sendgrid')
 
 /*

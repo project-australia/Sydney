@@ -13,7 +13,7 @@ const findOrdersByUserId = async customerId => {
   return OrderModel.find({ customerId })
 }
 
-const save = async (order) => new OrderModel(order).save()
+const save = async order => new OrderModel(order).save()
 
 const findAllOrders = async () => {
   return OrderModel.aggregate([

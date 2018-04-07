@@ -79,8 +79,9 @@ const createItemsTableRows = (title, price, imageUrl, subTitle) => {
 `
 }
 
-const createOrderPricingInfo = (total) => {
-  return total ? `
+const createOrderPricingInfo = total => {
+  return total
+    ? `
     <tr>
       <td class='item-col item'>
       </td>
@@ -91,7 +92,8 @@ const createOrderPricingInfo = (total) => {
         <span class='total-space' style='font-weight:bold; color: #4d4d4d'>${total}</span>
       </td>
     </tr>  
-` : ''
+`
+    : ''
 }
 
 const createHeader = (order, shippingAddress) => {
@@ -512,7 +514,6 @@ const htmlHead = `
   </style>
 </head>
 `
-
 
 module.exports = {
   createOrderTemplate

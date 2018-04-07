@@ -1,6 +1,15 @@
 const OrderRepository = require('../../data/repositories/ordersRepository')
-const { markOrderAsEmailFailure, updateOrder, save, findAllOrders } = require('../../data/repositories/ordersRepository')
-const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
+const {
+  markOrderAsEmailFailure,
+  updateOrder,
+  save,
+  findAllOrders
+} = require('../../data/repositories/ordersRepository')
+const {
+  getCustomerEmail,
+  addMoneyToUserWallet,
+  getWhoIndicatedUser
+} = require('../../data/repositories/usersRepository')
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
@@ -77,9 +86,10 @@ const confirmOrder = async (userId, orderId, books) => {
 
   const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
 
-  books.forEach(book => {
+  books.forEach((book, index, array) => {
     if (!book.status) {
-      books.status = 'AVAILABLE'
+      book.status = 'AVAILABLE'
+      array[index].status = 'AVAILABLE'
     }
   })
 
@@ -93,11 +103,17 @@ const confirmOrder = async (userId, orderId, books) => {
 
   if (firstTierRep) {
     let firstTierId = firstTierRep.id
-    await addMoneyToUserWallet(firstTierId, totalSellingPrice * FIRST_TIER_COMMISSION_RATE)
+    await addMoneyToUserWallet(
+      firstTierId,
+      totalSellingPrice * FIRST_TIER_COMMISSION_RATE
+    )
     const secondTierRep = await getWhoIndicatedUser(firstTierId)
 
     if (secondTierRep) {
-      await addMoneyToUserWallet(secondTierRep.id, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
+      await addMoneyToUserWallet(
+        secondTierRep.id,
+        totalSellingPrice * SECOND_TIER_COMMISSION_RATE
+      )
     }
   }
 
