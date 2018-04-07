@@ -1,4 +1,5 @@
 const { OrderModel } = require('../models/orderModel')
+const { findBooksByIds } = require('./booksRepository')
 
 const updateOrder = async (id, order) => {
   return OrderModel.findOneAndUpdate(
@@ -28,7 +29,11 @@ const findAllOrders = async () => {
 }
 
 async function findById (id) {
-  return OrderModel.findById(id)
+  const orders = await OrderModel.findById(id)
+  orders.forEach(async order => {
+    order.books = await findBooksByIds()
+  })
+  return orders
 }
 
 const markOrderAsEmailFailure = async order => {
