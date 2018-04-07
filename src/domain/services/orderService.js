@@ -76,6 +76,13 @@ const confirmOrder = async (userId, orderId, books) => {
   }
 
   const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
+
+  books.forEach(book => {
+    if (!book.status) {
+      books.status = 'AVAILABLE'
+    }
+  })
+
   const updatedBooks = await updateBooks(books)
   const totalSellingPrice = updatedBooks.reduce(
     (acc, { prices }) => acc + prices.sell,
