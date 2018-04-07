@@ -100,6 +100,11 @@ const createOrderPricingInfo = (subTotal, shipping, total) => {
 
 const createHeader = (order, shippingAddress) => {
   const address = createShippingAddress(shippingAddress)
+  const orderInfo = createOrderInfos(
+    order.id,
+    new Date(order.createdAt),
+    new Date(order.updatedAt)
+  )
 
   return `
     <tr>
@@ -468,29 +473,37 @@ const footer = `
   </tr>
 `
 
-// OrderId + Date Order
-const orderInfo = `
-  <td class='mini-container-right'>
-    <table cellpadding='0' cellspacing='0' width='100%'>
-      <tr>
-        <td class='mini-block-padding'>
-          <table cellspacing='0' cellpadding='0' width='100%'
-                 style='border-collapse:separate !important;'>
-            <tr>
-              <td class='mini-block'>
-                <span class='header-sm'>Date Ordered</span><br/>
-                January 12, 2015 <br/>
-                <br/>
-                <span class='header-sm'>Order</span> <br/>
-                #12342
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </td>
+const createOrderInfos = (orderId, orderDate) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+  const locale = 'en-US'
+  return `
+    <td class='mini-container-right'>
+      <table cellpadding='0' cellspacing='0' width='100%'>
+        <tr>
+          <td class='mini-block-padding'>
+            <table cellspacing='0' cellpadding='0' width='100%'
+                   style='border-collapse:separate !important;'>
+              <tr>
+                <td class='mini-block'>
+                  <span class='header-sm'>Date Ordered</span><br/>
+                  ${orderDate.toLocaleDateString(locale, options)}<br/>
+                  <br/>
+                  <span class='header-sm'>Order</span> <br/>
+                  #${orderId}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
 `
+}
 
 const tableHeader = `
 <tr>
