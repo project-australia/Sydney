@@ -4,14 +4,14 @@ const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require(
 const {
   sendShippingLabelTo,
   sendOrderConfirmationEmailTo
-} = require('../../data/vendors/mailer')
+} = require('../../data/vendors/sendgrid')
 const {
   saveBooks,
   changeAvailability,
   findById,
   updateBooks
 } = require('../../data/repositories/booksRepository')
-const { generateShippingLabel } = require('../../domain/services/shipping')
+const { generateShippingLabel } = require('../../data/vendors/shippo')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
 const FIRST_TIER_COMMISSION_RATE = 0.05

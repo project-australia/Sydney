@@ -3,7 +3,7 @@ import { createProfileRequestBody } from '../../../fixture/model/user.fixture'
 const request = require('supertest')
 const app = require('../../../../src/app')
 const UserService = require('../../../../src/data/repositories/userService')
-const FirebaseService = require('../../../../src/domain/services/firebase')
+const FirebaseService = require('../../../../src/data/vendors/firebase')
 
 jest.mock('../../../../src/services/database/userService')
 jest.mock('../../../../src/services/firebase')

@@ -1,7 +1,7 @@
 const { AmazonLookupMapper } = require('../mappers/AmazonLookupMapper')
 const { AmazonLookup } = require('../entities/amazonLookup')
 const { ServiceError } = require('./serviceError')
-const AmazonClient = require('./amazon')
+const AmazonClient = require('../../data/vendors/amazon')
 
 const amazonLookup = async isbn => AmazonClient.lookupByISBN(isbn)
 

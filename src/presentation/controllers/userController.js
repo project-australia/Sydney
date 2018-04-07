@@ -1,5 +1,5 @@
 const { captureError } = require('./apiError')
-const FireBaseService = require('../../domain/services/firebase')
+const FireBaseService = require('../../data/vendors/firebase')
 const UserService = require('../../data/repositories/usersRepository')
 const OrderService = require('../../data/repositories/ordersRepository')
 

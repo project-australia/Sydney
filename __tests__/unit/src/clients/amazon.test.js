@@ -1,6 +1,6 @@
 import amazon from 'amazon-product-api'
 
-import { lookupByISBN } from '../../../../src/domain/services/amazon'
+import { lookupByISBN } from '../../../../src/data/vendors/amazon'
 import amazonLookupByISBN from '../../../fixture/amazonLookup/amazonLookupByISBN'
 
 jest.mock('amazon-product-api')
