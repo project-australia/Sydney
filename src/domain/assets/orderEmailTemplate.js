@@ -80,7 +80,7 @@ const createItemsTableRows = (title, price, imageUrl, subTitle) => {
 }
 
 const createOrderPricingInfo = (total) => {
-  return !!total ? `
+  return total ? `
     <tr>
       <td class='item-col item'>
       </td>
@@ -159,6 +159,68 @@ const createShippingAddress = ({ street, city, zipCode, state }) => {
     </td>
 `
 }
+
+const createOrderInfos = (orderId, orderDate) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+  const locale = 'en-US'
+  return `
+    <td class='mini-container-right'>
+      <table cellpadding='0' cellspacing='0' width='100%'>
+        <tr>
+          <td class='mini-block-padding'>
+            <table cellspacing='0' cellpadding='0' width='100%'
+                   style='border-collapse:separate !important;'>
+              <tr>
+                <td class='mini-block'>
+                  <span class='header-sm'>Date Ordered</span><br/>
+                  ${orderDate.toLocaleDateString(locale, options)}<br/>
+                  <br/>
+                  <span class='header-sm'>Order</span> <br/>
+                  #${orderId}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+`
+}
+
+const footer = `
+<tr>
+    <td align='center' valign='top' width='100%' style='background-color: #f7f7f7; height: 100px;'>
+      <center>
+        <table cellspacing='0' cellpadding='0' width='600' class='w320'>
+          <tr>
+            <td style='padding: 25px 0 25px'>
+              <strong>© 2018 Ballard Books LLC. All rights reserved.</strong><br/>
+                Info@BallardBooks.com <br/>
+                503-899-5875 <br/><br/>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+`
+
+const tableHeader = `
+<tr>
+  <td class='title-dark' width='300'>
+    Item
+  </td>
+  <td class='title-dark' width='163'></td>
+  <td class='title-dark' width='97'>
+    Total
+  </td>
+</tr>
+`
 
 const htmlHead = `
 <head>
@@ -451,67 +513,6 @@ const htmlHead = `
 </head>
 `
 
-const footer = `
-<tr>
-    <td align='center' valign='top' width='100%' style='background-color: #f7f7f7; height: 100px;'>
-      <center>
-        <table cellspacing='0' cellpadding='0' width='600' class='w320'>
-          <tr>
-            <td style='padding: 25px 0 25px'>
-              <strong>© 2018 Ballard Books LLC. All rights reserved.</strong><br/>
-                Info@BallardBooks.com <br/>
-                503-899-5875 <br/><br/>
-            </td>
-          </tr>
-        </table>
-      </center>
-    </td>
-  </tr>
-`
-
-const createOrderInfos = (orderId, orderDate) => {
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }
-  const locale = 'en-US'
-  return `
-    <td class='mini-container-right'>
-      <table cellpadding='0' cellspacing='0' width='100%'>
-        <tr>
-          <td class='mini-block-padding'>
-            <table cellspacing='0' cellpadding='0' width='100%'
-                   style='border-collapse:separate !important;'>
-              <tr>
-                <td class='mini-block'>
-                  <span class='header-sm'>Date Ordered</span><br/>
-                  ${orderDate.toLocaleDateString(locale, options)}<br/>
-                  <br/>
-                  <span class='header-sm'>Order</span> <br/>
-                  #${orderId}
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-`
-}
-
-const tableHeader = `
-<tr>
-  <td class='title-dark' width='300'>
-    Item
-  </td>
-  <td class='title-dark' width='163'></td>
-  <td class='title-dark' width='97'>
-    Total
-  </td>
-</tr>
-`
 
 module.exports = {
   createOrderTemplate

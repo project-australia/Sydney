@@ -11,9 +11,6 @@ class OrderEmailTemplateBuilder {
   constructor(order, books) {
     this.order = order
     this.books = books
-
-    console.log('ORDER: ', order)
-    console.log('BOOKS: ', books)
   }
 
   get items() {
