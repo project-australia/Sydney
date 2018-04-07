@@ -146,6 +146,7 @@ const saveOrder = async (
     await sendOrderConfirmationEmailTo(customerEmail, orderSaved, items)
   } catch (err) {
     await markOrderAsEmailFailure(orderSaved)
+    console.error('Error to retrieve user email', err)
   }
 
   return orderSaved

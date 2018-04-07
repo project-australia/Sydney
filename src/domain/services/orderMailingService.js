@@ -27,6 +27,8 @@ const sendShippingLabelTo = async (to, label) => {
 }
 
 const sendOrderConfirmationEmailTo = async (to, order, books) => {
+  // TODO: Remove this
+  console.log('Sending Email:', to, order, books)
   const subject = `Order Confirmation #${order.id}`
   const html = new OrderEmailTemplateBuilder(order, books).build()
 
