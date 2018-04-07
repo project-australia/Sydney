@@ -78,8 +78,7 @@ async function getCustomerEmail (id) {
 
 async function findUserNetwork (id) {
   const customerEmail = await getCustomerEmail(id)
-  const regexpParam = { $regex: new RegExp(customerEmail, 'ig') }
-  return UserProfileModel.find({ referredBy: regexpParam })
+  return UserProfileModel.find({ referredBy: customerEmail })
 }
 
 async function addMoneyToUserWallet (id, money) {
