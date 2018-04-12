@@ -25,7 +25,7 @@ const createOrderTemplate = (order, items, shippingAddress) => {
 }
 
 const createItemsTable = (order, items) => {
-  // FIXMED: a order nao esta vindo com informacoes sobre total
+  // FIXME: a order nao esta vindo com informacoes sobre total
   const orderPricingInfo = createOrderPricingInfo(order.prices && order.prices.total)
   const itemsTableRows = items
     .map(({ title, price, imageUrl, subTitle }) =>
@@ -51,7 +51,7 @@ const createItemsTable = (order, items) => {
           </td>
         </tr>
       </table>
-</center>
+    </center>
 `
 }
 
@@ -116,8 +116,8 @@ const createHeader = (order, shippingAddress) => {
             </tr>
             <tr>
               <td class='free-text'>
-                We'll let you know as soon as your items have shipped. To change or view your order, please view your
-                account by clicking the button below.
+                We'll let you know as soon as your items have shipped. To view your order, please view your
+                account profile under my orders tab.
               </td>
             </tr>
             <tr>

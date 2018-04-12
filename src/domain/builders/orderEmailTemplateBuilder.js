@@ -1,10 +1,11 @@
 const { createOrderTemplate } = require('./orderEmailTemplate')
 
-const toRowItem = (title, price, imageUrl, subTitle) => ({
+const toRowItem = (title, price, imageUrl, subTitle, type) => ({
   title,
   price,
   imageUrl,
-  subTitle
+  subTitle,
+  type
 })
 
 class OrderEmailTemplateBuilder {
@@ -14,8 +15,10 @@ class OrderEmailTemplateBuilder {
   }
 
   get items () {
+    const type = this.order.orderType.toLocaleLowerCase()
+
     return this.books.map(book =>
-      toRowItem(book.title, book.prices.sell, book.images.small, book.condition)
+      toRowItem(book.title, book.prices[type], book.images.small, book.condition, type)
     )
   }
 

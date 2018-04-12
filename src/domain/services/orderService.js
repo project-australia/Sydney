@@ -42,6 +42,7 @@ const createBuyOrder = async (
   const buyingBooks = items
     .filter(item => item.type === 'BUY')
     .map(item => changeAvailability(item.book.id, 'SOLD'))
+
   const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
 
   return saveOrder(
