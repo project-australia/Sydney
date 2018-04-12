@@ -14,12 +14,10 @@ const findOrdersByUserId = async customerId => {
   const booksPromises = orders.map(order => findBooksByIds(order.items))
   const books = await Promise.all(booksPromises)
 
-  const ordersWithBooks = orders.map((order, index) => {
+  return orders.map((order, index) => {
     order.items = books[index]
     return order
-  })
-
-  return ordersWithBooks
+  }).reverse()
 }
 
 const save = async order => new OrderModel(order).save()
