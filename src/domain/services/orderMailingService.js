@@ -3,22 +3,16 @@ const {
 } = require('../builders/orderEmailTemplateBuilder')
 const { sendMail } = require('../../data/vendors/sendgrid')
 
-/*
- *
- * Venda Local
- * Venda Shipped
- * Compra Local
- * Compra Shipped
- *
- *  Todos listam os livros
- *  todos listam o id da Order
- *  todos precisam do valor da order
- *  Mandar Id da order no tiutlo do email
- *  Se for shipped mandar o endereco
- *  Todos precisam de um Footer Default
- *  Todos precisam de um Header Default
- *
-*/
+const BALLARD_EMAIL = 'info@ballardbooks.com'
+
+const sendBeARepresentantRequest = async user => {
+  const html = `
+  <p><b>${user.name}</b> wants to be an representant</p>
+  <p>his/her email address is: ${user.email}.</p>
+  `
+  const subject = `${user.email} wants to be a representant`
+  return sendMail(BALLARD_EMAIL, subject, html)
+}
 
 const sendShippingLabelTo = async (to, label) => {
   const html = '<div></div>'
@@ -37,5 +31,6 @@ const sendOrderConfirmationEmailTo = async (to, order, books) => {
 
 module.exports = {
   sendShippingLabelTo,
+  sendBeARepresentantRequest,
   sendOrderConfirmationEmailTo
 }
