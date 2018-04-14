@@ -10,9 +10,10 @@ const {
   addMoneyToUserWallet,
   getWhoIndicatedUser
 } = require('../../data/repositories/usersRepository')
+const UsersRepository = require('../../data/repositories/usersRepository')
 const {
-  sendShippingLabelTo,
-  sendOrderConfirmationEmailTo
+  sendOrderConfirmationEmailTo,
+  sendLabelRequestEmail
 } = require('../services/orderMailingService')
 const {
   saveBooks,
@@ -20,7 +21,6 @@ const {
   findById,
   updateBooks
 } = require('../../data/repositories/booksRepository')
-const { generateShippingLabel } = require('../../data/vendors/shippo')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
 const FIRST_TIER_COMMISSION_RATE = 0.05
@@ -65,17 +65,18 @@ const createSellOrder = async (
 
   if (shippingMethod === 'SHIPPO') {
     try {
-      const label = await generateShippingLabel()
-      const customerEmail = await getCustomerEmail(customerId)
-      sendShippingLabelTo(customerEmail, label.labelUrl)
+      const user = await UsersRepository.findById(customerId)
+      await sendLabelRequestEmail(user, items)
     } catch (err) {
+      console.err(err)
       // TODO: Nesse caso ainda nao temos a order, possivelmente precisamos passar um parametro
       // para proxima funcao dizendo que já falho ao enviar email
       // await markOrderAsEmailFailure()
     }
   }
 
-  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
+  // TODO: REMOVE THIS
+  // return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
 const confirmOrder = async (userId, orderId, books) => {
