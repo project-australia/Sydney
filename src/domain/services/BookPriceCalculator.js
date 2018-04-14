@@ -51,7 +51,8 @@ const ballardSellingPercentage = (salesRank, price) => {
 }
 
 const calculateBallardSellingPrice = ({ salesRank, price }) => {
-  return price * ballardSellingPercentage(salesRank, price)
+  // return price * ballardSellingPercentage(salesRank, price)
+  return 1.99
 }
 
 module.exports = {
