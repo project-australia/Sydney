@@ -6,13 +6,13 @@ import {
 const request = require('supertest')
 const app = require('../../../../src/app')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
-const OrderService = require('../../../../src/data/repositories/orderService')
+const OrderService = require('../../../../src/data/repositories/ordersRepository')
 const {
   newSellingOrderRequest,
   newBuyingOrderRequest
 } = require('../../../fixture/model/order.fixture')
 
-jest.mock('../../../../src/services/database/orderService')
+jest.mock('../../../../src/data/repositories/ordersRepository')
 
 const userId = newOrderResponse.customerId
 
