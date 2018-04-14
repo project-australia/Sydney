@@ -24,6 +24,10 @@ const requestRep = async (req, res) => {
   const { id } = req.params
 
   try {
+    if (!id || id === 'undefined') {
+      return captureError('Representant request without user', new Error(), req, res)
+    }
+
     await requestBeARepresentant(id)
     res.status(200).json({ message: 'Received' })
   } catch (err) {
