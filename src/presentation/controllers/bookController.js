@@ -18,6 +18,7 @@ const lookup = async (req, res) => {
 
   try {
     const evaluation = await EvaluationService.amazonLookup(formattedIsbn)
+    evaluation.prices.sell = 1.99
     res.status(200).json(evaluation)
   } catch (err) {
     return captureError('book lookup', err, req, res, err.status)
