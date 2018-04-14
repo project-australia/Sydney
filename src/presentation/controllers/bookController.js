@@ -30,6 +30,7 @@ const evaluate = async (req, res) => {
 
   try {
     const evaluation = await EvaluationService.evaluateBook(formattedIsbn)
+    evaluation.prices.sell = 1.99
     res.status(200).json(evaluation)
   } catch (err) {
     return captureError(undefined, err, req, res)
