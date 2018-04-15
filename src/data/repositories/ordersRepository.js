@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const { OrderModel } = require('../models/orderModel')
 const { findBooksByIds } = require('./booksRepository')
 
@@ -22,8 +23,13 @@ const findOrdersByUserId = async customerId => {
 
 const save = async order => new OrderModel(order).save()
 
-const findAllOrders = async () => {
-  return OrderModel.aggregate([
+const searchOrders = async (searchParam, currentPage) => {
+  const { ObjectId } = mongoose.Types
+  const perPage = 15
+  const page = currentPage || 1
+  const skip = (perPage * page) - perPage
+  const orders = await OrderModel.aggregate([
+    { $match: { _id: ObjectId(searchParam) } },
     {
       $lookup: {
         from: 'users',
@@ -31,8 +37,45 @@ const findAllOrders = async () => {
         foreignField: '_id',
         as: 'user'
       }
-    }
+    },
+    { $sort: { createdAt: -1 } }
   ])
+    .skip(skip)
+    .limit(perPage)
+  const totalPages = 1 // TODO: FIX - se houver outros parametros
+  const paginatedOrders = {
+    orders,
+    activePage: parseInt(page, 10),
+    totalPages
+  }
+  return paginatedOrders
+}
+
+const findAllOrders = async (currentPage) => {
+  const perPage = 15
+  const page = currentPage || 1
+  const skip = (perPage * page) - perPage
+  const orders = await OrderModel.aggregate([
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'customerId',
+        foreignField: '_id',
+        as: 'user'
+      }
+    },
+    { $sort: { createdAt: -1 } }
+  ])
+    .skip(skip)
+    .limit(perPage)
+  const totalOrders = await OrderModel.count()
+  const totalPages = Math.ceil(totalOrders / perPage)
+  const paginatedOrders = {
+    orders,
+    activePage: parseInt(page, 10),
+    totalPages
+  }
+  return paginatedOrders
 }
 
 async function findById (id) {
@@ -54,5 +97,6 @@ module.exports = {
   findById,
   save,
   markOrderAsEmailFailure,
-  findOrdersByUserId
+  findOrdersByUserId,
+  searchOrders
 }

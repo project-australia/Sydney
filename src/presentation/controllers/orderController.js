@@ -63,8 +63,9 @@ const updateOrder = async (req, res) => {
 }
 
 const getAll = async (req, res) => {
+  const { activepage } = req.query
   try {
-    let orders = await OrderService.findAll()
+    let orders = await OrderService.findAll(activepage)
 
     res.status(200).json(orders)
   } catch (err) {
@@ -83,10 +84,21 @@ const confirmOrder = async (req, res) => {
     return captureError('Order Confirmation Error', err, req, res)
   }
 }
+const findBySearchParam = async (req, res) => {
+  const { searchParam } = req.query
+  try {
+    let orders = await OrderService.serachAll(searchParam)
+
+    res.status(200).json(orders)
+  } catch (err) {
+    return captureError('Search Orders', err, req, res)
+  }
+}
 
 module.exports = {
   confirmOrder,
   createOrder,
   updateOrder,
-  getAll
+  getAll,
+  findBySearchParam
 }

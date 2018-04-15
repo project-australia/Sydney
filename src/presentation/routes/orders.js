@@ -5,13 +5,15 @@ const {
   createOrder,
   updateOrder,
   getAll,
-  confirmOrder
+  confirmOrder,
+  findBySearchParam
 } = require('../controllers/orderController')
 
 const router = Router({ mergeParams: true })
 
 router.post('/', validate(create), createOrder)
 router.get('/', getAll)
+router.get('/search', findBySearchParam)
 router.put('/:orderId/', validate(update), updateOrder)
 router.post('/:orderId/confirmation', validate(confirmation), confirmOrder)
 

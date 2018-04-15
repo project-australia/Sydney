@@ -3,7 +3,8 @@ const {
   markOrderAsEmailFailure,
   updateOrder,
   save,
-  findAllOrders
+  findAllOrders,
+  searchOrders
 } = require('../../data/repositories/ordersRepository')
 const {
   getCustomerEmail,
@@ -160,9 +161,9 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
-const findAll = async () => {
-  const orders = await findAllOrders()
-  orders.forEach(order => {
+const serachAll = async (activePage) => {
+  const paginatedOrders = await searchOrders(activePage)
+  paginatedOrders.orders.forEach(order => {
     order.id = order._id
     delete order._id
     delete order.__v
@@ -174,13 +175,31 @@ const findAll = async () => {
     }
   })
 
-  return orders
+  return paginatedOrders
+}
+
+const findAll = async (activePage) => {
+  const paginatedOrders = await findAllOrders(activePage)
+  paginatedOrders.orders.forEach(order => {
+    order.id = order._id
+    delete order._id
+    delete order.__v
+
+    if (order.user[0]) {
+      order.user = order.user[0]
+      order.user.id = order.user._id
+      delete order.user._id
+    }
+  })
+
+  return paginatedOrders
 }
 
 module.exports = {
   UNAVAILABLE_ITEMS,
   createBuyOrder,
   createSellOrder,
+  serachAll,
   confirmOrder,
   updateOrder, // TODO: remove this proxy behaviour
   findAll // TODO: remove this proxy behaviour
