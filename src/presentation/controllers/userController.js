@@ -65,7 +65,6 @@ const findUsersByParams = async (req, res) => {
 const updateProfile = async (req, res) => {
   const { body, params } = req
   const id = params.id
-  console.log('atualizando profile')
   try {
     const updatedProfile = await UserService.updateProfile(id, body)
     res.status(200).json(updatedProfile)

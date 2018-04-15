@@ -152,6 +152,7 @@ const createShippingAddress = ({ street, city, zipCode, state }) => {
                   ${city} <br/>
                   ${zipCode} <br/>
                   ${state} <br/>
+                  <br />
                 </td>
               </tr>
             </table>
@@ -183,7 +184,8 @@ const createOrderInfos = (orderId, orderDate) => {
                   ${orderDate.toLocaleDateString(locale, options)}<br/>
                   <br/>
                   <span class='header-sm'>Order</span> <br/>
-                  #${orderId}
+                  #${orderId}<br/>
+                  Payment waiting for approval
                 </td>
               </tr>
             </table>
