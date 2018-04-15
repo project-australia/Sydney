@@ -8,7 +8,8 @@ const {
   findFeaturedBooks,
   findAll,
   updateBook,
-  findBooksByIds
+  findBooksByIds,
+  findBySearchPaginated
 } = require('../../data/repositories/booksRepository')
 const formatIsbn = isbn => isbn.replace(/-/g, '').trim()
 
@@ -102,8 +103,19 @@ const getRecentlyAddedBooks = async (req, res) => {
 }
 
 const findAllBooks = async (req, res) => {
+  const { activePage } = req.query
   try {
-    const books = await findAll()
+    const books = await findAll(activePage)
+    res.status(200).json(books)
+  } catch (err) {
+    return captureError('error get all books', err, req, res)
+  }
+}
+
+const serachBooksWithPagination = async (req, res) => {
+  const { search } = req.query
+  try {
+    const books = await findBySearchPaginated(search)
     res.status(200).json(books)
   } catch (err) {
     return captureError('error get all books', err, req, res)
@@ -131,5 +143,6 @@ module.exports = {
   getRecentlyAddedBooks,
   findAllBooks,
   updateABook,
-  findBooksByArrayOfIds
+  findBooksByArrayOfIds,
+  serachBooksWithPagination
 }

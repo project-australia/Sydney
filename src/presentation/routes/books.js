@@ -9,7 +9,8 @@ const {
   getRecentlyAddedBooks,
   findAllBooks,
   updateABook,
-  findBooksByArrayOfIds
+  findBooksByArrayOfIds,
+  serachBooksWithPagination
 } = require('../controllers/bookController')
 
 const router = Router()
@@ -19,6 +20,7 @@ router.post('/searchbyids', findBooksByArrayOfIds)
 router.put('/:id', updateABook)
 router.get('/', findAllBooks)
 router.get('/search', findBookByParams)
+router.get('/searchPaginated', serachBooksWithPagination)
 router.get('/featured', getFeaturedBooks)
 router.get('/recentlyAdded', getRecentlyAddedBooks)
 

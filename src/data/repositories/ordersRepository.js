@@ -52,7 +52,7 @@ const searchOrders = async (searchParam, currentPage) => {
 }
 
 const findAllOrders = async (currentPage) => {
-  const perPage = 15
+  const perPage = 50
   const page = currentPage || 1
   const skip = (perPage * page) - perPage
   const orders = await OrderModel.aggregate([
