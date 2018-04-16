@@ -2,11 +2,11 @@ import { createProfileRequestBody } from '../../../fixture/model/user.fixture'
 
 const request = require('supertest')
 const app = require('../../../../src/app')
-const UserService = require('../../../../src/data/repositories/userService')
-const FirebaseService = require('../../../../src/domain/services/firebase')
+const UserService = require('../../../../src/data/repositories/usersRepository')
+const FirebaseService = require('../../../../src/data/vendors/firebase')
 
-jest.mock('../../../../src/services/database/userService')
-jest.mock('../../../../src/services/firebase')
+jest.mock('../../../../src/data/repositories/usersRepository')
+jest.mock('../../../../src/data/vendors/firebase')
 
 const expectedProfile = {
   id: '2Cbqh6mjOGUkb9Vsu3M42oPJW5V2',

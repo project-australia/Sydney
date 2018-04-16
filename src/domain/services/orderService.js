@@ -1,17 +1,27 @@
 const OrderRepository = require('../../data/repositories/ordersRepository')
-const { markOrderAsEmailFailure, updateOrder, save, findAll } = require('../../data/repositories/ordersRepository')
-const { getCustomerEmail, addMoneyToUserWallet, getWhoIndicatedUser } = require('../../data/repositories/usersRepository')
 const {
-  sendShippingLabelTo,
-  sendOrderConfirmationEmailTo
-} = require('../../domain/services/mailer')
+  markOrderAsEmailFailure,
+  updateOrder,
+  save,
+  findAllOrders,
+  searchOrders
+} = require('../../data/repositories/ordersRepository')
+const {
+  getCustomerEmail,
+  addMoneyToUserWallet,
+  getWhoIndicatedUser
+} = require('../../data/repositories/usersRepository')
+const UsersRepository = require('../../data/repositories/usersRepository')
+const {
+  sendOrderConfirmationEmailTo,
+  sendLabelRequestEmail
+} = require('../services/orderMailingService')
 const {
   saveBooks,
   changeAvailability,
   findById,
   updateBooks
 } = require('../../data/repositories/booksRepository')
-const { generateShippingLabel } = require('../../domain/services/shipping')
 
 const UNAVAILABLE_ITEMS = 'Trying to buy an unavailable book'
 const FIRST_TIER_COMMISSION_RATE = 0.05
@@ -33,6 +43,7 @@ const createBuyOrder = async (
   const buyingBooks = items
     .filter(item => item.type === 'BUY')
     .map(item => changeAvailability(item.book.id, 'SOLD'))
+
   const orderItems = await Promise.all([...buyingBooks, ...rentingBooks])
 
   return saveOrder(
@@ -55,17 +66,18 @@ const createSellOrder = async (
 
   if (shippingMethod === 'SHIPPO') {
     try {
-      const label = await generateShippingLabel()
-      const customerEmail = await getCustomerEmail(customerId)
-      sendShippingLabelTo(customerEmail, label.labelUrl)
+      const user = await UsersRepository.findById(customerId)
+      await sendLabelRequestEmail(user, items)
     } catch (err) {
+      console.err(err)
       // TODO: Nesse caso ainda nao temos a order, possivelmente precisamos passar um parametro
       // para proxima funcao dizendo que já falho ao enviar email
       // await markOrderAsEmailFailure()
     }
   }
 
-  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
+  // TODO: REMOVE THIS
+  // return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
 const confirmOrder = async (userId, orderId, books) => {
@@ -76,6 +88,14 @@ const confirmOrder = async (userId, orderId, books) => {
   }
 
   const updatedOrder = await updateOrder(orderId, { status: 'RECEIVED' })
+
+  books.forEach((book, index, array) => {
+    if (!book.status) {
+      book.status = 'AVAILABLE'
+      array[index].status = 'AVAILABLE'
+    }
+  })
+
   const updatedBooks = await updateBooks(books)
   const totalSellingPrice = updatedBooks.reduce(
     (acc, { prices }) => acc + prices.sell,
@@ -86,11 +106,17 @@ const confirmOrder = async (userId, orderId, books) => {
 
   if (firstTierRep) {
     let firstTierId = firstTierRep.id
-    await addMoneyToUserWallet(firstTierId, totalSellingPrice * FIRST_TIER_COMMISSION_RATE)
+    await addMoneyToUserWallet(
+      firstTierId,
+      totalSellingPrice * FIRST_TIER_COMMISSION_RATE
+    )
     const secondTierRep = await getWhoIndicatedUser(firstTierId)
 
     if (secondTierRep) {
-      await addMoneyToUserWallet(secondTierRep.id, totalSellingPrice * SECOND_TIER_COMMISSION_RATE)
+      await addMoneyToUserWallet(
+        secondTierRep.id,
+        totalSellingPrice * SECOND_TIER_COMMISSION_RATE
+      )
     }
   }
 
@@ -120,9 +146,10 @@ const saveOrder = async (
 
   try {
     const customerEmail = await getCustomerEmail(customerId)
-    await sendOrderConfirmationEmailTo(customerEmail, orderSaved)
+    await sendOrderConfirmationEmailTo(customerEmail, orderSaved, items)
   } catch (err) {
     await markOrderAsEmailFailure(orderSaved)
+    console.error('Error to retrieve user email', err)
   }
 
   return orderSaved
@@ -135,10 +162,45 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
+const serachAll = async (activePage) => {
+  const paginatedOrders = await searchOrders(activePage)
+  paginatedOrders.orders.forEach(order => {
+    order.id = order._id
+    delete order._id
+    delete order.__v
+
+    if (order.user[0]) {
+      order.user = order.user[0]
+      order.user.id = order.user._id
+      delete order.user._id
+    }
+  })
+
+  return paginatedOrders
+}
+
+const findAll = async (activePage) => {
+  const paginatedOrders = await findAllOrders(activePage)
+  paginatedOrders.orders.forEach(order => {
+    order.id = order._id
+    delete order._id
+    delete order.__v
+
+    if (order.user[0]) {
+      order.user = order.user[0]
+      order.user.id = order.user._id
+      delete order.user._id
+    }
+  })
+
+  return paginatedOrders
+}
+
 module.exports = {
   UNAVAILABLE_ITEMS,
   createBuyOrder,
   createSellOrder,
+  serachAll,
   confirmOrder,
   updateOrder, // TODO: remove this proxy behaviour
   findAll // TODO: remove this proxy behaviour

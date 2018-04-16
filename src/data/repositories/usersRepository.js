@@ -98,7 +98,7 @@ async function addMoneyToUserWallet (id, money) {
   }
 }
 
-const getWhoIndicatedUser = async (userId) => {
+const getWhoIndicatedUser = async userId => {
   const user = await findById(userId)
   return findUserBy({ referId: user.referredBy })
 }

@@ -49,8 +49,39 @@ async function findById (id) {
   return BookModel.findById(id)
 }
 
-async function findAll () {
-  return BookModel.find({})
+async function findBySearchPaginated (search) {
+  const searchParamLowerCase = search.toLowerCase()
+  const regexpParam = { $regex: new RegExp(searchParamLowerCase, 'ig') }
+  const books = await BookModel.find({
+    $or: [
+      { isbn: search },
+      { title: regexpParam },
+      { authors: regexpParam }
+    ]
+  })
+  const paginatedBooks = {
+    books,
+    activePage: 1,
+    totalPages: 1
+  }
+  return paginatedBooks
+}
+
+async function findAll (activePage) {
+  const perPage = 15
+  const page = activePage || 1
+  const skip = (perPage * page) - perPage
+  const books = await BookModel.find({})
+    .skip(skip)
+    .limit(perPage)
+  const totalBooks = await BookModel.count()
+  const totalPages = Math.ceil(totalBooks / perPage)
+  const paginatedBooks = {
+    books,
+    activePage: parseInt(page, 10),
+    totalPages
+  }
+  return paginatedBooks
 }
 
 async function findBooksByIds (booksIds) {
@@ -84,5 +115,6 @@ module.exports = {
   findAll,
   saveBooks,
   updateBook,
-  findBooksByIds
+  findBooksByIds,
+  findBySearchPaginated
 }

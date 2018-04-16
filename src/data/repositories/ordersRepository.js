@@ -1,4 +1,6 @@
+const mongoose = require('mongoose')
 const { OrderModel } = require('../models/orderModel')
+const { findBooksByIds } = require('./booksRepository')
 
 const updateOrder = async (id, order) => {
   return OrderModel.findOneAndUpdate(
@@ -9,13 +11,25 @@ const updateOrder = async (id, order) => {
 }
 
 const findOrdersByUserId = async customerId => {
-  return OrderModel.find({ customerId })
+  const orders = await OrderModel.find({ customerId })
+  const booksPromises = orders.map(order => findBooksByIds(order.items))
+  const books = await Promise.all(booksPromises)
+
+  return orders.map((order, index) => {
+    order.items = books[index]
+    return order
+  }).reverse()
 }
 
-const save = async (order) => new OrderModel(order).save()
+const save = async order => new OrderModel(order).save()
 
-const findAll = async () => {
-  return OrderModel.aggregate([
+const searchOrders = async (searchParam, currentPage) => {
+  const { ObjectId } = mongoose.Types
+  const perPage = 15
+  const page = currentPage || 1
+  const skip = (perPage * page) - perPage
+  const orders = await OrderModel.aggregate([
+    { $match: { _id: ObjectId(searchParam) } },
     {
       $lookup: {
         from: 'users',
@@ -23,8 +37,45 @@ const findAll = async () => {
         foreignField: '_id',
         as: 'user'
       }
-    }
+    },
+    { $sort: { createdAt: -1 } }
   ])
+    .skip(skip)
+    .limit(perPage)
+  const totalPages = 1 // TODO: FIX - se houver outros parametros
+  const paginatedOrders = {
+    orders,
+    activePage: parseInt(page, 10),
+    totalPages
+  }
+  return paginatedOrders
+}
+
+const findAllOrders = async (currentPage) => {
+  const perPage = 50
+  const page = currentPage || 1
+  const skip = (perPage * page) - perPage
+  const orders = await OrderModel.aggregate([
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'customerId',
+        foreignField: '_id',
+        as: 'user'
+      }
+    },
+    { $sort: { createdAt: -1 } }
+  ])
+    .skip(skip)
+    .limit(perPage)
+  const totalOrders = await OrderModel.count()
+  const totalPages = Math.ceil(totalOrders / perPage)
+  const paginatedOrders = {
+    orders,
+    activePage: parseInt(page, 10),
+    totalPages
+  }
+  return paginatedOrders
 }
 
 async function findById (id) {
@@ -42,9 +93,10 @@ const markOrderAsEmailFailure = async order => {
 
 module.exports = {
   updateOrder,
-  findAll,
+  findAllOrders,
   findById,
   save,
   markOrderAsEmailFailure,
-  findOrdersByUserId
+  findOrdersByUserId,
+  searchOrders
 }

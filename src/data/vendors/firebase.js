@@ -1,4 +1,4 @@
-const { ServiceError } = require('./serviceError')
+const { ServiceError } = require('../../domain/services/serviceError')
 const { auth } = require('firebase-admin')
 const Firebase = require('firebase')
 

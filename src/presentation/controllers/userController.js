@@ -1,7 +1,8 @@
 const { captureError } = require('./apiError')
-const FireBaseService = require('../../domain/services/firebase')
+const FireBaseService = require('../../data/vendors/firebase')
 const UserService = require('../../data/repositories/usersRepository')
 const OrderService = require('../../data/repositories/ordersRepository')
+const { requestBeARepresentant } = require('../../domain/services/userService')
 
 const firebaseErrors = {
   'auth/email-already-in-use': 409,
@@ -20,11 +21,17 @@ const getAll = async (req, res) => {
 }
 
 const requestRep = async (req, res) => {
+  const { id } = req.params
+
   try {
-    // TODO: PRECISA SER IMPLEMENTADO
-    res.status(200).json({ todo: 'NOT IMPLEMENTED YET' })
+    if (!id || id === 'undefined') {
+      return captureError('Representant request without user', new Error(), req, res)
+    }
+
+    await requestBeARepresentant(id)
+    res.status(200).json({ message: 'Received' })
   } catch (err) {
-    return captureError('Get All Users', err, req, res)
+    return captureError('Representant request', err, req, res)
   }
 }
 
@@ -58,7 +65,6 @@ const findUsersByParams = async (req, res) => {
 const updateProfile = async (req, res) => {
   const { body, params } = req
   const id = params.id
-  console.log('atualizando profile')
   try {
     const updatedProfile = await UserService.updateProfile(id, body)
     res.status(200).json(updatedProfile)

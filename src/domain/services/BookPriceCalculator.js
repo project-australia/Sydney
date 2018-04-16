@@ -14,6 +14,10 @@ class BookPriceCalculator {
       return ACCEPT_AS_DONATION
     }
 
+    if (!book.salesRank || !book.price) {
+      return NOT_INTERESTED_IN_THIS_BOOK
+    }
+
     return calculateBallardSellingPrice(book)
   }
 }
