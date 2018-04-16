@@ -25,11 +25,15 @@ const save = async order => new OrderModel(order).save()
 
 const searchOrders = async (searchParam, currentPage) => {
   const { ObjectId } = mongoose.Types
+  let id = searchParam
+  if (ObjectId.isValid(searchParam)) {
+    id = ObjectId(searchParam)
+  }
   const perPage = 15
   const page = currentPage || 1
   const skip = (perPage * page) - perPage
   const orders = await OrderModel.aggregate([
-    { $match: { _id: ObjectId(searchParam) } },
+    { $match: { _id: id } },
     {
       $lookup: {
         from: 'users',
