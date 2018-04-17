@@ -2,7 +2,7 @@ const { captureError } = require('./apiError')
 const FireBaseService = require('../../data/vendors/firebase')
 const UserService = require('../../data/repositories/usersRepository')
 const OrderService = require('../../data/repositories/ordersRepository')
-const { requestBeARepresentant } = require('../../domain/services/userService')
+const { requestBeARepresentant, requestMyWithdraw } = require('../../domain/services/userService')
 
 const firebaseErrors = {
   'auth/email-already-in-use': 409,
@@ -78,7 +78,7 @@ const requestWithdraw = async (req, res) => {
   const id = params.id
 
   try {
-    const updatedProfile = await UserService.requestWithdraw(id, body)
+    const updatedProfile = await requestMyWithdraw(id, body)
     res.status(200).json(updatedProfile)
   } catch (err) {
     return captureError('Requesting Withdraw', err, req, res)
