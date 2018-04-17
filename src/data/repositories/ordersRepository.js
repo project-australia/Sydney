@@ -23,10 +23,9 @@ const findOrdersByUserId = async customerId => {
 
 const save = async order => new OrderModel(order).save()
 
-const searchOrders = async (searchParam, currentPage) => {
+const searchOrders = async (searchParam, page = 1) => {
   const { ObjectId } = mongoose.Types
   const perPage = 15
-  const page = currentPage || 1
   const skip = (perPage * page) - perPage
   const orders = await OrderModel.aggregate([
     { $match: { _id: ObjectId(searchParam) } },
@@ -42,18 +41,18 @@ const searchOrders = async (searchParam, currentPage) => {
   ])
     .skip(skip)
     .limit(perPage)
+
   const totalPages = 1 // TODO: FIX - se houver outros parametros
-  const paginatedOrders = {
+
+  return {
     orders,
     activePage: parseInt(page, 10),
     totalPages
   }
-  return paginatedOrders
 }
 
-const findAllOrders = async (currentPage) => {
+const findAllOrders = async (page = 1) => {
   const perPage = 50
-  const page = currentPage || 1
   const skip = (perPage * page) - perPage
   const orders = await OrderModel.aggregate([
     {
@@ -70,12 +69,12 @@ const findAllOrders = async (currentPage) => {
     .limit(perPage)
   const totalOrders = await OrderModel.count()
   const totalPages = Math.ceil(totalOrders / perPage)
-  const paginatedOrders = {
+
+  return {
     orders,
     activePage: parseInt(page, 10),
     totalPages
   }
-  return paginatedOrders
 }
 
 async function findById (id) {

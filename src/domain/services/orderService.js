@@ -77,7 +77,7 @@ const createSellOrder = async (
   }
 
   // TODO: REMOVE THIS
-  // return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
+  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
 
 const confirmOrder = async (userId, orderId, books) => {
