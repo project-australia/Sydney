@@ -162,8 +162,8 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
-const serachAll = async (activePage) => {
-  const paginatedOrders = await searchOrders(activePage)
+const serachAll = async (searchParam) => {
+  const paginatedOrders = await searchOrders(searchParam)
   paginatedOrders.orders.forEach(order => {
     order.id = order._id
     delete order._id
