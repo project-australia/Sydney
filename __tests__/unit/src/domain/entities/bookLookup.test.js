@@ -77,7 +77,9 @@ describe('Book Lookup Domain Object', () => {
     })
 
     it('should retrieve ISBN13', () => {
-      expect(bookLookup.isbn13).toEqual(PaperbackLookupJSON.ItemAttributes[0].EAN[0])
+      expect(bookLookup.isbn13).toEqual(
+        PaperbackLookupJSON.ItemAttributes[0].EAN[0]
+      )
     })
 
     it('should expose books salesRank', () => {

@@ -1,5 +1,6 @@
 const { captureError } = require('./apiError')
 const EvaluationService = require('../../domain/services/evaluation')
+// TODO: Controller nao deve acessar diretamente banco de dados
 const {
   findBooksByAuthorOrIsnbOrTitle,
   saveBook,

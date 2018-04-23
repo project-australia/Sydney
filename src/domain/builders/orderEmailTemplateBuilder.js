@@ -18,7 +18,13 @@ class OrderEmailTemplateBuilder {
     const type = this.order.orderType.toLocaleLowerCase()
 
     return this.books.map(book =>
-      toRowItem(book.title, book.prices[type], book.images.small, book.condition, type)
+      toRowItem(
+        book.title,
+        book.prices[type],
+        book.images.small,
+        book.condition,
+        type
+      )
     )
   }
 

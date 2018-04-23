@@ -15,10 +15,12 @@ const findOrdersByUserId = async customerId => {
   const booksPromises = orders.map(order => findBooksByIds(order.items))
   const books = await Promise.all(booksPromises)
 
-  return orders.map((order, index) => {
-    order.items = books[index]
-    return order
-  }).reverse()
+  return orders
+    .map((order, index) => {
+      order.items = books[index]
+      return order
+    })
+    .reverse()
 }
 
 const save = async order => new OrderModel(order).save()
@@ -30,7 +32,7 @@ const searchOrders = async (searchParam, page = 1) => {
     id = ObjectId(searchParam)
   }
   const perPage = 15
-  const skip = (perPage * page) - perPage
+  const skip = perPage * page - perPage
   const orders = await OrderModel.aggregate([
     { $match: { _id: id } },
     {
@@ -57,7 +59,7 @@ const searchOrders = async (searchParam, page = 1) => {
 
 const findAllOrders = async (page = 1) => {
   const perPage = 50
-  const skip = (perPage * page) - perPage
+  const skip = perPage * page - perPage
   const orders = await OrderModel.aggregate([
     {
       $lookup: {

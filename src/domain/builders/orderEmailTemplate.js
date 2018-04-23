@@ -26,7 +26,9 @@ const createOrderTemplate = (order, items, shippingAddress) => {
 
 const createItemsTable = (order, items) => {
   // FIXME: a order nao esta vindo com informacoes sobre total
-  const orderPricingInfo = createOrderPricingInfo(order.prices && order.prices.total)
+  const orderPricingInfo = createOrderPricingInfo(
+    order.prices && order.prices.total
+  )
   const itemsTableRows = items
     .map(({ title, price, imageUrl, subTitle }) =>
       createItemsTableRows(title, price, imageUrl, subTitle)

@@ -18,6 +18,7 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
   return BookModel.find({
     $or: [
       { isbn: searchParam },
+      { isbn13: searchParam },
       { title: regexpParam },
       { authors: regexpParam }
     ],
@@ -26,8 +27,9 @@ async function findBooksByAuthorOrIsnbOrTitle (searchParam) {
 }
 
 async function findByIsbn (isbn) {
+  const isbnFormatted = formatIsbn(isbn)
   const books = await BookModel.find({
-    $or: [{ isbn: formatIsbn(isbn) }]
+    $or: [{ isbn: isbnFormatted }, { isbn13: isbnFormatted }]
   }).exec()
   return books && books[0]
 }
@@ -55,33 +57,32 @@ async function findBySearchPaginated (search) {
   const books = await BookModel.find({
     $or: [
       { isbn: search },
+      { isbn13: search },
       { title: regexpParam },
       { authors: regexpParam }
     ]
   })
-  const paginatedBooks = {
+  return {
     books,
     activePage: 1,
     totalPages: 1
   }
-  return paginatedBooks
 }
 
 async function findAll (activePage) {
   const perPage = 15
   const page = activePage || 1
-  const skip = (perPage * page) - perPage
+  const skip = perPage * page - perPage
   const books = await BookModel.find({})
     .skip(skip)
     .limit(perPage)
   const totalBooks = await BookModel.count()
   const totalPages = Math.ceil(totalBooks / perPage)
-  const paginatedBooks = {
+  return {
     books,
     activePage: parseInt(page, 10),
     totalPages
   }
-  return paginatedBooks
 }
 
 async function findBooksByIds (booksIds) {
