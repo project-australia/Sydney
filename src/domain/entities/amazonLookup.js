@@ -45,7 +45,8 @@ class AmazonLookup {
   }
 
   get isbn13 () {
-    return null
+    const booksWithISBN13 = this.lookups.filter(book => book.isbn13)
+    return idx(booksWithISBN13, _ => _[0].isbn13)
   }
 }
 

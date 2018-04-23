@@ -38,6 +38,17 @@ describe('Amazon Books Lookup Domain Object', () => {
     )
   })
 
+  it('should get lookup ISBN13', () => {
+    const aBookLookup = new BookLookupBuilder().build()
+    const expectedISBN = new BookLookup(aBookLookup).isbn13
+
+    const aBookWithNoISBN13 = new BookLookupBuilder().build()
+    aBookWithNoISBN13.ItemAttributes[0].EAN[0] = undefined
+
+    const amazonLookup = new AmazonLookup([aBookWithNoISBN13, aBookLookup])
+    expect(amazonLookup.isbn13).toEqual(expectedISBN)
+  })
+
   it('should get book dimensions', () => {
     const aBookLookup = new BookLookupBuilder().build()
     const expectedDimensions = new BookLookup(aBookLookup).dimensions
