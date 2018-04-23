@@ -1,8 +1,12 @@
 const {
   sendBeARepresentantRequest,
-  sendARepRequestConfirmation
+  sendARepRequestConfirmation,
+  sendRequestWithdraw
 } = require('../services/orderMailingService')
-const { findById } = require('../../data/repositories/usersRepository')
+const {
+  findById,
+  requestWithdrawFromWallet
+} = require('../../data/repositories/usersRepository')
 
 const requestBeARepresentant = async userId => {
   const user = await findById(userId)
@@ -10,6 +14,12 @@ const requestBeARepresentant = async userId => {
   sendARepRequestConfirmation(user)
 }
 
+const requestMyWithdraw = async (id, wallet) => {
+  const user = await requestWithdrawFromWallet(id, wallet)
+  sendRequestWithdraw(user)
+  return user
+}
 module.exports = {
-  requestBeARepresentant
+  requestBeARepresentant,
+  requestMyWithdraw
 }

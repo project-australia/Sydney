@@ -68,7 +68,7 @@ async function updateWalletBalance (id, balance) {
   return updateProfile(id, { wallet: { balance: balanceTruncated } })
 }
 
-async function requestWithdraw (id, wallet) {
+async function requestWithdrawFromWallet (id, wallet) {
   return UserProfileModel.findOneAndUpdate(
     { _id: id },
     {
@@ -119,7 +119,7 @@ module.exports = {
   getWhoIndicatedUser,
   findById,
   updateProfile,
-  requestWithdraw,
+  requestWithdrawFromWallet,
   mapToMongoose,
   getCustomerEmail,
   findUserNetwork,

@@ -25,6 +25,16 @@ const sendLabelRequestEmail = async (user, items) => {
   return sendMail(BALLARD_EMAIL, subject, html)
 }
 
+const sendRequestWithdraw = async (user) => {
+  const html = `
+  <p><b>${user.name}</b> is requesting withdraw</p>
+  <p>his/her email address is: ${user.email}.</p>
+  `
+
+  const subject = `${user.email} is requesting withdraw`
+  return sendMail(BALLARD_EMAIL, subject, html)
+}
+
 const sendARepRequestConfirmation = async user => {
   const html = `
   <p>Hi ${user.name},</p>
@@ -78,5 +88,6 @@ module.exports = {
   sendLabelRequestEmail,
   sendBeARepresentantRequest,
   sendARepRequestConfirmation,
-  sendOrderConfirmationEmailTo
+  sendOrderConfirmationEmailTo,
+  sendRequestWithdraw
 }
