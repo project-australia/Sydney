@@ -3,11 +3,12 @@ const { parserOptions } = require('../config/mongoose')
 const { address } = require('./addressModel')
 
 const Schema = mongoose.Schema
+const DEFAULT_REP = 'info@ballardbooks.com'
 
 let UserProfileSchema = new Schema({
   _id: { type: String, trim: true, unique: true },
   referId: { type: String, trim: true, unique: true },
-  referredBy: { type: String, trim: true, lowercase: true },
+  referredBy: { type: String, trim: true, lowercase: true, default: DEFAULT_REP },
   name: { type: String, lowercase: true, trim: true },
   email: { type: String, lowercase: true, trim: true, unique: true },
   birthDate: { type: Date },
@@ -42,3 +43,4 @@ const userCollection = 'users'
 
 module.exports = mongoose.model(userCollection, UserProfileSchema)
 exports.userCollection = userCollection
+exports.DEFAULT_REP = DEFAULT_REP

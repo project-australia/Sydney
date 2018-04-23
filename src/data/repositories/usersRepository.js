@@ -1,5 +1,5 @@
 const UserProfileModel = require('../models/userModel')
-
+const { DEFAULT_REP } = require('../models/userModel')
 const ALL = {}
 
 const changeIdField = profile => {
@@ -11,10 +11,17 @@ const createReferId = profile => {
   profile.referId = profile.email
 }
 
+const addDefaultRep = profile => {
+  if (_.isEmpty(profile.referId)) {
+    profile.referId = DEFAULT_REP
+  }
+}
+
 function mapToMongoose (profile, id) {
   const clone = { ...profile, id }
   changeIdField(clone)
   createReferId(clone)
+  addDefaultRep(clone)
   return clone
 }
 
