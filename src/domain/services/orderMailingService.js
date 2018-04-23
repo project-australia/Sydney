@@ -25,7 +25,7 @@ const sendLabelRequestEmail = async (user, items) => {
   return sendMail(BALLARD_EMAIL, subject, html)
 }
 
-const sendRequestWithdraw = async (user) => {
+const sendRequestWithdraw = async user => {
   const html = `
   <p><b>${user.name}</b> is requesting withdraw</p>
   <p>his/her email address is: ${user.email}.</p>

@@ -12,7 +12,7 @@
     "test": "npm run test:unit",
     "test:unit": "jest ./__tests__/unit/",
     "test:integration": "jest ./__tests__/integration/ --runInBand --forceExit",
-    "test:watch": "jest --watch",
+    "test:watch": "npm run test:unit -- --watch",
     "reformat-code": "npm run prettier && npm run lint:fix",
     "prettier": "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'"
   },

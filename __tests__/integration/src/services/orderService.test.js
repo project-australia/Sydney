@@ -1,11 +1,11 @@
 import {
   saveOrder,
   updateOrder
-} from '../../../../src/data/repositories/orderService'
+} from '../../../../src/data/repositories/ordersRepository'
 import { connectDB } from '../config/integrationTest'
 import { userProfile } from './userService.test'
-import { saveBook } from '../../../../src/data/repositories/bookService'
-import { createProfile } from '../../../../src/data/repositories/userService'
+import { saveBook } from '../../../../src/data/repositories/booksRepository'
+import { createProfile } from '../../../../src/data/repositories/usersRepository'
 import { aBook } from '../../../fixture/model/book.fixture'
 
 describe('Order service integration tests', () => {
