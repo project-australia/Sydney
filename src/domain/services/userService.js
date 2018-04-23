@@ -8,7 +8,7 @@ const {
   requestWithdrawFromWallet
 } = require('../../data/repositories/usersRepository')
 
-const requestBeARepresentant = async (userId) => {
+const requestBeARepresentant = async userId => {
   const user = await findById(userId)
   sendBeARepresentantRequest(user)
   sendARepRequestConfirmation(user)

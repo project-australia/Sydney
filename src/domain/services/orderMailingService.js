@@ -70,7 +70,7 @@ const sendOrderConfirmationEmailTo = async (to, order, books) => {
   return sendMail(to, subject, html)
 }
 
-const mapOrderItems = (items) => {
+const mapOrderItems = items => {
   const toItemsHTML = (html, item) => {
     return `
       <p>

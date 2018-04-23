@@ -162,7 +162,7 @@ const someItemsAreNotAvailable = async items => {
   return !books.every(isAvailable)
 }
 
-const serachAll = async (searchParam) => {
+const serachAll = async searchParam => {
   const paginatedOrders = await searchOrders(searchParam)
   paginatedOrders.orders.forEach(order => {
     order.id = order._id
@@ -179,7 +179,7 @@ const serachAll = async (searchParam) => {
   return paginatedOrders
 }
 
-const findAll = async (activePage) => {
+const findAll = async activePage => {
   const paginatedOrders = await findAllOrders(activePage)
   paginatedOrders.orders.forEach(order => {
     order.id = order._id

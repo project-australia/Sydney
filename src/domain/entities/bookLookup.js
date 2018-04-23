@@ -22,7 +22,7 @@ class BookLookup {
   }
 
   get isbn13 () {
-    return null
+    return idx(this.book, _ => _.ItemAttributes[0].EAN[0])
   }
 
   get salesRank () {
