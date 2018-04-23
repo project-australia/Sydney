@@ -8,7 +8,8 @@ class Book {
     images,
     description,
     dimensions,
-    prices
+    prices,
+    isbn13
   }) {
     this.id = id
     this.title = title
@@ -19,6 +20,7 @@ class Book {
     this.images = images
     this.dimensions = dimensions
     this.prices = prices
+    this.isbn13 = isbn13
   }
 }
 

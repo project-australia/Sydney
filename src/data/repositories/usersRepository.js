@@ -1,5 +1,8 @@
-const UserProfileModel = require('../models/userModel')
+const _ = require('lodash')
+
 const { DEFAULT_REP } = require('../models/userModel')
+const { UserProfileModel } = require('../models/userModel')
+
 const ALL = {}
 
 const changeIdField = profile => {
@@ -12,8 +15,8 @@ const createReferId = profile => {
 }
 
 const addDefaultRep = profile => {
-  if (_.isEmpty(profile.referId)) {
-    profile.referId = DEFAULT_REP
+  if (_.isEmpty(profile.referredBy)) {
+    profile.referredBy = DEFAULT_REP
   }
 }
 

@@ -41,6 +41,8 @@ UserProfileSchema.set('toJSON', parserOptions)
 UserProfileSchema.set('toObject', parserOptions)
 const userCollection = 'users'
 
-module.exports = mongoose.model(userCollection, UserProfileSchema)
-exports.userCollection = userCollection
-exports.DEFAULT_REP = DEFAULT_REP
+module.exports = {
+  UserProfileModel: mongoose.model(userCollection, UserProfileSchema),
+  userCollection,
+  DEFAULT_REP
+}
