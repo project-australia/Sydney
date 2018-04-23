@@ -21,6 +21,10 @@ class BookLookup {
     return this.binding === 'Spiral-bound'
   }
 
+  get isbn13 () {
+    return null
+  }
+
   get salesRank () {
     const salesRank = idx(this.book, _ => _.SalesRank[0])
     return Number(salesRank)

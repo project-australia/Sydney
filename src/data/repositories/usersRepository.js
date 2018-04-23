@@ -1,4 +1,7 @@
-const UserProfileModel = require('../models/userModel')
+const _ = require('lodash')
+
+const { DEFAULT_REP } = require('../models/userModel')
+const { UserProfileModel } = require('../models/userModel')
 
 const ALL = {}
 
@@ -11,10 +14,17 @@ const createReferId = profile => {
   profile.referId = profile.email
 }
 
+const addDefaultRep = profile => {
+  if (_.isEmpty(profile.referredBy)) {
+    profile.referredBy = DEFAULT_REP
+  }
+}
+
 function mapToMongoose (profile, id) {
   const clone = { ...profile, id }
   changeIdField(clone)
   createReferId(clone)
+  addDefaultRep(clone)
   return clone
 }
 

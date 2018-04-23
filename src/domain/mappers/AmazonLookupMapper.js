@@ -9,6 +9,7 @@ class AmazonLookupMapper {
     const description = bookLookup.description
     const authors = lookup.bookAuthors
     const edition = lookup.bookEdition
+    const isbn13 = lookup.isbn13
     const images = new Images(lookup.bookImages)
     const dimensions = new Dimensions(lookup.bookDimensions)
     const sellingPrice = BookPriceCalculator.calculate(bookLookup)
@@ -23,7 +24,8 @@ class AmazonLookupMapper {
       images,
       description,
       dimensions,
-      prices
+      prices,
+      isbn13
     })
   }
 }

@@ -43,6 +43,10 @@ class AmazonLookup {
     const booksWithImages = this.lookups.filter(book => book.images)
     return idx(booksWithImages, _ => _[0].images)
   }
+
+  get isbn13 () {
+    return null
+  }
 }
 
 module.exports = {

@@ -48,6 +48,7 @@ let BookSchema = new Schema(
     title: { type: String, trim: true, lowercase: true, required: true },
     authors: [{ type: String, lowercase: true, trim: true }],
     isbn: { type: String, trim: true, lowercase: true, required: true },
+    isbn13: { type: String, trim: true, lowercase: true },
     edition: { type: String, trim: true, lowercase: true },
     about: { type: String, trim: true },
     prices,
