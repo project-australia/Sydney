@@ -21,9 +21,9 @@ class BookPriceCalculator {
       return NOT_INTERESTED_IN_THIS_BOOK
     }
 
-    // if (isInterestedInDonation(book)) {
-    //   return ACCEPT_AS_DONATION
-    // }
+    if (isInterestedInDonation(book)) {
+      return ACCEPT_AS_DONATION
+    }
 
     return 1
     return calculateBallardSellingPrice(book)
@@ -31,27 +31,20 @@ class BookPriceCalculator {
 }
 
 const notInterestedIn = ({ salesRank, price }) => {
-  console.log('rank  ->', salesRank)
-  console.log('price ->', price)
-
   if (salesRank > TIER_FOUR_SALES_RANK) {
-    console.log('UM')
     return true
   } else if (salesRank > TIER_THREE_SALES_RANK) {
-    console.log('DOIS', price < AVERAGE_PRICE)
     return price < AVERAGE_PRICE
   }
 
-  console.log('LOWER PRICE', LOWER_PRICE)
-  console.log('TRES', price < LOWER_PRICE)
   return price < LOWER_PRICE
 }
 
 const isInterestedInDonation = ({ salesRank, price }) => {
-  if (salesRank <= 900000) {
-    return price >= 10 && price < 20
-  } else if (salesRank < 1200000) {
-    return price > 20
+  if (salesRank <= TIER_THREE_SALES_RANK) {
+    return price >= LOWER_PRICE && price < AVERAGE_PRICE
+  } else if (salesRank <= TIER_FOUR_SALES_RANK) {
+    return price >= AVERAGE_PRICE
   }
 
   return false
