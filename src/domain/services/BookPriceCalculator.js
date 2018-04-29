@@ -1,5 +1,6 @@
 const NOT_INTERESTED_IN_THIS_BOOK = undefined
 const THIRTY_FIVE_PERCENT = 0.35
+const THIRTY_PERCENT = 0.3
 const TWENTY_FIVE_PERCENT = 0.25
 const ACCEPT_AS_DONATION = 0
 const TWENTY_PERCENT = 0.2
@@ -30,15 +31,15 @@ class BookPriceCalculator {
 }
 
 const ballardSellingPercentage = (salesRank, price) => {
-  console.log('RANK ->', salesRank)
-  console.log('PRICE ->', price)
-
   if (salesRank < TIER_ZERO_SALES_RANK) {
     console.log('UM', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
     return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
   } else if (salesRank < TIER_ONE_SALES_RANK) {
     console.log('DOIS', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
     return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
+  } else if (salesRank < TIER_TWO_SALES_RANK) {
+    console.log('TRES', price < MAX_PRICE ? THIRTY_PERCENT : THIRTY_FIVE_PERCENT)
+    return price < MAX_PRICE ? THIRTY_PERCENT : THIRTY_FIVE_PERCENT
   }
 
   return 1
@@ -77,6 +78,7 @@ module.exports = {
   TWENTY_FIVE_PERCENT,
   ACCEPT_AS_DONATION,
   TWENTY_PERCENT,
+  THIRTY_PERCENT,
   FORTY_PERCENT,
   MAX_PRICE,
   AVERAGE_PRICE,
