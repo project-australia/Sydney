@@ -25,9 +25,20 @@ class BookPriceCalculator {
       return ACCEPT_AS_DONATION
     }
 
-    return 1
     return calculateBallardSellingPrice(book)
   }
+}
+
+const ballardSellingPercentage = (salesRank, price) => {
+  console.log('RANK ->', salesRank)
+  console.log('PRICE ->', price)
+
+  if (salesRank < TIER_ZERO_SALES_RANK) {
+    console.log('UM', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
+    return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
+  }
+
+  return 1
 }
 
 const notInterestedIn = ({ salesRank, price }) => {
@@ -50,19 +61,9 @@ const isInterestedInDonation = ({ salesRank, price }) => {
   return false
 }
 
-const ballardSellingPercentage = (salesRank, price) => {
-  if (salesRank < 200000) {
-    return price > 30 ? THIRTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank >= 200000 && salesRank < 500000) {
-    return price > 30 ? TWENTY_FIVE_PERCENT : TWENTY_PERCENT
-  } else if (salesRank >= 500000 && salesRank <= 900000) {
-    return TWENTY_PERCENT
-  }
-
-  return 1
-}
-
 const calculateBallardSellingPrice = ({ salesRank, price }) => {
+  console.log('price', price)
+  console.log('percentage', ballardSellingPercentage(salesRank, price))
   return price * ballardSellingPercentage(salesRank, price)
 }
 
