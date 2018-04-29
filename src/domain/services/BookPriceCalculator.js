@@ -36,6 +36,9 @@ const ballardSellingPercentage = (salesRank, price) => {
   if (salesRank < TIER_ZERO_SALES_RANK) {
     console.log('UM', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
     return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
+  } else if (salesRank < TIER_ONE_SALES_RANK) {
+    console.log('DOIS', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
+    return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
   }
 
   return 1
