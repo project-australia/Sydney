@@ -5,148 +5,290 @@ import {
   THIRTY_FIVE_PERCENT,
   TWENTY_FIVE_PERCENT,
   ACCEPT_AS_DONATION,
-  TWENTY_PERCENT
+  TWENTY_PERCENT,
+  FORTY_PERCENT,
+  MAX_PRICE
 } from '../../../../src/domain/services/BookPriceCalculator'
 
 const calculate = BookPriceCalculator.calculate
 
 describe('Book Evaluation Pricing Rules', () => {
-  describe('should not accept book in if', () => {
-    it('sales rank > 1200000', () => {
-      const book = new BookLookupBuilder().withSalesRank(1200001).buildLookup()
-      expect(calculate(book)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+  let lowerSalesRank
+  let higherSalesRank
+  let lowerPrice
+  let higherPrice
+
+  describe('sales Rank between 1 and 900k', () => {
+    beforeAll(() => {
+      lowerSalesRank = 1
+      higherSalesRank = 900000
     })
 
-    it('salesRank > 900000 < 1200000 and price < $20', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(19.99)
-        .withSalesRank(1199999)
-        .buildLookup()
-      expect(calculate(book)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+    it('DO NOT take if price is below $10', () => {
+      higherPrice = 9.99
 
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(19.99)
-        .withSalesRank(900001)
+      higherPriceBondaryAssertion(lowerSalesRank, higherPrice, NOT_INTERESTED_IN_THIS_BOOK)
+
+      const lowerBoundBook = new BookLookupBuilder()
+        .withLowestPrice(higherPrice)
+        .withSalesRank(lowerSalesRank)
         .buildLookup()
-      expect(calculate(anotherBook)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+      expect(calculate(lowerBoundBook)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+
+      const higherSalesRankBoundary = new BookLookupBuilder()
+        .withLowestPrice(higherPrice)
+        .withSalesRank(higherSalesRank)
+        .buildLookup()
+      expect(calculate(higherSalesRankBoundary)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
     })
 
-    it('salesRank <= 900000 and price < $10', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(9.99)
-        .withSalesRank(900000)
-        .buildLookup()
-      expect(calculate(book)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+    describe('price between $0 and $14.99', () => {
+      beforeAll(() => {
+        lowerPrice = 0
+        higherPrice = 14.99
+      })
+
+      it('DONATE if price is between $10 and $15', () => {
+        const lowerPrice = 10
+        const higherPrice = 15
+
+        const lowerBound = new BookLookupBuilder()
+          .withLowestPrice(lowerPrice)
+          .withSalesRank(lowerSalesRank)
+          .buildLookup()
+        expect(calculate(lowerBound)).toEqual(ACCEPT_AS_DONATION)
+
+        const higherBound = new BookLookupBuilder()
+          .withLowestPrice(higherPrice)
+          .withSalesRank(higherSalesRank)
+          .buildLookup()
+        expect(calculate(higherBound)).toEqual(ACCEPT_AS_DONATION)
+
+        const higherBoundInvalidSalesRank = new BookLookupBuilder()
+          .withLowestPrice(lowerPrice)
+          .withSalesRank(lowerSalesRank + 1)
+          .buildLookup()
+        expect(calculate(higherBoundInvalidSalesRank)).not.toEqual(ACCEPT_AS_DONATION)
+
+        const higherBoundInvalidPrice = new BookLookupBuilder()
+          .withLowestPrice(lowerPrice + 0.01)
+          .withSalesRank(lowerSalesRank)
+          .buildLookup()
+        expect(calculate(higherBoundInvalidPrice)).not.toEqual(ACCEPT_AS_DONATION)
+      })
+    })
+
+    describe('sales Rank between 1 and 300k', () => {
+      it('pay 35% if price is between $15 and $20', () => {
+        lowerBoundPriceAssertion(1, 15, THIRTY_FIVE_PERCENT)
+        higherBoundPriceAssertion(300000, 20, THIRTY_FIVE_PERCENT)
+      })
+
+      it('pay 40% if price is above $20', () => {
+        lowerBoundPriceAssertion(1, 20, FORTY_PERCENT)
+
+        const higherBound = new BookLookupBuilder()
+          .withLowestPrice(20)
+          .withSalesRank(300000)
+          .buildLookup()
+        expect(calculate(higherBound)).toEqual(higherBound.price * FORTY_PERCENT)
+
+        const invalidSalesRank = new BookLookupBuilder()
+          .withLowestPrice(20)
+          .withSalesRank(300000)
+          .buildLookup()
+        expect(calculate(invalidSalesRank)).not.toEqual(invalidSalesRank.price * FORTY_PERCENT)
+      })
     })
   })
 
-  describe('should accept as donation if', () => {
-    it('salesRank > 900000 < 1.2M and price > $20', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(20.01)
-        .withSalesRank(900001)
-        .buildLookup()
-      expect(calculate(book)).toEqual(ACCEPT_AS_DONATION)
-
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(20.01)
-        .withSalesRank(1199999)
-        .buildLookup()
-      expect(calculate(anotherBook)).toEqual(ACCEPT_AS_DONATION)
+  describe('sales Rank between 900k + 1 and 1200k', () => {
+    beforeEach(() => {
+      lowerSalesRank = 900001
+      higherSalesRank = 1200000
     })
 
-    it('salesRank <= 900000 and $20 > price >= $10', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(10.0)
-        .withSalesRank(900000)
-        .buildLookup()
-      expect(calculate(book)).toEqual(ACCEPT_AS_DONATION)
+    describe('price is below $15', () => {
+      beforeEach(() => {
+        lowerPrice = 0
+        higherPrice = 14.99
+      })
 
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(19.99)
-        .withSalesRank(900000)
-        .buildLookup()
-      expect(calculate(anotherBook)).toEqual(ACCEPT_AS_DONATION)
+      it('DO NOT take', () => {
+        lowerSalesRankBoundaryAssertion(lowerSalesRank, higherPrice, NOT_INTERESTED_IN_THIS_BOOK)
+        higherPriceBondaryAssertion(lowerSalesRank, higherPrice, NOT_INTERESTED_IN_THIS_BOOK)
+
+        const higherBound = new BookLookupBuilder()
+          .withLowestPrice(higherPrice)
+          .withSalesRank(higherSalesRank)
+          .buildLookup()
+
+        expect(calculate(higherBound)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
+      })
+    })
+
+    describe('price is above $15', () => {
+      it('DONATE', () => {
+        const lowerPrice = 15 // This case don't have higher price boundary
+
+        lowerBoundConditionAssertion(lowerSalesRank, lowerPrice, ACCEPT_AS_DONATION)
+        higherBoundConditionAssertion(higherSalesRank, lowerPrice, ACCEPT_AS_DONATION)
+      })
     })
   })
 
-  describe('should calculate offer discount for', () => {
-    it('salesRank <= 199999 and $30 >= price >= $20, 20% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(20.0)
-        .withSalesRank(199999)
+  describe('sales Rank above 1200k', () => {
+    it('DO NOT take', () => {
+      const whatever = 100
+      const lowerSalesRank = 1200001
+
+      const lowerBoundBook = new BookLookupBuilder()
+        .withLowestPrice(whatever)
+        .withSalesRank(lowerSalesRank)
         .buildLookup()
-      expect(calculate(book)).toEqual(book.price * TWENTY_PERCENT)
+      expect(calculate(lowerBoundBook)).toEqual(NOT_INTERESTED_IN_THIS_BOOK)
 
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(30.0)
-        .withSalesRank(199999)
+      const bookBelowLowerSalesRankBound = new BookLookupBuilder()
+        .withLowestPrice(whatever)
+        .withSalesRank(lowerSalesRank - 1)
         .buildLookup()
-
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
-    })
-
-    it('salesRank <= 199999 and price > $30, 35% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(30.01)
-        .withSalesRank(199999)
-        .buildLookup()
-      expect(calculate(book)).toEqual(book.price * THIRTY_FIVE_PERCENT)
-    })
-
-    it('salesRank <= 199999 and price > $30, 35% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(30.01)
-        .withSalesRank(199999)
-        .buildLookup()
-      expect(calculate(book)).toEqual(book.price * THIRTY_FIVE_PERCENT)
-    })
-
-    it('200000 >= salesRank >= 499999 and $20 >= price >= $30, 20% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(20.0)
-        .withSalesRank(200000)
-        .buildLookup()
-      expect(calculate(book)).toEqual(book.price * TWENTY_PERCENT)
-
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(30.0)
-        .withSalesRank(499999)
-        .buildLookup()
-
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
-    })
-
-    it('200000 >= salesRank >= 499999 and price > $30, 25% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(31.0)
-        .withSalesRank(200000)
-        .buildLookup()
-      expect(calculate(book)).toEqual(book.price * TWENTY_FIVE_PERCENT)
-
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(31.0)
-        .withSalesRank(499999)
-        .buildLookup()
-
-      expect(calculate(anotherBook)).toEqual(
-        anotherBook.price * TWENTY_FIVE_PERCENT
-      )
-    })
-
-    it('500000 >= salesRank >= 900000 and price > $30, 20% PRICE', () => {
-      const book = new BookLookupBuilder()
-        .withLowestPrice(31.0)
-        .withSalesRank(500000)
-        .buildLookup()
-      expect(calculate(book)).toEqual(book.price * TWENTY_PERCENT)
-
-      const anotherBook = new BookLookupBuilder()
-        .withLowestPrice(31.0)
-        .withSalesRank(899999)
-        .buildLookup()
-
-      expect(calculate(anotherBook)).toEqual(anotherBook.price * TWENTY_PERCENT)
+      expect(calculate(bookBelowLowerSalesRankBound)).not.toEqual(NOT_INTERESTED_IN_THIS_BOOK)
     })
   })
 })
+
+const lowerSalesRankBoundaryAssertion = (lowerSalesRank, price, result) => {
+  const lowerBoundBook = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(lowerSalesRank)
+    .buildLookup()
+  expect(calculate(lowerBoundBook)).toEqual(result)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(lowerSalesRank - 1)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(result)
+}
+
+const higherSalesRankBoundaryAssertion = (higherSalesRank, price, result) => {
+  const higherBounBook = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(higherSalesRank)
+    .buildLookup()
+  expect(calculate(higherBounBook)).toEqual(result)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(higherSalesRank + 1)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(result)
+}
+
+const higherPriceBondaryAssertion = (salesRank, higherPrice, result) => {
+  const lowerBoundBook = new BookLookupBuilder()
+    .withLowestPrice(higherPrice)
+    .withSalesRank(salesRank)
+    .buildLookup()
+  expect(calculate(lowerBoundBook)).toEqual(result)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(higherPrice + 1)
+    .withSalesRank(salesRank)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(result)
+}
+
+const higherSalesRankAssertion = (higherSalesRank, price, result) => {
+  const lowerBoundBook = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(higherSalesRank)
+    .buildLookup()
+  expect(calculate(lowerBoundBook)).toEqual(result)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(higherSalesRank + 1)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(result)
+}
+
+const lowerBoundConditionAssertion = (lowerSalesRank, lowerPrice, expectedCondition) => {
+  const lowerBoundBook = new BookLookupBuilder()
+    .withLowestPrice(lowerPrice)
+    .withSalesRank(lowerPrice)
+    .buildLookup()
+  expect(calculate(lowerBoundBook)).toEqual(expectedCondition)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(lowerPrice)
+    .withSalesRank(lowerSalesRank - 1)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(expectedCondition)
+
+  const belowLowerPriceBound = new BookLookupBuilder()
+    .withLowestPrice(lowerPrice - 0.01)
+    .withSalesRank(lowerSalesRank)
+    .buildLookup()
+  expect(calculate(belowLowerPriceBound)).not.toEqual(expectedCondition)
+}
+
+const higherBoundConditionAssertion = (higherSalesRank, higherPrice, expectedCondition) => {
+  const lowerBoundBook = new BookLookupBuilder()
+    .withLowestPrice(higherPrice)
+    .withSalesRank(higherSalesRank)
+    .buildLookup()
+  expect(calculate(lowerBoundBook)).toEqual(expectedCondition)
+
+  const belowLowerSalesRankBound = new BookLookupBuilder()
+    .withLowestPrice(higherPrice)
+    .withSalesRank(higherSalesRank + 1)
+    .buildLookup()
+  expect(calculate(belowLowerSalesRankBound)).not.toEqual(expectedCondition)
+
+  const belowLowerPriceBound = new BookLookupBuilder()
+    .withLowestPrice(higherPrice + 0.01)
+    .withSalesRank(higherSalesRank)
+    .buildLookup()
+  expect(calculate(belowLowerPriceBound)).not.toEqual(expectedCondition)
+}
+
+const lowerBoundPriceAssertion = (salesrank, price, percentage) => {
+  const lowerBound = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(salesrank)
+    .buildLookup()
+  expect(calculate(lowerBound)).toEqual(lowerBound.price * percentage)
+
+  const invalidSalesRank = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(salesrank - 1)
+    .buildLookup()
+  expect(calculate(invalidSalesRank)).not.toEqual(invalidSalesRank.price * percentage)
+
+  const invalidPrice = new BookLookupBuilder()
+    .withLowestPrice(price - 0.01)
+    .withSalesRank(salesrank)
+    .buildLookup()
+  expect(calculate(invalidPrice)).not.toEqual(invalidPrice.price * percentage)
+}
+
+const higherBoundPriceAssertion = (salesrank, price, percentage) => {
+  const higherBound = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(salesrank)
+    .buildLookup()
+  expect(calculate(higherBound)).toEqual(higherBound.price * percentage)
+
+  const invalidSalesRank = new BookLookupBuilder()
+    .withLowestPrice(price)
+    .withSalesRank(salesrank + 1)
+    .buildLookup()
+  expect(calculate(invalidSalesRank)).not.toEqual(invalidSalesRank.price * percentage)
+
+  const invalidPrice = new BookLookupBuilder()
+    .withLowestPrice(price + 0.01)
+    .withSalesRank(salesrank)
+    .buildLookup()
+  expect(calculate(invalidPrice)).not.toEqual(invalidPrice.price * percentage)
+}

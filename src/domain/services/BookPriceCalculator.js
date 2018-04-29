@@ -3,33 +3,48 @@ const THIRTY_FIVE_PERCENT = 0.35
 const TWENTY_FIVE_PERCENT = 0.25
 const ACCEPT_AS_DONATION = 0
 const TWENTY_PERCENT = 0.2
+const FORTY_PERCENT = 0.4
+
+const MAX_PRICE = 20
+const LOWER_PRICE = 10
+const AVERAGE_PRICE = 15
+
+const TIER_ZERO_SALES_RANK = 300000
+const TIER_ONE_SALES_RANK = 500000
+const TIER_TWO_SALES_RANK = 770000
+const TIER_THREE_SALES_RANK = 900000
+const TIER_FOUR_SALES_RANK = 1200000
 
 class BookPriceCalculator {
   static calculate (book) {
-    if (!book.price || notInterestedIn(book)) {
+    if (!book.salesRank || !book.price || notInterestedIn(book)) {
       return NOT_INTERESTED_IN_THIS_BOOK
     }
 
-    if (isInterestedInDonation(book)) {
-      return ACCEPT_AS_DONATION
-    }
+    // if (isInterestedInDonation(book)) {
+    //   return ACCEPT_AS_DONATION
+    // }
 
-    if (!book.salesRank || !book.price) {
-      return NOT_INTERESTED_IN_THIS_BOOK
-    }
-
+    return 1
     return calculateBallardSellingPrice(book)
   }
 }
 
 const notInterestedIn = ({ salesRank, price }) => {
-  if (salesRank > 1200000) {
+  console.log('rank  ->', salesRank)
+  console.log('price ->', price)
+
+  if (salesRank > TIER_FOUR_SALES_RANK) {
+    console.log('UM')
     return true
-  } else if (salesRank > 900000) {
-    return price < 20
+  } else if (salesRank > TIER_THREE_SALES_RANK) {
+    console.log('DOIS', price < AVERAGE_PRICE)
+    return price < AVERAGE_PRICE
   }
 
-  return price < 10
+  console.log('LOWER PRICE', LOWER_PRICE)
+  console.log('TRES', price < LOWER_PRICE)
+  return price < LOWER_PRICE
 }
 
 const isInterestedInDonation = ({ salesRank, price }) => {
@@ -64,5 +79,9 @@ module.exports = {
   THIRTY_FIVE_PERCENT,
   TWENTY_FIVE_PERCENT,
   ACCEPT_AS_DONATION,
-  TWENTY_PERCENT
+  TWENTY_PERCENT,
+  FORTY_PERCENT,
+  MAX_PRICE,
+  AVERAGE_PRICE,
+  LOWER_PRICE
 }
