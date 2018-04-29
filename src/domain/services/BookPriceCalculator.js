@@ -1,16 +1,13 @@
 const NOT_INTERESTED_IN_THIS_BOOK = undefined
-const THIRTY_FIVE_PERCENT = 0.35
 const THIRTY_PERCENT = 0.3
-const TWENTY_FIVE_PERCENT = 0.25
-const ACCEPT_AS_DONATION = 0
-const TWENTY_PERCENT = 0.2
+const THIRTY_FIVE_PERCENT = 0.35
 const FORTY_PERCENT = 0.4
+const ACCEPT_AS_DONATION = 0
 
 const MAX_PRICE = 20
 const LOWER_PRICE = 10
 const AVERAGE_PRICE = 15
 
-const TIER_ZERO_SALES_RANK = 300000
 const TIER_ONE_SALES_RANK = 500000
 const TIER_TWO_SALES_RANK = 770000
 const TIER_THREE_SALES_RANK = 900000
@@ -31,18 +28,15 @@ class BookPriceCalculator {
 }
 
 const ballardSellingPercentage = (salesRank, price) => {
-  if (salesRank < TIER_ZERO_SALES_RANK) {
-    console.log('UM', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
+  if (salesRank < TIER_ONE_SALES_RANK) {
     return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
-  } else if (salesRank < TIER_ONE_SALES_RANK) {
-    console.log('DOIS', price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT)
-    return price < MAX_PRICE ? THIRTY_FIVE_PERCENT : FORTY_PERCENT
-  } else if (salesRank < TIER_TWO_SALES_RANK) {
-    console.log('TRES', price < MAX_PRICE ? THIRTY_PERCENT : THIRTY_FIVE_PERCENT)
-    return price < MAX_PRICE ? THIRTY_PERCENT : THIRTY_FIVE_PERCENT
   }
 
-  return 1
+  if (salesRank < TIER_TWO_SALES_RANK && price >= MAX_PRICE) {
+    return THIRTY_FIVE_PERCENT
+  }
+
+  return THIRTY_PERCENT
 }
 
 const notInterestedIn = ({ salesRank, price }) => {
@@ -65,19 +59,14 @@ const isInterestedInDonation = ({ salesRank, price }) => {
   return false
 }
 
-const calculateBallardSellingPrice = ({ salesRank, price }) => {
-  console.log('price', price)
-  console.log('percentage', ballardSellingPercentage(salesRank, price))
-  return price * ballardSellingPercentage(salesRank, price)
-}
+const calculateBallardSellingPrice = ({ salesRank, price }) =>
+  price * ballardSellingPercentage(salesRank, price)
 
 module.exports = {
   BookPriceCalculator,
   NOT_INTERESTED_IN_THIS_BOOK,
   THIRTY_FIVE_PERCENT,
-  TWENTY_FIVE_PERCENT,
   ACCEPT_AS_DONATION,
-  TWENTY_PERCENT,
   THIRTY_PERCENT,
   FORTY_PERCENT,
   MAX_PRICE,
