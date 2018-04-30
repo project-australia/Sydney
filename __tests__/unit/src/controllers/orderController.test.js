@@ -6,13 +6,13 @@ import {
 const request = require('supertest')
 const app = require('../../../../src/app')
 const { newOrderResponse } = require('../../../fixture/model/order.fixture')
-const OrderService = require('../../../../src/data/repositories/ordersRepository')
+const OrderService = require('../../../../src/domain/services/orderService')
 const {
   newSellingOrderRequest,
   newBuyingOrderRequest
 } = require('../../../fixture/model/order.fixture')
 
-jest.mock('../../../../src/data/repositories/ordersRepository')
+jest.mock('../../../../src/domain/services/orderService')
 
 const userId = newOrderResponse.customerId
 
@@ -67,8 +67,10 @@ describe('Order controller', () => {
     expect(response.body).toEqual(orderUpdatedResponse)
     expect(OrderService.updateOrder).toHaveBeenCalledWith(
       orderUpdatedResponse.id,
-      updateOrderStatusRequest.status,
-      updateOrderStatusRequest.transactionId
+      {
+        status: updateOrderStatusRequest.status,
+        transactionId: updateOrderStatusRequest.transactionId
+      }
     )
   })
 })
