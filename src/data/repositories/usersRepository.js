@@ -33,7 +33,7 @@ async function createProfile (profile, id) {
 }
 
 async function findAllUsers () {
-  return UserProfileModel.find(ALL)
+  return UserProfileModel.find(ALL).sort({ createdAt: 1 })
 }
 
 async function findUsersByNameOrEmailOrSchool (searchParam) {

@@ -39,7 +39,9 @@ let UserProfileSchema = new Schema({
     paypalAccount: {
       type: String
     }
-  }
+  }},
+{
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
 })
 
 UserProfileSchema.set('toJSON', parserOptions)
