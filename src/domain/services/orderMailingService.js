@@ -5,6 +5,25 @@ const { sendMail } = require('../../data/vendors/sendgrid')
 
 const BALLARD_EMAIL = 'info@ballardbooks.com'
 
+const sendOrderConfirmationEmailToAdmins = (
+  id,
+  status,
+  orderType,
+  customerId,
+  items
+) => {
+  const subject = 'Order Notification'
+  const html = `
+  <p><b>Order ID: </b> ${id}.</p></br>
+  <p><b>Order Status: </b> ${status}.</p></br>
+  <p><b>Order Type: </b> ${orderType}.</p></br>
+  <p><b>Customer ID: </b> ${customerId}.</p></br>
+  `
+
+  console.log('order Items --->', items)
+  return sendMail(BALLARD_EMAIL, subject, html)
+}
+
 const sendLabelRequestEmail = async (user, items) => {
   const { street, zipCode, state, city } = user.address
   const html = `
@@ -89,5 +108,6 @@ module.exports = {
   sendBeARepresentantRequest,
   sendARepRequestConfirmation,
   sendOrderConfirmationEmailTo,
+  sendOrderConfirmationEmailToAdmins,
   sendRequestWithdraw
 }

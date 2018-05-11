@@ -17,6 +17,8 @@ const sellingOrderNotification = async (customerId, items, shippingMethod) => {
 }
 
 const orderConfirmNotification = async (customerId, order, items) => {
+  notifyBallardBooksAdmins(order)
+
   try {
     const customerEmail = await UsersRepository.getCustomerEmail(customerId)
     await MailingService.sendOrderConfirmationEmailTo(
@@ -28,6 +30,17 @@ const orderConfirmNotification = async (customerId, order, items) => {
     await OrderRepository.markOrderAsEmailFailure(order)
     console.error('Error to retrieve user email', err)
   }
+}
+
+const notifyBallardBooksAdmins = async (order, items) => {
+  const { id, status, orderType, customerId } = order
+  MailingService.sendOrderConfirmationEmailToAdmins(
+    id,
+    status,
+    orderType,
+    customerId,
+    items
+  )
 }
 
 module.exports = {
