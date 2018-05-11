@@ -43,7 +43,11 @@ const createSellOrder = async (
 ) => {
   const booksFromItem = items.map(item => item.book)
   const books = await BooksRepository.saveBooks(booksFromItem)
-  NotificationService.sellingOrderNotification(customerId, items, shippingMethod)
+  NotificationService.sellingOrderNotification(
+    customerId,
+    items,
+    shippingMethod
+  )
 
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
 }
@@ -55,7 +59,9 @@ const confirmOrder = async (userId, orderId, books) => {
     throw new Error('Trying to confirm and order which is already confirmed')
   }
 
-  const updatedOrder = await OrderRepository.updateOrder(orderId, { status: 'RECEIVED' })
+  const updatedOrder = await OrderRepository.updateOrder(orderId, {
+    status: 'RECEIVED'
+  })
 
   books.forEach((book, index, array) => {
     if (!book.status) {
@@ -69,7 +75,10 @@ const confirmOrder = async (userId, orderId, books) => {
     (acc, { prices }) => acc + prices.sell,
     0
   )
-  const updatedUser = await UsersRepository.addMoneyToUserWallet(userId, totalSellingPrice)
+  const updatedUser = await UsersRepository.addMoneyToUserWallet(
+    userId,
+    totalSellingPrice
+  )
   const firstTierRep = await UsersRepository.getWhoIndicatedUser(userId)
 
   if (firstTierRep) {

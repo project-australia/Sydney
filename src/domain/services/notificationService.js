@@ -19,7 +19,11 @@ const sellingOrderNotification = async (customerId, items, shippingMethod) => {
 const orderConfirmNotification = async (customerId, order, items) => {
   try {
     const customerEmail = await UsersRepository.getCustomerEmail(customerId)
-    await MailingService.sendOrderConfirmationEmailTo(customerEmail, order, items)
+    await MailingService.sendOrderConfirmationEmailTo(
+      customerEmail,
+      order,
+      items
+    )
   } catch (err) {
     await OrderRepository.markOrderAsEmailFailure(order)
     console.error('Error to retrieve user email', err)
