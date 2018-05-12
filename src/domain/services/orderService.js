@@ -31,7 +31,8 @@ const createBuyOrder = async (
     orderItems,
     shippingMethod,
     shippingAddress,
-    'BUY'
+    'BUY',
+    items
   )
 }
 
@@ -50,7 +51,7 @@ const createSellOrder = async (
     booksFromItem
   )
 
-  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
+  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL', items)
 }
 
 const confirmOrder = async (userId, orderId, books) => {
@@ -110,7 +111,8 @@ const saveOrder = async (
   items,
   shippingMethod,
   shippingAddress,
-  orderType
+  orderType,
+  itemsFromRequest
 ) => {
   const orderToSave = {
     customerId,
@@ -121,7 +123,7 @@ const saveOrder = async (
   }
 
   const order = await OrderRepository.save(orderToSave)
-  NotificationService.orderConfirmNotification(customerId, order, items)
+  NotificationService.orderConfirmNotification(customerId, order, items, itemsFromRequest)
 
   return order
 }

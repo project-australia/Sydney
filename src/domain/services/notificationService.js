@@ -21,8 +21,13 @@ const sellingOrderNotification = async (
   }
 }
 
-const orderConfirmNotification = async (customerId, order, items) => {
-  notifyBallardBooksAdmins(order, items)
+const orderConfirmNotification = async (
+  customerId,
+  order,
+  items,
+  itemsFromRequest
+) => {
+  notifyBallardBooksAdmins(order, itemsFromRequest)
 
   try {
     const customerEmail = await UsersRepository.getCustomerEmail(customerId)

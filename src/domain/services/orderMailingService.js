@@ -15,16 +15,25 @@ const sendOrderConfirmationEmailToAdmins = (
   items = []
 ) => {
   const subject = `Order #${id.substring(0, 5)} Notification`
-  const itemsHtml = items.reduce(
-    (acc, book) => `
-    ${acc}</br> 
-    <p><b>Title: </b> ${book.title}.</p></br>
-    <p><b>Prices: </b> ${book.prices}.</p></br>
-    <p><b>ISBN: </b> ${book.isbn}.</p></br>
-    <p><b>ISBN 13: </b> ${book.isbn13}.</p></br>
-  `,
-    ''
-  )
+  const itemsHtml = items.reduce((acc, item) => {
+    let price = JSON.stringify(item.book.prices)
+
+    if (orderType === 'SELL') {
+      price = item.book.prices.sell
+    } else {
+      price =
+        item.type === 'RENT' ? item.book.prices.rent : item.book.prices.buy
+    }
+
+    return `
+      ${acc}</br>
+      <p><b>Type: </b> ${item.type}.</p></br>
+      <p><b>Title: </b> ${item.book.title}.</p></br>
+      <p><b>Price: </b> ${price}.</p></br>
+      <p><b>ISBN: </b> ${item.book.isbn}.</p></br>
+      <p><b>ISBN 13: </b> ${item.book.isbn13}.</p></br>
+    `
+  }, '')
   const html = `
   <p><b>Order Type: </b> ${orderType}.</p></br>
   <p><b>Shipping Method: </b> ${shippingMethod}.</p></br>
