@@ -38,6 +38,9 @@ let UserProfileSchema = new Schema({
     },
     paypalAccount: {
       type: String
+    },
+    venmoAccount: {
+      type: String
     }
   }},
 {

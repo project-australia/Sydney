@@ -74,7 +74,8 @@ async function requestWithdrawFromWallet (id, wallet) {
     {
       $set: {
         'wallet.status': 'PENDING',
-        'wallet.paypalAccount': wallet.paypalAccount
+        'wallet.paypalAccount': wallet.paypalAccount,
+        'wallet.venmoAccount': wallet.venmoAccount
       }
     },
     { new: true }
