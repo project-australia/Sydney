@@ -7,20 +7,35 @@ const BALLARD_EMAIL = 'info@ballardbooks.com'
 
 const sendOrderConfirmationEmailToAdmins = (
   id,
-  status,
   orderType,
-  customerId,
-  items
+  shippingMethod,
+  transactionId,
+  customerName,
+  customerEmail,
+  items = []
 ) => {
-  const subject = 'Order Notification'
+  const subject = `Order #${id.substring(0, 5)} Notification`
+  const itemsHtml = items.reduce(
+    (acc, book) => `
+    ${acc}</br> 
+    <p><b>Title: </b> ${book.title}.</p></br>
+    <p><b>Prices: </b> ${book.prices}.</p></br>
+    <p><b>ISBN: </b> ${book.isbn}.</p></br>
+    <p><b>ISBN 13: </b> ${book.isbn13}.</p></br>
+  `,
+    ''
+  )
   const html = `
-  <p><b>Order ID: </b> ${id}.</p></br>
-  <p><b>Order Status: </b> ${status}.</p></br>
   <p><b>Order Type: </b> ${orderType}.</p></br>
-  <p><b>Customer ID: </b> ${customerId}.</p></br>
+  <p><b>Shipping Method: </b> ${shippingMethod}.</p></br>
+  <p><b>Transaction Payment: </b> ${transactionId}.</p></br>
+  <p><b>Customer Name: </b> ${customerName}.</p></br>
+  <p><b>Customer Email: </b> ${customerEmail}.</p></br>
+  </br>
+  <p><b>Books: </b></p></br>
+  ${itemsHtml}
   `
 
-  console.log('order Items --->', items)
   return sendMail(BALLARD_EMAIL, subject, html)
 }
 

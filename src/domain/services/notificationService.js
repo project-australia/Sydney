@@ -2,11 +2,16 @@ const OrderRepository = require('../../data/repositories/ordersRepository')
 const UsersRepository = require('../../data/repositories/usersRepository')
 const MailingService = require('../services/orderMailingService')
 
-const sellingOrderNotification = async (customerId, items, shippingMethod) => {
+const sellingOrderNotification = async (
+  customerId,
+  items,
+  shippingMethod,
+  booksFromItem
+) => {
   if (shippingMethod === 'SHIPPO') {
     try {
       const user = await UsersRepository.findById(customerId)
-      await MailingService.sendLabelRequestEmail(user, items)
+      await MailingService.sendLabelRequestEmail(user, items, booksFromItem)
     } catch (err) {
       console.err(err)
       // TODO: Nesse caso ainda nao temos a order, possivelmente precisamos passar um parametro
@@ -17,7 +22,7 @@ const sellingOrderNotification = async (customerId, items, shippingMethod) => {
 }
 
 const orderConfirmNotification = async (customerId, order, items) => {
-  notifyBallardBooksAdmins(order)
+  notifyBallardBooksAdmins(order, items)
 
   try {
     const customerEmail = await UsersRepository.getCustomerEmail(customerId)
@@ -33,12 +38,16 @@ const orderConfirmNotification = async (customerId, order, items) => {
 }
 
 const notifyBallardBooksAdmins = async (order, items) => {
-  const { id, status, orderType, customerId } = order
+  const { transactionId, orderType, shippingMethod, customerId, id } = order
+  const { name, email } = await UsersRepository.findById(customerId)
+
   MailingService.sendOrderConfirmationEmailToAdmins(
     id,
-    status,
     orderType,
-    customerId,
+    shippingMethod,
+    transactionId,
+    name,
+    email,
     items
   )
 }

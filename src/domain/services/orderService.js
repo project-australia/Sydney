@@ -46,7 +46,8 @@ const createSellOrder = async (
   NotificationService.sellingOrderNotification(
     customerId,
     items,
-    shippingMethod
+    shippingMethod,
+    booksFromItem
   )
 
   return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL')
@@ -111,7 +112,7 @@ const saveOrder = async (
   shippingAddress,
   orderType
 ) => {
-  const order = {
+  const orderToSave = {
     customerId,
     items: items.map(book => book.id),
     shippingMethod,
@@ -119,10 +120,10 @@ const saveOrder = async (
     orderType
   }
 
-  let orderSaved = await OrderRepository.save(order)
-  NotificationService.orderConfirmNotification(customerId, orderSaved, items)
+  const order = await OrderRepository.save(orderToSave)
+  NotificationService.orderConfirmNotification(customerId, order, items)
 
-  return orderSaved
+  return order
 }
 
 const someItemsAreNotAvailable = async items => {
