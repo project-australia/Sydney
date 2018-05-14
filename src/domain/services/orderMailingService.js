@@ -5,6 +5,49 @@ const { sendMail } = require('../../data/vendors/sendgrid')
 
 const BALLARD_EMAIL = 'info@ballardbooks.com'
 
+const sendOrderConfirmationEmailToAdmins = (
+  id,
+  orderType,
+  shippingMethod,
+  transactionId,
+  customerName,
+  customerEmail,
+  items = []
+) => {
+  const subject = `Order #${id.substring(0, 5)} Notification`
+  const itemsHtml = items.reduce((acc, item) => {
+    let price = JSON.stringify(item.book.prices)
+
+    if (orderType === 'SELL') {
+      price = item.book.prices.sell
+    } else {
+      price =
+        item.type === 'RENT' ? item.book.prices.rent : item.book.prices.buy
+    }
+
+    return `
+      ${acc}</br>
+      <p><b>Type: </b> ${item.type}.</p></br>
+      <p><b>Title: </b> ${item.book.title}.</p></br>
+      <p><b>Price: </b> ${price}.</p></br>
+      <p><b>ISBN: </b> ${item.book.isbn}.</p></br>
+      <p><b>ISBN 13: </b> ${item.book.isbn13}.</p></br>
+    `
+  }, '')
+  const html = `
+  <p><b>Order Type: </b> ${orderType}.</p></br>
+  <p><b>Shipping Method: </b> ${shippingMethod}.</p></br>
+  <p><b>Transaction Payment: </b> ${transactionId}.</p></br>
+  <p><b>Customer Name: </b> ${customerName}.</p></br>
+  <p><b>Customer Email: </b> ${customerEmail}.</p></br>
+  </br>
+  <p><b>Books: </b></p></br>
+  ${itemsHtml}
+  `
+
+  return sendMail(BALLARD_EMAIL, subject, html)
+}
+
 const sendLabelRequestEmail = async (user, items) => {
   const { street, zipCode, state, city } = user.address
   const html = `
@@ -89,5 +132,6 @@ module.exports = {
   sendBeARepresentantRequest,
   sendARepRequestConfirmation,
   sendOrderConfirmationEmailTo,
+  sendOrderConfirmationEmailToAdmins,
   sendRequestWithdraw
 }
