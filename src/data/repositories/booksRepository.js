@@ -74,6 +74,7 @@ async function findAll (activePage) {
   const page = activePage || 1
   const skip = perPage * page - perPage
   const books = await BookModel.find({})
+    .sort({ createdAt: -1 })
     .skip(skip)
     .limit(perPage)
   const totalBooks = await BookModel.count()
