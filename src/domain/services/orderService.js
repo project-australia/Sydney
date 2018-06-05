@@ -51,7 +51,14 @@ const createSellOrder = async (
     booksFromItem
   )
 
-  return saveOrder(customerId, books, shippingMethod, shippingAddress, 'SELL', items)
+  return saveOrder(
+    customerId,
+    books,
+    shippingMethod,
+    shippingAddress,
+    'SELL',
+    items
+  )
 }
 
 const confirmOrder = async (userId, orderId, books) => {
@@ -123,7 +130,12 @@ const saveOrder = async (
   }
 
   const order = await OrderRepository.save(orderToSave)
-  NotificationService.orderConfirmNotification(customerId, order, items, itemsFromRequest)
+  NotificationService.orderConfirmNotification(
+    customerId,
+    order,
+    items,
+    itemsFromRequest
+  )
 
   return order
 }
