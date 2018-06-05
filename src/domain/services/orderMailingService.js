@@ -3,7 +3,7 @@ const {
 } = require('../builders/orderEmailTemplateBuilder')
 const { sendMail } = require('../../data/vendors/sendgrid')
 
-const BALLARD_EMAIL = 'info@ballardbooks.com'
+const BALLARD_EMAIL = 'sales@ballardbooks.com'
 
 const sendOrderConfirmationEmailToAdmins = (
   id,
