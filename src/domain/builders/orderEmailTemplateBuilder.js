@@ -1,7 +1,8 @@
+const _ = require('lodash')
 const { createOrderTemplate } = require('./orderEmailTemplate')
 
 const toRowItem = (title, price, imageUrl, subTitle, type) => ({
-  title,
+  title: _.startCase(_.toLower(title)),
   price,
   imageUrl,
   subTitle,
