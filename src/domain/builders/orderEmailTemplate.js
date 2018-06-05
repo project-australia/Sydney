@@ -118,8 +118,8 @@ const createHeader = (order, shippingAddress) => {
             </tr>
             <tr>
               <td class='free-text'>
-                We'll let you know as soon as your items have shipped. To view your order, please view your
-                account profile under my orders tab.
+                We’ll let you know as soon as your book(s) have shipped.
+                To view your order, please view your account profile under my orders tab.
               </td>
             </tr>
             <tr>
