@@ -134,7 +134,9 @@ const saveOrder = async (
     customerId,
     order,
     items,
-    itemsFromRequest
+    itemsFromRequest,
+    shippingMethod,
+    orderType
   )
 
   return order

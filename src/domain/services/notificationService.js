@@ -25,7 +25,9 @@ const orderConfirmNotification = async (
   customerId,
   order,
   items,
-  itemsFromRequest
+  itemsFromRequest,
+  shippingMethod,
+  orderType
 ) => {
   notifyBallardBooksAdmins(order, itemsFromRequest)
 
@@ -34,7 +36,7 @@ const orderConfirmNotification = async (
     await MailingService.sendOrderConfirmationEmailTo(
       customerEmail,
       order,
-      items
+      items,
     )
   } catch (err) {
     await OrderRepository.markOrderAsEmailFailure(order)

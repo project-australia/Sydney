@@ -13,6 +13,12 @@ class OrderEmailTemplateBuilder {
   constructor (order, books) {
     this.order = order
     this.books = books
+
+    if (order.shippingMethod === 'IN_PERSON') {
+      this.headline = HEADLINES[order.orderType].IN_PERSON
+    } else {
+      this.headline = HEADLINES[order.orderType].SHIPPED
+    }
   }
 
   get items () {
@@ -33,23 +39,24 @@ class OrderEmailTemplateBuilder {
     return createOrderTemplate(
       this.order,
       this.items,
-      this.order.shippingAddress
+      this.order.shippingAddress,
+      this.headline
     )
   }
 }
 
-const TITLES = {
+const HEADLINES = {
   BUY: {
-    SHIPPING:
-      '<p>We’ll let you know as soon as your book(s) have shipped.</p><p>To view your order, please view your account profile under my orders tab.</p>',
-    NO_SHIPPING:
-      '<p>We’ll contact you as soon as possible to set up a time to deliver. </p><p>To view your order, please view your account profile under my orders tab. </p>'
+    SHIPPED:
+      "We'll let you know as soon as your book(s) have shipped.<br/>To view your order, please view your account profile under my orders tab.<br/>",
+    IN_PERSON:
+      "We'll contact you as soon as possible to set up a time to deliver. <br/>To view your order, please view your account profile under my orders tab. <br/>"
   },
   SELL: {
-    SHIPPING:
-      "<p>You’ll receive another email with the prepaid shipping label and instructions/tips on how to package your book(s) so they don't get damaged on the way. </p><p>Once we receive and inspect the book(s) to make sure they're not damaged (as damaged books will be subject to the Terms and Conditions agreed upon), you'll see the amount on the front of the app under My Wallet. You can then withdraw it and it will go to your PayPal or Venmo account. </p><p>To view your order, please view your account profile under my orders tab.</p>",
-    NO_SHIPPING:
-      "<p>We’ll contact you as soon as possible to set up a time for us to pick up the book(s).</p><p>Once we receive and inspect the book(s) at our location to make sure they're not damaged (as damaged books will be subject to the Terms and Conditions agreed upon), you'll see the amount on the front of the app under My Wallet. You can then withdraw it and it will go to your PayPal or Venmo account. </p><p>To view your order, please view your account profile under my orders tab.</p>"
+    SHIPPED:
+      "You'll receive another email with the prepaid shipping label and instructions/tips on how to package your book(s) so they don't get damaged on the way. <br/>Once we receive and inspect the book(s) to make sure they're not damaged (as damaged books will be subject to the Terms and Conditions agreed upon), you'll see the amount on the front of the app under My Wallet. You can then withdraw it and it will go to your PayPal or Venmo account. <br/>To view your order, please view your account profile under my orders tab.<br/>",
+    IN_PERSON:
+      "We'll contact you as soon as possible to set up a time for us to pick up the book(s).<br/>Once we receive and inspect the book(s) at our location to make sure they're not damaged (as damaged books will be subject to the Terms and Conditions agreed upon), you'll see the amount on the front of the app under My Wallet. You can then withdraw it and it will go to your PayPal or Venmo account. <br/>To view your order, please view your account profile under my orders tab.<br/>"
   }
 }
 
