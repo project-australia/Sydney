@@ -1,8 +1,8 @@
 const { footer, htmlHead, tableHeader } = require('./orderEmailTemplateContants');
 
-const createOrderTemplate = (order, items, shippingAddress, headlineText) => {
+const createOrderTemplate = (order, items, shippingAddress, headlineText, title) => {
   const itemsTable = createItemsTable(order, items)
-  const header = createHeader(order, shippingAddress, headlineText)
+  const header = createHeader(order, shippingAddress, headlineText, title)
 
   return `
     <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
@@ -100,7 +100,7 @@ const createOrderPricingInfo = total => {
     : ''
 }
 
-const createHeader = (order, shippingAddress, headlineText) => {
+const createHeader = (order, shippingAddress, headlineText, title) => {
   const address = createShippingAddress(shippingAddress)
   const orderInfo = createOrderInfos(
     order.id,
@@ -115,7 +115,7 @@ const createHeader = (order, shippingAddress, headlineText) => {
           <table cellspacing='0' cellpadding='0' width='600' class='w320'>
             <tr>
               <td class='header-lg'>
-                Thank you for your order!
+                ${title}
               </td>
             </tr>
             <tr>
