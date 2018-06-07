@@ -1,0 +1,158 @@
+-- orderConfirmNotification, Sample Params.
+
+- customerId eLtIBTU72heXIhQBvW7NyLY5bP13
+
+- order { updatedAt: 2018-06-07T21:22:19.102Z,
+  createdAt: 2018-06-07T21:22:19.102Z,
+  customerId: 'eLtIBTU72heXIhQBvW7NyLY5bP13',
+  shippingMethod: 'IN_PERSON',
+  orderType: 'BUY',
+  shippingAddress: { street: 'a', city: 'a', zipCode: '123123', state: 'a' },
+  emailSent: true,
+  items: [ 5ac9162a1ca6535372af2fdf, 5ac91b2f5eaf5e6e645e779f ],
+  status: 'WAITING_PAYMENT',
+  total: undefined,
+  transactionId: undefined,
+  id: 5b19a20b3741f1a87882a542 }
+
+- items [ { updatedAt: 2018-06-07T21:22:18.854Z,
+    createdAt: 2018-03-29T01:12:09.884Z,
+    title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+    edition: '6',
+    isbn: '032191533x',
+    condition: 'New',
+    dimensions: { height: 1, length: 10.9, width: 8.3, weight: 3.15 },
+    images:
+     { small: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL75_.jpg',
+       medium: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL160_.jpg',
+       large: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L.jpg' },
+    prices: { sell: 97.75, rent: 7.35, buy: 15.5 },
+    authors: [ 'jeffrey o bennett', 'william l briggs' ],
+    featured: true,
+    status: 'SOLD',
+    about: undefined,
+    isbn13: undefined,
+    id: 5ac9162a1ca6535372af2fdf },
+  { updatedAt: 2018-06-07T21:22:18.854Z,
+    createdAt: 2018-03-29T01:12:09.884Z,
+    title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+    edition: '6',
+    isbn: '032191533x',
+    condition: 'New',
+    dimensions: { height: 1, length: 10.9, width: 8.3, weight: 3.15 },
+    images:
+     { small: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL75_.jpg',
+       medium: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL160_.jpg',
+       large: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L.jpg' },
+    prices: { sell: 97.75, rent: 7.35, buy: 15.5 },
+    authors: [ 'jeffrey o bennett', 'william l briggs' ],
+    featured: true,
+    status: 'RENTED',
+    about: undefined,
+    isbn13: undefined,
+    id: 5ac91b2f5eaf5e6e645e779f } ]
+
+- itemsFromRequest [ { type: 'BUY',
+    id: '5ac9162a1ca6535372af2fdf',
+    book:
+     { updatedAt: '2018-03-29T01:12:09.884Z',
+       createdAt: '2018-03-29T01:12:09.884Z',
+       title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+       edition: '6',
+       isbn: '032191533x',
+       condition: 'New',
+       dimensions: [Object],
+       images: [Object],
+       prices: [Object],
+       authors: [Array],
+       featured: true,
+       status: 'AVAILABLE',
+       id: '5ac9162a1ca6535372af2fdf' } },
+  { type: 'RENT',
+    id: '5ac91b2f5eaf5e6e645e779f',
+    book:
+     { updatedAt: '2018-03-29T01:12:09.884Z',
+       createdAt: '2018-03-29T01:12:09.884Z',
+       title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+       edition: '6',
+       isbn: '032191533x',
+       condition: 'New',
+       dimensions: [Object],
+       images: [Object],
+       prices: [Object],
+       authors: [Array],
+       featured: true,
+       status: 'AVAILABLE',
+       id: '5ac91b2f5eaf5e6e645e779f' } } ]
+
+- shippingMethod IN_PERSON
+
+- orderType BUY
+
+
+-- Compra com pagamento para entregar em maos
+
+POST /users/eLtIBTU72heXIhQBvW7NyLY5bP13/orders 201 739.172 ms - 358
+order { updatedAt: 2018-06-07T21:42:16.410Z,
+  createdAt: 2018-06-07T21:42:16.410Z,
+  customerId: 'eLtIBTU72heXIhQBvW7NyLY5bP13',
+  shippingMethod: 'IN_PERSON',
+  orderType: 'BUY',
+  shippingAddress: { street: 'a', city: 'a', zipCode: '123123', state: 'a' },
+  emailSent: true,
+  items: [ 5ac920b73eb2d557fc1bcbeb ],
+  status: 'WAITING_PAYMENT',
+  total: undefined,
+  transactionId: undefined,
+  id: 5b19a6b846a7e2aaebc8ff73 }
+books [ { updatedAt: 2018-06-07T21:42:16.048Z,
+    createdAt: 2018-03-29T01:12:09.884Z,
+    title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+    edition: '6',
+    isbn: '032191533x',
+    condition: 'New',
+    dimensions: { height: 1, length: 10.9, width: 8.3, weight: 3.15 },
+    images:
+     { small: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL75_.jpg',
+       medium: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL160_.jpg',
+       large: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L.jpg' },
+    prices: { sell: 97.75, rent: 7.35, buy: 15.5 },
+    authors: [ 'jeffrey o bennett', 'william l briggs' ],
+    featured: true,
+    status: 'SOLD',
+    about: undefined,
+    isbn13: undefined,
+    id: 5ac920b73eb2d557fc1bcbeb } ]
+
+-- Compara Shipping pagando pelo paypal
+POST /users/eLtIBTU72heXIhQBvW7NyLY5bP13/orders 201 499.422 ms - 357
+order { updatedAt: 2018-06-07T21:43:27.088Z,
+  createdAt: 2018-06-07T21:43:27.088Z,
+  customerId: 'eLtIBTU72heXIhQBvW7NyLY5bP13',
+  shippingMethod: 'EXPEDITE',
+  orderType: 'BUY',
+  shippingAddress: { street: 'a', city: 'a', zipCode: '123123', state: 'a' },
+  emailSent: true,
+  items: [ 5ac9215f3eb2d557fc1bcbed ],
+  status: 'WAITING_PAYMENT',
+  total: undefined,
+  transactionId: undefined,
+  id: 5b19a6ff46a7e2aaebc8ff74 }
+books [ { updatedAt: 2018-06-07T21:43:26.909Z,
+    createdAt: 2018-03-29T01:12:09.884Z,
+    title: 'using and understanding mathematics, books a la carte edition (6th edition)',
+    edition: '6',
+    isbn: '032191533x',
+    condition: 'New',
+    dimensions: { height: 1, length: 10.9, width: 8.3, weight: 3.15 },
+    images:
+     { small: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL75_.jpg',
+       medium: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L._SL160_.jpg',
+       large: 'https://images-na.ssl-images-amazon.com/images/I/51xTsrOrv1L.jpg' },
+    prices: { sell: 97.75, rent: 7.35, buy: 15.5 },
+    authors: [ 'jeffrey o bennett', 'william l briggs' ],
+    featured: true,
+    status: 'SOLD',
+    about: undefined,
+    isbn13: undefined,
+    id: 5ac9215f3eb2d557fc1bcbed } ]
