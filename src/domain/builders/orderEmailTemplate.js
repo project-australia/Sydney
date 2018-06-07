@@ -1,6 +1,16 @@
-const { footer, htmlHead, tableHeader } = require('./orderEmailTemplateContants');
+const {
+  footer,
+  htmlHead,
+  tableHeader
+} = require('./orderEmailTemplateContants')
 
-const createOrderTemplate = (order, items, shippingAddress, headlineText, title) => {
+const createOrderTemplate = (
+  order,
+  items,
+  shippingAddress,
+  headlineText,
+  title
+) => {
   const itemsTable = createItemsTable(order, items)
   const header = createHeader(order, shippingAddress, headlineText, title)
 
@@ -174,6 +184,12 @@ const createOrderInfos = (orderId, orderDate) => {
     day: 'numeric'
   }
   const locale = 'en-US'
+  const orderInfo = orderId
+    ? `
+                    #${orderId}<br/>
+                  Payment waiting for approval
+  `
+    : ''
   return `
     <td class='mini-container-right'>
       <table cellpadding='0' cellspacing='0' width='100%'>
@@ -187,8 +203,7 @@ const createOrderInfos = (orderId, orderDate) => {
                   ${orderDate.toLocaleDateString(locale, options)}<br/>
                   <br/>
                   <span class='header-sm'>Order</span> <br/>
-                  #${orderId}<br/>
-                  Payment waiting for approval
+                   ${orderInfo}
                 </td>
               </tr>
             </table>

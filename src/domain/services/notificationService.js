@@ -36,7 +36,7 @@ const orderConfirmNotification = async (
     await MailingService.sendOrderConfirmationEmailTo(
       customerEmail,
       order,
-      items,
+      items
     )
   } catch (err) {
     await OrderRepository.markOrderAsEmailFailure(order)
