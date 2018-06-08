@@ -111,7 +111,7 @@ const sendShippingLabelTo = async (to, label) => {
   return sendMail(to, subject, html)
 }
 
-const sendOrderConfirmationEmailTo = async (to, order, books) => {
+const sendOrderConfirmationEmailTo = async (to, order, books, orderType) => {
   const subject = `Order Confirmation #${order.id.substring(0, 5)}`
   const html = new OrderEmailTemplateBuilder(order, books).build()
 
@@ -120,14 +120,16 @@ const sendOrderConfirmationEmailTo = async (to, order, books) => {
 
 const mapOrderItems = items => {
   const toItemsHTML = (html, item) => {
-    return `
+    return (
+      html +
+      `
       <p>
         book: ${item.book.title}<br>
         dimensions: ${JSON.stringify(item.book.dimensions)}
       </p>
     `
+    )
   }
-
   return items.reduce(toItemsHTML, '')
 }
 
