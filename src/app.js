@@ -1,6 +1,5 @@
 const bodyParser = require('body-parser')
 const express = require('express')
-const opbeat = require('opbeat')
 const logger = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
@@ -14,10 +13,6 @@ const app = express()
 
 app.use(ignoreFavicon)
 app.disable('x-powered-by')
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(opbeat.middleware.express())
-}
 
 app.use(cors())
 
