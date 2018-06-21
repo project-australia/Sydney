@@ -25,7 +25,9 @@ const orderConfirmNotification = async (
   customerId,
   order,
   items,
-  itemsFromRequest
+  itemsFromRequest,
+  shippingMethod,
+  orderType
 ) => {
   notifyBallardBooksAdmins(order, itemsFromRequest)
 

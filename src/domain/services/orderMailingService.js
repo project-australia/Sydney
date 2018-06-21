@@ -1,9 +1,10 @@
 const {
   OrderEmailTemplateBuilder
 } = require('../builders/orderEmailTemplateBuilder')
-const { sendMail } = require('../../data/vendors/sendgrid')
+const { sendMail, sendMailWithCC } = require('../../data/vendors/sendgrid')
 
-const BALLARD_EMAIL = 'info@ballardbooks.com'
+const BALLARD_EMAIL = 'sales@ballardbooks.com'
+const CC_RECIPIENT = 'info@ballardbooks.com'
 
 const sendOrderConfirmationEmailToAdmins = (
   id,
@@ -82,13 +83,17 @@ const sendARepRequestConfirmation = async user => {
   const html = `
   <p>Hi ${user.name},</p>
   <p>
-    Thank you for your interest!
-    We have received your request. We’ll review your answers and get back to you as soon as possible.
+  Thank you for your interest! We have received your request.
+  I'd like to tell you a little more about being a rep. Please let me know the best number and time to call you.
+  </p>
+  <p>
+  Best wishes,
+  Winnie Ballard
   </p>
   `
 
   const subject = `Ballard Books Rep request confirmation`
-  return sendMail(user.email, subject, html)
+  return sendMailWithCC(user.email, subject, html, CC_RECIPIENT)
 }
 
 const sendBeARepresentantRequest = async user => {
@@ -106,7 +111,7 @@ const sendShippingLabelTo = async (to, label) => {
   return sendMail(to, subject, html)
 }
 
-const sendOrderConfirmationEmailTo = async (to, order, books) => {
+const sendOrderConfirmationEmailTo = async (to, order, books, orderType) => {
   const subject = `Order Confirmation #${order.id.substring(0, 5)}`
   const html = new OrderEmailTemplateBuilder(order, books).build()
 
@@ -115,14 +120,16 @@ const sendOrderConfirmationEmailTo = async (to, order, books) => {
 
 const mapOrderItems = items => {
   const toItemsHTML = (html, item) => {
-    return `
+    return (
+      html +
+      `
       <p>
         book: ${item.book.title}<br>
         dimensions: ${JSON.stringify(item.book.dimensions)}
       </p>
     `
+    )
   }
-
   return items.reduce(toItemsHTML, '')
 }
 
