@@ -60,7 +60,7 @@ const searchOrders = async (searchParam, page = 1) => {
 const findAllOrders = async (page = 1) => {
   const perPage = 50
   const skip = perPage * page - perPage
-  const orders = await OrderModel.aggregate([
+  const cursor = OrderModel.aggregate([
     {
       $lookup: {
         from: 'users',
@@ -73,6 +73,10 @@ const findAllOrders = async (page = 1) => {
   ])
     .skip(skip)
     .limit(perPage)
+    .cursor({ batchSize: 2500 })
+    .exec()
+  const orders = []
+  await cursor.eachAsync(order => orders.push(order))
   const totalOrders = await OrderModel.count()
   const totalPages = Math.ceil(totalOrders / perPage)
 

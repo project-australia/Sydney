@@ -66,7 +66,7 @@ const getAll = async (req, res) => {
   const { activepage } = req.query
   try {
     let orders = await OrderService.findAll(activepage)
-
+    console.log(' ## ORDERS ##', orders)
     res.status(200).json(orders)
   } catch (err) {
     return captureError('Get All Orders', err, req, res)
