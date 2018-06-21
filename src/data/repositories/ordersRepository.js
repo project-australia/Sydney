@@ -73,7 +73,8 @@ const findAllOrders = async (page = 1) => {
   ])
     .skip(skip)
     .limit(perPage)
-
+    .cursor({})
+    .exec()
   const totalOrders = await OrderModel.count()
   const totalPages = Math.ceil(totalOrders / perPage)
 
