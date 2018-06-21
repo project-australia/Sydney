@@ -1,5 +1,3 @@
-const opbeat = require('opbeat')
-
 const captureError = async (msg, err = {}, req, res, status) => {
   const error = new ApiError(err, status, msg)
   res.status(error.status).json(error)
@@ -15,12 +13,6 @@ class ApiError extends Error {
     this.rootCause = error
 
     captureStackTrace(this, error.stack)
-
-    if (process.env.NODE_ENV === 'production') {
-      opbeat.captureError(error)
-    } else {
-      console.log(error)
-    }
   }
 }
 
